@@ -1,65 +1,78 @@
-import { Link } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
+import Img from "gatsby-image";
 import React from "react"
 import styled from "@emotion/styled"
 import Container from "./container"
 import HamburgerMenu from "react-hamburger-menu"
+import theme from "../theme"
 
 const Styles = styled.div`
   position: fixed;
-  background: #060606;
-  height: 64px;
+  background: #fff;
+  box-shadow: 0px 8px 8px -8px grey;
+  height: 84px;
   width: 100%;
   z-index: 1000;
 
-  a {
-    color: #fff;
-    transition: all 0.1s ease;
-
-    &:hover {
-      color: #ffffff77;
-    }
+  .my-box {
+    display: grid;
+    grid-template-columns: 160px calc(100% - 320px) 160px;
   }
 
-  .links {
-    display: inline-block;
-    float: right;
+  a {
+    color: #3fa9f5;
+  }
+
+  .my-logo {
+    width: 156px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .home-link {
+    text-align: center;
+    font-size: 32px;
+  }
+
+  .my-vote {
     text-align: right;
+    .button {
+      width: 100%;
+      height: calc(100% - 8px);
+      border-radius: 0px;
+      margin: 4px 0px;
+      background: #E48047;
+      transition: all ${theme.transition}s ease;
 
-    a {
-      margin-left: 24px;
-    }
-
-    @media screen and (max-width: 768px) {
-      display: none;
-      text-align: center;
-
-      &.active {
-        position: absolute;
-        padding-bottom: 20px;
-        top: 64px;
-        width: 100%;
-        background: #060606;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
-        left: 0px;
-        z-index: 1000;
-
-        a {
-          display: inline-block;
-          margin-bottom: 12px;
-        }
+      &:hover {
+        background: #E48047cc;
       }
     }
   }
 
-  .hamburger {
+  .links {
     display: none;
-    cursor: pointer;
 
-    @media screen and (max-width: 768px) {
+    &.active {
+      position: absolute;
+      border-top: 1px solid grey;
+      width: 100%;
+      left: 0px;
+      top: 84px;
+      text-align: center;
+      background: #fff;
+      box-shadow: 0px 8px 8px -8px grey;
+      padding: 20px;
+      z-index: 999;
+      
       display: block;
-      float: right;
     }
+  }
+
+  .hamburger {
+    position: relative;
+    top: 18px;
+    cursor: pointer;
   }
 `
 export default class Header extends React.Component {
@@ -84,21 +97,32 @@ export default class Header extends React.Component {
     return (
       <Styles>
         <Container>
-          <Link to="/">Gatsby Starter</Link>
+          <div className="my-box">
+            <div className="hamburger" onClick={this.toggleMenu.bind(this)}>
+              <HamburgerMenu
+                isOpen={this.state.open}
+                menuClicked={() => {}}
+                width={33}
+                height={20}
+                strokeWidth={4}
+                rotate={0}
+                color={theme.blue}
+                borderRadius={0}
+                animationDuration={theme.transition}
+              />
+            </div>
 
-          <div className="hamburger" onClick={this.toggleMenu.bind(this)}>
-            <HamburgerMenu
-              isOpen={this.state.open}
-              menuClicked={() => {}}
-              width={25}
-              height={18}
-              strokeWidth={2}
-              rotate={0}
-              color="#fafafa"
-              borderRadius={0}
-              animationDuration={0.001}
-              style={{ position: "absolute" }}
-            />
+            <div className="home-link">
+              <Link to="/">
+                <Logo />
+              </Link>
+            </div>
+
+            <div className="my-vote">
+              <a href="http://www.appliedmaterials.com/" target="_blank" ref="noreopener noreferrer">
+                <div className="button is-danger">VOTE</div>
+              </a>
+            </div>
           </div>
 
           <div className="links">
@@ -108,4 +132,23 @@ export default class Header extends React.Component {
       </Styles>
     )
   }
+}
+
+
+const Logo  =  () => {
+  let fluid = useStaticQuery(graphql`
+    {
+      logo: file(relativePath: {eq: "applied-logo.jpg"}) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `).logo.childImageSharp.fluid;
+  return (
+    <Img fluid={ fluid } className="my-logo" alt="Applied Materials Logo" />  
+  )
+  
 }

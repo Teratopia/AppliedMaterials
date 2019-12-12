@@ -33,7 +33,7 @@ function SEO({ description, lang, meta, title }) {
         lang,
       }}
       title={title}
-      titleTemplate={`%s`}
+      titleTemplate={`%s | Applied Materials | 2020 Notice of Annual Meeting & Proxy Statement`}
       meta={[
         {
           name: `description`,

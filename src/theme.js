@@ -1,5 +1,5 @@
 
 export default {
-    black: "#fff",
-    height: 20,
+    blue: "#3FA9F5",
+    transition: 0.1,
 }

@@ -5,6 +5,7 @@ import Container from "../components/container"
 import Page from "../components/page"
 import SEO from "../components/seo"
 import styled from "@emotion/styled"
+import Theme from "../theme.js";
 
 const Styles = styled.div``
 
