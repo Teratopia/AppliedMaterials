@@ -62,10 +62,18 @@ const Styles = styled.div`
       text-align: center;
       background: #fff;
       box-shadow: 0px 8px 8px -8px grey;
-      padding: 20px;
       z-index: 999;
-      
       display: block;
+      font-size: 18px;
+
+      a {
+        display: block;
+        padding: 16px;
+
+        &:hover {
+          background: #fafafa;
+        }
+      }
     }
   }
 
@@ -126,7 +134,10 @@ export default class Header extends React.Component {
           </div>
 
           <div className="links">
-            <Link to="/about">About</Link>
+            <Link to="/about">HOME</Link>
+            <Link to="/about">SHAREHOLDER LETTER</Link>
+            <Link to="/about">PROXY SUMMARY</Link>
+            <Link to="/about">ANNUAL REPORT & 10K</Link>
           </div>
         </Container>
       </Styles>
