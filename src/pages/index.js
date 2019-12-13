@@ -8,23 +8,24 @@ import Page from "../components/page"
 import styled from "@emotion/styled"
 import ReactMarkdown from "react-markdown"
 import { graphql } from "gatsby"
-import theme from "../theme.js";
-import BackgroundImage from "gatsby-background-image";
+import theme from "../theme.js"
+import BackgroundImage from "gatsby-background-image"
 
 const Styles = styled.div`
-
   .my-hero-grid {
     display: grid;
     grid-template-columns: calc(50% - 10px) calc(50% - 10px);
     @media screen and (max-width: 1048px) {
       grid-template-columns: 100%;
     }
-    
+
     grid-gap: 20px;
 
     .hero-section {
       border: 1px solid ${theme.blue};
       padding: 10px;
+      
+
 
       .gatsby-background-image:before {
         opacity: 0.7;
@@ -40,7 +41,7 @@ const Styles = styled.div`
 
         grid-template-rows: 150px;
         grid-gap: 10px;
-        
+
         .my-meta {
           text-align: center;
           color: grey;
@@ -76,27 +77,145 @@ const Styles = styled.div`
     }
   }
 
+  .meeting-highlights {
+    background: #e5e5e5;
+    text-align: center;
+    font-size: 42px;
+    padding: 40px 0px;
+    padding-bottom: 0px;
+    margin: 24px 0px;
+
+    .my-runner {
+      background: ${theme.orange};
+      height: 20px;
+      margin-top: 24px;
+    }
+  }
+
+  .my-info-grid {
+    margin: 24px 0px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(33%, 1fr));
+
+    .mini-grid {
+      display: grid;
+      max-width: 350px;
+      margin: 0 auto;
+      font-size: 18px;
+      grid-template-columns: 80px calc(100% - 80px);
+
+      @media screen and (max-width: 1048px) {
+        grid-template-columns: 100%;
+        font-size: 22px;
+
+        .gatsby-image-wrapper {
+          display: block;
+          max-width: 50px;
+          margin: 12px auto;
+          margin-bottom: 8px;
+        }
+      }
+
+      .my-icon {
+        padding: 14px;
+      }
+
+      .my-text {
+        padding-left: 8px;
+
+        &.special {
+          padding-top: 8px;
+          font-size: 22px;
+        }
+
+        @media screen and (max-width: 1048px) {
+          text-align: center;
+          padding-left: 0px;
+
+          &.special {
+            padding-top: 0px;
+            font-size: inherit;
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: 1048px) {
+      max-width: 400px;
+      margin: 0 auto;
+      grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+
+      .info-grid-section {
+        margin: 12px 0px;
+      }
+    }
+
+    .my-vote-button {
+      text-align: right;
+      padding-left: 120px;
+
+      @media screen and (max-width: 1048px) {
+        padding-left: 0px;
+        width: 250px;
+        display: block;
+        margin: 0 auto;
+        margin-top: 44px;
+
+      }
+
+      .button {
+        width: 100%;
+        height: calc(100% - 24px);
+        border-radius: 0px;
+        margin: 12px 0px;
+        background: ${theme.orange};
+        transition: all ${theme.transition}s ease;
+        min-height: 58px;
+
+        &:hover {
+          background: #e48047cc;
+        }
+      }
+    }
+  }
 `
 
 export default class extends React.Component {
-  
+  constructor() {
+    super()
+    this.state = {}
+    this.state.runnerWidth = 0
+  }
 
-  member ( el ) {
+  componentDidMount() {
+    if (typeof window !== undefined) {
+      window.onscroll = this.updateRunner.bind(this)
+    }
+  }
+
+  updateRunner(e) {
+    this.setState({
+      runnerWidth: (window.scrollY / window.innerHeight) * 100,
+    })
+  }
+
+  member(el) {
     return (
       <div className="my-member">
-        <div className="background-name">
-          { el.name }
-        </div>
-        <Img fluid={ el.image.childImageSharp.fluid } alt={ el.name } />
+        <div className="background-name">{el.name}</div>
+        <Img fluid={el.image.childImageSharp.fluid} alt={el.name} />
       </div>
     )
   }
 
   render() {
-    const world = this.props.data.heroBackground.childImageSharp.fluid;
-    const appliedMaterials = this.props.data.appliedMaterials.childImageSharp.fixed;
-    const members = this.props.data.members.frontmatter.members;
-    
+    const world = this.props.data.heroBackground.childImageSharp.fluid
+    const appliedMaterials = this.props.data.appliedMaterials.childImageSharp
+      .fixed
+    const members = this.props.data.members.frontmatter.members
+    const locationIcon = this.props.data.locationIcon.childImageSharp.fluid
+    const calendarIcon = this.props.data.calendarIcon.childImageSharp.fluid
+
     return (
       <Layout>
         <SEO title="Home" />
@@ -107,33 +226,70 @@ export default class extends React.Component {
               <div className="my-hero-grid">
                 <div className="hero-section">
                   <BackgroundImage
-                  fluid={ world }
-                  style={{height: "100%", }}
-                  >
-
-                  </BackgroundImage>
+                    fluid={world}
+                    style={{ height: "100%", minHeight: 340 }}
+                  ></BackgroundImage>
                 </div>
 
                 <div className="hero-section my-board-grid">
-                  {members.map( this.member.bind(this) )}
+                  {members.map(this.member.bind(this))}
                   <div>
-                  <img src={ AppliedLogo } style={{width: "100%", marginTop: 34}} alt="Applied Materials" />
-                  <div className="my-meta">
-                    BOARD OF DIRECTORS
-                  </div>
+                    <img
+                      src={AppliedLogo}
+                      style={{ width: "100%", marginTop: 34 }}
+                      alt="Applied Materials"
+                    />
+                    <div className="my-meta">BOARD OF DIRECTORS</div>
                   </div>
                 </div>
               </div>
+            </Container>
 
-              <hr />
+            <div className="meeting-highlights">
+              2020 Meeting Highlights
+              <div
+                className="my-runner"
+                style={{
+                  width: this.state.runnerWidth + "%",
+                  maxWidth: "100%",
+                }}
+              ></div>
+            </div>
 
-              <div className="my-grid">
-                
+            <Container>
+              <div className="my-info-grid">
+                <div className="info-grid-section">
+                  <div className="mini-grid">
+                    <div className="my-icon">
+                      <Img fluid={calendarIcon} alt="Calendar Icon" />
+                    </div>
+
+                    <div className="my-text special">
+                      <div>March 7, 2020</div>
+
+                      <div>11:00 am PST</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="info-grid-section">
+                  <div className="mini-grid">
+                    <div className="my-icon">
+                      <Img fluid={locationIcon} alt="Location Icon" />
+                    </div>
+
+                    <div className="my-text">
+                      <div>Applied Materials, Inc</div>
+                      <div>3050 Bowers Avenue, Building 1</div>
+                      <div>Santa Clara, CA 95054</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="info-grid-section my-vote-button">
+                  <div className="button is-danger">VOTE</div>
+                </div>
               </div>
-
-
-       
-           
             </Container>
           </Page>
         </Styles>
@@ -156,6 +312,22 @@ export const query = graphql`
       childImageSharp {
         fixed {
           ...GatsbyImageSharpFixed
+        }
+      }
+    }
+
+    calendarIcon: file(relativePath: { eq: "calendar-icon.png" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+
+    locationIcon: file(relativePath: { eq: "location-icon.png" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
         }
       }
     }

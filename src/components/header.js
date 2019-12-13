@@ -41,7 +41,7 @@ const Styles = styled.div`
       height: calc(100% - 8px);
       border-radius: 0px;
       margin: 4px 0px;
-      background: #E48047;
+      background: ${theme.orange};
       transition: all ${theme.transition}s ease;
 
       &:hover {
