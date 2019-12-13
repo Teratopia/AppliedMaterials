@@ -20,7 +20,8 @@ const Styles = styled.div`
   }
 
   a {
-    color: #3fa9f5;
+    // color: #3fa9f5;
+    color: #0a0a0a;
   }
 
   .my-logo {
@@ -64,7 +65,7 @@ const Styles = styled.div`
       box-shadow: 0px 8px 8px -8px grey;
       z-index: 999;
       display: block;
-      font-size: 18px;
+      font-size: 16px;
 
       a {
         display: block;
