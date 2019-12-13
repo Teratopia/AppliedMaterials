@@ -24,11 +24,53 @@ const Styles = styled.div`
     .hero-section {
       border: 1px solid ${theme.blue};
       padding: 10px;
+
+      .my-background {
+        color: white;
+        text-align: center;
+        padding-top: 44px;
+
+        @media screen and (min-width: 1048px) {
+          padding-top: 84px; 
+        }
+
+        .my-title {
+          padding: 14px;
+          font-size: 34px;
+
+          @media screen and (min-width: 1048px) {
+            padding: 14px;
+            font-size: 36px; 
+            margin-bottom: 44px;
+          }
+        }
+
+        .my-proxy-button {
+          margin-top: 14px;
+          border: 2px solid white;
+          padding: 12px 78px;
+          font-size: 24px;
+          display: inline-block;
+
+          &:hover {
+            background: #fff;
+            color: black;
+            cursor: pointer;
+          }
+
+          @media screen and (min-width: 1048px) {
+            padding: 14px 44px; 
+            font-size: 20px;
+          }
+        }
+        
+      }
       
 
 
       .gatsby-background-image:before {
         opacity: 0.7;
+       
       }
 
       &.my-board-grid {
@@ -228,7 +270,28 @@ export default class extends React.Component {
                   <BackgroundImage
                     fluid={world}
                     style={{ height: "100%", minHeight: 340 }}
-                  ></BackgroundImage>
+                    className="my-background"
+                  >
+
+                      <div className="my-title">
+                        <div>
+                        Notice of 
+                        </div>
+                        <div>
+                        2020 Annual Meeting
+                        </div>
+                        <div>
+                        of Shareholders 
+                        </div>
+                        <div>
+                        and Proxy Statement
+                        </div>
+                      </div>
+
+                      <div className="my-proxy-button">
+                        VIEW INTERACTIVE PROXY
+                      </div>
+                  </BackgroundImage>
                 </div>
 
                 <div className="hero-section my-board-grid">

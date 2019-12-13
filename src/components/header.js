@@ -17,6 +17,9 @@ const Styles = styled.div`
   .my-box {
     display: grid;
     grid-template-columns: 160px calc(100% - 320px) 160px;
+    @media screen and (max-width: 700px) {
+      grid-template-columns: 60px calc(100% - 220px) 160px;
+    }
   }
 
   a {
@@ -33,6 +36,10 @@ const Styles = styled.div`
   .home-link {
     text-align: center;
     font-size: 32px;
+
+    @media screen and (max-width: 700px) {
+      text-align: left;
+    }
   }
 
   .my-vote {
