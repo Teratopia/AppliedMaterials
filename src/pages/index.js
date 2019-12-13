@@ -28,28 +28,27 @@ const Styles = styled.div`
       .my-background {
         color: white;
         text-align: center;
-        padding-top: 44px;
+        padding-top: 34px;
 
         @media screen and (min-width: 1048px) {
-          padding-top: 84px; 
+          padding-top: 88px; 
         }
 
         .my-title {
-          padding: 14px;
-          font-size: 34px;
+          font-size: 30px;
 
           @media screen and (min-width: 1048px) {
             padding: 14px;
-            font-size: 36px; 
+            font-size: 35px; 
             margin-bottom: 44px;
           }
         }
 
         .my-proxy-button {
-          margin-top: 14px;
+          margin-top: 24px;
           border: 2px solid white;
           padding: 12px 78px;
-          font-size: 24px;
+          font-size: 22px;
           display: inline-block;
 
           &:hover {
@@ -59,7 +58,7 @@ const Styles = styled.div`
           }
 
           @media screen and (min-width: 1048px) {
-            padding: 14px 44px; 
+            padding: 14px 42px; 
             font-size: 20px;
           }
         }
