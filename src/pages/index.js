@@ -7,7 +7,7 @@ import AppliedLogo from "../images/applied-materials.png"
 import Page from "../components/page"
 import styled from "@emotion/styled"
 import ReactMarkdown from "react-markdown"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import theme from "../theme.js"
 import BackgroundImage from "gatsby-background-image"
 
@@ -22,8 +22,11 @@ const Styles = styled.div`
     grid-gap: 20px;
 
     .hero-section {
-      border: 1px solid ${theme.blue};
-      padding: 10px;
+      
+      @media screen and (min-width: ${theme.breakpoints.mid}px) {
+        border: 1px solid ${theme.blue};
+        padding: 10px;
+      }
 
       .my-background {
         color: white;
@@ -95,24 +98,9 @@ const Styles = styled.div`
           height: 150px;
           color: white;
         }
-        .background-name {
-          background: #222;
-          position: absolute;
-          height: 100%;
-          width: 100%;
-          text-align: center;
-          padding: 0px 36px;
-          padding-top: 48px;
-        }
 
         .gatsby-image-wrapper {
           height: 150px;
-          transition: all 0.2s ease;
-          cursor: pointer;
-
-          &:hover {
-            opacity: 0.2;
-          }
         }
       }
     }
@@ -243,7 +231,6 @@ export default class extends React.Component {
   member(el) {
     return (
       <div className="my-member">
-        <div className="background-name">{el.name}</div>
         <Img fluid={el.image.childImageSharp.fluid} alt={el.name} />
       </div>
     )
@@ -293,6 +280,7 @@ export default class extends React.Component {
                   </BackgroundImage>
                 </div>
 
+                <Link to="/board">
                 <div className="hero-section my-board-grid">
                   {members.map(this.member.bind(this))}
                   <div>
@@ -304,6 +292,7 @@ export default class extends React.Component {
                     <div className="my-meta">BOARD OF DIRECTORS</div>
                   </div>
                 </div>
+                </Link>
               </div>
             </Container>
 
