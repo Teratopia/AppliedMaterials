@@ -50,9 +50,16 @@ const Styles = styled.div`
         .my-proxy-button {
           margin-top: 24px;
           border: 2px solid white;
-          padding: 12px 78px;
-          font-size: 22px;
           display: inline-block;
+          padding: 12px 18px;
+
+          
+          @media screen and (min-width: ${theme.breakpoints.mind}px) {
+            padding: 12px 78px;
+            font-size: 22px;
+          }
+          
+
 
           &:hover {
             background: #fff;
@@ -207,6 +214,34 @@ const Styles = styled.div`
       }
     }
   }
+
+  .my-voting-matters-grid {
+    display: grid;
+    grid-template-columns: 106px 107px 106px;
+
+    @media screen and (min-width: 368px) {
+      grid-template-columns: 140px calc(100% - 280px) 140px;
+    }
+
+    @media screen and (min-width: 768px) {
+      grid-template-columns: 140px calc(100% - 340px) 200px;
+    }
+
+  }
+
+  .my-header-row {
+    padding: 6px;
+    background: #f2f2f2;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  .my-normal-row {
+    padding: 6px;
+    padding-top: 14px;
+    border-bottom: 1px solid #ccc;
+    font-size: 16px;
+  }
 `
 
 export default class extends React.Component {
@@ -243,6 +278,8 @@ export default class extends React.Component {
     const members = this.props.data.members.frontmatter.members
     const locationIcon = this.props.data.locationIcon.childImageSharp.fluid
     const calendarIcon = this.props.data.calendarIcon.childImageSharp.fluid
+    const blueCheck = this.props.data.blueCheck.childImageSharp.fluid
+    const redCross = this.props.data.redCross.childImageSharp.fluid
 
     return (
       <Layout>
@@ -342,6 +379,105 @@ export default class extends React.Component {
                 </div>
               </div>
             </Container>
+
+            <div style={{padding: "40px 0px"}}>
+                <div className="title has-text-centered">
+                  Voting Matters & Board Recommendations
+                </div>
+
+                <div className="my-header-row">
+                  <Container >
+                  <div className="my-voting-matters-grid">
+                    <div className="has-text-centered" style={{paddingTop: 14}}>
+                      PROPOSAL
+                    </div>
+
+                    <div style={{paddingTop: 14}}>
+                      DESCRIPTION
+                    </div>
+
+                    <div className="has-text-centered">
+                      BOARD VOTE RECOMMENDATION
+                    </div>
+                  </div>
+                  </Container>
+                </div>
+
+                <div className="my-normal-row">
+                  <Container>
+                  <div className="my-voting-matters-grid">
+                    <div className="has-text-centered">
+                      1
+                    </div>
+
+                    <div>
+                      Electing Directors
+                    </div>
+
+                    <div className="has-text-centered">
+                      <Img fluid={ blueCheck } alt="Blue Check" style={{width: 32, display: "block", margin: "0 auto"}} />
+                    </div>
+                  </div>
+                  </Container>
+                </div>
+
+                <div className="my-normal-row">
+                  <Container>
+                  <div className="my-voting-matters-grid">
+                    <div className="has-text-centered">
+                      2
+                    </div>
+
+                    <div>
+                      Executive Compensation
+                    </div>
+
+                    <div className="has-text-centered">
+                      <Img fluid={ blueCheck } alt="Blue Check" style={{width: 32, display: "block", margin: "0 auto"}} />
+                    </div>
+                  </div>
+                  </Container>
+                </div>
+
+                <div className="my-normal-row">
+                  <Container>
+                  <div className="my-voting-matters-grid">
+                    <div className="has-text-centered">
+                      3
+                    </div>
+
+                    <div>
+                      Ratification of Registered Accounting Firm
+                    </div>
+
+                    <div className="has-text-centered">
+                      <Img fluid={ blueCheck } alt="Blue Check" style={{width: 32, display: "block", margin: "0 auto"}} />
+                    </div>
+                  </div>
+                  </Container>
+
+                </div>
+
+                <div className="my-normal-row">
+                  <Container>
+                  <div className="my-voting-matters-grid">
+                    <div className="has-text-centered">
+                      4
+                    </div>
+
+                    <div>
+                      Shareholder Proposal to Provide for Right to Act by Written Consent
+                    </div>
+
+                    <div className="has-text-centered">
+                      <Img fluid={ redCross } alt="Red Cross" style={{width: 32, display: "block", margin: "0 auto"}} />
+                    </div>
+                  </div>
+                  </Container>
+                </div>
+                
+                </div>
+            
           </Page>
         </Styles>
       </Layout>
@@ -382,6 +518,23 @@ export const query = graphql`
         }
       }
     }
+
+    blueCheck: file(relativePath: { eq: "blue-check.png" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+
+    redCross: file(relativePath: { eq: "red-cross.png" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+
 
     members: markdownRemark(frontmatter: { title: { eq: "board" } }) {
       frontmatter {
