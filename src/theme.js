@@ -1,6 +1,7 @@
 
 export default {
     blue: "#3FA9F5",
+    teal: "#469AC2",
     orange: "#E48047",
     transition: 0.1,
     breakpoints: {

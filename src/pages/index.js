@@ -196,14 +196,14 @@ const Styles = styled.div`
         display: block;
         margin: 0 auto;
         margin-top: 44px;
-
       }
 
       .button {
         width: 100%;
-        height: calc(100% - 24px);
+        height: calc(100% - 40px);
         border-radius: 0px;
-        margin: 12px 0px;
+        margin: 20px 0px;
+        margin-top: 8px;
         background: ${theme.orange};
         transition: all ${theme.transition}s ease;
         min-height: 58px;
@@ -241,6 +241,37 @@ const Styles = styled.div`
     padding-top: 14px;
     border-bottom: 1px solid #ccc;
     font-size: 16px;
+  }
+
+  .my-recommendations {
+    padding: 40px 20px;
+
+    @media screen and (min-width: 540px) {
+      padding: 40px;
+    }
+
+    @media screen and (min-width: 780px) {
+      padding: 40px 100px;
+    }
+  }
+
+  .proxy-statement {
+    background: ${theme.orange};
+    color: white;
+    text-align: center;
+    padding: 40px;
+  }
+
+  .proxy-statement-button {
+    border: 2px solid white;
+    padding: 16px 34px;
+    display: inline-block;
+
+    &:hover {
+      background: white;
+      color: ${ theme.orange };
+      cursor: pointer;
+    }
   }
 `
 
@@ -280,6 +311,8 @@ export default class extends React.Component {
     const calendarIcon = this.props.data.calendarIcon.childImageSharp.fluid
     const blueCheck = this.props.data.blueCheck.childImageSharp.fluid
     const redCross = this.props.data.redCross.childImageSharp.fluid
+    const esg = this.props.data.esg.childImageSharp.fluid
+    const recommendations = this.props.data.recommendations.childImageSharp.fluid
 
     return (
       <Layout>
@@ -477,6 +510,44 @@ export default class extends React.Component {
                 </div>
                 
                 </div>
+
+                <hr style={{background: "#469AC2"}}>
+                </hr>
+
+                <div style={{padding: "40px 0px"}}>
+                  <Container>
+                  {/* <div className="title has-text-centered">
+                    2020 ESG Highlights
+                  </div> */}
+                  
+                  {/* <p className="has-text-centered" style={{padding: "0 20px"}}>
+                    We were able to make measurable progress toward our ongoing goal of minimizing the environmental impact of our operations, even with a jump in revenue of more than 15%.  Here's how:
+
+                    
+                  </p> */}
+
+                  <Img fluid={esg} alt="2020 ESG Highlights" />
+
+                  </Container>
+
+                </div>
+
+                <hr style={{background: "#469AC2"}}>
+                </hr>
+
+                <div className="my-recommendations">
+                  <Img fluid={recommendations} alt="Our Recommendations"/>
+                </div>
+
+                <div className="proxy-statement">
+                  <div className="title" style={{color: "white", background: theme.orange}}>
+                    2020 Proxy Statement
+                  </div>
+
+                  <div className="proxy-statement-button">
+                    DOWNLOAD PDF
+                  </div>
+                </div>
             
           </Page>
         </Styles>
@@ -534,6 +605,23 @@ export const query = graphql`
         }
       }
     }
+
+    esg: file(relativePath: { eq: "esg.png" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+
+    recommendations: file(relativePath: { eq: "recommendations.png" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    
 
 
     members: markdownRemark(frontmatter: { title: { eq: "board" } }) {

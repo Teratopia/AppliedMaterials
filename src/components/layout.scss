@@ -1,14 +1,25 @@
 @import '~bulma/bulma.sass';
 @import '~antd/dist/antd.css';
 
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@font-face {
+  font-family: myriad;
+  src: url("../images/fonts/myriad.otf") format("opentype");
+}
+
+@font-face {
+  font-family: regular;
+  src: url("../images/fonts/regular.otf") format("opentype");
+}
+
+
 
 body {
   margin: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'regular', sans-serif;
 }
 
-html {
+.title {
+  font-family: myriad;
 }
 
 .box-shadow {
