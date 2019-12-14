@@ -13,12 +13,14 @@ const Styles = styled.div`
   height: 84px;
   width: 100%;
   z-index: 1000;
+  min-width: 320px;
 
   .my-box {
     display: grid;
-    grid-template-columns: 160px calc(100% - 320px) 160px;
-    @media screen and (max-width: 700px) {
-      grid-template-columns: 60px calc(100% - 220px) 160px;
+    grid-template-columns: 90px calc(100% - 180px) 90px;
+
+    @media screen and (min-width: ${theme.breakpoints.mid}px) {
+      grid-template-columns: 160px calc(100% - 320px) 160px;
     }
   }
 
@@ -29,8 +31,23 @@ const Styles = styled.div`
 
   .my-logo {
     width: 156px;
-    display: block;
+    
     margin: 0 auto;
+    display: none;
+
+    @media screen and (min-width: ${theme.breakpoints.mid}px) {
+      display: block;
+    }
+  }
+
+  .my-icon {
+    width: 56px;
+    margin: 0 auto;
+    display: block;
+
+    @media screen and (min-width: ${theme.breakpoints.mid}px) {
+      display: none;
+    }
   }
 
   .home-link {
@@ -55,7 +72,14 @@ const Styles = styled.div`
       &:hover {
         background: #E48047cc;
       }
+
+      @media screen and (max-width: ${theme.breakpoints.mid}px) {
+        margin: 8px 0px;
+        height: calc(100% - 16px);
+      }
     }
+
+
   }
 
   .links {
@@ -155,7 +179,7 @@ export default class Header extends React.Component {
 
 
 const Logo  =  () => {
-  let fluid = useStaticQuery(graphql`
+  let data = useStaticQuery(graphql`
     {
       logo: file(relativePath: {eq: "applied-logo.jpg"}) {
         childImageSharp {
@@ -164,10 +188,21 @@ const Logo  =  () => {
           }
         }
       }
+
+      icon: file(relativePath: {eq: "applied-icon.png"}) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
-  `).logo.childImageSharp.fluid;
+  `);
   return (
-    <Img fluid={ fluid } className="my-logo" alt="Applied Materials Logo" />  
+    <div>
+      <Img fluid={ data.logo.childImageSharp.fluid } className="my-logo" alt="Applied Materials Logo" />  
+      <Img fluid={ data.icon.childImageSharp.fluid } className="my-icon" alt="Applied Materials Logo" />  
+    </div>
   )
   
 }
