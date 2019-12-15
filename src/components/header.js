@@ -141,7 +141,7 @@ export default class Header extends React.Component {
   render() {
     return (
       <Styles>
-        <Container style={{ padding: "12px 20px"}}>
+        <Container>
           <div className="my-box">
             <div className="hamburger" onClick={this.toggleMenu.bind(this)}>
               <HamburgerMenu

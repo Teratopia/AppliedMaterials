@@ -18,7 +18,7 @@ export default class Footer extends React.Component {
   render () {
     return (
       <Styles>
-          <Container>
+          <Container style={{padding: 12}}>
             <Link to="/"> 
           <img src={AppliedIcon} alt="Applied Icon" style={{width: 33, marginRight: 4}}/></Link> <span style={{position: "relative", top: 2}}>| 2020 Proxy Statement</span>
           </Container>

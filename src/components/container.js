@@ -4,7 +4,7 @@ import theme from "../theme.js";
 export default styled.div`
   margin: 0 auto;
   max-width: 1080px;
-  padding: 12px 0px;
+  padding: 12px;
 
 
   @media screen and (min-width: ${theme.breakpoints.mid}px) {
