@@ -273,6 +273,39 @@ const Styles = styled.div`
       cursor: pointer;
     }
   }
+
+  .have-you-heard {
+    padding: 40px;
+
+    .have-you-heard-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+      text-align: center;
+
+      & > div {
+        margin-bottom: 24px;
+      }
+
+      @media screen and (min-width: 740px) {
+        grid-template-columns: repeat(auto-fill, minmax(calc(33% - 24px), 1fr));
+        grid-gap: 24px;
+        text-align: left;
+
+      }
+
+      .my-have-you-heard-title {
+        font-weight: bold;
+        font-size: 18px;
+      }
+
+      .my-have-you-heard-row {
+        font-size: 16px;
+        margin: 12px 0px;
+      }
+    }
+  }
+
+
 `
 
 export default class extends React.Component {
@@ -547,6 +580,63 @@ export default class extends React.Component {
                   <div className="proxy-statement-button">
                     DOWNLOAD PDF
                   </div>
+                </div>
+
+                <div className="have-you-heard">
+                  <Container>
+                    <div className="have-you-heard-grid">
+                      <div>
+                        <div className="my-have-you-heard-title">
+                          HAVE YOU HEARD?
+                        </div>
+
+                        <div className="my-have-you-heard-row">
+                          09.05.19 <a>Applied Materials Announces Cash Dividend</a>
+                        </div>
+
+                        <div className="my-have-you-heard-row">
+                          08.22.19 <a>Applied Materials to Participate in Citi Global...</a>
+                        </div>
+                      </div>
+
+                      <div>
+                        <div className="my-have-you-heard-title">
+                          JOIN US AT
+                        </div>
+
+                        <div className="my-have-you-heard-row">
+                          10.16.19 <a>K2019</a>
+                        </div>
+
+                        <div className="my-have-you-heard-row">
+                          08.22.19 <a>Specialty Films Mumbai - 2019</a>
+                        </div>
+
+                        <div className="my-have-you-heard-row">
+                          07.09.19 <a>SEMICON West 2019</a>
+                        </div>
+                      </div>
+
+                      <div>
+                        <div className="my-have-you-heard-title">
+                          DID YOU KNOW?
+                        </div>
+
+                        <div className="my-have-you-heard-row">
+                          10.04.19 <a>Designing "Eyes" into Process Equipment to...</a>
+                        </div>
+
+                        <div className="my-have-you-heard-row">
+                          09.12.19 <a>Themes of an AI Summer: VC Perspectives</a>
+                        </div>
+
+                        <div className="my-have-you-heard-row">
+                          08.21.19 <a>The AI Paradox</a>
+                        </div>
+
+                      </div>
+                    </div>
+                  </Container>
                 </div>
             
           </Page>
