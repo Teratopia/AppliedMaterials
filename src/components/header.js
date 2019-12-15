@@ -61,6 +61,7 @@ const Styles = styled.div`
 
   .my-vote {
     text-align: right;
+
     .button {
       width: 100%;
       height: calc(100% - 8px);
@@ -73,9 +74,13 @@ const Styles = styled.div`
         background: #E48047cc;
       }
 
-      @media screen and (max-width: ${theme.breakpoints.mid}px) {
-        margin: 8px 0px;
-        height: calc(100% - 16px);
+      @media screen and (max-width: 480px) {
+        font-size: 10px;
+        padding: 4px;
+        height: auto;
+        width: 62px;
+        padding-top: 8px;
+        margin-top: 12px;
       }
     }
 
