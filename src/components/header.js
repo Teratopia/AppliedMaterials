@@ -75,13 +75,12 @@ const Styles = styled.div`
       }
 
       @media screen and (max-width: 480px) {
-        font-size: 10px;
+        font-size: 12px;
         padding: 4px;
         height: auto;
         width: 62px;
         padding-top: 8px;
         margin-top: 12px;
-        background: blue !important;
       }
     }
 
