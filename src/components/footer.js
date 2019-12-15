@@ -1,4 +1,5 @@
 import React from "react"
+import {Link} from "gatsby"
 import styled from "@emotion/styled";
 import Container from "./container";
 import AppliedIcon from "../images/applied-icon.png"
@@ -18,7 +19,8 @@ export default class Footer extends React.Component {
     return (
       <Styles>
           <Container>
-          <img src={AppliedIcon} alt="Applied Icon" style={{width: 33, marginRight: 4}}/> <span style={{position: "relative", top: 2}}>| 2020 Proxy Statement</span>
+            <Link to="/"> 
+          <img src={AppliedIcon} alt="Applied Icon" style={{width: 33, marginRight: 4}}/></Link> <span style={{position: "relative", top: 2}}>| 2020 Proxy Statement</span>
           </Container>
       </Styles>
     )

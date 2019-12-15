@@ -6,7 +6,6 @@ import Container from "../components/container"
 import AppliedLogo from "../images/applied-materials.png"
 import Page from "../components/page"
 import styled from "@emotion/styled"
-import ReactMarkdown from "react-markdown"
 import { graphql, Link } from "gatsby"
 import theme from "../theme.js"
 import BackgroundImage from "gatsby-background-image"
@@ -341,8 +340,6 @@ export default class extends React.Component {
 
   render() {
     const world = this.props.data.heroBackground.childImageSharp.fluid
-    const appliedMaterials = this.props.data.appliedMaterials.childImageSharp
-      .fixed
     const members = this.props.data.members.frontmatter.members
     const locationIcon = this.props.data.locationIcon.childImageSharp.fluid
     const calendarIcon = this.props.data.calendarIcon.childImageSharp.fluid
