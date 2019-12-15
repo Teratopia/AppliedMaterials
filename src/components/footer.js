@@ -1,19 +1,16 @@
 import React from "react"
 import styled from "@emotion/styled";
 import Container from "./container";
+import AppliedIcon from "../images/applied-icon.png"
+import theme from "../theme";
 
 const Styles = styled.footer`
-  background: #464646;
-  color: white;
+  background: #E5E5E5;
+  color: #060606;
+  padding: 4px;
+  font-size: 18px;
+  border-top: 4px solid ${theme.teal}; 
 
-  a {
-    transition: all 0.1s ease;
-
-    &:hover {
-      color: inherit;
-      opacity: 0.5;
-    }
-  }
 
 `
 export default class Footer extends React.Component {
@@ -21,9 +18,7 @@ export default class Footer extends React.Component {
     return (
       <Styles>
           <Container>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          <img src={AppliedIcon} alt="Applied Icon" style={{width: 33, marginRight: 4}}/> <span style={{position: "relative", top: 2}}>| 2020 Proxy Statement</span>
           </Container>
       </Styles>
     )

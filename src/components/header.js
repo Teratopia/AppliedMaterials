@@ -81,6 +81,7 @@ const Styles = styled.div`
         width: 62px;
         padding-top: 8px;
         margin-top: 12px;
+        background: blue !important;
       }
     }
 

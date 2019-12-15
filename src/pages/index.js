@@ -291,6 +291,10 @@ const Styles = styled.div`
         grid-gap: 24px;
         text-align: left;
 
+        & > div {
+          margin-bottom: 8px;
+        }
+
       }
 
       .my-have-you-heard-title {
@@ -447,7 +451,7 @@ export default class extends React.Component {
             </Container>
 
             <div style={{padding: "40px 0px"}}>
-                <div className="title has-text-centered">
+                <div className="title has-text-centered" style={{ marginBottom: 48}}>
                   Voting Matters & Board Recommendations
                 </div>
 
