@@ -14,6 +14,15 @@ const Styles = styled.div`
   .my-grid {
     display: grid;
     grid-template-columns: 320px calc(100% - 320px);
+
+    @media screen and (max-width: 700px) {
+      grid-template-columns: 220px calc(100% - 220px); 
+      grid-gap: 14px;
+    }
+
+    @media screen and (max-width: 520px) {
+      grid-template-columns: 100% ; 
+    }
     grid-gap: 24px;
   }
 
