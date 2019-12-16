@@ -1,0 +1,14 @@
+---
+title: proxy
+documents:
+- title: SUMMARY
+- title: BOARD & CORPORATE GOVERNANCE
+- title: PROPOSALS
+- title: HR & COMPENSATION COMMITTEE REPORT
+- title: DIRECTOR COMPENSATION
+- title: EXECUTIVE COMPENSATION
+- title: STOCK OWNERSHIP INFORMATION
+- title: FAQ
+- title: APPENDIX
+- title: OTHER MATTERS
+  
