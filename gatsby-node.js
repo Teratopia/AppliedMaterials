@@ -56,7 +56,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           path: "/board/" + node.slug,
           component: member,
           context: {
-            node, idx
+            node, idx, members: result.data.members.frontmatter.members
           },
         })
       })

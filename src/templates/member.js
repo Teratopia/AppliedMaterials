@@ -8,6 +8,7 @@ import SEO from "../components/seo"
 import styled from "@emotion/styled"
 import { Icon } from "antd"
 import theme from "../theme.js"
+import { navigate } from "@reach/router"
 
 const Styles = styled.div`
   .my-grid {
@@ -36,6 +37,24 @@ export default class extends React.Component {
     super()
     this.state = {}
     this.state.member = props.pageContext.node;
+    this.state.idx = props.pageContext.idx;
+    this.state.members = props.pageContext.members;
+  }
+
+  navigateRight ( ) {
+    let myNew = (this.state.idx + 1) % this.state.members.length;
+     navigate( this.state.members[myNew].slug );
+  }
+
+  navigateLeft ( ) {
+    let myNew = (this.state.idx - 1) % this.state.members.length;
+
+    if (myNew < 0 ) {
+      myNew = this.state.members.length - 1
+    }
+
+
+     navigate( this.state.members[myNew].slug );
   }
 
   render() {
@@ -51,11 +70,11 @@ export default class extends React.Component {
               </span>
 
               <span style={{float: "right"}}>
-                <span className="my-icon">
+                <span className="my-icon"  onClick={ this.navigateLeft.bind(this) }>
                   <Icon type="left" />
                 </span>
 
-                <span className="my-icon">
+                <span className="my-icon" onClick={ this.navigateRight.bind(this) }>
                   <Icon type="right" />
                 </span>
 
