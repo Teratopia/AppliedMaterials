@@ -5,9 +5,8 @@ export default {
     orange: "#E48047",
     transition: 0.1,
     breakpoints: {
-        min: 320, 
-        mid: 680, 
-        lrg: 780,
+        min: 540, 
+        mid: 980, 
         max: 1080,
     }
 }
