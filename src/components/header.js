@@ -171,10 +171,10 @@ export default class Header extends React.Component {
           </div>
 
           <div className="links">
-            <Link to="/about">HOME</Link>
-            <Link to="/about">SHAREHOLDER LETTER</Link>
-            <Link to="/about">PROXY SUMMARY</Link>
-            <Link to="/about">ANNUAL REPORT & 10K</Link>
+            <Link to="/">HOME</Link>
+            <Link to="/letter">SHAREHOLDER LETTER</Link>
+            <Link to="/proxy">PROXY SUMMARY</Link>
+            <Link to="/report">ANNUAL REPORT & 10K</Link>
           </div>
         </Container>
       </Styles>

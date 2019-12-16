@@ -243,15 +243,18 @@ const Styles = styled.div`
   }
 
   .my-recommendations {
-    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-gap: 64px;
+    max-width: 940px;
+    margin: 0 auto;
+    padding: 60px 100px;
+    margin-bottom: 24px;
 
-    @media screen and (min-width: 540px) {
-      padding: 40px;
+    @media screen and (max-width: 740px) {
+      padding: 40px 60px;
     }
 
-    @media screen and (min-width: 780px) {
-      padding: 40px 100px;
-    }
   }
 
   .proxy-statement {
@@ -346,7 +349,9 @@ export default class extends React.Component {
     const blueCheck = this.props.data.blueCheck.childImageSharp.fluid
     const redCross = this.props.data.redCross.childImageSharp.fluid
     const esg = this.props.data.esg.childImageSharp.fluid
-    const recommendations = this.props.data.recommendations.childImageSharp.fluid
+    const barrons = this.props.data.barrons.childImageSharp.fluid
+    const computerWorld = this.props.data.computerWorld.childImageSharp.fluid
+    const fortune = this.props.data.fortune.childImageSharp.fluid
 
     return (
       <Layout>
@@ -378,9 +383,11 @@ export default class extends React.Component {
                         </div>
                       </div>
 
+                      <Link to="proxy" style={{color: "white"}}>
                       <div className="my-proxy-button">
                         VIEW INTERACTIVE PROXY
                       </div>
+                      </Link>
                   </BackgroundImage>
                 </div>
 
@@ -570,7 +577,10 @@ export default class extends React.Component {
                 </hr>
 
                 <div className="my-recommendations">
-                  <Img fluid={recommendations} alt="Our Recommendations"/>
+
+                  <Img fluid={ fortune } alt="Fotune World's Most Admired Companies"/>
+                  <Img fluid={ barrons } alt="Barron's 100 Most Sustainable"/>
+                  <Img fluid={ computerWorld } alt="Computer World Best Place To Live"/>
                 </div>
 
                 <div className="proxy-statement">
@@ -649,7 +659,7 @@ export default class extends React.Component {
 
 export const query = graphql`
   {
-    heroBackground: file(relativePath: { eq: "world.jpg" }) {
+    heroBackground: file(relativePath: { eq: "hero-background.png" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
@@ -705,13 +715,31 @@ export const query = graphql`
       }
     }
 
-    recommendations: file(relativePath: { eq: "recommendations.png" }) {
+    barrons: file(relativePath: { eq: "barrons.png" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
         }
       }
     }
+
+    computerWorld: file(relativePath: { eq: "computer-world.png" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+
+    fortune: file(relativePath: { eq: "fortune.png" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+
+    
     
 
 

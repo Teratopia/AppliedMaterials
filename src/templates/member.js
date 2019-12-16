@@ -73,7 +73,7 @@ export default class extends React.Component {
         <Styles>
           <Page>
           <Container>
-            <div style={{marginBottom: "24px"}}>
+            <div style={{marginBottom: "30px"}}>
               <span>
               <Link to="/">Home</Link> / <Link to="board">Board of Directors</Link> / <span style={{color: theme.blue}}>{this.state.member.name}</span>
               </span>
