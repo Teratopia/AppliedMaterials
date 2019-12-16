@@ -216,10 +216,22 @@ const Styles = styled.div`
 
   .my-voting-matters-grid {
     display: grid;
-    grid-template-columns: 106px 107px 106px;
+    grid-template-columns: calc(100%);
+    text-align: center;
+    grid-gap: 6px;
 
-    @media screen and (min-width: 368px) {
+    @media screen and (min-width: 448px) {
       grid-template-columns: 140px calc(100% - 280px) 140px;
+      text-align: left;
+
+      .special-header {
+        display: flex;
+        align-items: center;
+
+        &.really-special {
+          justify-content: center;
+        }
+      }
     }
 
     @media screen and (min-width: 768px) {
@@ -462,11 +474,11 @@ export default class extends React.Component {
                 <div className="my-header-row">
                   <Container >
                   <div className="my-voting-matters-grid">
-                    <div className="has-text-centered" style={{paddingTop: 14}}>
+                    <div className="has-text-centered special-header really-special" >
                       PROPOSAL
                     </div>
 
-                    <div style={{paddingTop: 14}}>
+                    <div className="special-header">
                       DESCRIPTION
                     </div>
 
@@ -577,7 +589,6 @@ export default class extends React.Component {
                 </hr>
 
                 <div className="my-recommendations">
-
                   <Img fluid={ fortune } alt="Fotune World's Most Admired Companies"/>
                   <Img fluid={ barrons } alt="Barron's 100 Most Sustainable"/>
                   <Img fluid={ computerWorld } alt="Computer World Best Place To Live"/>
