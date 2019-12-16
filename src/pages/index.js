@@ -47,7 +47,7 @@ const Styles = styled.div`
         }
 
         .my-proxy-button {
-          margin-top: 24px;
+          margin: 24px 0px;
           border: 2px solid white;
           display: inline-block;
           padding: 12px 18px;
