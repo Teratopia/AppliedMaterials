@@ -73,14 +73,10 @@ const Styles = styled.div`
 
     .button {
       font-size: 12px;
-      padding: 2px 14px;
+      padding: 6px 14px;
       font-size: 10px;
       height: auto;
       width: 62px;
-      padding-top: 6px;
-      position: relative;
-      top: 1px;
-      transition: all ${theme.transition}s ease;
       border-radius: 0px;
       margin: 6px 0px;
       background: ${theme.orange};

@@ -6,16 +6,13 @@
   src: url("../images/fonts/myriad.otf") format("opentype");
 }
 
-@font-face {
-  font-family: regular;
-  src: url("../images/fonts/regular.otf") format("opentype");
-}
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
 
 
 body {
   margin: 0;
-  font-family: 'regular', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .title {
