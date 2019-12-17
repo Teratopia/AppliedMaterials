@@ -4,6 +4,10 @@ export default {
     teal: "#469AC2",
     orange: "#E48047",
     transition: 0.1,
+    header: {
+        low: 64,
+        high: 84,
+    },
     breakpoints: {
         min: 540, 
         mid: 980, 

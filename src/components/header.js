@@ -40,7 +40,7 @@ const Styles = styled.div`
     margin: 0 auto;
     display: none;
 
-    @media screen and (min-width: ${theme.breakpoints.mid}px) {
+    @media screen and (min-width: ${theme.breakpoints.min}px) {
       display: block;
     }
   }
@@ -50,7 +50,7 @@ const Styles = styled.div`
     margin: 0 auto;
     display: block;
 
-    @media screen and (min-width: ${theme.breakpoints.mid}px) {
+    @media screen and (min-width: ${theme.breakpoints.min}px) {
       display: none;
     }
   }
@@ -91,8 +91,6 @@ const Styles = styled.div`
         
       }
 
-      @media screen and (max-width: 480px) {
-      }
     }
   }
 
@@ -104,7 +102,12 @@ const Styles = styled.div`
       border-top: 1px solid grey;
       width: 100%;
       left: 0px;
-      top: 84px;
+      top: ${ theme.header.low }px;
+
+      @media screen and (min-width: ${theme.breakpoints.min}px) {
+        top: 84px;
+      }
+      
       text-align: center;
       background: #fff;
       box-shadow: 0px 8px 8px -8px grey;
