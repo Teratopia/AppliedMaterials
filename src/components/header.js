@@ -1,5 +1,5 @@
 import { Link, graphql, useStaticQuery } from "gatsby"
-import Img from "gatsby-image";
+import Img from "gatsby-image"
 import React from "react"
 import styled from "@emotion/styled"
 import Container from "./container"
@@ -9,8 +9,13 @@ import theme from "../theme"
 const Styles = styled.div`
   position: fixed;
   background: #fff;
-  box-shadow: 0px 8px 8px -8px grey;
-  height: 84px;
+  box-shadow: 0px 0px 8px -2px grey;
+  height: 64px;
+
+  @media screen and (min-width: ${ theme.breakpoints.min}px) {
+    height: 84px;
+  }
+  
   width: 100%;
   z-index: 1000;
   min-width: 320px;
@@ -31,7 +36,7 @@ const Styles = styled.div`
 
   .my-logo {
     width: 156px;
-    
+
     margin: 0 auto;
     display: none;
 
@@ -41,7 +46,7 @@ const Styles = styled.div`
   }
 
   .my-icon {
-    width: 56px;
+    width: 43px;
     margin: 0 auto;
     display: block;
 
@@ -63,28 +68,32 @@ const Styles = styled.div`
     text-align: right;
 
     .button {
-      width: 100%;
-      height: calc(100% - 8px);
-      border-radius: 0px;
-      margin: 4px 0px;
-      background: ${theme.orange};
+      font-size: 12px;
+      padding: 2px 14px;
+      font-size: 10px;
+      height: auto;
+      width: 62px;
+      padding-top: 6px;
+      position: relative;
+      top: 1px;
       transition: all ${theme.transition}s ease;
+      border-radius: 0px;
+      margin: 6px 0px;
+      background: ${theme.orange};
 
       &:hover {
-        background: #E48047cc;
+        background: #e48047cc;
+      }
+
+      @media screen and (min-width: ${theme.breakpoints.min}px) {
+        width: 100%;
+        height: calc(100% - 8px);
+        
       }
 
       @media screen and (max-width: 480px) {
-        font-size: 12px;
-        padding: 4px;
-        height: auto;
-        width: 62px;
-        padding-top: 8px;
-        margin-top: 12px;
       }
     }
-
-
   }
 
   .links {
@@ -116,7 +125,12 @@ const Styles = styled.div`
 
   .hamburger {
     position: relative;
-    top: 18px;
+    top: 12px;
+
+    @media screen and (min-width: ${theme.breakpoints.min}px) {
+      top: 18px;
+    }
+
     cursor: pointer;
   }
 `
@@ -164,7 +178,11 @@ export default class Header extends React.Component {
             </div>
 
             <div className="my-vote">
-              <a href="http://www.appliedmaterials.com/" target="_blank" ref="noreopener noreferrer">
+              <a
+                href="http://www.appliedmaterials.com/"
+                target="_blank"
+                ref="noreopener noreferrer"
+              >
                 <div className="button is-danger">VOTE</div>
               </a>
             </div>
@@ -182,11 +200,10 @@ export default class Header extends React.Component {
   }
 }
 
-
-const Logo  =  () => {
+const Logo = () => {
   let data = useStaticQuery(graphql`
     {
-      logo: file(relativePath: {eq: "applied-logo.jpg"}) {
+      logo: file(relativePath: { eq: "applied-logo.jpg" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid
@@ -194,7 +211,7 @@ const Logo  =  () => {
         }
       }
 
-      icon: file(relativePath: {eq: "applied-icon.png"}) {
+      icon: file(relativePath: { eq: "applied-icon.png" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid
@@ -202,12 +219,19 @@ const Logo  =  () => {
         }
       }
     }
-  `);
+  `)
   return (
     <div>
-      <Img fluid={ data.logo.childImageSharp.fluid } className="my-logo" alt="Applied Materials Logo" />  
-      <Img fluid={ data.icon.childImageSharp.fluid } className="my-icon" alt="Applied Materials Logo" />  
+      <Img
+        fluid={data.logo.childImageSharp.fluid}
+        className="my-logo"
+        alt="Applied Materials Logo"
+      />
+      <Img
+        fluid={data.icon.childImageSharp.fluid}
+        className="my-icon"
+        alt="Applied Materials Logo"
+      />
     </div>
   )
-  
 }
