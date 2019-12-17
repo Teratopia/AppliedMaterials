@@ -18,7 +18,7 @@ const Styles = styled.div`
       grid-template-columns: 100%;
     }
 
-    grid-gap: 20px;
+    grid-gap: 18px;
 
     .hero-section {
       
@@ -58,8 +58,6 @@ const Styles = styled.div`
             font-size: 22px;
           }
           
-
-
           &:hover {
             background: #fff;
             color: black;
@@ -73,8 +71,6 @@ const Styles = styled.div`
         }
         
       }
-      
-
 
       .gatsby-background-image:before {
         opacity: 0.7;

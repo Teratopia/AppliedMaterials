@@ -24,6 +24,10 @@ const Styles = styled.div`
     display: grid;
     grid-template-columns: 90px calc(100% - 180px) 90px;
 
+    @media screen and (min-width: ${theme.breakpoints.min}px) {
+      grid-template-columns: 120px calc(100% - 240px) 120px;
+    }
+
     @media screen and (min-width: ${theme.breakpoints.mid}px) {
       grid-template-columns: 160px calc(100% - 320px) 160px;
     }
@@ -87,6 +91,7 @@ const Styles = styled.div`
 
       @media screen and (min-width: ${theme.breakpoints.min}px) {
         width: 100%;
+        
         height: calc(100% - 8px);
         
       }
@@ -132,6 +137,7 @@ const Styles = styled.div`
 
     @media screen and (min-width: ${theme.breakpoints.min}px) {
       top: 18px;
+      left: 4px;
     }
 
     cursor: pointer;
