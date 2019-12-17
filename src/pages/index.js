@@ -137,7 +137,7 @@ const Styles = styled.div`
       display: grid;
       max-width: 350px;
       margin: 0 auto;
-      font-size: 18px;
+      font-size: 17px;
       grid-template-columns: 80px calc(100% - 80px);
 
       @media screen and (max-width: 1048px) {

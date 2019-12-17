@@ -79,6 +79,7 @@ const Styles = styled.div`
       width: 62px;
       border-radius: 0px;
       margin: 6px 0px;
+      margin-top: 4px;
       background: ${theme.orange};
 
       &:hover {
@@ -172,7 +173,7 @@ export default class Header extends React.Component {
                 rotate={0}
                 color={theme.blue}
                 borderRadius={0}
-                animationDuration={theme.transition}
+                animationDuration={0.4}
               />
             </div>
 
