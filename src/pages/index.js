@@ -14,6 +14,7 @@ const Styles = styled.div`
   .my-hero-grid {
     display: grid;
     grid-template-columns: calc(50% - 10px) calc(50% - 10px);
+    
     @media screen and (max-width: 1048px) {
       grid-template-columns: 100%;
     }
@@ -37,7 +38,8 @@ const Styles = styled.div`
         }
 
         .my-title {
-          font-size: 30px;
+          font-size: 28px;
+          padding: 0px 14px;
 
           @media screen and (min-width: 1048px) {
             padding: 14px;
@@ -79,19 +81,18 @@ const Styles = styled.div`
 
       &.my-board-grid {
         display: grid;
-        grid-template-columns: calc(33% - 5px) calc(33% - 5px) calc(33% - 5px);
+        grid-template-columns: repeat(auto-fill, minmax(92px, 1fr));
+        grid-gap: 8px;
 
-        @media screen and (max-width: 1048px) {
+
+        @media screen and (min-width: 512px) {
+          grid-template-columns: repeat(auto-fill, minmax(122px, 1fr));
+        }
+
+        @media screen and (min-width: 666px) {
           grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
         }
 
-        @media screen and (max-width: 400px) {
-          
-          grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-        }
-
-        grid-template-rows: 150px;
-        grid-gap: 10px;
 
         .my-meta {
           text-align: center;
@@ -102,13 +103,14 @@ const Styles = styled.div`
 
         .my-member {
           position: relative;
-          height: 150px;
           color: white;
+          
         }
 
         .gatsby-image-wrapper {
-          height: 150px;
+          height: 100%;
         }
+
       }
     }
   }
@@ -374,10 +376,10 @@ export default class extends React.Component {
           <Page>
             <Container>
               <div className="my-hero-grid">
-                <div className="hero-section">
+                <div className="hero-section" style={{paddingTop: 0}}>
                   <BackgroundImage
                     fluid={world}
-                    style={{ height: "100%", minHeight: 340 }}
+                    style={{ height: "100%", minHeight: 340, marginTop: -3 }}
                     className="my-background"
                   >
 
@@ -407,13 +409,15 @@ export default class extends React.Component {
                 <Link to="/board">
                 <div className="hero-section my-board-grid">
                   {members.map(this.member.bind(this))}
-                  <div>
+                  <div style={{display: "table", height: "100%"}}>
+                    <div style={{verticalAlign: "middle", height: "100%", display: "table-cell"}}>
                     <img
                       src={AppliedLogo}
-                      style={{ width: "100%", marginTop: 34 }}
+                      className="my-materials-logo"
                       alt="Applied Materials"
                     />
                     <div className="my-meta">BOARD OF DIRECTORS</div>
+                    </div>
                   </div>
                 </div>
                 </Link>
