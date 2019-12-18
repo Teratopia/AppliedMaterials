@@ -15,9 +15,15 @@ const Styles = styled.div`
     display: grid;
     grid-template-columns: calc(50% - 24px) calc(50% - 24px);
     grid-gap: 24px;
+    margin-bottom: 24px;
 
     @media screen and (max-width: 700px) {
         grid-template-columns: calc(100%);
+
+        .gatsby-image-wrapper {
+          margin: 10px auto;
+          max-width: 420px;
+        }
 
         .title {
             text-align: center;
@@ -27,18 +33,16 @@ const Styles = styled.div`
 
   .members-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(212px, 1fr));
-
-      @media screen and (max-width: 700px) {
-        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); 
-      }
-
-      @media screen and (max-width: 381px) {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); 
-      }
-      grid-gap: 32px;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); 
+      grid-gap: 12px;
       max-width: 940px;
       margin: 24px auto;
+
+      @media screen and (min-width: 720px) {
+        grid-template-columns: repeat(auto-fit, minmax(212px, 1fr));        
+        grid-gap: 32px;
+      }
+      
 
       .gatsby-image-wrapper {
           margin-bottom: 10px;
@@ -111,7 +115,7 @@ export default class extends React.Component {
               </div>
 
               <div className="my-board-stat-grid">
-                <div style={{marginBottom: 24, padding: 12}}>
+                <div style={{marginBottom: 12, padding: 12}}>
                   <div className="title is-5">DIRECTOR NOMINEE EXPERTISE</div>
 
                   <Img fluid={ nomineeExpertise } alt="Nominee Expertise" />

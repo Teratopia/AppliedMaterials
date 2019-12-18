@@ -13,8 +13,13 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = '//mozilla.github.io/pdf.js/build/pdf.w
 const Styles = styled.div`
   .my-documents {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
     grid-gap: 6px;
+
+    @media screen and (min-width: 408px) {
+      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    }
+
 
     .my-menu-item {
       text-align: center;
@@ -31,7 +36,15 @@ const Styles = styled.div`
         display: table-cell;
         vertical-align: middle;
         padding: 12px 14px;
-        height: 68px;
+        height: 112px;
+
+        @media screen and (max-width: 320px) {
+          height: 74px;
+        }
+
+        @media screen and (min-width: 408px) {
+          height: 74px;
+        }
       }
 
       
