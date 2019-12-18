@@ -742,7 +742,7 @@ export const query = graphql`
 
     calendarIcon: file(relativePath: { eq: "calendar-icon.png" }) {
       childImageSharp {
-        fluid {
+        fluid(maxWidth: 200) {
           ...GatsbyImageSharpFluid
         }
       }
@@ -750,7 +750,7 @@ export const query = graphql`
 
     locationIcon: file(relativePath: { eq: "location-icon.png" }) {
       childImageSharp {
-        fluid {
+        fluid(maxWidth: 200) {
           ...GatsbyImageSharpFluid
         }
       }
@@ -758,7 +758,7 @@ export const query = graphql`
 
     blueCheck: file(relativePath: { eq: "blue-check.png" }) {
       childImageSharp {
-        fluid {
+        fluid(maxWidth: 200) {
           ...GatsbyImageSharpFluid
         }
       }
@@ -766,7 +766,7 @@ export const query = graphql`
 
     redCross: file(relativePath: { eq: "red-cross.png" }) {
       childImageSharp {
-        fluid {
+        fluid(maxWidth: 200) {
           ...GatsbyImageSharpFluid
         }
       }
@@ -774,7 +774,7 @@ export const query = graphql`
 
     esg: file(relativePath: { eq: "esg.png" }) {
       childImageSharp {
-        fluid {
+        fluid(maxWidth: 1400) {
           ...GatsbyImageSharpFluid
         }
       }
@@ -782,7 +782,7 @@ export const query = graphql`
 
     barrons: file(relativePath: { eq: "barrons.png" }) {
       childImageSharp {
-        fluid {
+        fluid(maxWidth: 500) {
           ...GatsbyImageSharpFluid
         }
       }
@@ -790,7 +790,7 @@ export const query = graphql`
 
     computerWorld: file(relativePath: { eq: "computer-world.png" }) {
       childImageSharp {
-        fluid {
+        fluid(maxWidth: 500) {
           ...GatsbyImageSharpFluid
         }
       }
@@ -798,7 +798,7 @@ export const query = graphql`
 
     fortune: file(relativePath: { eq: "fortune.png" }) {
       childImageSharp {
-        fluid {
+        fluid(maxWidth: 500) {
           ...GatsbyImageSharpFluid
         }
       }
@@ -811,7 +811,7 @@ export const query = graphql`
           title
           image {
             childImageSharp {
-              fluid {
+              fluid(maxWidth: 500) {
                 ...GatsbyImageSharpFluid
               }
             }
