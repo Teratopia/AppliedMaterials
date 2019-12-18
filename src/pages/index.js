@@ -249,6 +249,14 @@ const Styles = styled.div`
     text-align: center;
     grid-gap: 6px;
 
+    .my-description {
+      margin: 8px 0px;
+
+      @media screen and (min-width: 448px) {
+        margin: 0px;
+      }
+    }
+
     @media screen and (min-width: 448px) {
       grid-template-columns: 140px calc(100% - 280px) 140px;
       text-align: left;
@@ -527,7 +535,7 @@ export default class extends React.Component {
                       PROPOSAL
                     </div>
 
-                    <div className="special-header">
+                    <div className="special-header my-description">
                       DESCRIPTION
                     </div>
 
@@ -545,7 +553,7 @@ export default class extends React.Component {
                       1
                     </div>
 
-                    <div>
+                    <div className="my-description">
                       Electing Directors
                     </div>
 
@@ -563,7 +571,7 @@ export default class extends React.Component {
                       2
                     </div>
 
-                    <div>
+                    <div className="my-description">
                       Executive Compensation
                     </div>
 
@@ -581,7 +589,7 @@ export default class extends React.Component {
                       3
                     </div>
 
-                    <div>
+                    <div  className="my-description">
                       Ratification of Registered Accounting Firm
                     </div>
 
