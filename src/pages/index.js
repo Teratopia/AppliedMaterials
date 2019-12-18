@@ -28,21 +28,11 @@ const Styles = styled.div`
         padding: 10px;
       }
 
-      &.special  {
-        // padding-top: 0px;
-        
-        // .gatsby-image-wrapper {
-        //   margin-top: -3px;
-        //   height: calc(100% + 3px);
-        // }
-        
-      }
-
       .my-background {
         color: white;
         text-align: center;
         padding-top: 34px;
-        height: 336px;
+        min-height: 336px;
         
 
         @media screen and (min-width: 1049px) {
@@ -295,6 +285,15 @@ const Styles = styled.div`
     color: white;
     text-align: center;
     padding: 40px;
+
+    
+    @media screen and (min-width: 948px) {
+      .title {
+        position: relative;
+        top: 12px;
+      }
+      
+    }
   }
 
   .proxy-statement-button {
@@ -306,6 +305,12 @@ const Styles = styled.div`
       background: white;
       color: ${ theme.orange };
       cursor: pointer;
+    }
+
+    @media screen and (min-width: 948px) {
+      float: right;
+      position: relative;
+      top: -62px;
     }
   }
 
@@ -427,8 +432,8 @@ export default class extends React.Component {
                 <Link to="/board">
                 <div className="hero-section my-board-grid">
                   {members.map(this.member.bind(this))}
-                  <div style={{display: "table", height: "100%"}}>
-                    <div style={{verticalAlign: "middle", height: "100%", display: "table-cell"}}>
+                  <div >
+                    <div style={{paddingTop: "25%"}}>
                     <img
                       src={AppliedLogo}
                       className="my-materials-logo"
@@ -618,6 +623,7 @@ export default class extends React.Component {
                 </div>
 
                 <div className="proxy-statement">
+                  <Container>
                   <div className="title" style={{color: "white", background: theme.orange}}>
                     2020 Proxy Statement
                   </div>
@@ -625,6 +631,7 @@ export default class extends React.Component {
                   <div className="proxy-statement-button">
                     DOWNLOAD PDF
                   </div>
+                  </Container>
                 </div>
 
                 <div className="have-you-heard">
