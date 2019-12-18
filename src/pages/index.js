@@ -118,7 +118,13 @@ const Styles = styled.div`
   .meeting-highlights {
     background: #e5e5e5;
     text-align: center;
-    font-size: 42px;
+
+    font-size: 32px;
+
+    @media screen and (min-width: 740px) {
+      font-size: 42px;
+    }
+    
     padding: 40px 0px;
     padding-bottom: 0px;
     margin: 24px 0px;

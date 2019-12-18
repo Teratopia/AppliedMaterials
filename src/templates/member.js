@@ -11,6 +11,10 @@ import theme from "../theme.js"
 import { navigate } from "@reach/router"
 
 const Styles = styled.div`
+  .my-header-grid {
+    display: grid;
+    grid-template-columns: calc(100% - 100px) 100px; 
+  }
   .my-grid {
     display: grid;
     grid-template-columns: 320px calc(100% - 320px);
@@ -74,11 +78,12 @@ export default class extends React.Component {
           <Page>
           <Container>
             <div style={{marginBottom: "30px"}}>
+              <div className="my-header-grid">
               <span>
               <Link to="/">Home</Link> / <Link to="board">Board of Directors</Link> / <span style={{color: theme.blue}}>{this.state.member.name}</span>
               </span>
 
-              <span style={{float: "right"}}>
+              <span style={{textAlign: "right", paddingTop: 6}}>
                 <span className="my-icon"  onClick={ this.navigateLeft.bind(this) }>
                   <Icon type="left" />
                 </span>
@@ -86,8 +91,9 @@ export default class extends React.Component {
                 <span className="my-icon" onClick={ this.navigateRight.bind(this) }>
                   <Icon type="right" />
                 </span>
-
               </span>
+
+              </div>
             </div>
             <div className="my-grid">
               <div>
