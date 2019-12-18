@@ -13,7 +13,7 @@ import BackgroundImage from "gatsby-background-image"
 const Styles = styled.div`
   .my-hero-grid {
     display: grid;
-    grid-template-columns: calc(50% - 10px) calc(50% - 10px);
+    grid-template-columns: calc(50% - 9px) calc(50% - 9px);
     
     @media screen and (max-width: 1048px) {
       grid-template-columns: 100%;
@@ -29,12 +29,12 @@ const Styles = styled.div`
       }
 
       &.special  {
-        padding-top: 0px;
+        // padding-top: 0px;
         
-        .gatsby-image-wrapper {
-          margin-top: -3px;
-          height: calc(100% + 3px);
-        }
+        // .gatsby-image-wrapper {
+        //   margin-top: -3px;
+        //   height: calc(100% + 3px);
+        // }
         
       }
 
@@ -42,10 +42,14 @@ const Styles = styled.div`
         color: white;
         text-align: center;
         padding-top: 34px;
-        height: 100%;
+        height: 336px;
+        
 
-        @media screen and (min-width: 1048px) {
-          padding-top: 88px; 
+        @media screen and (min-width: 1049px) {
+          padding-top: 88px;
+          height: 102%; 
+          position: relative;
+          bottom: 2%;
         }
 
         .my-title {
@@ -64,6 +68,7 @@ const Styles = styled.div`
           border: 2px solid white;
           display: inline-block;
           padding: 12px 18px;
+          background: none;
 
           
           @media screen and (min-width: ${theme.breakpoints.mind}px) {
@@ -417,6 +422,7 @@ export default class extends React.Component {
                       </Link>
                   </BackgroundImage>
                 </div>
+                
 
                 <Link to="/board">
                 <div className="hero-section my-board-grid">
@@ -689,7 +695,7 @@ export const query = graphql`
   {
     heroBackground: file(relativePath: { eq: "hero-background.png" }) {
       childImageSharp {
-        fluid {
+        fluid{
           ...GatsbyImageSharpFluid
         }
       }
