@@ -184,7 +184,7 @@ export default class Header extends React.Component {
             </div>
 
             <div className="my-vote">
-              <div style={{display: "table", height: "100%"}}>
+              <div style={{display: "table", height: "100%", width: "100%"}}>
                 <div style={{display: "table-cell", verticalAlign: "middle", height: "100%"}}>
                   <a
                     href="http://www.appliedmaterials.com/"
