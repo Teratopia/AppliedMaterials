@@ -28,10 +28,21 @@ const Styles = styled.div`
         padding: 10px;
       }
 
+      &.special  {
+        padding-top: 0px;
+        
+        .gatsby-image-wrapper {
+          margin-top: -3px;
+          height: calc(100% + 3px);
+        }
+        
+      }
+
       .my-background {
         color: white;
         text-align: center;
         padding-top: 34px;
+        height: 100%;
 
         @media screen and (min-width: 1048px) {
           padding-top: 88px; 
@@ -75,8 +86,7 @@ const Styles = styled.div`
       }
 
       .gatsby-background-image:before {
-        opacity: 0.7;
-       
+        opacity: 0.8;
       }
 
       &.my-board-grid {
@@ -107,9 +117,6 @@ const Styles = styled.div`
           
         }
 
-        .gatsby-image-wrapper {
-          height: 100%;
-        }
 
       }
     }
@@ -382,10 +389,9 @@ export default class extends React.Component {
           <Page>
             <Container>
               <div className="my-hero-grid">
-                <div className="hero-section" style={{paddingTop: 0}}>
+                <div className="hero-section special">
                   <BackgroundImage
                     fluid={world}
-                    style={{ height: "100%", minHeight: 340, marginTop: -3 }}
                     className="my-background"
                   >
 
