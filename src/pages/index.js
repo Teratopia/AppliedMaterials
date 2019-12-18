@@ -14,7 +14,7 @@ const Styles = styled.div`
   .my-hero-grid {
     display: grid;
     grid-template-columns: calc(50% - 9px) calc(50% - 9px);
-    
+
     @media screen and (max-width: 1048px) {
       grid-template-columns: 100%;
     }
@@ -22,20 +22,18 @@ const Styles = styled.div`
     grid-gap: 18px;
 
     .hero-section {
-      
-        border: 1px solid ${theme.blue};
-        padding: 10px;
+      border: 1px solid ${theme.blue};
+      padding: 10px;
 
       .my-background {
         color: white;
         text-align: center;
         padding-top: 34px;
         min-height: 336px;
-        
 
         @media screen and (min-width: 1049px) {
           padding-top: 88px;
-          height: 102%; 
+          height: 102%;
           position: relative;
           bottom: 2%;
         }
@@ -46,7 +44,7 @@ const Styles = styled.div`
 
           @media screen and (min-width: 1048px) {
             padding: 14px;
-            font-size: 35px; 
+            font-size: 35px;
             margin-bottom: 44px;
           }
         }
@@ -58,12 +56,11 @@ const Styles = styled.div`
           padding: 12px 18px;
           background: none;
 
-          
           @media screen and (min-width: ${theme.breakpoints.mind}px) {
             padding: 12px 78px;
             font-size: 22px;
           }
-          
+
           &:hover {
             background: #fff;
             color: black;
@@ -71,11 +68,10 @@ const Styles = styled.div`
           }
 
           @media screen and (min-width: 1048px) {
-            padding: 14px 42px; 
+            padding: 14px 42px;
             font-size: 20px;
           }
         }
-        
       }
 
       .gatsby-background-image:before {
@@ -86,7 +82,6 @@ const Styles = styled.div`
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(86px, 1fr));
         grid-gap: 8px;
-
 
         @media screen and (min-width: 412px) {
           grid-template-columns: repeat(auto-fill, minmax(92px, 1fr));
@@ -126,10 +121,7 @@ const Styles = styled.div`
         .my-member {
           position: relative;
           color: white;
-          
         }
-
-
       }
     }
   }
@@ -139,12 +131,11 @@ const Styles = styled.div`
     text-align: center;
 
     font-size: 32px;
-    
 
     @media screen and (min-width: 740px) {
       font-size: 42px;
     }
-    
+
     padding: 40px 0px;
     padding-bottom: 0px;
     margin: 24px 0px;
@@ -274,7 +265,6 @@ const Styles = styled.div`
     @media screen and (min-width: 768px) {
       grid-template-columns: 140px calc(100% - 340px) 200px;
     }
-
   }
 
   .my-header-row {
@@ -303,7 +293,6 @@ const Styles = styled.div`
     @media screen and (max-width: 740px) {
       padding: 40px 60px;
     }
-
   }
 
   .proxy-statement {
@@ -312,13 +301,11 @@ const Styles = styled.div`
     text-align: center;
     padding: 40px;
 
-    
     @media screen and (min-width: 948px) {
       .title {
         position: relative;
         top: 12px;
       }
-      
     }
   }
 
@@ -329,7 +316,7 @@ const Styles = styled.div`
 
     &:hover {
       background: white;
-      color: ${ theme.orange };
+      color: ${theme.orange};
       cursor: pointer;
     }
 
@@ -360,7 +347,6 @@ const Styles = styled.div`
         & > div {
           margin-bottom: 8px;
         }
-
       }
 
       .my-have-you-heard-title {
@@ -374,8 +360,6 @@ const Styles = styled.div`
       }
     }
   }
-
-
 `
 
 export default class extends React.Component {
@@ -426,58 +410,42 @@ export default class extends React.Component {
             <Container>
               <div className="my-hero-grid">
                 <div className="hero-section special">
-                  <BackgroundImage
-                    fluid={world}
-                    className="my-background"
-                  >
+                  <BackgroundImage fluid={world} className="my-background">
+                    <div className="my-title">
+                      <div>Notice of</div>
+                      <div>2020 Annual Meeting</div>
+                      <div>of Shareholders</div>
+                      <div>and Proxy Statement</div>
+                    </div>
 
-                      <div className="my-title">
-                        <div>
-                        Notice of 
-                        </div>
-                        <div>
-                        2020 Annual Meeting
-                        </div>
-                        <div>
-                        of Shareholders 
-                        </div>
-                        <div>
-                        and Proxy Statement
-                        </div>
-                      </div>
-
-                      <Link to="proxy" style={{color: "white"}}>
+                    <Link to="proxy" style={{ color: "white" }}>
                       <div className="my-proxy-button">
                         VIEW INTERACTIVE PROXY
                       </div>
-                      </Link>
+                    </Link>
                   </BackgroundImage>
                 </div>
-                
 
                 <Link to="/board">
-                <div className="hero-section my-board-grid">
-                  {members.map(this.member.bind(this))}
-                  <div >
-                    <div className="my-applied-logo">
-                      
-                    <img
-                      src={AppliedLogo}
-                      className="my-materials-logo"
-                      alt="Applied Materials"
-                    />
-                    <div className="my-meta">BOARD OF DIRECTORS</div>
+                  <div className="hero-section my-board-grid">
+                    {members.map(this.member.bind(this))}
+                    <div>
+                      <div className="my-applied-logo">
+                        <img
+                          src={AppliedLogo}
+                          className="my-materials-logo"
+                          alt="Applied Materials"
+                        />
+                        <div className="my-meta">BOARD OF DIRECTORS</div>
+                      </div>
                     </div>
                   </div>
-                </div>
                 </Link>
               </div>
             </Container>
 
             <div className="meeting-highlights">
-              <div style={{padding: "0px 20px"}}>
-                2020 Meeting Highlights
-              </div>
+              <div style={{ padding: "0px 20px" }}>2020 Meeting Highlights</div>
               <div
                 className="my-runner"
                 style={{
@@ -518,20 +486,29 @@ export default class extends React.Component {
                 </div>
 
                 <div className="info-grid-section my-vote-button">
-                  <div className="button is-danger">VOTE</div>
+                  <a
+                    href="http://www.appliedmaterials.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <div className="button is-danger">VOTE</div>
+                  </a>
                 </div>
               </div>
             </Container>
 
-            <div style={{padding: "40px 0px"}}>
-                <div className="title has-text-centered" style={{ marginBottom: 48}}>
-                  Voting Matters & Board Recommendations
-                </div>
+            <div style={{ padding: "40px 0px" }}>
+              <div
+                className="title has-text-centered"
+                style={{ marginBottom: 48 }}
+              >
+                Voting Matters & Board Recommendations
+              </div>
 
-                <div className="my-header-row">
-                  <Container >
+              <div className="my-header-row">
+                <Container>
                   <div className="my-voting-matters-grid">
-                    <div className="has-text-centered special-header really-special" >
+                    <div className="has-text-centered special-header really-special">
                       PROPOSAL
                     </div>
 
@@ -543,183 +520,201 @@ export default class extends React.Component {
                       BOARD VOTE RECOMMENDATION
                     </div>
                   </div>
-                  </Container>
-                </div>
+                </Container>
+              </div>
 
-                <div className="my-normal-row">
-                  <Container>
+              <div className="my-normal-row">
+                <Container>
                   <div className="my-voting-matters-grid">
-                    <div className="has-text-centered">
-                      1
-                    </div>
+                    <div className="has-text-centered">1</div>
 
-                    <div className="my-description">
-                      Electing Directors
-                    </div>
+                    <div className="my-description">Electing Directors</div>
 
                     <div className="has-text-centered">
-                      <Img fluid={ blueCheck } alt="Blue Check" style={{width: 32, display: "block", margin: "0 auto"}} />
+                      <Img
+                        fluid={blueCheck}
+                        alt="Blue Check"
+                        style={{
+                          width: 32,
+                          display: "block",
+                          margin: "0 auto",
+                        }}
+                      />
                     </div>
                   </div>
-                  </Container>
-                </div>
+                </Container>
+              </div>
 
-                <div className="my-normal-row">
-                  <Container>
+              <div className="my-normal-row">
+                <Container>
                   <div className="my-voting-matters-grid">
-                    <div className="has-text-centered">
-                      2
-                    </div>
+                    <div className="has-text-centered">2</div>
 
-                    <div className="my-description">
-                      Executive Compensation
-                    </div>
+                    <div className="my-description">Executive Compensation</div>
 
                     <div className="has-text-centered">
-                      <Img fluid={ blueCheck } alt="Blue Check" style={{width: 32, display: "block", margin: "0 auto"}} />
+                      <Img
+                        fluid={blueCheck}
+                        alt="Blue Check"
+                        style={{
+                          width: 32,
+                          display: "block",
+                          margin: "0 auto",
+                        }}
+                      />
                     </div>
                   </div>
-                  </Container>
-                </div>
+                </Container>
+              </div>
 
-                <div className="my-normal-row">
-                  <Container>
+              <div className="my-normal-row">
+                <Container>
                   <div className="my-voting-matters-grid">
-                    <div className="has-text-centered">
-                      3
-                    </div>
+                    <div className="has-text-centered">3</div>
 
-                    <div  className="my-description">
+                    <div className="my-description">
                       Ratification of Registered Accounting Firm
                     </div>
 
                     <div className="has-text-centered">
-                      <Img fluid={ blueCheck } alt="Blue Check" style={{width: 32, display: "block", margin: "0 auto"}} />
+                      <Img
+                        fluid={blueCheck}
+                        alt="Blue Check"
+                        style={{
+                          width: 32,
+                          display: "block",
+                          margin: "0 auto",
+                        }}
+                      />
                     </div>
                   </div>
-                  </Container>
+                </Container>
+              </div>
 
-                </div>
-
-                <div className="my-normal-row">
-                  <Container>
+              <div className="my-normal-row">
+                <Container>
                   <div className="my-voting-matters-grid">
-                    <div className="has-text-centered">
-                      4
-                    </div>
+                    <div className="has-text-centered">4</div>
 
                     <div>
-                      Shareholder Proposal to Provide for Right to Act by Written Consent
+                      Shareholder Proposal to Provide for Right to Act by
+                      Written Consent
                     </div>
 
                     <div className="has-text-centered">
-                      <Img fluid={ redCross } alt="Red Cross" style={{width: 32, display: "block", margin: "0 auto"}} />
+                      <Img
+                        fluid={redCross}
+                        alt="Red Cross"
+                        style={{
+                          width: 32,
+                          display: "block",
+                          margin: "0 auto",
+                        }}
+                      />
                     </div>
                   </div>
-                  </Container>
-                </div>
-                
-                </div>
+                </Container>
+              </div>
+            </div>
 
-                <hr style={{background: "#469AC2"}}>
-                </hr>
+            <hr style={{ background: "#469AC2" }}></hr>
 
-                <div style={{padding: "40px 0px"}}>
-                  <Container>
-                  {/* <div className="title has-text-centered">
+            <div style={{ padding: "40px 0px" }}>
+              <Container>
+                {/* <div className="title has-text-centered">
                     2020 ESG Highlights
                   </div> */}
-                  
-                  {/* <p className="has-text-centered" style={{padding: "0 20px"}}>
+
+                {/* <p className="has-text-centered" style={{padding: "0 20px"}}>
                     We were able to make measurable progress toward our ongoing goal of minimizing the environmental impact of our operations, even with a jump in revenue of more than 15%.  Here's how:
 
                     
                   </p> */}
 
-                  <Img fluid={esg} alt="2020 ESG Highlights" />
+                <Img fluid={esg} alt="2020 ESG Highlights" />
+              </Container>
+            </div>
 
-                  </Container>
+            <hr style={{ background: "#469AC2" }}></hr>
 
+            <div className="my-recommendations">
+              <Img
+                fluid={fortune}
+                alt="Fotune World's Most Admired Companies"
+              />
+              <Img fluid={barrons} alt="Barron's 100 Most Sustainable" />
+              <Img
+                fluid={computerWorld}
+                alt="Computer World Best Place To Live"
+              />
+            </div>
+
+            <div className="proxy-statement">
+              <Container>
+                <div
+                  className="title"
+                  style={{ color: "white", background: theme.orange }}
+                >
+                  2020 Proxy Statement
                 </div>
 
-                <hr style={{background: "#469AC2"}}>
-                </hr>
+                <div className="proxy-statement-button">DOWNLOAD PDF</div>
+              </Container>
+            </div>
 
-                <div className="my-recommendations">
-                  <Img fluid={ fortune } alt="Fotune World's Most Admired Companies"/>
-                  <Img fluid={ barrons } alt="Barron's 100 Most Sustainable"/>
-                  <Img fluid={ computerWorld } alt="Computer World Best Place To Live"/>
-                </div>
-
-                <div className="proxy-statement">
-                  <Container>
-                  <div className="title" style={{color: "white", background: theme.orange}}>
-                    2020 Proxy Statement
-                  </div>
-
-                  <div className="proxy-statement-button">
-                    DOWNLOAD PDF
-                  </div>
-                  </Container>
-                </div>
-
-                <div className="have-you-heard">
-                  <Container>
-                    <div className="have-you-heard-grid">
-                      <div>
-                        <div className="my-have-you-heard-title">
-                          HAVE YOU HEARD?
-                        </div>
-
-                        <div className="my-have-you-heard-row">
-                          09.05.19 <a>Applied Materials Announces Cash Dividend</a>
-                        </div>
-
-                        <div className="my-have-you-heard-row">
-                          08.22.19 <a>Applied Materials to Participate in Citi Global...</a>
-                        </div>
-                      </div>
-
-                      <div>
-                        <div className="my-have-you-heard-title">
-                          JOIN US AT
-                        </div>
-
-                        <div className="my-have-you-heard-row">
-                          10.16.19 <a>K2019</a>
-                        </div>
-
-                        <div className="my-have-you-heard-row">
-                          08.22.19 <a>Specialty Films Mumbai - 2019</a>
-                        </div>
-
-                        <div className="my-have-you-heard-row">
-                          07.09.19 <a>SEMICON West 2019</a>
-                        </div>
-                      </div>
-
-                      <div>
-                        <div className="my-have-you-heard-title">
-                          DID YOU KNOW?
-                        </div>
-
-                        <div className="my-have-you-heard-row">
-                          10.04.19 <a>Designing "Eyes" into Process Equipment to...</a>
-                        </div>
-
-                        <div className="my-have-you-heard-row">
-                          09.12.19 <a>Themes of an AI Summer: VC Perspectives</a>
-                        </div>
-
-                        <div className="my-have-you-heard-row">
-                          08.21.19 <a>The AI Paradox</a>
-                        </div>
-
-                      </div>
+            <div className="have-you-heard">
+              <Container>
+                <div className="have-you-heard-grid">
+                  <div>
+                    <div className="my-have-you-heard-title">
+                      HAVE YOU HEARD?
                     </div>
-                  </Container>
+
+                    <div className="my-have-you-heard-row">
+                      09.05.19 <a>Applied Materials Announces Cash Dividend</a>
+                    </div>
+
+                    <div className="my-have-you-heard-row">
+                      08.22.19{" "}
+                      <a>Applied Materials to Participate in Citi Global...</a>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div className="my-have-you-heard-title">JOIN US AT</div>
+
+                    <div className="my-have-you-heard-row">
+                      10.16.19 <a>K2019</a>
+                    </div>
+
+                    <div className="my-have-you-heard-row">
+                      08.22.19 <a>Specialty Films Mumbai - 2019</a>
+                    </div>
+
+                    <div className="my-have-you-heard-row">
+                      07.09.19 <a>SEMICON West 2019</a>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div className="my-have-you-heard-title">DID YOU KNOW?</div>
+
+                    <div className="my-have-you-heard-row">
+                      10.04.19{" "}
+                      <a>Designing "Eyes" into Process Equipment to...</a>
+                    </div>
+
+                    <div className="my-have-you-heard-row">
+                      09.12.19 <a>Themes of an AI Summer: VC Perspectives</a>
+                    </div>
+
+                    <div className="my-have-you-heard-row">
+                      08.21.19 <a>The AI Paradox</a>
+                    </div>
+                  </div>
                 </div>
-            
+              </Container>
+            </div>
           </Page>
         </Styles>
       </Layout>
@@ -731,7 +726,7 @@ export const query = graphql`
   {
     heroBackground: file(relativePath: { eq: "hero-background.png" }) {
       childImageSharp {
-        fluid{
+        fluid {
           ...GatsbyImageSharpFluid
         }
       }
@@ -808,10 +803,6 @@ export const query = graphql`
         }
       }
     }
-
-    
-    
-
 
     members: markdownRemark(frontmatter: { title: { eq: "board" } }) {
       frontmatter {

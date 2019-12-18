@@ -187,7 +187,7 @@ export default class Header extends React.Component {
               <a
                 href="http://www.appliedmaterials.com/"
                 target="_blank"
-                ref="noreopener noreferrer"
+                rel="noopener noreferrer"
               >
                 <div className="button is-danger">VOTE</div>
               </a>
