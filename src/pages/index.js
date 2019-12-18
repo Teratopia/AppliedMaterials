@@ -23,10 +23,8 @@ const Styles = styled.div`
 
     .hero-section {
       
-      @media screen and (min-width: ${theme.breakpoints.mid}px) {
         border: 1px solid ${theme.blue};
         padding: 10px;
-      }
 
       .my-background {
         color: white;
@@ -122,6 +120,7 @@ const Styles = styled.div`
     text-align: center;
 
     font-size: 32px;
+    
 
     @media screen and (min-width: 740px) {
       font-size: 42px;
@@ -448,7 +447,9 @@ export default class extends React.Component {
             </Container>
 
             <div className="meeting-highlights">
-              2020 Meeting Highlights
+              <div style={{padding: "0px 20px"}}>
+                2020 Meeting Highlights
+              </div>
               <div
                 className="my-runner"
                 style={{
