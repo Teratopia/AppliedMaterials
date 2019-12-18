@@ -15,6 +15,7 @@ const Styles = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
     grid-gap: 6px;
+    margin-bottom: 24px;
 
     @media screen and (min-width: 408px) {
       grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
@@ -148,9 +149,13 @@ export default class extends React.Component {
               }
             </div>
 
-            <div>
+            {/* <div>
               <canvas id="canvas"></canvas>
-            </div>
+            </div> */}
+
+            <iframe src="https://mozilla.github.io/pdf.js/web/viewer.html" style={{width: "100%", height: "100vh", marginBottom: 24}}>
+
+            </iframe>
           </Container>
           </Page>
         </Styles>
