@@ -84,24 +84,43 @@ const Styles = styled.div`
 
       &.my-board-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(92px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(86px, 1fr));
         grid-gap: 8px;
 
 
-        @media screen and (min-width: 512px) {
-          grid-template-columns: repeat(auto-fill, minmax(122px, 1fr));
+        @media screen and (min-width: 412px) {
+          grid-template-columns: repeat(auto-fill, minmax(92px, 1fr));
         }
 
-        @media screen and (min-width: 666px) {
+        @media screen and (min-width: 436px) {
           grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
         }
 
+        .my-applied-logo {
+          margin-top: 2vw;
+
+          @media screen and (min-width: 386px) {
+            margin-top: 14px;
+          }
+
+          @media screen and (max-width: 316px) {
+            margin-top: 14px;
+          }
+
+          @media screen and (min-width: 436px) {
+            margin-top: 25%;
+          }
+        }
 
         .my-meta {
           text-align: center;
           color: grey;
           margin-top: 12px;
-          font-size: 15px;
+          font-size: 10px !important;
+
+          @media screen and (min-width: 580px) {
+            font-size: 15px;
+          }
         }
 
         .my-member {
@@ -432,7 +451,8 @@ export default class extends React.Component {
                 <div className="hero-section my-board-grid">
                   {members.map(this.member.bind(this))}
                   <div >
-                    <div style={{paddingTop: "25%"}}>
+                    <div className="my-applied-logo">
+                      
                     <img
                       src={AppliedLogo}
                       className="my-materials-logo"
