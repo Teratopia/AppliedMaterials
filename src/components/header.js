@@ -79,7 +79,7 @@ const Styles = styled.div`
       width: 62px;
       border-radius: 0px;
       margin: 6px 0px;
-      margin-top: 4px;
+
       background: ${theme.orange};
 
       &:hover {
