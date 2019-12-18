@@ -27,9 +27,16 @@ const Styles = styled.div`
       cursor: pointer;
       background: #E5E5E5;
       font-size: 12px;
+      width: 100%;
 
       &:hover {
         background: #e5e5e5aa;
+      }
+          
+
+      &.active {
+        background: #469AC2;
+        color: white;
       }
 
       .cell {
@@ -49,12 +56,7 @@ const Styles = styled.div`
         }
       }
 
-      
-
-      &.active {
-        background: #469AC2;
-        color: white;
-      }
+  
     }
   }
 
