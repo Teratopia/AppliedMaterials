@@ -22,8 +22,13 @@ const Styles = styled.div`
     grid-gap: 18px;
 
     .hero-section {
-      border: 1px solid ${theme.blue};
-      padding: 10px;
+      border: 2px solid #4499c3;
+      padding: 14px;
+      padding-bottom: 13px;
+
+      &.is-board {
+        padding: 9px 11px;
+      }
 
       .my-background {
         color: white;
@@ -77,51 +82,6 @@ const Styles = styled.div`
       .gatsby-background-image:before {
         opacity: 0.8;
       }
-
-      &.my-board-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(86px, 1fr));
-        grid-gap: 8px;
-
-        @media screen and (min-width: 412px) {
-          grid-template-columns: repeat(auto-fill, minmax(92px, 1fr));
-        }
-
-        @media screen and (min-width: 436px) {
-          grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        }
-
-        .my-applied-logo {
-          margin-top: 2vw;
-
-          @media screen and (min-width: 386px) {
-            margin-top: 14px;
-          }
-
-          @media screen and (max-width: 316px) {
-            margin-top: 14px;
-          }
-
-          @media screen and (min-width: 436px) {
-            margin-top: 25%;
-          }
-        }
-
-        .my-meta {
-          text-align: center;
-          color: grey;
-          margin-top: 12px;
-          font-size: 10px !important;
-
-          @media screen and (min-width: 580px) {
-            font-size: 15px;
-          }
-        }
-
-        .my-member {
-          position: relative;
-          color: white;
-        }
       }
     }
   }
@@ -129,22 +89,27 @@ const Styles = styled.div`
   .meeting-highlights {
     background: #e5e5e5;
     text-align: center;
-
     font-size: 32px;
 
     @media screen and (min-width: 740px) {
-      font-size: 42px;
+      font-size: 36px;
     }
 
-    padding: 40px 0px;
-    padding-bottom: 0px;
+    padding: 30px 0px;
     margin: 24px 0px;
+    margin-bottom: 0px;
+  }
 
-    .my-runner {
-      background: ${theme.orange};
-      height: 20px;
-      margin-top: 24px;
+  .my-runner {
+    background: ${theme.orange};
+    width: 0%;
+    height: 16px;
+
+    @media screen and (min-width: 800px) {
+      width: 75%;
     }
+    
+
   }
 
   .my-info-grid {
@@ -369,18 +334,6 @@ export default class extends React.Component {
     this.state.runnerWidth = 0
   }
 
-  componentDidMount() {
-    if (typeof window !== undefined) {
-      window.onscroll = this.updateRunner.bind(this)
-    }
-  }
-
-  updateRunner(e) {
-    this.setState({
-      runnerWidth: (window.scrollY / window.innerHeight) * 100,
-    })
-  }
-
   member(el) {
     return (
       <div className="my-member">
@@ -391,6 +344,7 @@ export default class extends React.Component {
 
   render() {
     const world = this.props.data.heroBackground.childImageSharp.fluid
+    const heroBoard = this.props.data.heroBoard.childImageSharp.fluid
     const members = this.props.data.members.frontmatter.members
     const locationIcon = this.props.data.locationIcon.childImageSharp.fluid
     const calendarIcon = this.props.data.calendarIcon.childImageSharp.fluid
@@ -427,18 +381,8 @@ export default class extends React.Component {
                 </div>
 
                 <Link to="/board">
-                  <div className="hero-section my-board-grid">
-                    {members.map(this.member.bind(this))}
-                    <div>
-                      <div className="my-applied-logo">
-                        <img
-                          src={AppliedLogo}
-                          className="my-materials-logo"
-                          alt="Applied Materials"
-                        />
-                        <div className="my-meta">BOARD OF DIRECTORS</div>
-                      </div>
-                    </div>
+                  <div className="hero-section is-board">
+                    <Img fluid={heroBoard} alt="Board" />
                   </div>
                 </Link>
               </div>
@@ -446,14 +390,8 @@ export default class extends React.Component {
 
             <div className="meeting-highlights">
               <div style={{ padding: "0px 20px" }}>2020 Meeting Highlights</div>
-              <div
-                className="my-runner"
-                style={{
-                  width: this.state.runnerWidth + "%",
-                  maxWidth: "100%",
-                }}
-              ></div>
             </div>
+            <div className="my-runner"></div>
 
             <Container>
               <div className="my-info-grid">
@@ -725,6 +663,14 @@ export default class extends React.Component {
 export const query = graphql`
   {
     heroBackground: file(relativePath: { eq: "hero-background.png" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+
+    heroBoard: file(relativePath: { eq: "hero-board.jpg" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid

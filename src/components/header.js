@@ -13,7 +13,7 @@ const Styles = styled.div`
   height: 64px;
 
   @media screen and (min-width: ${ theme.breakpoints.min}px) {
-    height: 84px;
+    height: 92px;
   }
   
   width: 100%;
@@ -25,27 +25,24 @@ const Styles = styled.div`
     grid-template-columns: 90px calc(100% - 180px) 90px;
 
     @media screen and (min-width: ${theme.breakpoints.min}px) {
-      grid-template-columns: 120px calc(100% - 240px) 120px;
-    }
-
-    @media screen and (min-width: ${theme.breakpoints.mid}px) {
       grid-template-columns: 160px calc(100% - 320px) 160px;
     }
   }
 
   a {
-    // color: #3fa9f5;
     color: #0a0a0a;
   }
 
   .my-logo {
     width: 156px;
 
-    margin: 0 auto;
+    margin: 0px auto;
+    
     display: none;
 
     @media screen and (min-width: ${theme.breakpoints.min}px) {
       display: block;
+      margin-top: 4px;
     }
   }
 
@@ -56,12 +53,12 @@ const Styles = styled.div`
 
     @media screen and (min-width: ${theme.breakpoints.min}px) {
       display: none;
+      margin-top: 4px;
     }
   }
 
   .home-link {
     text-align: center;
-    font-size: 32px;
 
     @media screen and (max-width: 700px) {
       text-align: left;
@@ -73,12 +70,11 @@ const Styles = styled.div`
 
     .button {
       font-size: 12px;
-      padding: 6px 14px;
-      font-size: 10px;
+      padding: 5px 14px;
+      font-size: 11px;
       height: auto;
-      width: 62px;
+      width: 90px;
       border-radius: 0px;
-      // margin: 6px 0px;
 
       background: ${theme.orange};
 
@@ -87,12 +83,10 @@ const Styles = styled.div`
       }
 
       @media screen and (min-width: ${theme.breakpoints.min}px) {
-        width: 100%;
-        
-        height: calc(100% - 8px);
-        
+        padding: 14px;
+        width: 140px;
+        font-size: 16px;
       }
-
     }
   }
 
@@ -129,14 +123,6 @@ const Styles = styled.div`
   }
 
   .hamburger {
-    position: relative;
-    top: 12px;
-
-    @media screen and (min-width: ${theme.breakpoints.min}px) {
-      top: 18px;
-      left: 4px;
-    }
-
     cursor: pointer;
   }
 `
@@ -163,7 +149,10 @@ export default class Header extends React.Component {
       <Styles>
         <Container>
           <div className="my-box">
-            <div className="hamburger" onClick={this.toggleMenu.bind(this)}>
+
+          <div style={{display: "table", height: "100%", width: "100%"}}>
+                <div style={{display: "table-cell", verticalAlign: "middle"}}>
+                <div className="hamburger" onClick={this.toggleMenu.bind(this)}>
               <HamburgerMenu
                 isOpen={this.state.open}
                 menuClicked={() => {}}
@@ -176,16 +165,31 @@ export default class Header extends React.Component {
                 animationDuration={0.4}
               />
             </div>
+                </div>
+              </div>
 
-            <div className="home-link">
+
+          <div style={{display: "table", height: "100%", width: "100%"}}>
+                <div style={{display: "table-cell", verticalAlign: "middle"}}>
+                <div className="home-link">
               <Link to="/">
                 <Logo />
               </Link>
             </div>
+                </div>
+              </div>
+            
+
+            
+            
+
+            
+
+            
 
             <div className="my-vote">
               <div style={{display: "table", height: "100%", width: "100%"}}>
-                <div style={{display: "table-cell", verticalAlign: "middle", height: "100%"}}>
+                <div style={{display: "table-cell", verticalAlign: "middle"}}>
                   <a
                     href="http://www.appliedmaterials.com/"
                     target="_blank"
