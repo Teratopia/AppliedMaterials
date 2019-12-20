@@ -63,7 +63,7 @@ const Styles = styled.div`
             color: black; 
 
             .my-board-title {
-                font-size: 10px;
+                font-size: 14px;
                 color: #777;
             }
           }

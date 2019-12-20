@@ -40,7 +40,7 @@ const Styles = styled.div`
     cursor: pointer;
 
     &:hover {
-      background: #777777cc; 
+      background: #77777777; 
     }
   }
 `
