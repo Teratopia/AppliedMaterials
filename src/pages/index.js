@@ -432,7 +432,7 @@ export default class extends React.Component {
 
                 <div className="info-grid-section my-vote-button">
                   <a
-                    href="http://www.appliedmaterials.com/"
+                    href="https://east.proxyvote.com/pv/web"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

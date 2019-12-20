@@ -213,7 +213,7 @@ export default class Header extends React.Component {
               <div style={{ display: "table", height: "100%", width: "100%" }}>
                 <div style={{ display: "table-cell", verticalAlign: "middle" }}>
                   <a
-                    href="http://www.appliedmaterials.com/"
+                    href="https://east.proxyvote.com/pv/web"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
