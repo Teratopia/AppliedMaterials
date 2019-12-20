@@ -11,11 +11,12 @@ const Styles = styled.div`
   background: #fff;
   box-shadow: 0px 0px 8px -2px grey;
   height: 64px;
+  padding: 0px 4px;
 
-  @media screen and (min-width: ${ theme.breakpoints.min}px) {
+  @media screen and (min-width: ${theme.breakpoints.mid}px) {
     height: 92px;
   }
-  
+
   width: 100%;
   z-index: 1000;
   min-width: 320px;
@@ -37,12 +38,13 @@ const Styles = styled.div`
     width: 156px;
 
     margin: 0px auto;
-    
+
     display: none;
 
-    @media screen and (min-width: ${theme.breakpoints.min}px) {
+    @media screen and (min-width: ${theme.breakpoints.mid}px) {
       display: block;
       margin-top: 4px;
+      float: left;
     }
   }
 
@@ -51,7 +53,7 @@ const Styles = styled.div`
     margin: 0 auto;
     display: block;
 
-    @media screen and (min-width: ${theme.breakpoints.min}px) {
+    @media screen and (min-width: ${theme.breakpoints.mid}px) {
       display: none;
       margin-top: 4px;
     }
@@ -82,7 +84,7 @@ const Styles = styled.div`
         background: #e48047cc;
       }
 
-      @media screen and (min-width: ${theme.breakpoints.min}px) {
+      @media screen and (min-width: ${theme.breakpoints.mid}px) {
         padding: 14px;
         width: 140px;
         font-size: 16px;
@@ -93,17 +95,33 @@ const Styles = styled.div`
   .links {
     display: none;
 
+    @media screen and (min-width: ${theme.breakpoints.mid}px) {
+      display: block;
+      margin: 0 auto;
+
+      a {
+        display: inline-block;
+        margin: 4% 12px;
+        font-size: 14px;
+
+        &:hover {
+          color: grey;
+        }
+      }
+
+    }
+
     &.active {
       position: absolute;
       border-top: 1px solid grey;
       width: 100%;
       left: 0px;
-      top: ${ theme.header.low }px;
+      top: ${theme.header.low}px;
 
       @media screen and (min-width: ${theme.breakpoints.min}px) {
         top: 84px;
       }
-      
+
       text-align: center;
       background: #fff;
       box-shadow: 0px 8px 8px -8px grey;
@@ -120,10 +138,16 @@ const Styles = styled.div`
         }
       }
     }
+
+    
   }
 
   .hamburger {
     cursor: pointer;
+
+    @media screen and (min-width: ${theme.breakpoints.mid}px) {
+      display: none;
+    }
   }
 `
 export default class Header extends React.Component {
@@ -149,47 +173,45 @@ export default class Header extends React.Component {
       <Styles>
         <Container>
           <div className="my-box">
-
-          <div style={{display: "table", height: "100%", width: "100%"}}>
-                <div style={{display: "table-cell", verticalAlign: "middle"}}>
-                <div className="hamburger" onClick={this.toggleMenu.bind(this)}>
-              <HamburgerMenu
-                isOpen={this.state.open}
-                menuClicked={() => {}}
-                width={33}
-                height={20}
-                strokeWidth={4}
-                rotate={0}
-                color={theme.blue}
-                borderRadius={0}
-                animationDuration={0.4}
-              />
-            </div>
+          <div className="hamburger" onClick={this.toggleMenu.bind(this)}>
+            <div style={{ display: "table", height: "100%", width: "100%" }}>
+              <div style={{ display: "table-cell", verticalAlign: "middle" }}>
+                
+                  <HamburgerMenu
+                    isOpen={this.state.open}
+                    menuClicked={() => {}}
+                    width={33}
+                    height={20}
+                    strokeWidth={4}
+                    rotate={0}
+                    color={theme.blue}
+                    borderRadius={0}
+                    animationDuration={0.4}
+                  />
                 </div>
               </div>
+            </div>
 
-
-          <div style={{display: "table", height: "100%", width: "100%"}}>
-                <div style={{display: "table-cell", verticalAlign: "middle"}}>
+            <div style={{ display: "table", height: "100%", width: "100%" }}>
+              <div style={{ display: "table-cell", verticalAlign: "middle" }}>
                 <div className="home-link">
-              <Link to="/">
-                <Logo />
-              </Link>
-            </div>
+                  <Link to="/">
+                    <Logo />
+                  </Link>
                 </div>
               </div>
-            
+            </div>
 
-            
-            
-
-            
-
-            
+            <div className="links">
+            <Link to="/">HOME</Link>
+            <Link to="/letter">SHAREHOLDER LETTER</Link>
+            <Link to="/proxy">PROXY SUMMARY</Link>
+            <Link to="/report">ANNUAL REPORT & 10K</Link>
+          </div>
 
             <div className="my-vote">
-              <div style={{display: "table", height: "100%", width: "100%"}}>
-                <div style={{display: "table-cell", verticalAlign: "middle"}}>
+              <div style={{ display: "table", height: "100%", width: "100%" }}>
+                <div style={{ display: "table-cell", verticalAlign: "middle" }}>
                   <a
                     href="http://www.appliedmaterials.com/"
                     target="_blank"
@@ -202,12 +224,7 @@ export default class Header extends React.Component {
             </div>
           </div>
 
-          <div className="links">
-            <Link to="/">HOME</Link>
-            <Link to="/letter">SHAREHOLDER LETTER</Link>
-            <Link to="/proxy">PROXY SUMMARY</Link>
-            <Link to="/report">ANNUAL REPORT & 10K</Link>
-          </div>
+          
         </Container>
       </Styles>
     )
