@@ -216,7 +216,7 @@ export default class Header extends React.Component {
             <div className="links">
             <Link to="/">HOME</Link>
             <Link to="/letter">SHAREHOLDER LETTER</Link>
-            <Link to="/proxy">PROXY SUMMARY</Link>
+            <Link to="/proxy-summary">PROXY SUMMARY</Link>
             <Link to="/report">ANNUAL REPORT & 10K</Link>
           </div>
 

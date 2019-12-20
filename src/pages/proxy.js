@@ -164,17 +164,13 @@ export default class extends React.Component {
               }
             </div>
 
-            <div className="title">
-              {this.state.current}
-            </div>
-
             {/* <div>
               <canvas id="canvas"></canvas>
             </div> */}
 
-            {/* <iframe src="https://mozilla.github.io/pdf.js/web/viewer.html" style={{width: "100%", height: "100vh", marginBottom: 24}}>
+            <iframe src="https://mozilla.github.io/pdf.js/web/viewer.html" style={{width: "100%", height: "100vh", marginBottom: 24}}>
 
-            </iframe> */}
+            </iframe>
           </Container>
           </Page>
         </Styles>
