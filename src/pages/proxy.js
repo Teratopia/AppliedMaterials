@@ -31,7 +31,8 @@ const Styles = styled.div`
       width: 100%;
 
       &:hover {
-        background: #e5e5e5aa;
+        background: #469AC2;
+        color: white;
       }
           
 
@@ -78,8 +79,8 @@ export default class extends React.Component {
   }
 
   componentDidMount () {
-    var loadingTask = pdfjsLib.getDocument(require("../images/pdf/sample.pdf"));
-    loadingTask.promise.then( this.loadingTaskHandler.bind(this) );
+    // var loadingTask = pdfjsLib.getDocument(require("../images/pdf/sample.pdf"));
+    // loadingTask.promise.then( this.loadingTaskHandler.bind(this) );
   }
 
   loadingTaskHandler ( pdf ) {

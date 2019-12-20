@@ -15,7 +15,9 @@ const Styles = styled.div`
     display: grid;
     grid-template-columns: calc(50% - 24px) calc(50% - 24px);
     grid-gap: 24px;
-    margin-bottom: 24px;
+    max-width: 880px;
+    margin: 0 auto;
+    margin-bottom: 42px;
 
     @media screen and (max-width: 700px) {
         grid-template-columns: calc(100%);
@@ -35,7 +37,8 @@ const Styles = styled.div`
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); 
       grid-gap: 12px;
-      max-width: 940px;
+      max-width: 880px;
+      margin: 0 auto;
       margin: 24px auto;
 
       @media screen and (min-width: 720px) {
