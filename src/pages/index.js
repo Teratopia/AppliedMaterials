@@ -28,7 +28,7 @@ const Styles = styled.div`
       display: block;
       margin: 0 auto;
       width: 100%;
-      
+
       &.is-board {
         padding: 9px 11px;
       }
@@ -251,9 +251,9 @@ const Styles = styled.div`
 
   .my-recommendations {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     grid-gap: 64px;
-    max-width: 940px;
+    max-width: 840px;
     margin: 0 auto;
     padding: 60px 100px;
     margin-bottom: 24px;
@@ -267,7 +267,7 @@ const Styles = styled.div`
     background: ${theme.orange};
     color: white;
     text-align: center;
-    padding: 40px;
+    padding: 18px;
 
     @media screen and (min-width: 948px) {
       .title {
@@ -443,6 +443,7 @@ export default class extends React.Component {
             </Container>
 
             <div style={{ padding: "40px 0px" }}>
+              <Container>
               <div
                 className="title has-text-centered"
                 style={{ marginBottom: 48 }}
@@ -560,9 +561,12 @@ export default class extends React.Component {
                   </div>
                 </Container>
               </div>
+              </Container>
             </div>
 
-            <hr style={{ background: "#469AC2" }}></hr>
+            <Container>
+              <hr style={{ background: "#469AC2" }}></hr>
+            </Container>
 
             <div style={{ padding: "40px 0px" }}>
               <Container>
@@ -579,19 +583,21 @@ export default class extends React.Component {
                 <Img fluid={esg} alt="2020 ESG Highlights" />
               </Container>
             </div>
-
+            
+            <Container>
             <hr style={{ background: "#469AC2" }}></hr>
+            </Container>
 
             <div className="my-recommendations">
-              <Img
-                fluid={fortune}
-                alt="Fotune World's Most Admired Companies"
-              />
-              <Img fluid={barrons} alt="Barron's 100 Most Sustainable" />
-              <Img
-                fluid={computerWorld}
-                alt="Computer World Best Place To Live"
-              />
+                <Img
+                  fluid={fortune}
+                  alt="Fotune World's Most Admired Companies"
+                />
+                <Img fluid={barrons} alt="Barron's 100 Most Sustainable" />
+                <Img
+                  fluid={computerWorld}
+                  alt="Computer World Best Place To Live"
+                />
             </div>
 
             <div className="proxy-statement">

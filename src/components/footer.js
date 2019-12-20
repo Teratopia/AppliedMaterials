@@ -8,8 +8,8 @@ import theme from "../theme";
 const Styles = styled.footer`
   background: #E5E5E5;
   color: #060606;
-  padding: 4px;
-  font-size: 18px;
+  
+  font-size: 15px;
   border-top: 4px solid ${theme.teal}; 
 
 
@@ -18,7 +18,7 @@ export default class Footer extends React.Component {
   render () {
     return (
       <Styles>
-          <Container style={{padding: 12}}>
+          <Container >
             <Link to="/"> 
           <img src={AppliedIcon} alt="Applied Icon" style={{width: 33, marginRight: 4}}/></Link> <span style={{position: "relative", top: 2}}>| 2020 Proxy Statement</span>
           </Container>
