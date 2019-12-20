@@ -118,8 +118,8 @@ const Styles = styled.div`
       left: 0px;
       top: ${theme.header.low}px;
 
-      @media screen and (min-width: ${theme.breakpoints.min}px) {
-        top: 84px;
+      @media screen and (min-width: ${theme.breakpoints.mid}px) {
+        top: 92px;
       }
 
       text-align: center;
@@ -158,7 +158,18 @@ export default class Header extends React.Component {
     this.state.open = false
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+
+    window.addEventListener('resize', this.handleResize.bind(this))
+
+  }
+
+  handleResize (e) {
+    
+    if ( window.innerWidth > theme.breakpoints.mid && this.state.open ) {
+      this.toggleMenu();
+    }
+  }
 
   toggleMenu() {
     document.querySelectorAll(".links")[0].classList.toggle("active")
