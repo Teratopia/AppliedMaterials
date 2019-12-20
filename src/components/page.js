@@ -6,6 +6,6 @@ export default styled.div`
   padding-top: 66px;
 
   @media screen and (min-width: ${ theme.breakpoints.min }px) {
-    padding-top: 86px;
+    padding-top: 96px;
   }
 `;

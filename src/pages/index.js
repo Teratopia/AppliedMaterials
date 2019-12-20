@@ -13,17 +13,16 @@ import BackgroundImage from "gatsby-background-image"
 const Styles = styled.div`
   .my-hero-grid {
     display: grid;
-    grid-template-columns: calc(50% - 9px) calc(50% - 9px);
+    grid-template-columns: 100%;
+    grid-gap: 24px;
 
-    @media screen and (max-width: 1048px) {
-      grid-template-columns: 100%;
+    @media screen and (min-width: 848px) {
+      grid-template-columns: calc(50% - 12px) calc(50% - 12px);
     }
-
-    grid-gap: 18px;
 
     .hero-section {
       border: 2px solid #4499c3;
-      padding: 14px;
+      padding: 11px 12px;
       padding-bottom: 13px;
 
       &.is-board {
@@ -33,23 +32,17 @@ const Styles = styled.div`
       .my-background {
         color: white;
         text-align: center;
-        padding-top: 34px;
-        min-height: 336px;
+        padding: 24px;
 
-        @media screen and (min-width: 1049px) {
-          padding-top: 88px;
-          height: 102%;
-          position: relative;
-          bottom: 2%;
+        @media screen and (min-width: 848px) {
+          padding-top: 94px;
         }
 
         .my-title {
           font-size: 28px;
-          padding: 0px 14px;
 
-          @media screen and (min-width: 1048px) {
-            padding: 14px;
-            font-size: 35px;
+          @media screen and (min-width: 848px) {
+            font-size: 32px;
             margin-bottom: 44px;
           }
         }
@@ -81,6 +74,7 @@ const Styles = styled.div`
 
       .gatsby-background-image:before {
         opacity: 0.8;
+        
       }
       }
     }
@@ -175,7 +169,6 @@ const Styles = styled.div`
 
       @media screen and (max-width: 1048px) {
         padding-left: 0px;
-        width: 250px;
         display: block;
         margin: 0 auto;
         margin-top: 44px;
@@ -366,10 +359,14 @@ export default class extends React.Component {
 
         <Styles>
           <Page>
-            <Container>
+            <Container style={{maxWidth: 980}}>
               <div className="my-hero-grid">
                 <div className="hero-section special">
-                  <BackgroundImage fluid={world} className="my-background">
+                  <BackgroundImage
+                    fluid={world}
+                    style={{ height: "100%" }}
+                    className="my-background"
+                  >
                     <div className="my-title">
                       <div>Notice of</div>
                       <div>2020 Annual Meeting</div>
