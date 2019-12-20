@@ -104,12 +104,11 @@ const Styles = styled.div`
     background: ${theme.orange};
     width: 0%;
     height: 16px;
+    margin-bottom: 12px;
 
     @media screen and (min-width: 800px) {
       width: 75%;
     }
-    
-
   }
 
   .my-info-grid {
@@ -183,17 +182,23 @@ const Styles = styled.div`
       }
 
       .button {
-        width: 100%;
-        height: calc(100% - 40px);
+        font-size: 12px;
+        padding: 5px 14px;
+        font-size: 11px;
+        height: auto;
+        width: 90px;
         border-radius: 0px;
-        margin: 20px 0px;
-        margin-top: 8px;
+  
         background: ${theme.orange};
-        transition: all ${theme.transition}s ease;
-        min-height: 58px;
-
+  
         &:hover {
           background: #e48047cc;
+        }
+  
+        @media screen and (min-width: ${theme.breakpoints.min}px) {
+          padding: 14px;
+          width: 140px;
+          font-size: 16px;
         }
       }
     }
