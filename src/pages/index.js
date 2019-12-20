@@ -24,7 +24,7 @@ const Styles = styled.div`
       border: 2px solid #4499c3;
       padding: 11px 12px;
       padding-bottom: 13px;
-      max-width: 600px;
+      max-width: 580px;
       display: block;
       margin: 0 auto;
       width: 100%;
@@ -119,7 +119,7 @@ const Styles = styled.div`
       display: grid;
       max-width: 350px;
       margin: 0 auto;
-      font-size: 17px;
+      font-size: 16px;
       grid-template-columns: 80px calc(100% - 80px);
 
       @media screen and (max-width: 1048px) {
@@ -143,7 +143,7 @@ const Styles = styled.div`
 
         &.special {
           padding-top: 8px;
-          font-size: 22px;
+          font-size: 20px;
         }
 
         @media screen and (max-width: 1048px) {

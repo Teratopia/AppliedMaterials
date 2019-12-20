@@ -82,6 +82,7 @@ export default class extends React.Component {
   constructor( props ) {
     super()
     this.state = {}
+    this.state.current = "SUMMARY"
     this.state.active = {name: "SUMMARY"}
     this.state.materials =  props.data.materials.frontmatter.documents;
   }
@@ -117,16 +118,21 @@ export default class extends React.Component {
   toggleActive ( e) {
     document.querySelectorAll(".my-menu-item.active")[0].classList.toggle("active");
     e.currentTarget.classList.toggle("active")
+
+    this.setState({
+      current: e.currentTarget.dataset.current
+    })
   }
 
   menuItem ( el, idx ) {
     let active;
     if ( idx == 0 ) {
       active= "active"
+      
     }
 
     return (
-      <div className={"my-menu-item " + active} key={ el.title } onClick={ this.toggleActive.bind(this) }>
+      <div className={"my-menu-item " + active} key={ el.title } data-current={el.title} onClick={ this.toggleActive.bind(this) }>
         <div className="cell">
         {
           el.title
@@ -148,7 +154,7 @@ export default class extends React.Component {
           <Container>
             <div className="my-breadcrumbs" style={{marginBottom: "30px"}}>
               <span>
-              <Link to="/">Home</Link> / <Link to="proxy">2020 Proxy Statement</Link> / <span style={{color: theme.blue}}>{this.state.active.name}</span>
+              <Link to="/">Home</Link> / <Link to="proxy">2020 Proxy Statement</Link> / <span style={{color: theme.blue}}>{this.state.current}</span>
               </span>
             </div>
 
