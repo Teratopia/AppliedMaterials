@@ -46,8 +46,8 @@ const Styles = styled.div`
         vertical-align: middle;
         padding: 12px 14px;
         height: 112px;
+        font-size: 14px;
         width: 100%;
-        font-size: 10px !important;
 
         @media screen and (max-width: 319px) {
           height: 74px;
