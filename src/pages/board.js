@@ -122,7 +122,7 @@ export default class extends React.Component {
 
             <div className="my-header-grid">
               <span>
-              <Link to="/">Home</Link> / <Link to="board">Board of Directors</Link>
+              <Link to="/">Home</Link> / <span style={{color: theme.blue }}>Board of Directors</span>
               </span>
               </div>
               <div
