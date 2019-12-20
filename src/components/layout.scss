@@ -25,3 +25,7 @@ body {
 }
 
 
+#netlify-identity-widget  {
+  z-index: 10000 !important;
+  background: grey !important;
+}
