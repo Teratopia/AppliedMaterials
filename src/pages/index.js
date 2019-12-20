@@ -24,7 +24,11 @@ const Styles = styled.div`
       border: 2px solid #4499c3;
       padding: 11px 12px;
       padding-bottom: 13px;
-
+      max-width: 600px;
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+      
       &.is-board {
         padding: 9px 11px;
       }
@@ -106,8 +110,9 @@ const Styles = styled.div`
   }
 
   .my-info-grid {
-    margin: 24px 0px;
+    margin: 24px auto;
     display: grid;
+    max-width: 880px;
     grid-template-columns: repeat(auto-fill, minmax(33%, 1fr));
 
     .mini-grid {
