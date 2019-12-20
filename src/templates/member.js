@@ -14,6 +14,14 @@ const Styles = styled.div`
   .my-header-grid {
     display: grid;
     grid-template-columns: calc(100% - 100px) 100px; 
+
+    a {
+      color: #777;
+
+      &:hover {
+        color: #77777777;
+      }
+    }
   }
   .my-grid {
     display: grid;

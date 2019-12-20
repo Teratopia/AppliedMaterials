@@ -67,6 +67,14 @@ const Styles = styled.div`
     width: 100%;
   }
 
+  .my-breadcrumbs a {
+    color: #777;
+
+    &:hover {
+      color: #77777777;
+    }
+  }
+
   
 `
 
@@ -138,7 +146,7 @@ export default class extends React.Component {
         <Styles>
           <Page>
           <Container>
-            <div style={{marginBottom: "30px"}}>
+            <div className="my-breadcrumbs" style={{marginBottom: "30px"}}>
               <span>
               <Link to="/">Home</Link> / <Link to="proxy">2020 Proxy Statement</Link> / <span style={{color: theme.blue}}>{this.state.active.name}</span>
               </span>

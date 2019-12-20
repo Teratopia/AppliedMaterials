@@ -9,7 +9,6 @@ import styled from "@emotion/styled"
 import theme from "../theme.js"
 
 const Styles = styled.div`
-  padding: 40px 0px;
 
   .my-board-stat-grid {
     display: grid;
@@ -69,6 +68,16 @@ const Styles = styled.div`
           }
       }
   }
+
+  .my-header-grid {
+    a {
+      color: #777;
+
+      &:hover {
+        color: #77777777;
+      }
+    }
+  }
 `
 
 export default class extends React.Component {
@@ -110,9 +119,15 @@ export default class extends React.Component {
         <Styles>
           <Page>
             <Container>
+
+            <div className="my-header-grid">
+              <span>
+              <Link to="/">Home</Link> / <Link to="board">Board of Directors</Link>
+              </span>
+              </div>
               <div
                 className="title has-text-centered"
-                style={{ marginBottom: 48 }}
+                style={{ margin: "48px 0px" }}
               >
                 Our Board Represents a Diverse Range of Qualifications & Skills
               </div>
