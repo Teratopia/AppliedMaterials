@@ -251,11 +251,12 @@ const Styles = styled.div`
 
   .my-recommendations {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    grid-gap: 64px;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-gap: 74px;
     max-width: 840px;
     margin: 0 auto;
-    padding: 60px 100px;
+    padding: 70px 100px;
+    padding-top: 40px;
     margin-bottom: 24px;
 
     @media screen and (max-width: 740px) {
@@ -591,6 +592,7 @@ export default class extends React.Component {
             <div className="my-recommendations">
                 <Img
                   fluid={fortune}
+                 
                   alt="Fotune World's Most Admired Companies"
                 />
                 <Img fluid={barrons} alt="Barron's 100 Most Sustainable" />
