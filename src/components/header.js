@@ -19,7 +19,7 @@ const Styles = styled.div`
 
   width: 100%;
   z-index: 1000;
-  min-width: 320px;
+  min-width: 240px;
 
   .my-box {
     display: grid;
@@ -72,10 +72,16 @@ const Styles = styled.div`
 
     .button {
       font-size: 12px;
-      padding: 5px 14px;
+      padding: 3px; 
+      width: 68px;
       font-size: 11px;
       height: auto;
-      width: 90px;
+      
+
+      @media screen and (min-width: ${theme.breakpoints.min}px) {
+        padding: 5px 14px;
+        width: 90px;
+      }
       border-radius: 0px;
 
       background: ${theme.orange};
