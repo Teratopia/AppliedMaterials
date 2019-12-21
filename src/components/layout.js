@@ -39,13 +39,13 @@ class Layout extends React.Component {
   }
 
   componentDidMount () {
-    if (typeof window !== undefined) {
-      if (!window.netlifyIdentity.currentUser()) {
-        window.netlifyIdentity.open()
-      } else {
-        document.querySelectorAll(".my-background")[0].classList += "active"
-      }
-    }
+    // if (typeof window !== undefined) {
+    //   if (!window.netlifyIdentity.currentUser()) {
+    //     window.netlifyIdentity.open()
+    //   } else {
+    //     document.querySelectorAll(".my-background")[0].classList += "active"
+    //   }
+    // }
     
   }
   render () {
@@ -53,8 +53,8 @@ class Layout extends React.Component {
       <Styles>
         <Header />
         
-        <div className="my-background">
-        </div>
+        {/* <div className="my-background">
+        </div> */}
         
         
         <main>{ this.props.children }</main>
