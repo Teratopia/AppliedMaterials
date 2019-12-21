@@ -37,6 +37,7 @@ const Styles = styled.div`
         color: white;
         text-align: center;
         z-index: 100;
+        background: white;
         padding: 24px;
 
         @media screen and (min-width: 848px) {
