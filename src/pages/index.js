@@ -372,7 +372,6 @@ export default class extends React.Component {
                 <div className="hero-section special">
                   <BackgroundImage
                     fluid={world}
-                    style={{ height: "100%" }}
                     className="my-background"
                   >
                     <div className="my-title">
