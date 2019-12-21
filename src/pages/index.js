@@ -182,12 +182,12 @@ const Styles = styled.div`
       }
 
       .button {
-        font-size: 12px;
-        padding: 5px 14px;
-        font-size: 11px;
+        padding: 8px 20px;
+        font-size: 16px;
         height: auto;
-        width: 90px;
+        width: 110px;
         border-radius: 0px;
+        background: #E48047;
   
         background: ${theme.orange};
   
@@ -198,6 +198,7 @@ const Styles = styled.div`
         @media screen and (min-width: ${theme.breakpoints.min}px) {
           padding: 14px;
           width: 140px;
+          float: right;
           font-size: 16px;
         }
       }
