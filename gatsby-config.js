@@ -1,9 +1,13 @@
 module.exports = {
+  pathPrefix: `/interactive-proxy`,
+
   siteMetadata: {
     title: `Applied Materials`,
     description: `Notice of 2020 Annual Meeting of Shareholders and Proxy Statement`,
     author: `@samullman`,
   },
+
+  
   
   plugins: [
     
