@@ -72,16 +72,13 @@ const Styles = styled.div`
 
     .button {
       font-size: 12px;
-      padding: 3px; 
-      width: 68px;
+      padding: 5px 14px;
+      width: 90px;
       font-size: 11px;
       height: auto;
       
 
-      @media screen and (min-width: ${theme.breakpoints.min}px) {
-        padding: 5px 14px;
-        width: 90px;
-      }
+
       border-radius: 0px;
 
       background: ${theme.orange};
