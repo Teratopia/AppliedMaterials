@@ -13,7 +13,6 @@ export default function HTML(props) {
         />
 
         {props.headComponents}
-        <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
       </head>
       <body {...props.bodyAttributes}>

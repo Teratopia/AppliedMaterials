@@ -16,8 +16,8 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-csp`,
-    `gatsby-plugin-netlify-cms`,
     `gatsby-transformer-remark`,
+    `gatsby-plugin-csp`,
 
     {
       resolve: `gatsby-source-filesystem`,

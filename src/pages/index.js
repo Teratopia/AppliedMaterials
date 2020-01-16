@@ -335,7 +335,7 @@ const Styles = styled.div`
 `
 
 export default class extends React.Component {
-  constructor() {
+  constructor( props ) {
     super()
     this.state = {}
     this.state.runnerWidth = 0
