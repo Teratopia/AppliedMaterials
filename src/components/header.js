@@ -220,7 +220,7 @@ export default class Header extends React.Component {
             <Link to="/">HOME</Link>
             <Link to="/letter">SHAREHOLDER LETTER</Link>
             <Link to="/proxy-summary">PROXY SUMMARY</Link>
-            <Link to="/report">ANNUAL REPORT & 10K</Link>
+            <a href=" https://ir.appliedmaterials.com/annual-report-proxy" target="_blank" ref="noopener noreferrer">ANNUAL REPORT & 10K</a>
           </div>
 
             <div className="my-vote">
