@@ -29,9 +29,6 @@ const Styles = styled.div`
       margin: 0 auto;
       width: 100%;
 
-      &.is-board {
-        padding: 9px 11px;
-      }
 
       .my-background {
         color: white;
@@ -679,7 +676,7 @@ export default class extends React.Component {
 
 export const query = graphql`
   {
-    heroBackground: file(relativePath: { eq: "hero-background.png" }) {
+    heroBackground: file(relativePath: { eq: "hero-left.png" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
@@ -687,7 +684,7 @@ export const query = graphql`
       }
     }
 
-    heroBoard: file(relativePath: { eq: "hero-board.jpg" }) {
+    heroBoard: file(relativePath: { eq: "hero-team.png" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid

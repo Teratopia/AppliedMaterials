@@ -9,8 +9,6 @@
     "@emotion/styled": "^10.0.22",
     "antd": "^3.24.3",
     "bulma": "^0.8.0",
-    "firebase": "^7.5.0",
-    "firebaseui": "^4.3.0",
     "gatsby": "^2.17.4",
     "gatsby-background-image": "^0.9.10",
     "gatsby-image": "^2.2.29",
