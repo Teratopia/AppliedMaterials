@@ -111,7 +111,7 @@ const Styles = styled.div`
   .my-info-grid {
     margin: 24px auto;
     display: grid;
-    max-width: 880px;
+    max-width: 920px;
     grid-template-columns: repeat(auto-fill, minmax(33%, 1fr));
 
     .mini-grid {
@@ -139,10 +139,12 @@ const Styles = styled.div`
 
       .my-text {
         padding-left: 8px;
+        padding-top: 12px;
+        font-size: 14px;
 
         &.special {
-          padding-top: 8px;
-          font-size: 20px;
+          padding-top: 16px;
+          font-size: 18px;
         }
 
         @media screen and (max-width: 1048px) {
@@ -169,7 +171,8 @@ const Styles = styled.div`
 
     .my-vote-button {
       text-align: right;
-      padding-left: 120px;
+      padding-left: 80px;
+      margin: auto 0px;
 
       @media screen and (max-width: 1048px) {
         padding-left: 0px;
