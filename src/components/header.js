@@ -100,12 +100,12 @@ const Styles = styled.div`
 
     @media screen and (min-width: ${theme.breakpoints.mid}px) {
       display: block;
-      margin: 0 auto;
+      margin: auto auto;
 
       a {
         display: inline-block;
-        margin: 4% 12px;
-        font-size: 14px;
+        margin: 5px 30px;
+        font-size: 15px;
 
         &:hover {
           color: grey;
@@ -218,7 +218,6 @@ export default class Header extends React.Component {
 
             <div className="links">
             <Link to="/">HOME</Link>
-            <Link to="/letter">SHAREHOLDER LETTER</Link>
             <Link to="/proxy-summary">PROXY SUMMARY</Link>
             <a href=" https://ir.appliedmaterials.com/annual-report-proxy" target="_blank" ref="noopener noreferrer">ANNUAL REPORT & 10K</a>
           </div>
