@@ -529,7 +529,7 @@ export default class extends React.Component {
                     <div className="my-voting-matters-grid">
                       <div className="has-text-centered">1</div>
 
-                      <div className="my-description">Electing Directors</div>
+                      <div className="my-description">Election of Directors</div>
 
                       <div className="has-text-centered">
                         <Img
@@ -552,7 +552,7 @@ export default class extends React.Component {
                       <div className="has-text-centered">2</div>
 
                       <div className="my-description">
-                        Executive Compensation
+                        Advisory Vote on Executive Compensation
                       </div>
 
                       <div className="has-text-centered">
@@ -600,14 +600,14 @@ export default class extends React.Component {
                       <div className="has-text-centered">4</div>
 
                       <div>
-                        Shareholder Proposal to Provide for Right to Act by
+                        Management Proposal to Provide for Right to Act by
                         Written Consent
                       </div>
 
                       <div className="has-text-centered">
                         <Img
-                          fluid={redCross}
-                          alt="Red Cross"
+                          fluid={blueCheck}
+                          alt="Blue Check"
                           style={{
                             width: 32,
                             display: "block",
@@ -632,12 +632,8 @@ export default class extends React.Component {
                 </div>
 
                 <p className="has-text-centered" style={{ padding: "0 20px" }}>
-                  We have established executive leadership of a company-wide
-                  strategy on ESG matters and reporting and focused on
-                  integrating sustainability into our operations and company
-                  culture through initiatives aligned to company strategy that
-                  address a broad set of stakeholders, including customers,
-                  employees, suppliers, governments and our local communities.
+                  We have established executive leadership of a company-wide strategy on ESG matters and reporting and focused on integrating sustainability into our operations and company culture through initiatives aligned to company strategy that address a broad set of stakeholders, including customers, employees, suppliers, governments and our local communities.
+
                 </p>
 
                 <div className="my-esg-grid">

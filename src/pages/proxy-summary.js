@@ -18,7 +18,7 @@ export default class extends React.Component {
   render() {
     return (
       <Layout>
-        <SEO title="" />
+        <SEO title="Proxy Summary" />
         <Styles>
           <Page>
           <Container>
