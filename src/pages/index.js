@@ -283,32 +283,30 @@ const Styles = styled.div`
     color: white;
     text-align: center;
     padding: 18px;
+    text-align: center;
+    margin-bottom: 44px;
 
-    @media screen and (min-width: 948px) {
-      .title {
-        position: relative;
-        top: 12px;
+    .title {
+      display: inline-block; 
+      
+      margin: 0;
+      margin-right: 44px;
+    }
+    .proxy-statement-button {
+      border: 2px solid white;
+      padding: 16px 34px;
+      display: inline-block;
+  
+      &:hover {
+        background: white;
+        color: ${theme.orange};
+        cursor: pointer;
       }
+  
     }
   }
 
-  .proxy-statement-button {
-    border: 2px solid white;
-    padding: 16px 34px;
-    display: inline-block;
 
-    &:hover {
-      background: white;
-      color: ${theme.orange};
-      cursor: pointer;
-    }
-
-    @media screen and (min-width: 948px) {
-      float: right;
-      position: relative;
-      top: -62px;
-    }
-  }
 
   .have-you-heard {
     padding: 40px;
@@ -694,7 +692,7 @@ export default class extends React.Component {
               </Container>
             </div>
 
-            <div className="have-you-heard">
+            {/* <div className="have-you-heard">
               <Container>
                 <div className="have-you-heard-grid">
                   <div>
@@ -746,7 +744,7 @@ export default class extends React.Component {
                   </div>
                 </div>
               </Container>
-            </div>
+            </div> */}
           </Page>
         </Styles>
       </Layout>

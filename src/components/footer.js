@@ -10,7 +10,7 @@ const Styles = styled.footer`
   color: #060606;
   
   font-size: 15px;
-  border-top: 4px solid ${theme.teal}; 
+  border-top: 5px solid ${theme.teal}; 
 
 
 `
