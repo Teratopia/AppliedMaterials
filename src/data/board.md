@@ -200,11 +200,4 @@ members:
     - title: Public company board experience
   bio: >
     Scott A. McGregor served as President and Chief Executive Officer and as a member of the board of directors of Broadcom Corporation, a world leader in wireless connectivity, broadband, automotive and networking infrastructure, from 2005 until the company was acquired by Avago Technologies Limited in 2016. Mr. McGregor joined Broadcom from Philips Semiconductors (now NXP Semiconductors), where he was President and Chief Executive Officer. He previously served in a range of senior management positions at Santa Cruz Operation Inc., Digital Equipment Corporation (now part of HP), Xerox PARC and Microsoft, where he was the architect and development team leader for Windows 1.0. Mr. McGregor currently serves as a member of the board of directors of Equifax Inc. (since October 2017). He previously served as a member of the boards of directors of Ingram Micro Inc. and Xactly Corporation.
-
-- name: Dennis D. Powell
-  slug: dennis-powell
-  image: ../images/board/dennis-powell.jpg 
-  title: Executive Vice President Chief Financial Officer, Cisco Systems, Inc. (retired)
-  bio: >
-    Dennis D. Powell served as an Executive Advisor at Cisco Systems, Inc., a provider of networking products and services, from February 2008 to September 2010. He served as Cisco’s Chief Financial Officer from May 2003 to February 2008 and, in addition, served as an Executive Vice President from 2007 to 2008 and a Senior Vice President from 2003 to 2007. After joining Cisco in 1997, Mr. Powell also served as Senior Vice President, Corporate Finance and Vice President, Corporate Controller. Before joining Cisco, Mr. Powell worked for 26 years at Coopers & Lybrand LLP, an accounting firm, where he was last a senior partner. Mr. Powell served as a member of the board of directors of VMware, Inc. from 2007 to 2015 and currently serves as a member of the board of directors of Intuit, Inc. Mr. Powell joined the Applied Materials board of directors in 2007.
 ---

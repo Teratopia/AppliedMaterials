@@ -85,6 +85,60 @@ export default class extends React.Component {
      navigate( this.state.members[myNew].slug );
   }
 
+  other () {
+    if ( this.state.members.other ) {
+      return (
+        <div>
+           <div className="title is-6">
+                  <b>OTHER CURRENT PUBLIC BOARDS:</b>
+                </div>
+
+                <div className="content">
+                  <ul>
+                    {
+                      this.state.member.other.map( (el) => {
+                        return (
+                          <li>
+                            { el.title }
+                          </li>
+                        )
+                      })
+                    }
+                  </ul>
+
+                </div>
+        </div>
+      )
+    }
+  }
+
+  board () {
+    if ( this.state.member.boardComittees ) {
+      return (
+        <div>
+           <div className="title is-6">
+                  <b>BOARD COMMITTEES:</b>
+                </div>
+
+                <div className="content">
+                  <ul>
+                    {
+                      this.state.member.boardComittees.map( (el) => {
+                        return (
+                          <li>
+                            { el.title }
+                          </li>
+                        )
+                      })
+                    }
+                  </ul>
+
+                </div>
+        </div>
+      )
+    }
+  }
+
   render() {
     return (
       <Layout>
@@ -167,44 +221,15 @@ export default class extends React.Component {
                 
               </div>
               <div>
-              <div className="title is-6">
-                  <b>BOARD COMMITTEES:</b>
-                </div>
-
-                <div className="content">
-                  <ul>
                     {
-                      this.state.member.boardComittees.map( (el) => {
-                        return (
-                          <li>
-                            { el.title }
-                          </li>
-                        )
-                      })
+                      this.board()
                     }
-                  </ul>
-
-                </div>
               </div>
               <div>
-              <div className="title is-6">
-                  <b>OTHER CURRENT PUBLIC BOARDS:</b>
-                </div>
-
-                <div className="content">
-                  <ul>
-                    {
-                      this.state.member.other.map( (el) => {
-                        return (
-                          <li>
-                            { el.title }
-                          </li>
-                        )
-                      })
-                    }
-                  </ul>
-
-                </div>
+                {
+                   this.other()
+                }
+             
               </div>
 
             </div>
