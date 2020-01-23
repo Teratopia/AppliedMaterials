@@ -49,7 +49,7 @@ const Styles = styled.div`
 
     @media screen and (min-width: 720px) {
       grid-template-columns: repeat(auto-fit, minmax(212px, 1fr));
-      grid-gap: 32px;
+      grid-gap: 48px;
     }
 
     .gatsby-image-wrapper {
@@ -65,7 +65,11 @@ const Styles = styled.div`
 
       .my-content {
         padding: 9px 13px;
-        color: black;
+        color: #777;
+
+        .content ul {
+          margin-top: 8px;
+        }
 
         .my-board-title {
           font-size: 14px;
@@ -90,6 +94,10 @@ const Styles = styled.div`
     grid-template-columns: 34% 66%;
     grid-gap: 24px;
   }
+
+  .content {
+    margin-bottom: 8px;
+  }
 `
 
 export default class extends React.Component {
@@ -97,9 +105,24 @@ export default class extends React.Component {
     super()
     this.state = {}
   }
+  
+  boardComittees ( boards ) {
+    if ( boards ) {
+      return (
+        boards.map( (el) => {
+          return (
+            <li>
+              { el.title }
+            </li>
+          )
+        })
+      )
+    } else {
+      return ( <li>None </li>)
+    }
+  }
 
   memberItem(el, idx) {
-    debugger
     return (
       <Link to={"/board/" + el.slug}>
         <div className="my-board-member" key={el.name}>
@@ -108,7 +131,31 @@ export default class extends React.Component {
 
           <div className="my-content">
             <div className="my-board-title">{el.title}</div>
+
+            <div className="content">
+              <small>
+                <ul>
+                  <li>{ el.since }</li>
+                  <li>Age { el.age }</li>
+                  <li>{ el.type }</li>
+                </ul>
+              </small>
+            </div>
+
+            <b>Board Committees:</b>
+            <div className="content">
+              <small>
+                <ul>
+                  {
+                    this.boardComittees( el.boardComittees )
+                  }
+                </ul>
+              </small>
+
+            </div>
           </div>
+
+          
         </div>
       </Link>
     )
@@ -160,7 +207,6 @@ export default class extends React.Component {
                       fluid={diversity}
                       alt="Diversity"
                       style={{
-                        height: 141,
                         width: 144,
                         marginBottom: 24,
                         height: 144,
@@ -218,7 +264,11 @@ export default class extends React.Component {
                   <Img
                     fluid={tenure}
                     alt="Tenure"
-                    style={{ marginBottom: 24 }}
+                    style={{
+                      width: 144,
+                      marginBottom: 24,
+                      height: 144,
+                    }}
                   />
 
                   <div>
