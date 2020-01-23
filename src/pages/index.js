@@ -254,16 +254,27 @@ const Styles = styled.div`
 
   .my-recommendations {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    grid-gap: 74px;
-    max-width: 840px;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    grid-gap: 124px;
+    max-width: 1040px;
     margin: 0 auto;
-    padding: 70px 100px;
+    padding: 100px 100px;
     padding-top: 40px;
     margin-bottom: 24px;
 
     @media screen and (max-width: 740px) {
       padding: 40px 60px;
+    }
+
+    .gatsby-image-wrapper {
+      height: 144px;
+      width: 144px;
+      display: block;
+      margin: 0 auto;
+
+      &.best {
+        width: 224px;
+      }
     }
   }
 
@@ -332,10 +343,27 @@ const Styles = styled.div`
       }
     }
   }
+
+  .my-esg-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));        
+    grid-gap: 16px;
+
+    .my-esg-grid-title {
+      background: #ececec;
+      padding: 5px;
+      text-align: center;
+      margin: 10px 0px;
+    }
+
+
+  }
+
+  
 `
 
 export default class extends React.Component {
-  constructor( props ) {
+  constructor(props) {
     super()
     this.state = {}
     this.state.runnerWidth = 0
@@ -360,7 +388,8 @@ export default class extends React.Component {
     const esg = this.props.data.esg.childImageSharp.fluid
     const barrons = this.props.data.barrons.childImageSharp.fluid
     const computerWorld = this.props.data.computerWorld.childImageSharp.fluid
-    const fortune = this.props.data.fortune.childImageSharp.fluid
+    const investorsDaily = this.props.data.investorsDaily.childImageSharp.fluid
+    const best = this.props.data.best.childImageSharp.fluid
 
     return (
       <Layout>
@@ -368,13 +397,10 @@ export default class extends React.Component {
 
         <Styles>
           <Page>
-            <Container style={{maxWidth: 980}}>
+            <Container style={{ maxWidth: 980 }}>
               <div className="my-hero-grid">
                 <div className="hero-section special">
-                  <BackgroundImage
-                    fluid={world}
-                    className="my-background"
-                  >
+                  <BackgroundImage fluid={world} className="my-background">
                     <div className="my-title">
                       <div>Notice of</div>
                       <div>2020 Annual Meeting</div>
@@ -447,123 +473,125 @@ export default class extends React.Component {
 
             <div style={{ padding: "40px 0px" }}>
               <Container>
-              <div
-                className="title has-text-centered"
-                style={{ marginBottom: 48 }}
-              >
-                Voting Matters & Board Recommendations
-              </div>
+                <div
+                  className="title has-text-centered"
+                  style={{ marginBottom: 48 }}
+                >
+                  Voting Matters & Board Recommendations
+                </div>
 
-              <div className="my-header-row">
-                <Container>
-                  <div className="my-voting-matters-grid">
-                    <div className="has-text-centered special-header really-special">
-                      PROPOSAL
+                <div className="my-header-row">
+                  <Container>
+                    <div className="my-voting-matters-grid">
+                      <div className="has-text-centered special-header really-special">
+                        PROPOSAL
+                      </div>
+
+                      <div className="special-header my-description">
+                        DESCRIPTION
+                      </div>
+
+                      <div className="has-text-centered">
+                        BOARD VOTE RECOMMENDATION
+                      </div>
                     </div>
+                  </Container>
+                </div>
 
-                    <div className="special-header my-description">
-                      DESCRIPTION
+                <div className="my-normal-row">
+                  <Container>
+                    <div className="my-voting-matters-grid">
+                      <div className="has-text-centered">1</div>
+
+                      <div className="my-description">Electing Directors</div>
+
+                      <div className="has-text-centered">
+                        <Img
+                          fluid={blueCheck}
+                          alt="Blue Check"
+                          style={{
+                            width: 32,
+                            display: "block",
+                            margin: "0 auto",
+                          }}
+                        />
+                      </div>
                     </div>
+                  </Container>
+                </div>
 
-                    <div className="has-text-centered">
-                      BOARD VOTE RECOMMENDATION
+                <div className="my-normal-row">
+                  <Container>
+                    <div className="my-voting-matters-grid">
+                      <div className="has-text-centered">2</div>
+
+                      <div className="my-description">
+                        Executive Compensation
+                      </div>
+
+                      <div className="has-text-centered">
+                        <Img
+                          fluid={blueCheck}
+                          alt="Blue Check"
+                          style={{
+                            width: 32,
+                            display: "block",
+                            margin: "0 auto",
+                          }}
+                        />
+                      </div>
                     </div>
-                  </div>
-                </Container>
-              </div>
+                  </Container>
+                </div>
 
-              <div className="my-normal-row">
-                <Container>
-                  <div className="my-voting-matters-grid">
-                    <div className="has-text-centered">1</div>
+                <div className="my-normal-row">
+                  <Container>
+                    <div className="my-voting-matters-grid">
+                      <div className="has-text-centered">3</div>
 
-                    <div className="my-description">Electing Directors</div>
+                      <div className="my-description">
+                        Ratification of Registered Accounting Firm
+                      </div>
 
-                    <div className="has-text-centered">
-                      <Img
-                        fluid={blueCheck}
-                        alt="Blue Check"
-                        style={{
-                          width: 32,
-                          display: "block",
-                          margin: "0 auto",
-                        }}
-                      />
+                      <div className="has-text-centered">
+                        <Img
+                          fluid={blueCheck}
+                          alt="Blue Check"
+                          style={{
+                            width: 32,
+                            display: "block",
+                            margin: "0 auto",
+                          }}
+                        />
+                      </div>
                     </div>
-                  </div>
-                </Container>
-              </div>
+                  </Container>
+                </div>
 
-              <div className="my-normal-row">
-                <Container>
-                  <div className="my-voting-matters-grid">
-                    <div className="has-text-centered">2</div>
+                <div className="my-normal-row">
+                  <Container>
+                    <div className="my-voting-matters-grid">
+                      <div className="has-text-centered">4</div>
 
-                    <div className="my-description">Executive Compensation</div>
+                      <div>
+                        Shareholder Proposal to Provide for Right to Act by
+                        Written Consent
+                      </div>
 
-                    <div className="has-text-centered">
-                      <Img
-                        fluid={blueCheck}
-                        alt="Blue Check"
-                        style={{
-                          width: 32,
-                          display: "block",
-                          margin: "0 auto",
-                        }}
-                      />
+                      <div className="has-text-centered">
+                        <Img
+                          fluid={redCross}
+                          alt="Red Cross"
+                          style={{
+                            width: 32,
+                            display: "block",
+                            margin: "0 auto",
+                          }}
+                        />
+                      </div>
                     </div>
-                  </div>
-                </Container>
-              </div>
-
-              <div className="my-normal-row">
-                <Container>
-                  <div className="my-voting-matters-grid">
-                    <div className="has-text-centered">3</div>
-
-                    <div className="my-description">
-                      Ratification of Registered Accounting Firm
-                    </div>
-
-                    <div className="has-text-centered">
-                      <Img
-                        fluid={blueCheck}
-                        alt="Blue Check"
-                        style={{
-                          width: 32,
-                          display: "block",
-                          margin: "0 auto",
-                        }}
-                      />
-                    </div>
-                  </div>
-                </Container>
-              </div>
-
-              <div className="my-normal-row">
-                <Container>
-                  <div className="my-voting-matters-grid">
-                    <div className="has-text-centered">4</div>
-
-                    <div>
-                      Shareholder Proposal to Provide for Right to Act by
-                      Written Consent
-                    </div>
-
-                    <div className="has-text-centered">
-                      <Img
-                        fluid={redCross}
-                        alt="Red Cross"
-                        style={{
-                          width: 32,
-                          display: "block",
-                          margin: "0 auto",
-                        }}
-                      />
-                    </div>
-                  </div>
-                </Container>
-              </div>
+                  </Container>
+                </div>
               </Container>
             </div>
 
@@ -573,36 +601,85 @@ export default class extends React.Component {
 
             <div style={{ padding: "40px 0px" }}>
               <Container>
-                {/* <div className="title has-text-centered">
-                    2020 ESG Highlights
-                  </div> */}
+                <div className="title has-text-centered">
+                  2020 ESG Highlights
+                </div>
 
-                {/* <p className="has-text-centered" style={{padding: "0 20px"}}>
-                    We were able to make measurable progress toward our ongoing goal of minimizing the environmental impact of our operations, even with a jump in revenue of more than 15%.  Here's how:
+                <p className="has-text-centered" style={{ padding: "0 20px" }}>
+                  We have established executive leadership of a company-wide
+                  strategy on ESG matters and reporting and focused on
+                  integrating sustainability into our operations and company
+                  culture through initiatives aligned to company strategy that
+                  address a broad set of stakeholders, including customers,
+                  employees, suppliers, governments and our local communities.
+                </p>
 
-                    
-                  </p> */}
+                <div className="my-esg-grid">
+                  <div>
+                    <div className="my-esg-grid-title">
+                      DIVERSITY & INCLUSION
+                    </div>
+                    <div>
+                      We believe diverse and inclusive teams create a richer
+                      culture, enhance performance, and attract the best talent.
+                    </div>
+                  </div>
 
-                <Img fluid={esg} alt="2020 ESG Highlights" />
+                  <div>
+                    <div className="my-esg-grid-title">SUPPLY CHAIN</div>
+                    <div>
+                      Sustainable supply chains are core to our success, and we
+                      actively seek to manage and promote global best practices.
+                    </div>
+                  </div>
+
+                  <div>
+                    <div className="my-esg-grid-title">ENVIRONMENT</div>
+                    <div>
+                      We seek to operate and develop products in a way that
+                      minimizes environmental impact.
+                    </div>
+                  </div>
+
+                  <div>
+                    <div className="my-esg-grid-title">ETHICS</div>
+                    <div>
+                      We maintain highest ethical standards in interactions with
+                      employees, customers, suppliers, competitors and public.
+                    </div>
+                  </div>
+                </div>
               </Container>
             </div>
-            
+
             <Container>
-            <hr style={{ background: "#469AC2" }}></hr>
+              <hr style={{ background: "#469AC2" }}></hr>
             </Container>
 
-            <div className="my-recommendations">
-                <Img
-                  fluid={fortune}
-                 
-                  alt="Fotune World's Most Admired Companies"
-                />
-                <Img fluid={barrons} alt="Barron's 100 Most Sustainable" />
-                <Img
-                  fluid={computerWorld}
-                  alt="Computer World Best Place To Live"
-                />
+            <Container>
+
+            <div className="title has-text-centered">
+                          Recognition
             </div>
+
+            <div className="has-text-centered" style={{ margin: "20px 0px", padding: "0 40px" }}>
+            We are consistently recognized by a wide range of reputable organizations and publications for our achievements and contributions to the technology sector. Here are some of the corporate responsibility awards and positive recognition we received in 2019 and 2020.
+            </div>
+
+            <div className="my-recommendations">
+            <Img
+                fluid={computerWorld}
+                alt="Computer World Best Place To Live"
+              />
+              <Img
+                fluid={investorsDaily}
+                alt="Fotune World's Most Admired Companies"
+              />
+              <Img fixed={best} className="best" alt="Barron's 100 Most Sustainable" />
+              
+            </div>
+
+            </Container>
 
             <div className="proxy-statement">
               <Container>
@@ -759,7 +836,15 @@ export const query = graphql`
       }
     }
 
-    fortune: file(relativePath: { eq: "fortune.png" }) {
+    best: file(relativePath: { eq: "best.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 500){
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+
+    investorsDaily: file(relativePath: { eq: "investors-daily.png" }) {
       childImageSharp {
         fluid(maxWidth: 500) {
           ...GatsbyImageSharpFluid
