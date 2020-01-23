@@ -51,6 +51,13 @@ const Styles = styled.div`
       background: #77777777; 
     }
   }
+
+  .my-package {
+    display: grid;
+    grid-gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(212px, 1fr));
+    margin-bottom: 48px;
+  }
 `
 
 export default class extends React.Component {
@@ -115,19 +122,96 @@ export default class extends React.Component {
               <div className="subtitle" style={{marginBottom: 8}}>
                 { this.state.member.title }
               </div>
+              <div>
+                Age: { this.state.member.age }
+              </div>
+              <div>
+                { this.state.member.type }
+              </div>
+              <div style={{marginBottom: 12}}>
+                { this.state.member.since }
+              </div>
 
               <div className="content">
+                <small>
                 {
                   this.state.member.bio
                 }
+                </small>
               </div>
               </div>
             </div>
             
+            <hr style={{background: theme.teal, margin: "64px 0px"}}></hr>
+
+            <div className="my-package">
+              <div>
+                <div className="title is-6">
+                  <b>KEY QUALIFICATIONS AND EXPERTISE:</b>
+                </div>
+
+                <div className="content">
+                  <ul>
+                    {
+                      this.state.member.keyQualifications.map( (el) => {
+                        return (
+                          <li>
+                            { el.title }
+                          </li>
+                        )
+                      })
+                    }
+                  </ul>
+
+                </div>
+                
+              </div>
+              <div>
+              <div className="title is-6">
+                  <b>BOARD COMMITTEES:</b>
+                </div>
+
+                <div className="content">
+                  <ul>
+                    {
+                      this.state.member.boardComittees.map( (el) => {
+                        return (
+                          <li>
+                            { el.title }
+                          </li>
+                        )
+                      })
+                    }
+                  </ul>
+
+                </div>
+              </div>
+              <div>
+              <div className="title is-6">
+                  <b>OTHER CURRENT PUBLIC BOARDS:</b>
+                </div>
+
+                <div className="content">
+                  <ul>
+                    {
+                      this.state.member.other.map( (el) => {
+                        return (
+                          <li>
+                            { el.title }
+                          </li>
+                        )
+                      })
+                    }
+                  </ul>
+
+                </div>
+              </div>
+
+            </div>
+
             
           </Container>
 
-          <hr style={{background: theme.teal}}></hr>
           </Page>
         </Styles>
       </Layout>

@@ -127,8 +127,22 @@ members:
   slug: alexander-karsner
   image: ../images/board/alex-karsner.jpg 
   title: Executive Chairman Elemental Labs
+  age: 52
+  type: Senior Strategist, Independent Director
+  since: Director since 2008
+  boardComittees:
+    - title: Human Resources & Compensation
+    - title: Corporate Governance & Nominating
+  keyQualifications: 
+    - title: Expertise in public policy and government relations
+    - title: Domestic and international trade, development and investment markets
+    - title: Cybersecurity
+    - title: Environment and sustainability, including renewable energy policy, technologies and commercialization
+    - title: Entrepreneurial leadership
+    - title: Strategy and innovation
+    - title: Public company board experience
   bio: >
-    Alexander A. Karsner has served as Executive Chairman of Elemental Labs, an organization that pursues systems-based solutions to promote a sustainable future and equitably empower communities, since July 2019. He was Managing Partner of Emerson Collective, an investment platform funding non-profit, philanthropic and for-profit portfolios advancing education, immigration, the environment and other social justice initiatives, from 2016 to July 2019. Mr. Karsner has been Founder and CEO of Manifest Energy Inc., an energy technology development and investment firm, since July 2009, and has served as its Executive Chairman since January 2013. From March 2006 to August 2008, he served as Assistant Secretary for Energy Efficiency and Renewable Energy at the U.S. Department of Energy. From August 2002 to March 2006, Mr. Karsner was Founder and Managing Director of Enercorp, a private company involved in international project development, management and financing of energy infrastructure. Mr. Karsner has also worked with Tondu Energy Systems of Texas, Wartsila Power Development of Finland and other multi-national energy firms and developers. He is also Senior Strategist at X, part of Alphabet Inc., and a Precourt Energy Scholar at Stanford University's School of Civil and Environmental Engineering, and serves on Advisory Boards of MIT Medialab, Sandia National Laboratory and The Polsky Center for Entrepreneurship at the University of Chicago's Booth School of Business. Mr. Karsner served as a member of the board of directors of Codexis, Inc. from 2009 to 2014. Mr. Karsner joined the Applied Materials board of directors in 2008.
+    Alexander A. Karsner is Senior Strategist at X, the innovation lab of Alphabet Inc. Mr. Karsner is also Executive Chairman of Elemental Labs, which pursues market transformation through nature-based solutions. Mr. Karsner most recently served as Managing Partner of Emerson Collective, an investment platform funding non-profit, philanthropic and for-profit portfolios advancing education, immigration, the environment and other social innovation initiatives, from January 2016 to July 2019. Prior to this, Mr. Karsner has been Founder and CEO of Manifest Energy Inc., an energy technology development and investment firm, since July 2009, and has served as its Executive Chairman since January 2013. From March 2006to August 2008, he served as Assistant Secretary for Energy Efficiency and Renewable Energy at the U.S. Department of Energy, and exercised a diplomatic role as a principal in the UN Framework Convention on Climate Change. From August 2002 to March 2006, Mr. Karsner was Founder and Managing Director of Enercorp, a private company involved in international project development, management and financing of energy infrastructure. Mr. Karsner has also worked with Tondu Energy Systems of Texas, Wartsila Power Development of Finland and other multi-national energy firms and developers. He is a Precourt Energy Scholar at Stanford University’s School of Civil and Environmental Engineering, and serves on Advisory Boards of MIT Medialab, and the Polsky Center for Entrepreneurship at the University of Chicago’s Booth School of Business. Mr. Karsner served as a member of the board of directors of Codexis, Inc. from 2009 to 2014, as well as Argonne National Laboratory, and was previously an Associate of the Harvard Kennedy School. He presently is on the board of Conservation International and director emeritus of the National Marine Sanctuaries Foundation. He is a Life Member of the Council of Foreign Relations and the Trilateral Commission, Distinguished Fellow of the Council on Competitiveness and a Henry Crown Fellow of the Aspen Institute.
 
 - name: Adrianna C. Ma
   slug: adrianna-ma
@@ -169,6 +183,21 @@ members:
   slug: scott-mcgregor
   image: ../images/board/scott-mcgregor.jpg 
   title: President and Chief Executive Officer, Broadcom Corporation (retired)
+  age: 52
+  type: Independent Director
+  since: Director since 2019
+  other: 
+    - title: Equifax Inc. (since October 2017)
+  boardComittees:
+    - title: Audit
+    - title: Stategy
+  keyQualifications: 
+    - title: Executive leadership and management experience
+    - title: Semiconductor industry leadership
+    - title: Strategy, innovation, management development and understanding of global challenges and opportunities
+    - title: Cybersecurity
+    - title: Risk management and controls
+    - title: Public company board experience
   bio: >
     Scott A. McGregor served as President and Chief Executive Officer and as a member of the board of directors of Broadcom Corporation, a world leader in wireless connectivity, broadband, automotive and networking infrastructure, from 2005 until the company was acquired by Avago Technologies Limited in 2016. Mr. McGregor joined Broadcom from Philips Semiconductors (now NXP Semiconductors), where he was President and Chief Executive Officer. He previously served in a range of senior management positions at Santa Cruz Operation Inc., Digital Equipment Corporation (now part of HP), Xerox PARC and Microsoft, where he was the architect and development team leader for Windows 1.0. Mr. McGregor currently serves as a member of the board of directors of Equifax Inc. (since October 2017). He previously served as a member of the boards of directors of Ingram Micro Inc. and Xactly Corporation.
 
