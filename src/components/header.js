@@ -26,7 +26,7 @@ const Styles = styled.div`
     grid-template-columns: 90px calc(100% - 180px) 90px;
 
     @media screen and (min-width: ${theme.breakpoints.min}px) {
-      grid-template-columns: 160px calc(100% - 320px) 160px;
+      grid-template-columns: 180px calc(100% - 360px) 180px;
     }
   }
 
@@ -88,8 +88,8 @@ const Styles = styled.div`
       }
 
       @media screen and (min-width: ${theme.breakpoints.mid}px) {
-        padding: 14px;
-        width: 140px;
+        padding: 12px;
+        width: 180px;
         font-size: 16px;
       }
     }

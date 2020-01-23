@@ -168,10 +168,11 @@ export default class extends React.Component {
               <canvas id="canvas"></canvas>
             </div> */}
 
-            <iframe src="https://mozilla.github.io/pdf.js/web/viewer.html" style={{width: "100%", height: "100vh", marginBottom: 24}}>
+            
+          </Container>
+          <iframe src="https://mozilla.github.io/pdf.js/web/viewer.html" style={{width: "100%", height: "100vh", marginBottom: 24}}>
 
             </iframe>
-          </Container>
           </Page>
         </Styles>
       </Layout>
