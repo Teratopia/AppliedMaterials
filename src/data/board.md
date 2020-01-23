@@ -1,43 +1,9 @@
 ---
 title: board
 members:
-- name: Thomas J. Iannotti
-  slug: thomas-iannotti
-  image: ../images/iannotti.png 
-  title: Senior Vice President and General Manager, Enterprise Services, Hewlett-Packard Company (retired)
-  age: 63
-  type: Chairman of the Board, Independent Director
-  since: Director since 2005
-  other: 
-    - title: Atento S.A.
-  boardComittees:
-    - title: CorHuman Resources & Compensation (Chair)
-  keyQualifications: 
-    - title: Service management for technology companies on a global, regional and country level
-    - title: Senior leadership and management experience
-    - title: Global business, industry and operational experience
-    - title: International strategic and business development
-    - title: Public company board experience
-  bio: Thomas J. Iannotti was elected Chairman of the Board of Directors of Applied Materials in March 2017. He previously served as Senior Vice President and General Manager, Enterprise Services, for Hewlett-Packard Company, a technology solutions provider to consumers, businesses and institutions globally, from February 2009 until his retirement in October 2011. From 2002 to January 2009, Mr. Iannotti held various executive positions at Hewlett-Packard, including Senior Vice President and Managing Director, Enterprise Business Group, Americas. From 1978 to 2002, Mr. Iannotti worked at Digital Equipment Corporation, a vendor of computer systems and software, and at Compaq Computer Corporation, a supplier of personal computing systems, after its acquisition of Digital Equipment Corporation. Mr. Iannotti currently serves as a member of the board of directors of Atento S.A. Mr. Iannotti joined the Applied Materials board of directors in 2005.
-- name: Gary E. Dickerson
-  slug: gary-dickerson
-  image: ../images/dickerson.png 
-  title: President and Chief Executive Officer, Applied Materials, Inc.
-  age: 62
-  since: Director since 2013
-  keyQualifications: 
-    - title: Executive leadership and global management experience
-    - title: Semiconductor industry leadership
-    - title: Global business, industry and operational experience
-    - title: Extensive engineering and technological leadership
-    - title: Understanding of complex industry and global challenges
-    - title: Expertise in driving stategy, innovation and product development
-  bio: >
-    Gary E. Dickerson has been Chief Executive Officer and a member of the Board of Directors of Applied since Mr. Dickerson was named President of Applied in June 2012, after joining Applied following its acquisition in November 2011 of Varian Semiconductor Equipment Associates, Inc., a supplier of semiconductor manufacturing equipment. Mr. Dickerson had served as Chief Executive Officer and a director of Varian since 2004. Prior to joining Varian in 2004, Mr. Dickerson served 18 years with KLA-Tencor Corporation, a supplier of process control and yield management solutions for the semiconductor and related industries, where he held a variety of operations and product development roles, including President and Chief Operating Officer. Mr. Dickerson started his semiconductor career in manufacturing and engineering management at General Motors’ Delco Electronics Division and then AT&T, Inc.
-
 - name: Judy Bruner
   slug: judy-bruner
-  image: ../images/bruner.jpg 
+  image: ../images/bruner.png 
   title: Executive Vice President, Administration and Chief Financial Officer, SanDisk Corporation (retired)
   age: 61
   type: Independent Director
@@ -101,6 +67,22 @@ members:
     - title: Public company board experience
   bio: >
     Aart J. de Geus is a co-founder of Synopsys, Inc., a provider of electronic design automation software and related services for semiconductor design companies, and currently serves as its Chairman of the Board of Directors and Co-Chief Executive Officer. Since 1986, Dr. de Geus has held various positions at Synopsys, including President, Senior Vice President of Engineering and Senior Vice President of Marketing, and has served as a member of its board of directors. From 1982 to 1986, Dr. de Geus was employed by the General Electric Company, a global power, renewable energy, aviation, healthcare and finance company, where he was the Manager of the Advanced Computer-Aided Engineering Group.
+- name: Gary E. Dickerson
+  slug: gary-dickerson
+  image: ../images/dickerson.png 
+  title: President and Chief Executive Officer, Applied Materials, Inc.
+  age: 62
+  since: Director since 2013
+  keyQualifications: 
+    - title: Executive leadership and global management experience
+    - title: Semiconductor industry leadership
+    - title: Global business, industry and operational experience
+    - title: Extensive engineering and technological leadership
+    - title: Understanding of complex industry and global challenges
+    - title: Expertise in driving stategy, innovation and product development
+  bio: >
+    Gary E. Dickerson has been Chief Executive Officer and a member of the Board of Directors of Applied since Mr. Dickerson was named President of Applied in June 2012, after joining Applied following its acquisition in November 2011 of Varian Semiconductor Equipment Associates, Inc., a supplier of semiconductor manufacturing equipment. Mr. Dickerson had served as Chief Executive Officer and a director of Varian since 2004. Prior to joining Varian in 2004, Mr. Dickerson served 18 years with KLA-Tencor Corporation, a supplier of process control and yield management solutions for the semiconductor and related industries, where he held a variety of operations and product development roles, including President and Chief Operating Officer. Mr. Dickerson started his semiconductor career in manufacturing and engineering management at General Motors’ Delco Electronics Division and then AT&T, Inc.
+
 
 - name: Stephen R. Forrest
   slug: stephen-forrest
@@ -122,6 +104,25 @@ members:
     - title: Establishing partnerships to develop businesses in new markets focused on alternative energy and other technologies.
   bio: >
     Stephen R. Forrest holds faculty appointments as Professor of Electrical Engineering and Computer Science, as Professor of Physics, and as Professor of Materials Science and Engineering at the University of Michigan, and leads the University’s Optoelectronics Components and Materials Group. From January 2006 to December 2013, Dr. Forrest also served as Vice President for Research at the University of Michigan. From 1992 to 2005, Dr. Forrest served in a number of positions at Princeton University, including Chair of the Electrical Engineering Department, Director of the Center for Photonics and Optoelectronic Materials, and director of the National Center for Integrated Photonic Technology. Prior to Princeton, Dr. Forrest was a faculty member of the Electrical Engineering and Materials Science Departments at the University of Southern California. Dr. Forrest joined the Applied Materials board of directors in 2008.
+
+- name: Thomas J. Iannotti
+  slug: thomas-iannotti
+  image: ../images/iannotti.png 
+  title: Senior Vice President and General Manager, Enterprise Services, Hewlett-Packard Company (retired)
+  age: 63
+  type: Chairman of the Board, Independent Director
+  since: Director since 2005
+  other: 
+    - title: Atento S.A.
+  boardComittees:
+    - title: CorHuman Resources & Compensation (Chair)
+  keyQualifications: 
+    - title: Service management for technology companies on a global, regional and country level
+    - title: Senior leadership and management experience
+    - title: Global business, industry and operational experience
+    - title: International strategic and business development
+    - title: Public company board experience
+  bio: Thomas J. Iannotti was elected Chairman of the Board of Directors of Applied Materials in March 2017. He previously served as Senior Vice President and General Manager, Enterprise Services, for Hewlett-Packard Company, a technology solutions provider to consumers, businesses and institutions globally, from February 2009 until his retirement in October 2011. From 2002 to January 2009, Mr. Iannotti held various executive positions at Hewlett-Packard, including Senior Vice President and Managing Director, Enterprise Business Group, Americas. From 1978 to 2002, Mr. Iannotti worked at Digital Equipment Corporation, a vendor of computer systems and software, and at Compaq Computer Corporation, a supplier of personal computing systems, after its acquisition of Digital Equipment Corporation. Mr. Iannotti currently serves as a member of the board of directors of Atento S.A. Mr. Iannotti joined the Applied Materials board of directors in 2005.
 
 - name: Alexander A. Karsner
   slug: alexander-karsner
