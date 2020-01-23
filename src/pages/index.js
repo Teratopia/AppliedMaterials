@@ -111,7 +111,7 @@ const Styles = styled.div`
   .my-info-grid {
     margin: 24px auto;
     display: grid;
-    max-width: 920px;
+    max-width: 940px;
     grid-template-columns: repeat(auto-fill, minmax(33%, 1fr));
 
     .mini-grid {
@@ -355,8 +355,8 @@ const Styles = styled.div`
     }
 
     .my-esg-img  {
-      height: 120px;
-      max-width: 120px;
+      height: 110px;
+      max-width: 110px;
       display: block;
       margin: 16px auto;
 
@@ -365,8 +365,8 @@ const Styles = styled.div`
       }
 
       &.wider2 {
-        height: 123px;
-        max-width: 130px;
+        height: 113px;
+        max-width: 120px;
         margin-bottom: 13px;
       }
     }
