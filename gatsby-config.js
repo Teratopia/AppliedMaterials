@@ -24,6 +24,13 @@ module.exports = {
         mergeStyleHashes: false, 
         directives: {
           "style-src": "'self' 'unsafe-inline'",
+          "img-src": "'self'",
+          "default-src": "'none'", 
+          "script-src": "'self'", 
+          "connect-src": "'self'", 
+          "img-src": "'self'",
+          "style-src": 'self',
+          "font-src": 'self',
         }
       }
     },
