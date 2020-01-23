@@ -346,6 +346,29 @@ const Styles = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));        
     grid-gap: 16px;
+    margin: 24px;
+
+    .my-esg-grid-item {
+      height: 260px;
+      padding-top: 12px;
+      margin-bottom: 24px;
+    }
+
+    .my-esg-img  {
+      height: 120px;
+      max-width: 120px;
+      display: block;
+      margin: 16px auto;
+
+      &.wider {
+        max-width: 130px;
+      }
+
+      &.wider2 {
+        height: 123px;
+        max-width: 130px;
+      }
+    }
 
     .my-esg-grid-title {
       background: #ececec;
@@ -388,6 +411,10 @@ export default class extends React.Component {
     const computerWorld = this.props.data.computerWorld.childImageSharp.fluid
     const investorsDaily = this.props.data.investorsDaily.childImageSharp.fluid
     const best = this.props.data.best.childImageSharp.fluid
+    const diversityInclusion = this.props.data.diversityInclusion.childImageSharp.fluid
+    const environment = this.props.data.environment.childImageSharp.fluid
+    const ethics = this.props.data.ethics.childImageSharp.fluid
+    const supplyChain = this.props.data.supplyChain.childImageSharp.fluid
 
     return (
       <Layout>
@@ -613,7 +640,8 @@ export default class extends React.Component {
                 </p>
 
                 <div className="my-esg-grid">
-                  <div>
+                  <div className="my-esg-grid-item">
+                    <Img className="my-esg-img" fluid={ diversityInclusion } alt="Diversity & Inclusion" />
                     <div className="my-esg-grid-title">
                       DIVERSITY & INCLUSION
                     </div>
@@ -623,7 +651,8 @@ export default class extends React.Component {
                     </div>
                   </div>
 
-                  <div>
+                  <div  className="my-esg-grid-item">
+                    <Img className="my-esg-img wider" fluid={ supplyChain } alt="Supply Chain" />
                     <div className="my-esg-grid-title">SUPPLY CHAIN</div>
                     <div>
                       Sustainable supply chains are core to our success, and we
@@ -631,7 +660,8 @@ export default class extends React.Component {
                     </div>
                   </div>
 
-                  <div>
+                  <div  className="my-esg-grid-item">
+                    <Img className="my-esg-img" fluid={ environment } alt="Environment" />
                     <div className="my-esg-grid-title">ENVIRONMENT</div>
                     <div>
                       We seek to operate and develop products in a way that
@@ -639,7 +669,8 @@ export default class extends React.Component {
                     </div>
                   </div>
 
-                  <div>
+                  <div  className="my-esg-grid-item">
+                    <Img className="my-esg-img wider2" fluid={ ethics } alt="Ethics" />
                     <div className="my-esg-grid-title">ETHICS</div>
                     <div>
                       We maintain highest ethical standards in interactions with
@@ -843,6 +874,38 @@ export const query = graphql`
     }
 
     investorsDaily: file(relativePath: { eq: "investors-daily.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 500) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+
+    diversityInclusion: file(relativePath: { eq: "diversity-inclusion.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 500) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+
+    supplyChain: file(relativePath: { eq: "supply-chain.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 500) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+
+    environment: file(relativePath: { eq: "environment.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 500) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+
+    ethics: file(relativePath: { eq: "ethics.png" }) {
       childImageSharp {
         fluid(maxWidth: 500) {
           ...GatsbyImageSharpFluid
