@@ -17,6 +17,18 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                   members {
                     name
                     title
+                    type
+                    since
+                    age
+                    other {
+                      title 
+                    }
+                    boardComittees {
+                      title
+                    } 
+                    keyQualifications {
+                      title
+                    }
                     bio
                     slug
                     image {

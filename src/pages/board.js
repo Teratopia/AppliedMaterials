@@ -99,6 +99,7 @@ export default class extends React.Component {
   }
 
   memberItem(el, idx) {
+    debugger
     return (
       <Link to={"/board/" + el.slug}>
         <div className="my-board-member" key={el.name}>
@@ -307,6 +308,18 @@ export const query = graphql`
         members {
           name
           title
+          type
+          since
+          age
+          other {
+            title 
+          }
+          boardComittees {
+            title
+          } 
+          keyQualifications {
+            title
+          }
           slug
           bio
           image {
