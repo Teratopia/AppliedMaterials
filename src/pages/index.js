@@ -367,6 +367,7 @@ const Styles = styled.div`
       &.wider2 {
         height: 123px;
         max-width: 130px;
+        margin-bottom: 13px;
       }
     }
 
