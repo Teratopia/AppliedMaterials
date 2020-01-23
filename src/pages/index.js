@@ -699,9 +699,9 @@ export default class extends React.Component {
               />
               <Img
                 fluid={investorsDaily}
-                alt="Fotune World's Most Admired Companies"
+                alt="Investor Business Daily"
               />
-              <Img fixed={best} className="best" alt="Barron's 100 Most Sustainable" />
+              <Img fixed={best} className="best" alt="Best Places To Work" />
               
             </div>
 

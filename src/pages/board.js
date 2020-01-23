@@ -205,7 +205,7 @@ export default class extends React.Component {
                   <Img
                     fluid={expertise}
                     alt="Nominee Expertise"
-                    style={{ marginBottom: 24 }}
+                    style={{ marginBottom: 24, marginTop: -6 }}
                   />
                 </div>
 
@@ -338,7 +338,7 @@ export const query = graphql`
       }
     }
 
-    expertise: file(relativePath: { eq: "expertise.png" }) {
+    expertise: file(relativePath: { eq: "sectors-updates.png" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
@@ -361,6 +361,8 @@ export const query = graphql`
         }
       }
     }
+
+
 
     members: markdownRemark(frontmatter: { title: { eq: "board" } }) {
       frontmatter {
