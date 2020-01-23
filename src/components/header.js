@@ -11,7 +11,6 @@ const Styles = styled.div`
   background: #fff;
   box-shadow: 0px 0px 8px -2px grey;
   height: 64px;
-  padding: 0px 4px;
 
   @media screen and (min-width: ${theme.breakpoints.mid}px) {
     height: 92px;

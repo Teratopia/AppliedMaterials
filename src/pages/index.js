@@ -111,7 +111,6 @@ const Styles = styled.div`
   .my-info-grid {
     margin: 24px auto;
     display: grid;
-    max-width: 940px;
     grid-template-columns: repeat(auto-fill, minmax(33%, 1fr));
 
     .mini-grid {
@@ -196,9 +195,9 @@ const Styles = styled.div`
         }
   
         @media screen and (min-width: ${theme.breakpoints.min}px) {
-          padding: 14px;
-          width: 140px;
           float: right;
+          padding: 12px;
+          width: 180px;
           font-size: 16px;
         }
       }
@@ -471,8 +470,9 @@ export default class extends React.Component {
                   </div>
                 </div>
 
-                <div className="info-grid-section">
-                  <div className="mini-grid">
+                <div style={{textAlign: "center"}}>
+                  <div style={{display: "inline-block"}}>
+                  <div className="mini-grid" style={{textAlign: "left"}}>
                     <div className="my-icon">
                       <Img fluid={locationIcon} alt="Location Icon" />
                     </div>
@@ -482,6 +482,7 @@ export default class extends React.Component {
                       <div>3050 Bowers Avenue, Building 1</div>
                       <div>Santa Clara, CA 95054</div>
                     </div>
+                  </div>
                   </div>
                 </div>
 
@@ -902,7 +903,7 @@ export const query = graphql`
       }
     }
 
-    ethics: file(relativePath: { eq: "ethics.png" }) {
+    ethics: file(relativePath: { eq: "scale.png" }) {
       childImageSharp {
         fluid(maxWidth: 500) {
           ...GatsbyImageSharpFluid
