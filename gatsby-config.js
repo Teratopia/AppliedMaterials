@@ -17,14 +17,15 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-csp`,
     `gatsby-transformer-remark`,
-    {
-      resolve: `gatsby-plugin-csp`,
-      options: {
-        directives: {
-          "style-src": "'self' 'unsafe-inline'",
-        }
-      }
-    },
+    `gatsby-plugin-csp`,
+    // {
+    //   resolve: ,
+    //   options: {
+    //     directives: {
+    //       "style-src": "'self' 'unsafe-inline'",
+    //     }
+    //   }
+    // },
     
 
     {
