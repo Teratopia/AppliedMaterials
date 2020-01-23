@@ -122,6 +122,12 @@ export default class extends React.Component {
     }
   }
 
+  type ( type ) {
+    if ( type ) {
+      return ( <li>{ type }</li> )
+    }
+  }
+
   memberItem(el, idx) {
     return (
       <Link to={"/board/" + el.slug}>
@@ -137,7 +143,10 @@ export default class extends React.Component {
                 <ul>
                   <li>{ el.since }</li>
                   <li>Age { el.age }</li>
-                  <li>{ el.type }</li>
+                  {
+                    this.type( el.type )
+                    
+                  }
                 </ul>
               </small>
             </div>

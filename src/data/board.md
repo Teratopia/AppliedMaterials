@@ -3,7 +3,7 @@ title: board
 members:
 - name: Thomas J. Iannotti
   slug: thomas-iannotti
-  image: ../images/board/thomas-iannotti.jpg 
+  image: ../images/iannotti.png 
   title: Senior Vice President and General Manager, Enterprise Services, Hewlett-Packard Company (retired)
   age: 63
   type: Chairman of the Board, Independent Director
@@ -21,7 +21,7 @@ members:
   bio: Thomas J. Iannotti was elected Chairman of the Board of Directors of Applied Materials in March 2017. He previously served as Senior Vice President and General Manager, Enterprise Services, for Hewlett-Packard Company, a technology solutions provider to consumers, businesses and institutions globally, from February 2009 until his retirement in October 2011. From 2002 to January 2009, Mr. Iannotti held various executive positions at Hewlett-Packard, including Senior Vice President and Managing Director, Enterprise Business Group, Americas. From 1978 to 2002, Mr. Iannotti worked at Digital Equipment Corporation, a vendor of computer systems and software, and at Compaq Computer Corporation, a supplier of personal computing systems, after its acquisition of Digital Equipment Corporation. Mr. Iannotti currently serves as a member of the board of directors of Atento S.A. Mr. Iannotti joined the Applied Materials board of directors in 2005.
 - name: Gary E. Dickerson
   slug: gary-dickerson
-  image: ../images/board/gary-dickerson.jpg 
+  image: ../images/dickerson.png 
   title: President and Chief Executive Officer, Applied Materials, Inc.
   age: 62
   since: Director since 2013
@@ -37,7 +37,7 @@ members:
 
 - name: Judy Bruner
   slug: judy-bruner
-  image: ../images/board/judy-bruner.jpg 
+  image: ../images/bruner.jpg 
   title: Executive Vice President, Administration and Chief Financial Officer, SanDisk Corporation (retired)
   age: 61
   type: Independent Director
@@ -74,13 +74,13 @@ members:
     - title: Mergers and acquisitions, capital markets
     - title: Strategy and innovation
     - title: Public company board experience
-  image: ../images/board/eric-chen.jpg 
+  image: ../images/chen.png
   title: Partner, SB Investment Advisers (US), Inc.
   bio: >
     Eric Chen is a Managing Partner of SB Investment Advisers (US), Inc. (“SBIA”), an investment adviser focused on investments in the technology sector, since March 2018. Prior to joining SBIA, Dr. Chen was the Chief Executive Officer and Co-Founder of BaseBit Technologies, Inc., a technology company in Silicon Valley. He served as CEO of BaseBit Technologies since it was founded in October 2015, except from March 2016 until December 2017, when BaseBit was a portfolio company of Team Curis Group, a group of integrated biotechnology and data technology companies and laboratories, during which time Dr. Chen served as CEO of Team Curis Group. From 2008to 2015, Dr. Chen served as a managing director of Silver Lake, a leading private investment firm focused on technology-enabled and related growth industries. Prior to Silver Lake, Dr. Chen was a senior vice president and served on the executive committee of ASML Holding N.V. He joined ASML following its 2007 acquisition of Brion Technologies, Inc., a company he co-founded in 2002 and served as Chief Executive Officer. Prior to Brion Technologies, Dr. Chen was a senior vice president at J.P. Morgan. He served as a member of the boards of directors of Qihoo 360Technology Co. Ltd. from 2014 to July 2016 and of Varian Semiconductor Equipment Associates, Inc. (“Varian”) from 2004 until its acquisition by Applied in 2011. Dr. Chen also currently serves as a member of the board of directors of Che Hao Duo Group.
 - name: Aart J. de Geus
   slug: aart-de-geus
-  image: ../images/board/aart-de-geus.jpg 
+  image: ../images/aart.png 
   title: Chairman and Co-Chief Executive Officer, Synopsis, Inc.
   age: 65
   type: Independent Director
@@ -104,7 +104,7 @@ members:
 
 - name: Stephen R. Forrest
   slug: stephen-forrest
-  image: ../images/board/stephen-forrest.jpg 
+  image: ../images/forrest.png
   title: Professor of Electrical Engineering & Computer Science, Physics, and Materials Science & Engineering, University of Michigan
   age: 69
   type: Independent Director
@@ -125,7 +125,7 @@ members:
 
 - name: Alexander A. Karsner
   slug: alexander-karsner
-  image: ../images/board/alex-karsner.jpg 
+  image: ../images/karsner.png 
   title: Executive Chairman Elemental Labs
   age: 52
   type: Senior Strategist, Independent Director
@@ -146,7 +146,7 @@ members:
 
 - name: Adrianna C. Ma
   slug: adrianna-ma
-  image: ../images/board/adrianna-ma.jpg 
+  image: ../images/ma.png
   title: Managing Partner, Haleakala Holdings LLC
   age: 46
   type: Independent Director
@@ -165,7 +165,7 @@ members:
     Adrianna C. Ma has served as Managing Partner of Haleakala Holdings LLC, her personal investment firm, since July 2019. From May 2015 to June 2019, she was a Managing Partner at the Fremont Group, a private investment company where she was responsible for a portfolio of funds, including its investment strategy, asset allocation, manager selection and risk management. From 2005 to April 2015, Ms. Ma served as a Managing Director at General Atlantic LLC, a global growth equity firm, where she invested in and served on the boards of directors of technology-enabled growth companies around the world. Prior to joining General Atlantic, Ms. Ma worked at Morgan Stanley & Co. Incorporated as an investment banker in the Mergers, Acquisitions and Restructuring Department. Ms. Ma previously served as a member of the board of directors of Jagged Peak Energy Inc. from 2019 to 2020 and C&J Energy Services, Inc. from 2013 to 2015.
 - name: Yvonne McGill
   slug: yvonne-mcgill
-  image: ../images/board/yvonne-mcgill.jpg 
+  image: ../images/mcgill.png
   title: Chief Financial Officer, Senior Vice President, Infrastructure Solutions Group & Global Financial Planning & Analysis Dell Technologies, Inc.
   age: 52
   type: Independent Director
@@ -181,7 +181,7 @@ members:
 
 - name: Scott A. McGregor
   slug: scott-mcgregor
-  image: ../images/board/scott-mcgregor.jpg 
+  image: ../images/mcgregor.png 
   title: President and Chief Executive Officer, Broadcom Corporation (retired)
   age: 52
   type: Independent Director
