@@ -29,7 +29,6 @@ module.exports = {
           "script-src": "'self'", 
           "connect-src": "'self'", 
           "img-src": "'self'",
-          "style-src": 'self',
           "font-src": 'self',
         }
       }
