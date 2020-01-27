@@ -10,7 +10,7 @@ const defaultToolbar = (toolbarSlot) => {
                 display: 'flex',
                 width: "100%",
             } },
-            // React.createElement("div", { style: { padding: '0 2px' } }, toolbarSlot.toggleSidebarButton),
+            React.createElement("div", { style: { padding: '0 2px' } }, toolbarSlot.toggleSidebarButton),
             React.createElement("div", { style: { padding: '0 2px' } }, toolbarSlot.searchPopover),
             React.createElement("div", { style: { padding: '0 2px' } }, toolbarSlot.previousPageButton),
             React.createElement("div", { style: { padding: '0 2px' } },

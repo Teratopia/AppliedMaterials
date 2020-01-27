@@ -187,12 +187,14 @@ export default class extends React.Component {
               <canvas id="canvas"></canvas>
             </div> */}
             
-
-          <Worker  workerUrl="https://unpkg.com/pdfjs-dist@2.2.228/build/pdf.worker.min.js">
-            <div style={{ height: '100vh', overflowY: "scroll", position: "relative" }}>
+          
+          <div style={{position: "relative"}}>
+          <Worker >
+            <div style={{ height: '100vh', overflowY: "scroll", position: "relative", marginBottom: 100 }}>
               <Viewer fileUrl={ require("../images/applied-proxy.pdf")} />
             </div>
           </Worker>
+          </div>
           
           </Page>
         </Styles>

@@ -17,7 +17,12 @@ const defaultLayout = (isSidebarOpened, main, toolbar, sidebar) => {
                 display: 'flex',
                 gridArea: 'toolbar',
                 justifyContent: 'center',
-                padding: '4px',
+                padding: '0px 4px',
+                marginTop: -1,
+                position: "fixed",
+                width: "100%",
+                zIndex: 400,
+                 
             } }, toolbar),
         React.createElement("div", { style: {
                 borderRight: '1px solid rgba(0, 0, 0, 0.2)',
