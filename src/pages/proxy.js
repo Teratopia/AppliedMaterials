@@ -8,8 +8,10 @@ import Page from "../components/page"
 import SEO from "../components/seo"
 import styled from "@emotion/styled"
 // import Viewer from 'pdfviewer';
-import Worker from '../../vendor/pdfviewer/Worker';
-import Viewer from '../../vendor/pdfviewer/Viewer';
+
+const isBrowser = typeof window === undefined;
+const Worker  = isBrowser ? require('../../vendor/pdfviewer/Worker') : <div />;
+const Viewer  = isBrowser ? require('../../vendor/pdfviewer/Viewer') : <div />;
 
 import theme from "../theme.js";
 
