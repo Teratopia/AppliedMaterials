@@ -1,14 +1,20 @@
 import React from "react"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
+// import pdfobject from "pdfobject"
+// import Viewer from "../components/viewer"
 import Container from "../components/container"
 import Page from "../components/page"
 import SEO from "../components/seo"
 import styled from "@emotion/styled"
+// import Viewer from 'pdfviewer';
+import Worker from '../../vendor/pdfviewer/Worker';
+import Viewer from '../../vendor/pdfviewer/Viewer';
+
 import theme from "../theme.js";
 
-const pdfjsLib = require('pdfjs-dist');
-pdfjsLib.GlobalWorkerOptions.workerSrc = '//mozilla.github.io/pdf.js/build/pdf.worker.js';
+// const pdfjsLib = require('pdfjs-dist');
+// pdfjsLib.GlobalWorkerOptions.workerSrc = '//mozilla.github.io/pdf.js/build/pdf.worker.js';
 
 const Styles = styled.div`
   .my-documents {
@@ -62,10 +68,6 @@ const Styles = styled.div`
     }
   }
 
-  #canvas {
-    height: 100%;
-    width: 100%;
-  }
 
   .my-breadcrumbs a {
     color: #777;
@@ -88,14 +90,25 @@ export default class extends React.Component {
   }
 
   componentDidMount () {
-    // var loadingTask = pdfjsLib.getDocument(require("../images/pdf/sample.pdf"));
+    // var loadingTask = pdfjsLib.getDocument(require("../images/applied-proxy.pdf"));
     // loadingTask.promise.then( this.loadingTaskHandler.bind(this) );
+
+    // setTimeout(() => {
+    //   var myIframe = document.getElementById('my-frame');
+    // myIframe.onload = function () {
+    //     myIframe.contentWindow.scrollTo(0,1000);
+    // }
+    // }, 0);
+    
   }
 
   loadingTaskHandler ( pdf ) {
-    pdf.getPage(2).then(function(page) {
+    // pdfInstance = pdf;
+    // totalPagesCount = pdf.numPages;
+
+    pdf.getPage(1).then(function(page) {
       
-      var scale = 10;
+      var scale = 1;
       var viewport = page.getViewport({scale: scale});
       var canvas = document.getElementById('canvas');
       var context = canvas.getContext('2d');
@@ -164,21 +177,30 @@ export default class extends React.Component {
               }
             </div>
 
-            {/* <div>
-              <canvas id="canvas"></canvas>
-            </div> */}
+          
 
             
           </Container>
-          <iframe src="https://mozilla.github.io/pdf.js/web/viewer.html" style={{width: "100%", height: "100vh", marginBottom: 24}}>
+            {/* <Viewer /> */}
+            {/* <iframe title="my-frame" id="my-frame" src={require("../images/applied-proxy.pdf")} style={{width: "100%", height: "100vh" }}/> */}
+            {/* <div className="my-pdf">
+              <canvas id="canvas"></canvas>
+            </div> */}
+            
 
-            </iframe>
+          <Worker  workerUrl="https://unpkg.com/pdfjs-dist@2.2.228/build/pdf.worker.min.js">
+            <div style={{ height: '100vh', overflowY: "scroll", position: "relative" }}>
+              <Viewer fileUrl={ require("../images/applied-proxy.pdf")} />
+            </div>
+          </Worker>
+          
           </Page>
         </Styles>
       </Layout>
     )
   }
 }
+
 
 export const query = graphql`
   {

@@ -1,9 +1,15 @@
 const graphql = require(`graphql`)
 const path = require(`path`)
-// exports.onPreBuild = async ({ actions }) => {
-//   const { createNode } = actions;
 
-// }
+exports.onCreateWebpackConfig = ({ stage, actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        'pdfviewer': './vendors/src',
+      },
+    },
+  })
+}
 
 
 exports.createPages = async ({ graphql, actions, reporter }) => {

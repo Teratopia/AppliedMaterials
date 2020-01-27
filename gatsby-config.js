@@ -8,13 +8,13 @@ module.exports = {
   },
 
   
-  
   plugins: [
     
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`,
+    // `gatsby-plugin-typescript`,
     // `gatsby-plugin-csp`,
     `gatsby-transformer-remark`,
     
@@ -44,14 +44,7 @@ module.exports = {
     },
 
 
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images/board`,
-      },
-    },
-
+   
     {
       resolve: `gatsby-source-filesystem`,
       options: {
