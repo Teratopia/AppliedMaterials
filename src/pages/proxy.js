@@ -8,12 +8,12 @@ import Page from "../components/page"
 import SEO from "../components/seo"
 import styled from "@emotion/styled"
 // import Viewer from 'pdfviewer';
-
-const isBrowser = typeof window === undefined;
-const Worker  = isBrowser ? require('../../vendor/pdfviewer/Worker') : <div />;
-const Viewer  = isBrowser ? require('../../vendor/pdfviewer/Viewer') : <div />;
-
 import theme from "../theme.js";
+
+const isBrowser = typeof window !== undefined;
+const Worker = isBrowser ? require('../../vendor/pdfviewer/Worker') : "div";
+const Viewer = isBrowser ? require('../../vendor/pdfviewer/Viewer') : "div";
+
 
 // const pdfjsLib = require('pdfjs-dist');
 // pdfjsLib.GlobalWorkerOptions.workerSrc = '//mozilla.github.io/pdf.js/build/pdf.worker.js';
@@ -161,6 +161,7 @@ export default class extends React.Component {
   }
 
   render() {
+ 
     return (
       <Layout>
         <SEO title="" />
@@ -188,15 +189,15 @@ export default class extends React.Component {
             {/* <div className="my-pdf">
               <canvas id="canvas"></canvas>
             </div> */}
-            
-          
-          <div style={{position: "relative"}}>
-          <Worker >
-            <div style={{ height: '100vh', overflowY: "scroll", position: "relative", marginBottom: 100 }}>
-              <Viewer fileUrl={ require("../images/applied-proxy.pdf")} />
-            </div>
-          </Worker>
-          </div>
+            {/* <div style={{position: "relative"}}>
+            <Worker >
+              <div style={{ height: '100vh', overflowY: "scroll", position: "relative", marginBottom: 100 }}>
+                <Viewer fileUrl={ require("../images/applied-proxy.pdf")} />
+              </div>
+            </Worker>
+            </div> */}
+                
+        
           
           </Page>
         </Styles>
