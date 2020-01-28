@@ -13,8 +13,8 @@ import theme from "../theme.js";
 
 
 
-// const pdfjsLib = require('pdfjs-dist');
-// pdfjsLib.GlobalWorkerOptions.workerSrc = '//mozilla.github.io/pdf.js/build/pdf.worker.js';
+const pdfjsLib = require('pdfjs-dist');
+pdfjsLib.GlobalWorkerOptions.workerSrc = '//mozilla.github.io/pdf.js/build/pdf.worker.js';
 
 const Styles = styled.div`
   .my-documents {
@@ -77,6 +77,10 @@ const Styles = styled.div`
     }
   }
 
+  canvas {
+    width: 100%;
+  }
+
   
 `
 
@@ -105,28 +109,37 @@ export default class extends React.Component {
   loadingTaskHandler ( pdf ) {
     // pdfInstance = pdf;
     // totalPagesCount = pdf.numPages;
-
-    pdf.getPage(1).then(function(page) {
+    // pdf.getPage(3).then(function(page) {
       
-      var scale = 1;
-      var viewport = page.getViewport({scale: scale});
-      var canvas = document.getElementById('canvas');
-      var context = canvas.getContext('2d');
-      canvas.height = viewport.height;
-      canvas.width = viewport.width;
+    //   var scale = 1;
+    //   var viewport = page.getViewport({scale: scale});
+    //   var canvas = document.getElementById('canvas');
+    //   var context = canvas.getContext('2d');
+    //   canvas.height = viewport.height;
+    //   canvas.width = viewport.width;
   
-      // Render PDF page into canvas context
-      var renderContext = {
-        canvasContext: context,
-        viewport: viewport
-      };
-      var renderTask = page.render(renderContext);
-      renderTask.promise.then(function () {
-        console.log('Page rendered');
-      });
-    });
+    //   // Render PDF page into canvas context
+    //   var renderContext = {
+    //     canvasContext: context,
+    //     viewport: viewport
+    //   };
+    //   var renderTask = page.render(renderContext);
+    //   renderTask.promise.then(function () {
+    //     console.log('Page rendered');
+    //   });
+    // });
+
+    // this.setState({
+    //   pdf
+    // })
   
   }
+
+  // next ( e ){
+  //   debugger
+  // }
+
+
 
   toggleActive ( e) {
     document.querySelectorAll(".my-menu-item.active")[0].classList.toggle("active");
@@ -193,7 +206,11 @@ export default class extends React.Component {
           </Container>
             {/* <Viewer /> */}
             {/* <iframe title="my-frame" id="my-frame" src={require("../images/applied-proxy.pdf")} style={{width: "100%", height: "100vh" }}/> */}
-            {/* <div className="my-pdf">
+{/* 
+              <div className="button is-link" onClick={ this.next.bind(this) }>
+                Next
+              </div>
+            <div className="my-pdf">
               <canvas id="canvas"></canvas>
             </div> */}
             

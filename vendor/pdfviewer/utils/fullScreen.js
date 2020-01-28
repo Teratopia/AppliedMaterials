@@ -1,3 +1,5 @@
+import { window, document } from "browser-monads";
+
 var Api;
 (function (Api) {
     Api[Api["ExitFullScreen"] = 0] = "ExitFullScreen";
