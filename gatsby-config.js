@@ -14,7 +14,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`,
-    // `gatsby-plugin-typescript`,
+    `gatsby-plugin-typescript`,
     // `gatsby-plugin-csp`,
     `gatsby-transformer-remark`,
     

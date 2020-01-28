@@ -8,7 +8,7 @@ import styled from "@emotion/styled"
 import Worker from "../../vendor/pdfviewer/Worker"
 import Viewer from "../../vendor/pdfviewer/Viewer"
 import theme from "../theme.js";
-import { defaultLayout } from '../../vendor/pdfviewer';
+// import { defaultLayout } from '../../vendor/pdfviewer';
 
 
 
@@ -170,7 +170,7 @@ handleScroll ( e ) {
 
 
           <div className="my-target" style={{position: "relative", }}>
-              <Worker>
+              <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.2.228/build/pdf.worker.min.js">
           <div style={{ height: '100vh', overflowY: "scroll", position: "relative", marginBottom: 100 }}>
           <div style={{position: "relative"}}>
             <Viewer fileUrl={ require("../images/applied-proxy.pdf")}  />
