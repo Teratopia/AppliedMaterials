@@ -10,20 +10,21 @@ const defaultLayout = (isSidebarOpened, main, toolbar, sidebar) => {
             overflow: 'hidden',
             width: '100%',
         } },
-        React.createElement("div", { style: {
-                alignItems: 'center',
-                backgroundColor: '#EEE',
-                borderBottom: '1px solid rgba(0, 0, 0, .1)',
-                display: 'flex',
-                gridArea: 'toolbar',
-                justifyContent: 'center',
-                padding: '0px 4px',
-                marginTop: -1,
-                position: "fixed",
-                width: "100%",
-                zIndex: 400,
-                 
-            } }, toolbar),
+        React.createElement("div" , { style: {position: "relative"}}, React.createElement("div", { style: {
+            alignItems: 'center',
+            backgroundColor: '#EEE',
+            borderBottom: '1px solid rgba(0, 0, 0, .1)',
+            display: 'flex',
+            gridArea: 'toolbar',
+            justifyContent: 'center',
+            padding: '0px 4px',
+            top: -1,
+            position: "fixed",
+            width: "100%",
+            zIndex: 40000
+             
+        } }, toolbar)),
+        
         React.createElement("div", { style: {
                 borderRight: '1px solid rgba(0, 0, 0, 0.2)',
                 display: isSidebarOpened ? 'flex' : 'none',

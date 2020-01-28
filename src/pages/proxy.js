@@ -10,9 +10,8 @@ import styled from "@emotion/styled"
 // import Viewer from 'pdfviewer';
 import theme from "../theme.js";
 
-const isBrowser = typeof window !== undefined;
-const Worker = isBrowser ? require('../../vendor/pdfviewer/Worker') : "div";
-const Viewer = isBrowser ? require('../../vendor/pdfviewer/Viewer') : "div";
+import Worker from "../../vendor/pdfviewer/Worker"
+import Viewer from "../../vendor/pdfviewer/Viewer"
 
 
 // const pdfjsLib = require('pdfjs-dist');
@@ -189,13 +188,15 @@ export default class extends React.Component {
             {/* <div className="my-pdf">
               <canvas id="canvas"></canvas>
             </div> */}
-            {/* <div style={{position: "relative"}}>
+
             <Worker >
               <div style={{ height: '100vh', overflowY: "scroll", position: "relative", marginBottom: 100 }}>
+              <div style={{position: "relative", background: "red"}}>
                 <Viewer fileUrl={ require("../images/applied-proxy.pdf")} />
+                </div>
               </div>
             </Worker>
-            </div> */}
+            
                 
         
           
