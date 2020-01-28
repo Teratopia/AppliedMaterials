@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 // import pdfobject from "pdfobject"
 // import Viewer from "../components/viewer"
+import MyViewer from "../components/myViewer"
 import Container from "../components/container"
 import Page from "../components/page"
 import SEO from "../components/seo"
@@ -10,8 +11,6 @@ import styled from "@emotion/styled"
 // import Viewer from 'pdfviewer';
 import theme from "../theme.js";
 
-import Worker from "../../vendor/pdfviewer/Worker"
-import Viewer from "../../vendor/pdfviewer/Viewer"
 
 
 // const pdfjsLib = require('pdfjs-dist');
@@ -159,6 +158,15 @@ export default class extends React.Component {
 
   }
 
+  viewer ( ) {
+    
+    if (typeof window !== undefined) {
+      return (
+        <MyViewer />
+      )
+    }
+  }
+
   render() {
  
     return (
@@ -188,16 +196,10 @@ export default class extends React.Component {
             {/* <div className="my-pdf">
               <canvas id="canvas"></canvas>
             </div> */}
-
-            <Worker >
-              <div style={{ height: '100vh', overflowY: "scroll", position: "relative", marginBottom: 100 }}>
-              <div style={{position: "relative"}}>
-                <Viewer fileUrl={ require("../images/applied-proxy.pdf")} />
-                </div>
-              </div>
-            </Worker>
             
-                
+           {
+             this.viewer()
+           }
         
           
           </Page>

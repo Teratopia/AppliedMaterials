@@ -9,8 +9,7 @@ const defaultLayout = (isSidebarOpened, main, toolbar, sidebar) => {
             height: '100%',
             overflow: 'hidden',
             width: '100%',
-            position: "fixed"
-
+            position: "fixed",
         } },
         React.createElement("div", { style: {
             alignItems: 'center',
@@ -20,8 +19,7 @@ const defaultLayout = (isSidebarOpened, main, toolbar, sidebar) => {
             gridArea: 'toolbar',
             justifyContent: 'center',
             padding: '0px 4px',
-            // top: 0,
-            // position: "absolute",
+            // position: "fixed",
             // width: "100%",
             // zIndex: 40000
              
