@@ -37,7 +37,7 @@ const defaultToolbar = (toolbarSlot) => {
             React.createElement("div", { style: { padding: '0 2px' } }, toolbarSlot.fullScreenButton),
             // React.createElement("div", { style: { padding: '0 2px' } }, toolbarSlot.openFileButton),
             React.createElement("div", { style: { padding: '0 2px' } }, toolbarSlot.downloadButton),
-            // React.createElement("div", { style: { padding: '0 2px' } }, toolbarSlot.moreActionsPopover)
+            React.createElement("div", { style: { padding: '0 2px' } }, toolbarSlot.moreActionsPopover)
             )));
 };
 export default defaultToolbar;
