@@ -1,20 +1,17 @@
 import React from "react"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
-// import pdfobject from "pdfobject"
-// import Viewer from "../components/viewer"
-import MyViewer from "../components/myViewer"
 import Container from "../components/container"
 import Page from "../components/page"
 import SEO from "../components/seo"
 import styled from "@emotion/styled"
-// import Viewer from 'pdfviewer';
+import Worker from "../../vendor/pdfviewer/Worker"
+import Viewer from "../../vendor/pdfviewer/Viewer"
 import theme from "../theme.js";
+import { defaultLayout } from '../../vendor/pdfviewer';
 
 
 
-const pdfjsLib = require('pdfjs-dist');
-pdfjsLib.GlobalWorkerOptions.workerSrc = '//mozilla.github.io/pdf.js/build/pdf.worker.js';
 
 const Styles = styled.div`
   .my-documents {
@@ -94,51 +91,14 @@ export default class extends React.Component {
   }
 
   componentDidMount () {
-    // var loadingTask = pdfjsLib.getDocument(require("../images/applied-proxy.pdf"));
-    // loadingTask.promise.then( this.loadingTaskHandler.bind(this) );
+    window.onscroll = this.handleScroll.bind(this)
+}
 
-    // setTimeout(() => {
-    //   var myIframe = document.getElementById('my-frame');
-    // myIframe.onload = function () {
-    //     myIframe.contentWindow.scrollTo(0,1000);
-    // }
-    // }, 0);
-    
-  }
+handleScroll ( e ) {
+  document.querySelectorAll(".my-target")[0].style.top = -e.currentTarget.scrollY + "px" 
+}
 
-  loadingTaskHandler ( pdf ) {
-    // pdfInstance = pdf;
-    // totalPagesCount = pdf.numPages;
-    // pdf.getPage(3).then(function(page) {
-      
-    //   var scale = 1;
-    //   var viewport = page.getViewport({scale: scale});
-    //   var canvas = document.getElementById('canvas');
-    //   var context = canvas.getContext('2d');
-    //   canvas.height = viewport.height;
-    //   canvas.width = viewport.width;
-  
-    //   // Render PDF page into canvas context
-    //   var renderContext = {
-    //     canvasContext: context,
-    //     viewport: viewport
-    //   };
-    //   var renderTask = page.render(renderContext);
-    //   renderTask.promise.then(function () {
-    //     console.log('Page rendered');
-    //   });
-    // });
-
-    // this.setState({
-    //   pdf
-    // })
-  
-  }
-
-  // next ( e ){
-  //   debugger
-  // }
-
+ 
 
 
   toggleActive ( e) {
@@ -148,6 +108,8 @@ export default class extends React.Component {
     this.setState({
       current: e.currentTarget.dataset.current
     })
+
+
   }
 
   menuItem ( el, idx ) {
@@ -158,7 +120,7 @@ export default class extends React.Component {
     }
 
     return (
-      <div className={"my-menu-item " + active} key={ el.title } data-current={el.title} onClick={ this.toggleActive.bind(this) }>
+      <div className={"my-menu-item " + active} key={ el.title }  data-current={el.title} onClick={ this.toggleActive.bind(this) }>
         <div className="cell">
         {
           el.title
@@ -173,6 +135,15 @@ export default class extends React.Component {
 
 
   render() {
+
+    // const layout = ( isSidebarOpened, main, RenderToolbar,sidebar) => {
+    //   return React.createElement(  defaultLayout(
+    //     isSidebarOpened,
+    //     main,
+    //     sidebar,
+    // ))
+     
+  // };
  
     return (
       <Layout>
@@ -196,17 +167,17 @@ export default class extends React.Component {
 
             
           </Container>
-            {/* <Viewer /> */}
-            {/* <iframe title="my-frame" id="my-frame" src={require("../images/applied-proxy.pdf")} style={{width: "100%", height: "100vh" }}/> */}
-{/* 
-              <div className="button is-link" onClick={ this.next.bind(this) }>
-                Next
-              </div>
-            <div className="my-pdf">
-              <canvas id="canvas"></canvas>
-            </div> */}
-            
-             <MyViewer />
+
+
+          <div className="my-target" style={{position: "relative", }}>
+              <Worker>
+          <div style={{ height: '100vh', overflowY: "scroll", position: "relative", marginBottom: 100 }}>
+          <div style={{position: "relative"}}>
+            <Viewer fileUrl={ require("../images/applied-proxy.pdf")}  />
+            </div>
+          </div>
+        </Worker>
+        </div>
         
           
           </Page>
@@ -223,6 +194,7 @@ export const query = graphql`
       frontmatter {
         documents {
           title
+          page
         }
       }
     }
