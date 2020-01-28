@@ -90,15 +90,7 @@ export default class extends React.Component {
     this.state.materials =  props.data.materials.frontmatter.documents;
   }
 
-  componentDidMount () {
-    window.onscroll = this.handleScroll.bind(this)
-}
 
-handleScroll ( e ) {
-  document.querySelectorAll(".my-target")[0].style.top = -e.currentTarget.scrollY + "px" 
-}
-
- 
 
 
   toggleActive ( e) {

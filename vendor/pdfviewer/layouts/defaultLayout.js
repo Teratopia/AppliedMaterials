@@ -8,8 +8,8 @@ const defaultLayout = (isSidebarOpened, main, toolbar, sidebar) => {
             gridTemplateRows: '40px calc(100% - 40px)',
             height: '100%',
             overflow: 'hidden',
-            width: '100%',
-            position: "fixed",
+            // width: '100%',
+            // position: "fixed",
         } },
         React.createElement("div", { style: {
             alignItems: 'center',
