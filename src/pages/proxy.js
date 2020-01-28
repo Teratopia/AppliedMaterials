@@ -191,7 +191,7 @@ export default class extends React.Component {
 
             <Worker >
               <div style={{ height: '100vh', overflowY: "scroll", position: "relative", marginBottom: 100 }}>
-              <div style={{position: "relative", background: "red"}}>
+              <div style={{position: "relative"}}>
                 <Viewer fileUrl={ require("../images/applied-proxy.pdf")} />
                 </div>
               </div>

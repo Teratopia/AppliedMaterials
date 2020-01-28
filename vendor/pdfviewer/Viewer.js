@@ -7,6 +7,7 @@ import PageSizeCalculator from './PageSizeCalculator';
 import downloadFile from './utils/downloadFile';
 import ViewerInner from './ViewerInner';
 const Viewer = ({ fileUrl, layout, localization }) => {
+    
     const [file, setFile] = React.useState({
         data: fileUrl,
         name: fileUrl,

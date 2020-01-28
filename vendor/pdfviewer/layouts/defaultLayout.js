@@ -9,8 +9,10 @@ const defaultLayout = (isSidebarOpened, main, toolbar, sidebar) => {
             height: '100%',
             overflow: 'hidden',
             width: '100%',
+            position: "fixed"
+
         } },
-        React.createElement("div" , { style: {position: "relative"}}, React.createElement("div", { style: {
+        React.createElement("div", { style: {
             alignItems: 'center',
             backgroundColor: '#EEE',
             borderBottom: '1px solid rgba(0, 0, 0, .1)',
@@ -18,12 +20,12 @@ const defaultLayout = (isSidebarOpened, main, toolbar, sidebar) => {
             gridArea: 'toolbar',
             justifyContent: 'center',
             padding: '0px 4px',
-            top: -1,
-            position: "fixed",
-            width: "100%",
-            zIndex: 40000
+            // top: 0,
+            // position: "absolute",
+            // width: "100%",
+            // zIndex: 40000
              
-        } }, toolbar)),
+        } }, toolbar),
         
         React.createElement("div", { style: {
                 borderRight: '1px solid rgba(0, 0, 0, 0.2)',

@@ -24,6 +24,7 @@ const defaultToolbar = (toolbarSlot) => {
                 flexGrow: 1,
                 flexShrink: 1,
                 justifyContent: 'center',
+                
             } },
             React.createElement("div", { style: { padding: '0 2px' } }, toolbarSlot.zoomOutButton),
             React.createElement("div", { style: { padding: '0 2px' } }, toolbarSlot.zoomPopover),
