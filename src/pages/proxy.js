@@ -85,8 +85,8 @@ export default class extends React.Component {
   constructor( props ) {
     super()
     this.state = {}
-    this.state.current = "SUMMARY"
-    this.state.active = {name: "SUMMARY"}
+    this.state.current = "TABLE OF CONTENTS"
+    this.state.active = {name: "TABLE OF CONTENTS"}
     this.state.materials =  props.data.materials.frontmatter.documents;
   }
 

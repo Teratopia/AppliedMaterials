@@ -17,8 +17,8 @@ documents:
   page: 8
 - title: RATIFICATION OF AUDITOR
   page: 8
-- title: MANAGEMENT PROPOSAL
+- title: ACTION BY WRITTEN CONSENT PROPOSAL
   page: 8
-- title: FAQ / APPENDIX OTHER MATTERS
+- title: FAQ / OTHER MATTERS
   page: 8
   
