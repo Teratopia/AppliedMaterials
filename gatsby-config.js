@@ -18,21 +18,21 @@ module.exports = {
     // `gatsby-plugin-csp`,
     `gatsby-transformer-remark`,
     
-    {
-      resolve: `gatsby-plugin-csp`,
-      options: {
-        mergeStyleHashes: false, 
-        directives: {
-          "style-src": "'self' 'unsafe-inline'",
-          "img-src": "'self'",
-          "default-src": "'none'", 
-          "script-src": "'self'", 
-          "connect-src": "'self'", 
-          "img-src": "'self'",
-          "font-src": 'self',
-        }
-      }
-    },
+    // {
+    //   resolve: `gatsby-plugin-csp`,
+    //   options: {
+    //     mergeStyleHashes: false, 
+    //     directives: {
+    //       "style-src": "'self' 'unsafe-inline'",
+    //       "img-src": "'self'",
+    //       "default-src": "'none'", 
+    //       "script-src": "'self'", 
+    //       "connect-src": "'self'", 
+    //       "img-src": "'self'",
+    //       "font-src": 'self',
+    //     }
+    //   }
+    // },
     
 
     {

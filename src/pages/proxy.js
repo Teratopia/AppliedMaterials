@@ -172,7 +172,6 @@ export default class extends React.Component {
   }
 
   viewer ( ) {
-    
     if (typeof window !== undefined ) {
       return (
         <MyViewer />
