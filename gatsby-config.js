@@ -23,13 +23,13 @@ module.exports = {
       options: {
         mergeStyleHashes: false, 
         directives: {
-          "style-src": "'self' 'unsafe-inline' https://fonts.googleapis.com/css?family=Open+Sans&display=swap",
-          "img-src": "'self'",
+          "style-src": "'self' 'unsafe-inline' 'https://fonts.googleapis.com/css?family=Open+Sans&display=swap'",
+          "img-src": "'self' 'data:image/png;base64,*'",
           "default-src": "'self'", 
           "script-src": "'self'", 
           "connect-src": "'self'", 
           "img-src": "'self'",
-          "font-src": "'self' 'static/*' ",
+          "font-src": "'self' 'static/*' 'https://fonts.gstatic.com/s/opensans/v17/mem8YaGs126MiZpBA-UFWZ0bf8pkAp6a.woff2'",
         }
       }
     },

@@ -91,8 +91,6 @@ export default class extends React.Component {
   }
 
 
-
-
   toggleActive ( e) {
     document.querySelectorAll(".my-menu-item.active")[0].classList.toggle("active");
     e.currentTarget.classList.toggle("active")
@@ -100,8 +98,6 @@ export default class extends React.Component {
     this.setState({
       current: e.currentTarget.dataset.current
     })
-
-
   }
 
   menuItem ( el, idx ) {
