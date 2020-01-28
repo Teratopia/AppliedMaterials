@@ -171,13 +171,6 @@ export default class extends React.Component {
 
   }
 
-  viewer ( ) {
-    if (typeof window !== undefined ) {
-      return (
-        <MyViewer />
-      )
-    }
-  }
 
   render() {
  
@@ -213,9 +206,7 @@ export default class extends React.Component {
               <canvas id="canvas"></canvas>
             </div> */}
             
-           {
-             this.viewer()
-           }
+             <MyViewer />
         
           
           </Page>
