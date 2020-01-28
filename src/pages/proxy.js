@@ -160,7 +160,7 @@ export default class extends React.Component {
 
   viewer ( ) {
     
-    if (typeof window !== undefined) {
+    if (typeof window !== undefined && document) {
       return (
         <MyViewer />
       )
