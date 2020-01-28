@@ -29,7 +29,7 @@ module.exports = {
           "script-src": "'self'", 
           "connect-src": "'self'", 
           "img-src": "'self'",
-          "font-src": "'self' 'static/*' 'https://fonts.gstatic.com/s/opensans/v17/mem8YaGs126MiZpBA-UFWZ0bf8pkAp6a.woff2'",
+          "font-src": "'self' 'https://fonts.gstatic.com/s/opensans/v17/mem8YaGs126MiZpBA-UFWZ0bf8pkAp6a.woff2'",
         }
       }
     },
