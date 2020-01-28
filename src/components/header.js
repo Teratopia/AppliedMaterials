@@ -208,17 +208,17 @@ export default class Header extends React.Component {
             <div style={{ display: "table", height: "100%", width: "100%" }}>
               <div style={{ display: "table-cell", verticalAlign: "middle" }}>
                 <div className="home-link">
-                  <Link to="/">
+                  <a href="http://www.appliedmaterials.com/">
                     <Logo />
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>
 
             <div className="links">
             <Link to="/">HOME</Link>
-            <a href="https://res.cloudinary.com/rr-donnelley/image/upload/v1579818365/AM_2020_ProxySummary_krbohc.pdf" target="_blank" rel="noopener noreferrer">PROXY SUMMARY</a>
-            <a href=" https://ir.appliedmaterials.com/annual-report-proxy" target="_blank" ref="noopener noreferrer">ANNUAL REPORT & 10K</a>
+            <a href="https://ir.appliedmaterials.com/annual-report-proxy" target="_blank" rel="noopener noreferrer">PROXY SUMMARY</a>
+            <a href="https://ir.appliedmaterials.com/static-files/aad9bee5-4cd7-4b3c-bdb3-4d0f987852b7" target="_blank" ref="noopener noreferrer">ANNUAL REPORT & 10-K</a>
           </div>
 
             <div className="my-vote">
