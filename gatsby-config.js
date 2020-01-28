@@ -23,13 +23,13 @@ module.exports = {
       options: {
         mergeStyleHashes: false, 
         directives: {
-          "style-src": "'self' 'unsafe-inline'",
+          "style-src": "'self' 'unsafe-inline' https://fonts.googleapis.com/css?family=Open+Sans&display=swap",
           "img-src": "'self'",
-          "default-src": "'none'", 
+          "default-src": "'self'", 
           "script-src": "'self'", 
           "connect-src": "'self'", 
           "img-src": "'self'",
-          "font-src": 'self',
+          "font-src": "'self' 'static/*' ",
         }
       }
     },
