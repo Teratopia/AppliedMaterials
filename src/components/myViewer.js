@@ -10,11 +10,26 @@ export default class Component extends React.Component {
   constructor() {
     super()
     this.state = {}
+    this.state.top = 0
+  }
+
+  componentDidMount () {
+      window.onscroll = this.handleScroll.bind(this)
+  }
+
+  handleScroll ( e ) {
+    // this.setState({
+    //     top: e.currentTarget.scrollY
+    // })
+
+    document.querySelectorAll(".my-target")[0].style.top = -e.currentTarget.scrollY + "px" 
+
   }
 
   render() {
     return (
-        <Styles>
+        <Styles >
+            <div className="my-target" style={{position: "relative", }}>
               <Worker>
           <div style={{ height: '100vh', overflowY: "scroll", position: "relative", marginBottom: 100 }}>
           <div style={{position: "relative"}}>
@@ -22,6 +37,7 @@ export default class Component extends React.Component {
             </div>
           </div>
         </Worker>
+        </div>
         </Styles>
     )
   }
