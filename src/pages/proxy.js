@@ -104,7 +104,6 @@ export default class extends React.Component {
     let active;
     if ( idx == 0 ) {
       active= "active"
-      
     }
 
     return (
@@ -120,6 +119,7 @@ export default class extends React.Component {
     )
 
   }
+
 
 
   render() {

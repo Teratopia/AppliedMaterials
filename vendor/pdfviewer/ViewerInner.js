@@ -21,7 +21,8 @@ const ReturnRef = () => {
 }
 const ViewerInner = ({ doc, fileName, layout, pageSize, onDownload, onOpenFile }) => {
     const pagesRef = ReturnRef();
-    const [scale, setScale] = React.useState(pageSize.scale);
+    const [scale, setScale] = React.useState(pageSize.scale * 1.3);
+    
     const [currentPage, setCurrentPage] = React.useState(0);
     const [rotation, setRotation] = React.useState(0);
     const [keywordRegexp, setKeywordRegexp] = React.useState(EMPTY_KEYWORD_REGEXP);
