@@ -8,10 +8,6 @@ import styled from "@emotion/styled"
 import Worker from "../../vendor/pdfviewer/Worker"
 import Viewer from "../../vendor/pdfviewer/Viewer"
 import theme from "../theme.js";
-// import { defaultLayout } from '../../vendor/pdfviewer';
-
-
-
 
 const Styles = styled.div`
   .my-documents {
@@ -90,6 +86,23 @@ export default class extends React.Component {
     this.state.materials =  props.data.materials.frontmatter.documents;
   }
 
+  componentDidMount() {
+    if (typeof window !== undefined) {
+      window.onscroll = this.handleScroll.bind(this);
+    }
+    
+  }
+
+  componentWillUnmount () {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll (event) {
+    this.setState({
+      top: -(event.target.scrollingElement.scrollTop)
+    })
+  }
+
 
   toggleActive ( e) {
     document.querySelectorAll(".my-menu-item.active")[0].classList.toggle("active");
@@ -134,10 +147,10 @@ export default class extends React.Component {
   // };
  
     return (
-      <Layout>
+      <Layout >
         <SEO title="" />
         <Styles>
-          <Page>
+          <Page e>
           <Container>
             <div className="my-breadcrumbs" style={{marginBottom: "30px"}}>
               <span>
@@ -157,7 +170,7 @@ export default class extends React.Component {
           </Container>
 
 
-          <div className="my-target" style={{position: "relative", }}>
+          <div className="my-target" style={{position: "relative", top: this.state.top}}>
               <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.2.228/build/pdf.worker.min.js">
           <div style={{ height: '100vh', overflowY: "scroll", position: "relative", marginBottom: 100 }}>
           <div style={{position: "relative"}}>
