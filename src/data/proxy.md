@@ -13,7 +13,7 @@ documents:
   page: 8
 - title: COMPENSATION DISCUSSION & ANALYSIS
   page: 8
-- title: EXECUTIVE COMPENSATION
+- title: SUMMARY COMPENSATION TABLE
   page: 8
 - title: RATIFICATION OF AUDITOR
   page: 8
