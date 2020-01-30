@@ -14,7 +14,7 @@ const Styles = styled.div`
   .my-hero-grid {
     display: grid;
     grid-template-columns: 100%;
-    grid-gap: 24px;
+    grid-gap: 25px;
 
     @media screen and (min-width: 848px) {
       grid-template-columns: calc(50% - 12px) calc(50% - 12px);
@@ -422,7 +422,7 @@ export default class extends React.Component {
 
         <Styles>
           <Page>
-            <Container style={{ maxWidth: 980 }}>
+            <Container style={{ maxWidth: 920 }}>
               <div className="my-hero-grid">
                 <div className="hero-section special">
                   <BackgroundImage fluid={world} className="my-background">
