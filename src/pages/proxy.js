@@ -116,8 +116,11 @@ export default class extends React.Component {
     
     e.currentTarget.classList.toggle("active")
 
+    let current = <span>
+      / <span style={{color: theme.blue}}>{ e.currentTarget.dataset.current}</span>
+    </span>
     this.setState({
-      current: e.currentTarget.dataset.current,
+      current,
       currentPageNumber: e.currentTarget.dataset.page,
     })
 
@@ -284,7 +287,7 @@ export default class extends React.Component {
           <Container>
             <div className="my-breadcrumbs" style={{marginBottom: "30px"}}>
               <span>
-              <Link to="/">Home</Link> / <Link to="proxy">2020 Proxy Statement</Link> / <span style={{color: theme.blue}}>{this.state.current}</span>
+              <Link to="/">Home</Link> / <Link to="proxy">2020 Proxy Statement</Link> { this.state.current }
               </span>
             </div>
 

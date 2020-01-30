@@ -686,7 +686,7 @@ export default class extends React.Component {
             <Container>
 
             <div className="title has-text-centered">
-                          Recognition
+              Recognition
             </div>
 
             <div className="has-text-centered" style={{ margin: "20px 0px", padding: "0 40px" }}>
@@ -721,59 +721,7 @@ export default class extends React.Component {
               </Container>
             </div>
 
-            {/* <div className="have-you-heard">
-              <Container>
-                <div className="have-you-heard-grid">
-                  <div>
-                    <div className="my-have-you-heard-title">
-                      HAVE YOU HEARD?
-                    </div>
-
-                    <div className="my-have-you-heard-row">
-                      09.05.19 <a>Applied Materials Announces Cash Dividend</a>
-                    </div>
-
-                    <div className="my-have-you-heard-row">
-                      08.22.19{" "}
-                      <a>Applied Materials to Participate in Citi Global...</a>
-                    </div>
-                  </div>
-
-                  <div>
-                    <div className="my-have-you-heard-title">JOIN US AT</div>
-
-                    <div className="my-have-you-heard-row">
-                      10.16.19 <a>K2019</a>
-                    </div>
-
-                    <div className="my-have-you-heard-row">
-                      08.22.19 <a>Specialty Films Mumbai - 2019</a>
-                    </div>
-
-                    <div className="my-have-you-heard-row">
-                      07.09.19 <a>SEMICON West 2019</a>
-                    </div>
-                  </div>
-
-                  <div>
-                    <div className="my-have-you-heard-title">DID YOU KNOW?</div>
-
-                    <div className="my-have-you-heard-row">
-                      10.04.19{" "}
-                      <a>Designing "Eyes" into Process Equipment to...</a>
-                    </div>
-
-                    <div className="my-have-you-heard-row">
-                      09.12.19 <a>Themes of an AI Summer: VC Perspectives</a>
-                    </div>
-
-                    <div className="my-have-you-heard-row">
-                      08.21.19 <a>The AI Paradox</a>
-                    </div>
-                  </div>
-                </div>
-              </Container>
-            </div> */}
+            
           </Page>
         </Styles>
       </Layout>
