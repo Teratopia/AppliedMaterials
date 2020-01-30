@@ -6,11 +6,12 @@ import LocalizationProvider from './localization/LocalizationProvider';
 import PageSizeCalculator from './PageSizeCalculator';
 import downloadFile from './utils/downloadFile';
 import ViewerInner from './ViewerInner';
-const Viewer = ({ fileUrl, layout, localization }) => {
+const Viewer = ({ fileUrl, layout, localization, parent }) => {
     
     const [file, setFile] = React.useState({
         data: fileUrl,
         name: fileUrl,
+        parent,
     });
     const layoutOption = (isSidebarOpened, main, toolbar, sidebar) => {
         return defaultLayout(isSidebarOpened, main, toolbar(defaultToolbar), sidebar);
@@ -25,7 +26,7 @@ const Viewer = ({ fileUrl, layout, localization }) => {
         downloadFile(file.name, file.data);
     };
     const renderDoc = (doc) => {
-        const renderInner = (pageSize) => (React.createElement(ViewerInner, { doc: doc, fileName: file.name, layout: layout || layoutOption, pageSize: pageSize, onDownload: download, onOpenFile: openFile }));
+        const renderInner = (pageSize) => (React.createElement(ViewerInner, { doc: doc, fileName: file.name, layout: layout || layoutOption, pageSize: pageSize, onDownload: download, onOpenFile: openFile, parent: parent }));
         return (React.createElement(PageSizeCalculator, { doc: doc, render: renderInner }));
     };
     return (React.createElement(LocalizationProvider, { localization: localization },

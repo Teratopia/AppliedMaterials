@@ -82,17 +82,21 @@ export default class extends React.Component {
   constructor( props ) {
     super()
     this.state = {}
-    this.state.current = "TABLE OF CONTENTS"
-    this.state.active = {name: "TABLE OF CONTENTS"}
+    this.state.current = ""
+    this.state.active = {name: ""}
     this.state.materials =  props.data.materials.frontmatter.documents;
+    this.state.currentPage = 3;
   }
 
   componentDidMount() {
     if (typeof window !== undefined) {
       window.onscroll = this.handleScroll.bind(this);
+
+      
     }
     
   }
+
 
   componentWillUnmount () {
     window.removeEventListener('scroll', this.handleScroll);
@@ -106,23 +110,24 @@ export default class extends React.Component {
 
 
   toggleActive ( e) {
-    document.querySelectorAll(".my-menu-item.active")[0].classList.toggle("active");
+    if (document.querySelectorAll(".my-menu-item.active")[0]) {
+      document.querySelectorAll(".my-menu-item.active")[0].classList.toggle("active");
+    } 
+    
     e.currentTarget.classList.toggle("active")
 
     this.setState({
       current: e.currentTarget.dataset.current,
       currentPageNumber: e.currentTarget.dataset.page,
     })
+
+    this.jumpToPage( parseInt(e.currentTarget.dataset.page ))
   }
 
   menuItem ( el, idx ) {
-    let active;
-    if ( idx == 0 ) {
-      active= "active"
-    }
-
+   
     return (
-      <div className={"my-menu-item " + active} key={ el.title }  data-page={el.page} data-current={el.title} onClick={ this.toggleActive.bind(this) }>
+      <div className={"my-menu-item " } key={ el.title }  data-page={el.page} data-current={el.title} onClick={ this.toggleActive.bind(this) }>
         <div className="cell">
         {
           el.title
@@ -134,7 +139,6 @@ export default class extends React.Component {
     )
 
   }
-
 
 
   render() {
@@ -300,7 +304,7 @@ export default class extends React.Component {
               <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.2.228/build/pdf.worker.min.js">
           <div style={{ height: '100vh', overflowY: "scroll", position: "relative", marginBottom: 100 }}>
           <div style={{position: "relative"}}>
-            <Viewer layout={ layout } fileUrl={ require("../images/applied-proxy.pdf")}  />
+            <Viewer layout={ layout } parent={this} fileUrl={ require("../images/applied-proxy.pdf")}  />
             </div>
           </div>
         </Worker>

@@ -19,11 +19,13 @@ const PAGE_PADDING = 8;
 const ReturnRef = () => {
     return React.useRef(null);
 }
-const ViewerInner = ({ doc, fileName, layout, pageSize, onDownload, onOpenFile }) => {
+const ViewerInner = ({ doc, fileName, layout, pageSize, onDownload, onOpenFile, parent }) => {
     const pagesRef = ReturnRef();
     const [scale, setScale] = React.useState(pageSize.scale * 1.25);
-    
     const [currentPage, setCurrentPage] = React.useState(0);
+    
+    
+
     const [rotation, setRotation] = React.useState(0);
     const [keywordRegexp, setKeywordRegexp] = React.useState(EMPTY_KEYWORD_REGEXP);
     const [match, setMatch] = React.useState({
@@ -81,6 +83,11 @@ const ViewerInner = ({ doc, fileName, layout, pageSize, onDownload, onOpenFile }
             pagesContainer.scrollTop = targetPage.offsetTop;
         }
     };
+
+    parent.__proto__.jumpToPage = jumpToPage;
+
+    
+
     const rotate = (degree) => {
         const updateRotation = (rotation === 360 || rotation === -360) ? degree : rotation + degree;
         setRotation(updateRotation);
