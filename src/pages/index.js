@@ -716,8 +716,10 @@ export default class extends React.Component {
                 >
                   2020 Proxy Statement
                 </div>
-
+                
+                <a href={require("../images/applied-proxy.pdf")} style={{color: "inherit"}}download="Applied Materials 2020 Proxy Statement">
                 <div className="proxy-statement-button">DOWNLOAD PDF</div>
+                </a>
               </Container>
             </div>
 
