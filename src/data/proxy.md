@@ -14,7 +14,7 @@ documents:
 - title: COMPENSATION DISCUSSION & ANALYSIS
   page: 36
 - title: SUMMARY COMPENSATION TABLE
-  page: 32
+  page: 56
 - title: RATIFICATION OF AUDITOR
   page: 63
 - title: ACTION BY WRITTEN CONSENT PROPOSAL
