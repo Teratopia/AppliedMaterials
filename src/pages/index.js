@@ -690,7 +690,7 @@ export default class extends React.Component {
             </div>
 
             <div className="has-text-centered" style={{ margin: "20px 0px", padding: "0 40px" }}>
-            We are consistently recognized by many leading organizations and publications for our achievements and contributions to the technology sector. Here are some of the awards and positive recognition we received in 2019 and 2020.
+            We are consistently recognized by many leading organizations and publications for our achievements and contributions. Here are some of the awards and positive recognition we received in 2019 and 2020.
             </div>
 
             <div className="my-recommendations">

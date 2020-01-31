@@ -208,7 +208,7 @@ export default class Header extends React.Component {
             <div style={{ display: "table", height: "100%", width: "100%" }}>
               <div style={{ display: "table-cell", verticalAlign: "middle" }}>
                 <div className="home-link">
-                  <a href="http://www.appliedmaterials.com/">
+                  <a href="http://www.appliedmaterials.com/" target="_blank" rel="noopener norefferer">
                     <Logo />
                   </a>
                 </div>

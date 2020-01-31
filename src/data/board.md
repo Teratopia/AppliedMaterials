@@ -41,7 +41,7 @@ members:
     - title: Strategy and innovation
     - title: Public company board experience
   image: ../images/chen.png
-  title: Partner, SB Investment Advisers (US), Inc.
+  title: Managing Partner, SB Investment Advisers (US), Inc.
   bio: >
     Eric Chen is a Managing Partner of SB Investment Advisers (US), Inc. (“SBIA”), an investment adviser focused on investments in the technology sector, since March 2018. Prior to joining SBIA, Dr. Chen was the Chief Executive Officer and Co-Founder of BaseBit Technologies, Inc., a technology company in Silicon Valley. He served as CEO of BaseBit Technologies since it was founded in October 2015, except from March 2016 until December 2017, when BaseBit was a portfolio company of Team Curis Group, a group of integrated biotechnology and data technology companies and laboratories, during which time Dr. Chen served as CEO of Team Curis Group. From 2008to 2015, Dr. Chen served as a managing director of Silver Lake, a leading private investment firm focused on technology-enabled and related growth industries. Prior to Silver Lake, Dr. Chen was a senior vice president and served on the executive committee of ASML Holding N.V. He joined ASML following its 2007 acquisition of Brion Technologies, Inc., a company he co-founded in 2002 and served as Chief Executive Officer. Prior to Brion Technologies, Dr. Chen was a senior vice president at J.P. Morgan. He served as a member of the boards of directors of Qihoo 360Technology Co. Ltd. from 2014 to July 2016 and of Varian Semiconductor Equipment Associates, Inc. (“Varian”) from 2004 until its acquisition by Applied in 2011. Dr. Chen also currently serves as a member of the board of directors of Che Hao Duo Group.
 - name: Aart J. de Geus
