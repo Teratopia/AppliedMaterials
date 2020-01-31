@@ -211,6 +211,7 @@ export default class extends React.Component {
             overflow: "hidden",
             width: "100%",
             position: "fixed",
+            top: 360 + this.state.top
           }}
         >
           <div
@@ -275,7 +276,7 @@ export default class extends React.Component {
 
             <div
               className="my-target"
-              style={{ position: "relative", top: this.state.top, height: "110vh" }}
+              style={{ position: "relative", height: "110vh" }}
             >
               <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.2.228/build/pdf.worker.min.js">
                 <div
