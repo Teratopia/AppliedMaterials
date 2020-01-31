@@ -263,7 +263,7 @@ export default class extends React.Component {
                   <Img
                     fluid={independence}
                     alt="Independence"
-                    style={{ marginBottom: 24 }}
+                    style={{ marginBottom: 24, padding: "0px 2px" }}
                   />
                   <div className="subtitle is-6 has-text-centered">
                     9 of 10 director nominees are independent
