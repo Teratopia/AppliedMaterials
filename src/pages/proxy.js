@@ -275,7 +275,7 @@ export default class extends React.Component {
 
             <div
               className="my-target"
-              style={{ position: "relative", top: this.state.top }}
+              style={{ position: "relative", top: this.state.top, height: "110vh" }}
             >
               <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.2.228/build/pdf.worker.min.js">
                 <div
