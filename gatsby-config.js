@@ -28,6 +28,7 @@ module.exports = {
           "default-src": "'self'", 
           "script-src": "'self' 'unsafe-eval'", 
           "connect-src": "'self'", 
+          "worker-src": "'self' 'unsafe-eval'",
           "font-src": "'self' data: fonts.gstatic.com",
         }
       }
