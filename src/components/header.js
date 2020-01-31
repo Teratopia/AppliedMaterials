@@ -218,7 +218,7 @@ export default class Header extends React.Component {
             <div className="links">
             <Link to="/">HOME</Link>
             <Link to="/summary">PROXY SUMMARY</Link>
-            <a href="https://ir.appliedmaterials.com/static-files/aad9bee5-4cd7-4b3c-bdb3-4d0f987852b7" target="_blank" ref="noopener noreferrer">ANNUAL REPORT & 10-K</a>
+            <a href="https://ir.appliedmaterials.com/static-files/59aa9549-a055-44b6-b776-a6f8b0d7bbb1" target="_blank" ref="noopener noreferrer">ANNUAL REPORT & 10-K</a>
           </div>
 
             <div className="my-vote">

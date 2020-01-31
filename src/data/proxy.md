@@ -2,23 +2,23 @@
 title: proxy
 documents:
 - title: TABLE OF CONTENTS
-  page: 5
+  page: 3
 - title: SUMMARY
-  page: 6
+  page: 4
 - title: SUSTAINABILITY / CSR
-  page: 16
+  page: 14
 - title: BOARD & GOVERNANCE PRACTICES
-  page: 24
+  page: 22
 - title: SHAREHOLDER ENGAGEMENT
-  page: 30
+  page: 28
 - title: COMPENSATION DISCUSSION & ANALYSIS
-  page: 33
+  page: 31
 - title: SUMMARY COMPENSATION TABLE
-  page: 34
+  page: 32
 - title: RATIFICATION OF AUDITOR
-  page: 65
+  page: 63
 - title: ACTION BY WRITTEN CONSENT PROPOSAL
-  page: 67
+  page: 65
 - title: FAQ / OTHER MATTERS
-  page: 70
+  page: 68
   

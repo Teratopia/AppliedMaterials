@@ -57,9 +57,12 @@ class Layout extends React.Component {
         </div> */}
         
         
-        <main>{ this.props.children }</main>
+        <main>{ this.props.children }
         
-        <Footer />
+        {/* <Footer /> */}
+        </main>
+        
+        
       </Styles>
     )
   }
