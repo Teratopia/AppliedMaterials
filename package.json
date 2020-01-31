@@ -7,6 +7,7 @@
   "dependencies": {
     "@emotion/core": "^10.0.22",
     "@emotion/styled": "^10.0.22",
+    "@phuocng/react-pdf-viewer": "^1.0.2",
     "antd": "^3.24.3",
     "browser-monads": "^1.0.0",
     "bulma": "^0.8.0",

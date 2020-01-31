@@ -5,6 +5,8 @@ import Container from "../components/container"
 import Page from "../components/page"
 import SEO from "../components/seo"
 import styled from "@emotion/styled"
+import Worker from "../../vendor/pdfviewer/Worker"
+import Viewer from "../../vendor/pdfviewer/Viewer"
 import theme from "../theme.js";
 
 const Styles = styled.div`
@@ -43,8 +45,23 @@ export default class extends React.Component {
               </span>
             </div>
 
-            <iframe src={require("../images/proxy-summary.pdf")} />
-          </Container>
+            
+            </Container>
+
+            <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.2.228/build/pdf.worker.min.js">
+            <div
+                style={{
+                    height: '100vh',
+                    width: "100%",
+                    overflowY: "scroll",
+                    position: "relative",
+                    marginBottom: 100,
+                    
+                }}
+            >
+                <Viewer parent={ this } fileUrl={require("../images/proxy-summary.pdf")} />
+            </div>
+        </Worker>
           </Page>
         </Styles>
       </Layout>

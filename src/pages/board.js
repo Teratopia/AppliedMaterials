@@ -28,6 +28,10 @@ const Styles = styled.div`
 
       .title {
         text-align: center;
+
+        &.is-special {
+          text-align: left;
+        }
       }
     }
 
@@ -192,7 +196,7 @@ export default class extends React.Component {
               </div>
               <div
                 className="title has-text-centered"
-                style={{ margin: "48px 0px" }}
+                style={{ margin: "48px 0px", padding: "0px 55px" }}
               >
                 Our Board Represents a Diverse Range of Qualifications & Skills
               </div>
@@ -224,7 +228,7 @@ export default class extends React.Component {
 
                     <div>
                       <div
-                        className="title is-5"
+                        className="title is-5 is-special"
                         style={{ marginBottom: 10, marginTop: 10 }}
                       >
                         <b>Diversity</b>
@@ -282,7 +286,7 @@ export default class extends React.Component {
 
                   <div>
                     <div
-                      className="title is-5"
+                      className="title is-5 is-special"
                       style={{ marginBottom: 10, marginTop: 10 }}
                     >
                       <b>Tenure</b>

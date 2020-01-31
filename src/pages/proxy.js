@@ -7,7 +7,6 @@ import SEO from "../components/seo"
 import styled from "@emotion/styled"
 import Worker from "../../vendor/pdfviewer/Worker"
 import Viewer from "../../vendor/pdfviewer/Viewer"
-import defaultLayout from "../../vendor/pdfviewer/layouts/defaultLayout"
 import theme from "../theme.js";
 
 const Styles = styled.div`
