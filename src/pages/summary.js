@@ -63,7 +63,7 @@ export default class extends React.Component {
             </Container>
             <div
               className="my-target"
-              style={{ position: "relative", top: this.state.top, marginBottom: 124 }}
+              style={{ position: "relative", height: "110vh", top: this.state.top, marginBottom: 48, display: "block" }}
             >
               <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.2.228/build/pdf.worker.min.js">
                 <div
@@ -72,7 +72,7 @@ export default class extends React.Component {
                     width: "100%",
                     overflowY: "scroll",
                     position: "relative",
-                    marginBottom: 100,
+                    display: "block",
                   }}
                 >
                   <Viewer
