@@ -15,6 +15,10 @@ const Styles = styled.div`
     grid-template-columns: calc(54% - 24px) calc(46% - 24px);
     grid-gap: 56px;
     padding: 0px 20px;
+
+    @media screen and (min-width: 900px){
+      padding-left: 0px;
+    }
     max-width: 955px;
     margin: 0 auto;
     margin-bottom: 82px;
