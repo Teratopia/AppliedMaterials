@@ -15,16 +15,10 @@ const Styles = styled.div`
     grid-template-columns: calc(54% - 24px) calc(46% - 24px);
     grid-gap: 56px;
     padding: 0px 20px;
+    max-width: 955px;
     margin: 0 auto;
     margin-bottom: 82px;
 
-    @media screen and (max-width: 900px) {
-      .my-bracket {
-      }
-    }
-
-  
-    
 
     .my-title {
       font-size: 1.5rem;
@@ -49,29 +43,25 @@ const Styles = styled.div`
       .my-title, .title, .subtitle {
         text-align: center;
       }
-
-      
     }
 
     .my-grid-item {
       width: 100%;
       display: block;
       margin: 0 auto;
-
-      
     }
   }
 
   .members-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     grid-gap: 16px;
     max-width: 880px;
     margin: 0 auto;
     margin: 24px auto;
 
     @media screen and (min-width: 720px) {
-      grid-template-columns: repeat(auto-fit, minmax(212px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(192px, 1fr));
       grid-gap: 46px;
     }
 
@@ -114,7 +104,7 @@ const Styles = styled.div`
 
   .my-board-stat-mini-grid {
     display: grid;
-    grid-template-columns: 24% 66%;
+    grid-template-columns: 28% 72%;
     grid-gap: 16px;
     max-width: 400px;
     margin: 0 auto;
@@ -293,6 +283,10 @@ export default class extends React.Component {
                     />
 
                     <div>
+
+                      <small>
+                        Two directors added to the board over the last 2 years
+                      </small>
                       <div>
                         <b style={{ color: "#459ac2" }}> >10 Years Tenure :</b>{" "}
                         4 Directors
@@ -307,9 +301,7 @@ export default class extends React.Component {
                         <b> 0-4 Years Tenure :</b> 3 Directors
                       </div>
 
-                      <small>
-                        Two directors added to the board over the last 2 years
-                      </small>
+                      
                     </div>
                   </div>
                   </div>
