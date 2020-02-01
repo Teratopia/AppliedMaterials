@@ -113,6 +113,15 @@ const Styles = styled.div`
   .content {
     margin-bottom: 8px;
   }
+
+  @media screen and (max-width: 900px) {
+
+    .my-small-bump {
+      position: relative;
+      bottom: 4px;
+    }
+    
+  }
 `
 
 export default class extends React.Component {
@@ -233,6 +242,7 @@ export default class extends React.Component {
                   <div className="my-board-stat-mini-grid">
                     <Img
                       fluid={diversity}
+                      className="my-small-bump"
                       alt="Diversity"
                       style={{
                         width: "100%",
@@ -275,6 +285,7 @@ export default class extends React.Component {
                   <div className="my-board-stat-mini-grid">
                     <Img
                       fluid={tenure}
+                      className="my-small-bump"
                       alt="Tenure"
                       style={{
                         width: "100%",
