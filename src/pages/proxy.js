@@ -94,9 +94,18 @@ export default class extends React.Component {
 
   handleScroll(event) {
     let height = 172;
-    height += document.querySelectorAll(".my-documents")[0].scrollHeight
-    height += document.querySelectorAll(".my-breadcrumbs")[0].scrollHeight
+    let myDocuments = document.querySelectorAll(".my-documents")[0];
 
+    if (myDocuments) {
+      height += myDocuments.scrollHeight
+    }
+
+    let myBreadcrumbs = document.querySelectorAll(".my-breadcrumbs")[0];
+
+    if (myBreadcrumbs) {
+      height += myBreadcrumbs.scrollHeight
+    }
+    
 
     this.setState({
       top: (height-event.currentTarget.scrollY),
