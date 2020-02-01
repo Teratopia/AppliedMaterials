@@ -28,7 +28,7 @@ module.exports = {
           "default-src": "'self'", 
           "script-src": "'self' 'unsafe-eval'", 
           "connect-src": "'self'", 
-          "worker-src": "unpkg.com",
+          "worker-src": "blob:",
           "font-src": "'self' data: fonts.gstatic.com",
         }
       }
