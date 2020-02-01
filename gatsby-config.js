@@ -24,7 +24,7 @@ module.exports = {
         mergeStyleHashes: false, 
         directives: {
           "style-src": "'self' 'unsafe-inline' fonts.googleapis.com",
-          "img-src": "'self' data:",
+          "img-src": "'self' data: blob:",
           "default-src": "'self'", 
           "script-src": "'self' 'unsafe-eval'", 
           "connect-src": "'self'", 

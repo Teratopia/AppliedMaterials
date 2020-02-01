@@ -180,12 +180,11 @@ export default class extends React.Component {
 
   render() {
     const members = this.props.data.members.frontmatter.members
-    const nomineeExpertise = this.props.data.nomineeExpertise.childImageSharp
+    const expertise = this.props.data.expertise.childImageSharp
       .fluid
     const independence = this.props.data.independence.childImageSharp.fluid
     const tenure = this.props.data.tenure.childImageSharp.fluid
     const diversity = this.props.data.diversity.childImageSharp.fluid
-    const expertise = this.props.data.expertise.childImageSharp.fluid
     return (
       <Layout>
         <SEO title="" />
@@ -332,7 +331,7 @@ export default class extends React.Component {
 
 export const query = graphql`
   {
-    nomineeExpertise: file(relativePath: { eq: "nominee-expertise2.png" }) {
+    expertise: file(relativePath: { eq: "expertise.png" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
@@ -348,13 +347,7 @@ export const query = graphql`
       }
     }
 
-    expertise: file(relativePath: { eq: "sectors-updates.png" }) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
+  
 
     tenure: file(relativePath: { eq: "tenure.png" }) {
       childImageSharp {
