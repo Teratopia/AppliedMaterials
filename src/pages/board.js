@@ -12,14 +12,14 @@ import theme from "../theme.js"
 const Styles = styled.div`
   .my-board-stat-grid {
     display: grid;
-    grid-template-columns: calc(54% - 24px) calc(46% - 24px);
+    grid-template-columns: calc(58% - 24px) calc(42% - 24px);
     grid-gap: 56px;
     padding: 0px 20px;
 
     @media screen and (min-width: 900px){
       padding-left: 0px;
     }
-    max-width: 955px;
+    max-width: 965px;
     margin: 0 auto;
     margin-bottom: 82px;
 
@@ -110,7 +110,7 @@ const Styles = styled.div`
     display: grid;
     grid-template-columns: 28% 72%;
     grid-gap: 16px;
-    max-width: 400px;
+    max-width: 360px;
     margin: 0 auto;
   }
 
@@ -214,7 +214,7 @@ export default class extends React.Component {
                   <Img
                     fluid={expertise}
                     alt="Nominee Expertise"
-                    style={{ marginBottom: 24, marginTop: -6 }}
+                    
                   />
                 </div>
 
@@ -228,7 +228,7 @@ export default class extends React.Component {
                   <Img
                     fluid={independence}
                     alt="Independence"
-                    style={{ maxWidth: 300, marginBottom: 10, padding: "0px 1px" }}
+                    style={{ maxWidth: 300, marginBottom: 10, padding: "0px" }}
                   />
                   <div className="subtitle is-6" style={{marginBottom: 24}}>
                     9 of 10 director nominees are independent
