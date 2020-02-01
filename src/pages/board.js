@@ -12,32 +12,41 @@ import theme from "../theme.js"
 const Styles = styled.div`
   .my-board-stat-grid {
     display: grid;
-    grid-template-columns: calc(50% - 24px) calc(50% - 24px);
-    grid-gap: 64px;
-    max-width: 880px;
+    grid-template-columns: calc(54% - 24px) calc(46% - 24px);
+    grid-gap: 56px;
+    padding: 0px 20px;
     margin: 0 auto;
     margin-bottom: 82px;
+
+    .my-title {
+      font-size: 1.5rem;
+      margin-bottom: 24px;
+      color: ${theme.blue};
+    }
+
+    .title.is-5 {
+      font-size: 1.25rem;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
 
     @media screen and (max-width: 900px) {
       grid-template-columns: calc(100%);
 
       .gatsby-image-wrapper {
         margin: 10px auto;
-        max-width: 420px;
+        max-width: 400px;
       }
 
-      .title {
+      .my-title, .title, .subtitle {
         text-align: center;
-
-        &.is-special {
-          text-align: left;
-        }
       }
+
+      
     }
 
     .my-grid-item {
-      max-width: 440px;
-      min-width: 380px;
+      width: 100%;
       display: block;
       margin: 0 auto;
     }
@@ -95,8 +104,10 @@ const Styles = styled.div`
 
   .my-board-stat-mini-grid {
     display: grid;
-    grid-template-columns: 34% 66%;
-    grid-gap: 24px;
+    grid-template-columns: 24% 66%;
+    grid-gap: 16px;
+    max-width: 400px;
+    margin: 0 auto;
   }
 
   .content {
@@ -109,26 +120,20 @@ export default class extends React.Component {
     super()
     this.state = {}
   }
-  
-  boardComittees ( boards ) {
-    if ( boards ) {
-      return (
-        boards.map( (el) => {
-          return (
-            <li>
-              { el.title }
-            </li>
-          )
-        })
-      )
+
+  boardComittees(boards) {
+    if (boards) {
+      return boards.map(el => {
+        return <li>{el.title}</li>
+      })
     } else {
-      return ( <li>None </li>)
+      return <li>None </li>
     }
   }
 
-  type ( type ) {
-    if ( type ) {
-      return ( <li>{ type }</li> )
+  type(type) {
+    if (type) {
+      return <li>{type}</li>
     }
   }
 
@@ -145,12 +150,9 @@ export default class extends React.Component {
             <div className="content">
               <small>
                 <ul>
-                  <li>{ el.since }</li>
-                  <li>Age { el.age }</li>
-                  {
-                    this.type( el.type )
-                    
-                  }
+                  <li>{el.since}</li>
+                  <li>Age {el.age}</li>
+                  {this.type(el.type)}
                 </ul>
               </small>
             </div>
@@ -158,17 +160,10 @@ export default class extends React.Component {
             <b>Board Committees:</b>
             <div className="content">
               <small>
-                <ul>
-                  {
-                    this.boardComittees( el.boardComittees )
-                  }
-                </ul>
+                <ul>{this.boardComittees(el.boardComittees)}</ul>
               </small>
-
             </div>
           </div>
-
-          
         </div>
       </Link>
     )
@@ -203,9 +198,7 @@ export default class extends React.Component {
 
               <div className="my-board-stat-grid">
                 <div className="my-grid-item">
-                  <div className="title is-5 has-text-centered">
-                    <b>Expertise</b>
-                  </div>
+                  <div className="my-title">Director Nominee Expertise</div>
                   <Img
                     fluid={expertise}
                     alt="Nominee Expertise"
@@ -214,25 +207,40 @@ export default class extends React.Component {
                 </div>
 
                 <div className="my-grid-item">
-                  <VerticalAlign>
+                  <div className="my-title">Key Attributes</div>
+
+                  <div>
+                  <div className="title is-5">
+                    Independence
+                  </div>
+                  <Img
+                    fluid={independence}
+                    alt="Independence"
+                    style={{ maxWidth: 300, marginBottom: 10, padding: "0px 1px" }}
+                  />
+                  <div className="subtitle is-6" style={{marginBottom: 24}}>
+                    9 of 10 director nominees are independent
+                  </div>
+                  </div>
+
+                  <div>
+                    
+                  <div
+                    className="title is-5"
+                  >
+                    Diversity
+                  </div>
                   <div className="my-board-stat-mini-grid">
                     <Img
                       fluid={diversity}
                       alt="Diversity"
                       style={{
-                        width: 144,
+                        width: "100%",
                         marginBottom: 24,
-                        height: 144,
                       }}
                     />
 
                     <div>
-                      <div
-                        className="title is-5 is-special"
-                        style={{ marginBottom: 10, marginTop: 10 }}
-                      >
-                        <b>Diversity</b>
-                      </div>
                       <div>
                         <b style={{ color: "#459ac2" }}> 40% </b> of director
                         nominees are ethnically and/or gender diverse
@@ -253,61 +261,45 @@ export default class extends React.Component {
                       </div>
                     </div>
                   </div>
-                  </VerticalAlign>
-                </div>
 
-                <div className="my-grid-item">
-                  <div className="title is-5 has-text-centered">
-                    <b>Independence</b>
                   </div>
-                  <Img
-                    fluid={independence}
-                    alt="Independence"
-                    style={{ marginBottom: 24, padding: "0px 2px" }}
-                  />
-                  <div className="subtitle is-6 has-text-centered">
-                    9 of 10 director nominees are independent
-                  </div>
-                </div>
 
-                <div className="my-grid-item">
+                  <div
+                    className="title is-5"
+                  >
+                    Tenure
+                  </div>
+
                   <div className="my-board-stat-mini-grid">
-                  <Img
-                    fluid={tenure}
-                    alt="Tenure"
-                    style={{
-                      width: 144,
-                      marginBottom: 24,
-                      height: 144,
-                    }}
-                  />
-
-                  <div>
-                    <div
-                      className="title is-5 is-special"
-                      style={{ marginBottom: 10, marginTop: 10 }}
-                    >
-                      <b>Tenure</b>
-                    </div>
-                    <div>
-                      <b style={{ color: "#459ac2" }}> >10 Years Tenure :</b> 4
-                      Directors
-                    </div>
+                    <Img
+                      fluid={tenure}
+                      alt="Tenure"
+                      style={{
+                        width: "100%",
+                        marginBottom: 24,
+                      }}
+                    />
 
                     <div>
-                      <b style={{ color: "#e48047" }}> 4-10 Years Tenure :</b> 3
-                      Directors
-                    </div>
+                      <div>
+                        <b style={{ color: "#459ac2" }}> >10 Years Tenure :</b>{" "}
+                        4 Directors
+                      </div>
 
-                    <div>
-                      <b> 0-4 Years Tenure :</b> 3 Directors
-                    </div>
+                      <div>
+                        <b style={{ color: "#e48047" }}> 4-10 Years Tenure :</b>{" "}
+                        3 Directors
+                      </div>
 
-                    <small>
-                      Two directors added to the board over the last 2 years
-                    </small>
+                      <div>
+                        <b> 0-4 Years Tenure :</b> 3 Directors
+                      </div>
+
+                      <small>
+                        Two directors added to the board over the last 2 years
+                      </small>
+                    </div>
                   </div>
-                </div>
                 </div>
               </div>
 
@@ -364,8 +356,6 @@ export const query = graphql`
       }
     }
 
-
-
     members: markdownRemark(frontmatter: { title: { eq: "board" } }) {
       frontmatter {
         members {
@@ -375,11 +365,11 @@ export const query = graphql`
           since
           age
           otherBoards {
-            title 
+            title
           }
           boardComittees {
             title
-          } 
+          }
           keyQualifications {
             title
           }
