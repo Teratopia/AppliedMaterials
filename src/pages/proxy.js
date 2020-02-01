@@ -83,16 +83,23 @@ export default class extends React.Component {
   componentDidMount() {
     if (typeof window !== undefined) {
       window.onscroll = this.handleScroll.bind(this)
+      window.onresize = this.handleScroll.bind(this)
     }
   }
 
   componentWillUnmount() {
     window.removeEventListener("scroll", this.handleScroll)
+    window.removeEventListener("resize", this.handleScroll)
   }
 
   handleScroll(event) {
+    let height = 172;
+    height += document.querySelectorAll(".my-documents")[0].scrollHeight
+    height += document.querySelectorAll(".my-breadcrumbs")[0].scrollHeight
+
+
     this.setState({
-      top: -event.target.scrollingElement.scrollTop,
+      top: (height-event.currentTarget.scrollY),
     })
   }
 
@@ -211,7 +218,7 @@ export default class extends React.Component {
             overflow: "hidden",
             width: "100%",
             position: "fixed",
-            top: 360 + this.state.top
+            top: this.state.top
           }}
         >
           <div

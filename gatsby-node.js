@@ -1,17 +1,6 @@
 const graphql = require(`graphql`)
 const path = require(`path`)
 
-exports.onCreateWebpackConfig = ({ stage, actions }) => {
-  actions.setWebpackConfig({
-    resolve: {
-      alias: {
-        'pdfviewer': './vendors/src',
-      },
-    },
-  })
-}
-
-
 exports.createPages = async ({ graphql, actions, reporter }) => {
     const { createPage } = actions
     

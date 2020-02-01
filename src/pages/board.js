@@ -272,8 +272,6 @@ export default class extends React.Component {
 
                 <div className="my-grid-item">
                   <div className="my-board-stat-mini-grid">
-
-                  
                   <Img
                     fluid={tenure}
                     alt="Tenure"
