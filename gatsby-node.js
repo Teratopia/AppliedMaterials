@@ -15,7 +15,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                     type
                     since
                     age
-                    other {
+                    otherBoards {
                       title 
                     }
                     boardComittees {

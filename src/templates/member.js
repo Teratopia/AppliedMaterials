@@ -86,7 +86,7 @@ export default class extends React.Component {
   }
 
   other () {
-    if ( this.state.members.other ) {
+    if ( this.state.member.otherBoards ) {
       return (
         <div>
            <div className="title is-6">
@@ -96,7 +96,7 @@ export default class extends React.Component {
                 <div className="content">
                   <ul>
                     {
-                      this.state.member.other.map( (el) => {
+                      this.state.member.otherBoards.map( (el) => {
                         return (
                           <li>
                             { el.title }

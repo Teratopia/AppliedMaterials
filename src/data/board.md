@@ -8,7 +8,7 @@ members:
   age: 61
   type: Independent Director
   since: Director since 2016
-  other: 
+  otherBoards: 
     - title: Rapid7, Inc.
     - title: Seagate Technology plc
     - title: Varian Medical Systems, Inc.
@@ -51,7 +51,7 @@ members:
   age: 65
   type: Independent Director
   since: Director since 2007
-  other: 
+  otherBoards: 
     - title: Synopsis, Inc.
   boardComittees:
     - title: Strategy (Chair)
@@ -112,7 +112,7 @@ members:
   age: 63
   type: Chairman of the Board, Independent Director
   since: Director since 2005
-  other: 
+  otherBoards: 
     - title: Atento S.A.
   boardComittees:
     - title: Human Resources & Compensation (Chair)
@@ -187,7 +187,7 @@ members:
   age: 52
   type: Independent Director
   since: Director since 2019
-  other: 
+  otherBoards: 
     - title: Equifax Inc. (since October 2017)
   boardComittees:
     - title: Audit

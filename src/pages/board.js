@@ -374,7 +374,7 @@ export const query = graphql`
           type
           since
           age
-          other {
+          otherBoards {
             title 
           }
           boardComittees {
