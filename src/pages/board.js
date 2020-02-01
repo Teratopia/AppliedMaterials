@@ -53,7 +53,7 @@ const Styles = styled.div`
 
     @media screen and (min-width: 720px) {
       grid-template-columns: repeat(auto-fit, minmax(212px, 1fr));
-      grid-gap: 48px;
+      grid-gap: 46px;
     }
 
     .gatsby-image-wrapper {
