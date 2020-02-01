@@ -18,6 +18,14 @@ const Styles = styled.div`
     margin: 0 auto;
     margin-bottom: 82px;
 
+    @media screen and (max-width: 900px) {
+      .my-bracket {
+      }
+    }
+
+  
+    
+
     .my-title {
       font-size: 1.5rem;
       margin-bottom: 24px;
@@ -49,6 +57,8 @@ const Styles = styled.div`
       width: 100%;
       display: block;
       margin: 0 auto;
+
+      
     }
   }
 
@@ -209,7 +219,7 @@ export default class extends React.Component {
                 <div className="my-grid-item">
                   <div className="my-title">Key Attributes</div>
 
-                  <div>
+                  <div className="my-bracket">
                   <div className="title is-5">
                     Independence
                   </div>
@@ -223,7 +233,7 @@ export default class extends React.Component {
                   </div>
                   </div>
 
-                  <div>
+                  <div className="my-bracket">
                     
                   <div
                     className="title is-5"
@@ -264,6 +274,8 @@ export default class extends React.Component {
 
                   </div>
 
+                  <div className="my-bracket">
+
                   <div
                     className="title is-5"
                   >
@@ -299,6 +311,7 @@ export default class extends React.Component {
                         Two directors added to the board over the last 2 years
                       </small>
                     </div>
+                  </div>
                   </div>
                 </div>
               </div>
