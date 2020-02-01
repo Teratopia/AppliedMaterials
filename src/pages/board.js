@@ -45,8 +45,8 @@ const Styles = styled.div`
 
   .members-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    grid-gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-gap: 16px;
     max-width: 880px;
     margin: 0 auto;
     margin: 24px auto;

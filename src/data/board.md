@@ -115,7 +115,7 @@ members:
   other: 
     - title: Atento S.A.
   boardComittees:
-    - title: CorHuman Resources & Compensation (Chair)
+    - title: Human Resources & Compensation (Chair)
   keyQualifications: 
     - title: Service management for technology companies on a global, regional and country level
     - title: Senior leadership and management experience
@@ -127,7 +127,7 @@ members:
 - name: Alexander A. Karsner
   slug: alexander-karsner
   image: ../images/karsner.png 
-  title: Executive Chairman Elemental Labs
+  title: Senior Strategist, X
   age: 52
   type: Senior Strategist, Independent Director
   since: Director since 2008
