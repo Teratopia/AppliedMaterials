@@ -98,11 +98,11 @@ const Styles = styled.div`
     display: none;
 
     @media screen and (min-width: ${theme.breakpoints.mid}px) {
-      display: block;
-      margin: auto auto;
+      display: block ;
+      margin: auto auto ;
 
       a {
-        display: inline-block;
+        display: inline-block ;
         margin: 5px 30px;
         font-size: 15px;
 
@@ -170,7 +170,7 @@ export default class Header extends React.Component {
     
     if ( window.innerWidth > theme.breakpoints.mid && this.state.open ) {
       this.toggleMenu();
-    }
+    } 
   }
 
   toggleMenu() {
