@@ -332,7 +332,7 @@ export default class extends React.Component {
 
 export const query = graphql`
   {
-    nomineeExpertise: file(relativePath: { eq: "nominee-expertise.png" }) {
+    nomineeExpertise: file(relativePath: { eq: "nominee-expertise2.png" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid

@@ -29,7 +29,7 @@ module.exports = {
           "script-src": "'self' 'unsafe-eval'", 
           "connect-src": "'self'", 
           "worker-src": "blob:",
-          "script-src-elem": "blob:",
+          "script-src-elem": "blob: 'unsafe-inline'",
           "font-src": "'self' data: fonts.gstatic.com",
         }
       }
