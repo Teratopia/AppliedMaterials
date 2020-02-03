@@ -83,7 +83,7 @@ members:
   age: 62
   since: Director since 2013
   keyQualifications: 
-    - title: Executive leadership and global management experience
+    - title: Executive leadership and management experience
     - title: Semiconductor industry leadership
     - title: Global business, industry and operational experience
     - title: Extensive engineering and technological leadership

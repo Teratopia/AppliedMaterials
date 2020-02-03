@@ -108,6 +108,14 @@ const Styles = styled.div`
 
   .my-bracket {
     margin-bottom: 36px;
+
+    @media screen and (min-width: 900px){
+      .gatsby-image-wrapper {
+
+        position: relative;
+        right: 8px  
+      }
+    }
   }
 
 

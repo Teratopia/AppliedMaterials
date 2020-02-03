@@ -195,7 +195,7 @@ export default class extends React.Component {
               <div>
                 { memberType }
               </div>
-              <div style={{marginBottom: 12}}>
+              <div style={{ marginBottom: 12}}>
                 { this.state.member.since }
               </div>
 
