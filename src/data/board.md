@@ -13,17 +13,18 @@ members:
     - title: Seagate Technology plc
     - title: Varian Medical Systems, Inc.
   boardComittees:
-    - title: Corporate Governance & Nominating (Chair)
+    - title: Corporate Governance and Nominating (Chair)
     - title: Audit
   keyQualifications: 
     - title: Executive leadership and management experience
     - title: Semiconductor industry leadership
     - title: Accounting principles, financial controls, financial reporting rules and regulations, and audit procedures
-    - title: Global business, industry and operational experience
+    - title: Global business, industry, finance, information technology and operational experience
     - title: Risk management and controls
+    - title: Strategy and innovation
     - title: Public company board experience
   bio: >
-    Judy Bruner served as Executive Vice President, Administration and Chief Financial Officer of SanDisk Corporation, a supplier of flash storage products, from June 2004 until its acquisition by Western Digital in May 2016. Previously, she was Senior Vice President and Chief Financial Officer of Palm, Inc., a provider of handheld computing and communications solutions, from September 1999 until June 2004. Prior to Palm, Inc., Ms. Bruner held financial management positions at 3Com Corporation, Ridge Computers and Hewlett-Packard Company. She currently serves as a member of the boards of directors of Rapid7, Inc., Seagate Technology plc and Varian Medical Systems, Inc. Ms. Bruner is a member of the board of trustees of the Computer History Museum, and previously served as a member of the board of directors of Brocade Communications Systems, Inc., from 2009 until its acquisition in November 2017.
+    Judy Bruner served as Executive Vice President, Administration and Chief Financial Officer of SanDisk Corporation, a supplier of flash storage products, from June 2004 until its acquisition by Western Digital in May 2016. Previously, she was Senior Vice President and Chief Financial Officer of Palm, Inc., a provider of handheld computing and communications solutions, from September 1999 until June 2004. Prior to Palm, Inc., Ms. Bruner held financial management positions at 3Com Corporation, Ridge Computers and Hewlett-Packard Company. She currently serves as a member of the boards of directors of Rapid7, Inc., Seagate Technology plc and Varian Medical Systems, Inc. Ms. Bruner previously served as a member of the board of directors of Brocade Communications Systems, Inc., from 2009 until its acquisition in November 2017.
 
 - name: Xun (Eric) Chen
   slug: eric-chen
@@ -31,7 +32,7 @@ members:
   type: Independent Director
   since: Director since 2015
   boardComittees:
-    - title: Human Resources & Compensation
+    - title: Human Resources and Compensation
     - title: Strategy
   keyQualifications: 
     - title: Executive leadership and management experience
@@ -41,13 +42,13 @@ members:
     - title: Strategy and innovation
     - title: Public company board experience
   image: ../images/chen.png
-  title: Managing Partner, SB Investment Advisers (US), Inc.
+  title: Managing Partner, SB Investments Advisers (US), Inc.
   bio: >
-    Eric Chen is a Managing Partner of SB Investment Advisers (US), Inc. (“SBIA”), an investment adviser focused on investments in the technology sector, since March 2018. Prior to joining SBIA, Dr. Chen was the Chief Executive Officer and Co-Founder of BaseBit Technologies, Inc., a technology company in Silicon Valley. He served as CEO of BaseBit Technologies since it was founded in October 2015, except from March 2016 until December 2017, when BaseBit was a portfolio company of Team Curis Group, a group of integrated biotechnology and data technology companies and laboratories, during which time Dr. Chen served as CEO of Team Curis Group. From 2008to 2015, Dr. Chen served as a managing director of Silver Lake, a leading private investment firm focused on technology-enabled and related growth industries. Prior to Silver Lake, Dr. Chen was a senior vice president and served on the executive committee of ASML Holding N.V. He joined ASML following its 2007 acquisition of Brion Technologies, Inc., a company he co-founded in 2002 and served as Chief Executive Officer. Prior to Brion Technologies, Dr. Chen was a senior vice president at J.P. Morgan. He served as a member of the boards of directors of Qihoo 360Technology Co. Ltd. from 2014 to July 2016 and of Varian Semiconductor Equipment Associates, Inc. (“Varian”) from 2004 until its acquisition by Applied in 2011. Dr. Chen also currently serves as a member of the board of directors of Che Hao Duo Group.
+    Eric Chen is a Managing Partner of SB Investment Advisers (US), Inc. (“SBIA”), an investment adviser focused on investments in the technology sector, since March 2018. Prior to joining SBIA, Dr. Chen was the Chief Executive Officer and Co-Founder of BaseBit Technologies, Inc., a technology company in Silicon Valley. He served as CEO of BaseBit Technologies since it was founded in October 2015, except from March 2016 until December 2017, when BaseBit was a portfolio company of Team Curis Group, a group of integrated biotechnology and data technology companies and laboratories, during which time Dr. Chen served as CEO of Team Curis Group. From 2008 to 2015, Dr. Chen served as a managing director of Silver Lake, a leading private investment firm focused on technology-enabled and related growth industries. Prior to Silver Lake, Dr. Chen was a senior vice president and served on the executive committee of ASML Holding N.V. He joined ASML following its 2007 acquisition of Brion Technologies, Inc., a company he co-founded in 2002 and served as Chief Executive Officer. Prior to Brion Technologies, Dr. Chen was a senior vice president at J.P. Morgan. He served as a member of the boards of directors of Qihoo 360 Technology Co. Ltd. from 2014 to July 2016 and of Varian Semiconductor Equipment Associates, Inc. (“Varian”) from 2004 until its acquisition by Applied in 2011. Dr. Chen also currently serves as a member of the board of directors of Che Hao Duo Group.
 - name: Aart J. de Geus
   slug: aart-de-geus
   image: ../images/aart.png 
-  title: Chairman and Co-Chief Executive Officer, Synopsis, Inc.
+  title: Chairman and Co-Chief Executive Officer, Synopsys, Inc.
   age: 65
   type: Independent Director
   since: Director since 2007
@@ -82,8 +83,6 @@ members:
     - title: Expertise in driving stategy, innovation and product development
   bio: >
     Gary E. Dickerson has been Chief Executive Officer and a member of the Board of Directors of Applied since Mr. Dickerson was named President of Applied in June 2012, after joining Applied following its acquisition in November 2011 of Varian Semiconductor Equipment Associates, Inc., a supplier of semiconductor manufacturing equipment. Mr. Dickerson had served as Chief Executive Officer and a director of Varian since 2004. Prior to joining Varian in 2004, Mr. Dickerson served 18 years with KLA-Tencor Corporation, a supplier of process control and yield management solutions for the semiconductor and related industries, where he held a variety of operations and product development roles, including President and Chief Operating Officer. Mr. Dickerson started his semiconductor career in manufacturing and engineering management at General Motors’ Delco Electronics Division and then AT&T, Inc.
-
-
 - name: Stephen R. Forrest
   slug: stephen-forrest
   image: ../images/forrest.png
@@ -98,12 +97,12 @@ members:
   keyQualifications: 
     - title: Semiconductor, displays and alternative energy technologies
     - title: Research and development portfolio management
-    - title: Government policy procedures
+    - title: Government policy
     - title: Strategy, innovation, technology licensing and product commercialization
     - title: Mergers and acquisitions
-    - title: Establishing partnerships to develop businesses in new markets focused on alternative energy and other technologies.
+    - title: Establishing partnerships to develop businesses in new markets focused on alternative energy and other technologies
   bio: >
-    Stephen R. Forrest holds faculty appointments as Professor of Electrical Engineering and Computer Science, as Professor of Physics, and as Professor of Materials Science and Engineering at the University of Michigan, and leads the University’s Optoelectronics Components and Materials Group. From January 2006 to December 2013, Dr. Forrest also served as Vice President for Research at the University of Michigan. From 1992 to 2005, Dr. Forrest served in a number of positions at Princeton University, including Chair of the Electrical Engineering Department, Director of the Center for Photonics and Optoelectronic Materials, and director of the National Center for Integrated Photonic Technology. Prior to Princeton, Dr. Forrest was a faculty member of the Electrical Engineering and Materials Science Departments at the University of Southern California. Dr. Forrest joined the Applied Materials board of directors in 2008.
+    Stephen R. Forrest holds faculty appointments as Professor of Electrical Engineering and Computer Science, as Professor of Physics, and as Professor of Materials Science and Engineering at the University of Michigan, and leads the University’s Optoelectronics Components and Materials Group. Dr. Forrest also has been the lead editor of Physical Review Applied, a scientific journal covering engineering, physics and technologies, since June 2017. From January 2006 to December 2013, Dr. Forrest also served as Vice President for Research at the University of Michigan. From 1992 to 2005, Dr. Forrest served in a number of positions at Princeton University, including Chair of the Electrical Engineering Department, Director of the Center for Photonics and Optoelectronic Materials, and director of the National Center for Integrated Photonic Technology. Prior to Princeton, Dr. Forrest was a faculty member of the Electrical Engineering and Materials Science Departments at the University of Southern California. Dr. Forrest has participated in the founding of five companies commercializing fiber optic components, displays, lighting and solar cells.
 
 - name: Thomas J. Iannotti
   slug: thomas-iannotti
@@ -115,25 +114,24 @@ members:
   otherBoards: 
     - title: Atento S.A.
   boardComittees:
-    - title: Human Resources & Compensation (Chair)
+    - title: Human Resources and Compensation (Chair)
   keyQualifications: 
     - title: Service management for technology companies on a global, regional and country level
     - title: Senior leadership and management experience
     - title: Global business, industry and operational experience
     - title: International strategic and business development
     - title: Public company board experience
-  bio: Thomas J. Iannotti server as Senior Vice President and General Manager, Enterprise Services, for Hewlett-Packard Company, a technology solutions provider to consumers, businesses and institutions globally, from February 2009 until his retirement in October 2011.  From 2002 to January 2009, My. Iannotti held various executive positions at Hewlett-Packard, including Senior Vice President and Managing Director, Enterprise Business Group, Americas.  From 1978 to 2002, Mr. Iannotti worked at Digital Equipment Corporation, a supplier of personal computing systems, after its acquisition of Digital Equipment Corporation.  Mr. Iannotti currently serves as lead director of the board of directors of Atento S.A.
-
+  bio: Thomas J. Iannotti served as Senior Vice President and General Manager, Enterprise Services, for Hewlett-Packard Company, a technology solutions provider to consumers, businesses and institutions globally, from February 2009 until his retirement in October 2011. From 2002 to January 2009, Mr. Iannotti held various executive positions at Hewlett-Packard, including Senior Vice President and Managing Director, Enterprise Business Group, Americas. From 1978 to 2002, Mr. Iannotti worked at Digital Equipment Corporation, a vendor of computer systems and software, and at Compaq Computer Corporation, a supplier of personal computing systems, after its acquisition of Digital Equipment Corporation. Mr. Iannotti currently serves as lead director of the board of directors of Atento S.A.
 - name: Alexander A. Karsner
   slug: alexander-karsner
   image: ../images/karsner.png 
   title: Senior Strategist, X
   age: 52
-  type: Senior Strategist, Independent Director
+  type: Independent Director
   since: Director since 2008
   boardComittees:
-    - title: Human Resources & Compensation
-    - title: Corporate Governance & Nominating
+    - title: Human Resources and Compensation
+    - title: Corporate Governance and Nominating
   keyQualifications: 
     - title: Expertise in public policy and government relations
     - title: Domestic and international trade, development and investment markets
@@ -143,7 +141,7 @@ members:
     - title: Strategy and innovation
     - title: Public company board experience
   bio: >
-    Alexander A. Karsner is Senior Strategist at X, the innovation lab of Alphabet Inc. Mr. Karsner is also Executive Chairman of Elemental Labs, which pursues market transformation through nature-based solutions. Mr. Karsner most recently served as Managing Partner of Emerson Collective, an investment platform funding non-profit, philanthropic and for-profit portfolios advancing education, immigration, the environment and other social innovation initiatives, from January 2016 to July 2019. Prior to this, Mr. Karsner has been Founder and CEO of Manifest Energy Inc., an energy technology development and investment firm, since July 2009, and has served as its Executive Chairman since January 2013. From March 2006to August 2008, he served as Assistant Secretary for Energy Efficiency and Renewable Energy at the U.S. Department of Energy, and exercised a diplomatic role as a principal in the UN Framework Convention on Climate Change. From August 2002 to March 2006, Mr. Karsner was Founder and Managing Director of Enercorp, a private company involved in international project development, management and financing of energy infrastructure. Mr. Karsner has also worked with Tondu Energy Systems of Texas, Wartsila Power Development of Finland and other multi-national energy firms and developers. He is a Precourt Energy Scholar at Stanford University’s School of Civil and Environmental Engineering, and serves on Advisory Boards of MIT Medialab, and the Polsky Center for Entrepreneurship at the University of Chicago’s Booth School of Business. Mr. Karsner served as a member of the board of directors of Codexis, Inc. from 2009 to 2014, as well as Argonne National Laboratory, and was previously an Associate of the Harvard Kennedy School. He presently is on the board of Conservation International and director emeritus of the National Marine Sanctuaries Foundation. He is a Life Member of the Council of Foreign Relations and the Trilateral Commission, Distinguished Fellow of the Council on Competitiveness and a Henry Crown Fellow of the Aspen Institute.
+    Alexander A. Karsner is Senior Strategist at X, the innovation lab of Alphabet Inc. Mr. Karsner is also Executive Chairman of Elemental Labs, which pursues market transformation through nature-based solutions. Mr. Karsner most recently served as Managing Partner of Emerson Collective, an investment platform funding non-profit, philanthropic and for-profit portfolios advancing education, immigration, the environment and other social innovation initiatives, from January 2016 to July 2019. Prior to this, Mr. Karsner has been Founder and CEO of Manifest Energy Inc., an energy technology development and investment firm, since July 2009, and has served as its Executive Chairman since January 2013. From March 2006 to August 2008, he served as Assistant Secretary for Energy Efficiency and Renewable Energy at the U.S. Department of Energy, and exercised a diplomatic role as a principal in the UN Framework Convention on Climate Change. From August 2002 to March 2006, Mr. Karsner was Founder and Managing Director of Enercorp, a private company involved in international project development, management and financing of energy infrastructure. Mr. Karsner has also worked with Tondu Energy Systems of Texas, Wartsila Power Development of Finland and other multi-national energy firms and developers. He is a Precourt Energy Scholar at Stanford University’s School of Civil and Environmental Engineering, and serves on Advisory Boards of MIT Medialab, and the Polsky Center for Entrepreneurship at the University of Chicago’s Booth School of Business. Mr. Karsner served as a member of the board of directors of Codexis, Inc. from 2009 to 2014, as well as Argonne National Laboratory, and was previously an Associate of the Harvard Kennedy School. He presently is on the board of Conservation International and director emeritus of the National Marine Sanctuaries Foundation. He is a Life Member of the Council of Foreign Relations and the Trilateral Commission, Distinguished Fellow of the Council on Competitiveness and a Henry Crown Fellow of the Aspen Institute.
 
 - name: Adrianna C. Ma
   slug: adrianna-ma
@@ -155,7 +153,7 @@ members:
   boardComittees:
     - title: Investment (Chair)
     - title: Audit
-    - title: Corporate Governance & Nominating
+    - title: Corporate Governance and Nominating
   keyQualifications: 
     - title: Broad experience with technology companies
     - title: Expertise in global growth investment
@@ -167,7 +165,7 @@ members:
 - name: Yvonne McGill
   slug: yvonne-mcgill
   image: ../images/mcgill.png
-  title: Chief Financial Officer, Senior Vice President, Infrastructure Solutions Group & Global Financial Planning & Analysis Dell Technologies, Inc.
+  title: Chief Financial Officer, Senior Vice President, Infrastructure Solutions Group and Global FinancialPlanning and Analysis, Dell Technologies, Inc.
   age: 52
   type: Independent Director
   since: Director since 2019
@@ -184,7 +182,7 @@ members:
   slug: scott-mcgregor
   image: ../images/mcgregor.png 
   title: President and Chief Executive Officer, Broadcom Corporation (retired)
-  age: 52
+  age: 63
   type: Independent Director
   since: Director since 2019
   otherBoards: 
@@ -200,5 +198,5 @@ members:
     - title: Risk management and controls
     - title: Public company board experience
   bio: >
-    Scott A. McGregor served as President and Chief Executive Officer and as a member of the board of directors of Broadcom Corporation, a world leader in wireless connectivity, broadband, automotive and networking infrastructure, from 2005 until the company was acquired by Avago Technologies Limited in 2016. Mr. McGregor joined Broadcom from Philips Semiconductors (now NXP Semiconductors), where he was President and Chief Executive Officer. He previously served in a range of senior management positions at Santa Cruz Operation Inc., Digital Equipment Corporation (now part of HP), Xerox PARC and Microsoft, where he was the architect and development team leader for Windows 1.0. Mr. McGregor currently serves as a member of the board of directors of Equifax Inc. (since October 2017). He previously served as a member of the boards of directors of Ingram Micro Inc. and Xactly Corporation.
+    Scott A. McGregor served as President and Chief Executive Officer and as a member of the board of directors of Broadcom Corporation, a world leader in wireless connectivity, broadband, automotive and networking infrastructure, from 2005 until the company was acquired by Avago Technologies Limited in February 2016. Mr. McGregor joined Broadcom from Philips Semiconductors (now NXP Semiconductors), where he was President and Chief Executive Officer. He previously served in a range of senior management positions at Santa Cruz Operation Inc., Digital Equipment Corporation (now part of HP), Xerox PARC and Microsoft, where he was the architect and development team leader for Windows 1.0. Mr. McGregor currently serves as a member of the board of directors of Equifax Inc., and Luminar Technologies. He previously served as a member of the boards of directors of Ingram Micro Inc., TSMC, and Xactly Corporation.
 ---
