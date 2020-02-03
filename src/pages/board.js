@@ -140,7 +140,10 @@ export default class extends React.Component {
     }
   }
 
-  memberItem(el, idx) {
+  memberItem( el, idx ) {
+    if (el.name == "Thomas J. Iannotti"){
+      el.type = "Independent Director";
+    }
     return (
       <Link to={"/board/" + el.slug}>
         <div className="my-board-member" key={el.name}>
@@ -160,7 +163,7 @@ export default class extends React.Component {
               </small>
             </div>
 
-            <b>Board Committees:</b>
+            <b>Committees:</b>
             <div className="content">
               <small>
                 <ul>{this.boardComittees(el.summaryComittees)}</ul>
