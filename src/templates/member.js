@@ -140,6 +140,19 @@ export default class extends React.Component {
   }
 
   render() {
+    let memberType = this.state.member.type;
+    
+    if (this.state.member.name == "Thomas J. Iannotti"){
+      memberType = memberType.split(", ").map( (el ) => {
+        return (
+          <div key={el}>
+            {el}
+          </div>
+        )
+      })
+    }
+
+
     return (
       <Layout>
         <SEO title="" />
@@ -180,7 +193,7 @@ export default class extends React.Component {
                 Age: { this.state.member.age }
               </div>
               <div>
-                { this.state.member.type }
+                { memberType }
               </div>
               <div style={{marginBottom: 12}}>
                 { this.state.member.since }
@@ -209,7 +222,7 @@ export default class extends React.Component {
                     {
                       this.state.member.keyQualifications.map( (el) => {
                         return (
-                          <li>
+                          <li >
                             { el.title }
                           </li>
                         )
