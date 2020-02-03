@@ -34,6 +34,7 @@ const Styles = styled.div`
         color: white;
         text-align: center;
         z-index: 100;
+        width: 100%;
         background: white;
         padding: 24px;
 
