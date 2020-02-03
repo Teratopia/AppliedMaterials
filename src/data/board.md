@@ -168,8 +168,8 @@ members:
   type: Independent Director
   since: Director since 2015
   summaryComittees:
-    - title: Audit
     - title: Investment (Chair)
+    - title: Audit
     - title: Governance
   boardComittees:
     - title: Investment (Chair)
