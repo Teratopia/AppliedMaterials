@@ -12,7 +12,7 @@ import theme from "../theme.js"
 const Styles = styled.div`
   .my-board-stat-grid {
     display: grid;
-    grid-template-columns: calc(58% - 24px) calc(42% - 24px);
+    grid-template-columns: calc(50% - 24px) calc(50% - 24px);
     grid-gap: 56px;
     padding: 0px 20px;
 
