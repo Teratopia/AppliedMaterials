@@ -296,7 +296,7 @@ export default class extends React.Component {
               className="my-target"
               style={{ position: "relative", height: "110vh" }}
             >
-              <Worker workerUrl={ require("pdfjs-dist/build/pdf.worker.min.js")}>
+              <Worker workerUrl={ require("pdfjs-dist/build/pdf.worker.js")}>
                 <div
                   style={{
                     height: "100vh",
