@@ -19,6 +19,7 @@ const defaultLayout = (isSidebarOpened, main, toolbar, sidebar) => {
             gridArea: 'toolbar',
             justifyContent: 'center',
             padding: '0px 4px',
+            
             // position: "fixed",
             // width: "100%",
             // zIndex: 40000

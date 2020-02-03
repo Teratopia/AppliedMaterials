@@ -43,7 +43,7 @@ const Styles = styled.div`
         vertical-align: middle;
         padding: 2px 12px;
         height: 93px;
-        font-size: 14px;
+        font-size: 12px;
         width: 100%;
 
         @media screen and (max-width: 319px) {
@@ -52,6 +52,7 @@ const Styles = styled.div`
 
         @media screen and (min-width: 408px) {
           height: 74px;
+          font-size: 14px;
         }
       }
     }
@@ -174,7 +175,7 @@ export default class extends React.Component {
             <div style={{ padding: "0 2px" }}>
               {toolbarSlot.previousPageButton}
             </div>
-            <div style={{ padding: "0 2px" }}>
+            <div style={{ padding: "0 2px", minWidth: 87  }}>
               {toolbarSlot.currentPageInput} / {toolbarSlot.numPages}
             </div>
             <div style={{ padding: "0 2px" }}>{toolbarSlot.nextPageButton}</div>
@@ -239,6 +240,7 @@ export default class extends React.Component {
               gridArea: "toolbar",
               justifyContent: "center",
               padding: "4px",
+              overflow: "hidden",
             }}
           >
             {toolbar(renderToolbar)}
