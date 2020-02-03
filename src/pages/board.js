@@ -23,6 +23,7 @@ const Styles = styled.div`
     margin: 0 auto;
     margin-bottom: 82px;
 
+  
 
     .my-title {
       font-size: 1.5rem;
@@ -106,26 +107,16 @@ const Styles = styled.div`
     }
   }
 
-  .my-board-stat-mini-grid {
-    display: grid;
-    grid-template-columns: 28% 72%;
-    grid-gap: 16px;
-    max-width: 360px;
-    margin: 0 auto;
+  .my-bracket {
+    margin-bottom: 36px;
   }
+
 
   .content {
     margin-bottom: 8px;
   }
 
-  @media screen and (max-width: 900px) {
-
-    .my-small-bump {
-      position: relative;
-      bottom: 4px;
-    }
-    
-  }
+ 
 `
 
 export default class extends React.Component {
@@ -222,27 +213,14 @@ export default class extends React.Component {
                   <div className="my-title">Key Attributes</div>
 
                   <div className="my-bracket">
-                  <div className="title is-5">
-                    Independence
-                  </div>
                   <Img
                     fluid={independence}
                     alt="Independence"
-                    style={{ maxWidth: 300, marginBottom: 10, padding: "0px" }}
                   />
-                  <div className="subtitle is-6" style={{marginBottom: 24}}>
-                    9 of 10 director nominees are independent
-                  </div>
                   </div>
 
                   <div className="my-bracket">
                     
-                  <div
-                    className="title is-5"
-                  >
-                    Diversity
-                  </div>
-                  <div className="my-board-stat-mini-grid">
                     <Img
                       fluid={diversity}
                       className="my-small-bump"
@@ -253,40 +231,12 @@ export default class extends React.Component {
                       }}
                     />
 
-                    <div>
-                      <div>
-                        <b style={{ color: "#459ac2" }}> 40% </b> of director
-                        nominees are ethnically and/or gender diverse
-                      </div>
-
-                      <div className="content">
-                        <small>
-                          <ul style={{ marginTop: 8 }}>
-                            <li>
-                              <b>30%</b> are female
-                            </li>
-
-                            <li>
-                              <b>20%</b> are ethically diverse
-                            </li>
-                          </ul>
-                        </small>
-                      </div>
-                    </div>
-                  </div>
 
                   </div>
 
                   <div className="my-bracket">
 
-                  <div
-                    className="title is-5"
-                  >
-                    Tenure
-                  </div>
-
-                  <div className="my-board-stat-mini-grid">
-                    <Img
+                  <Img
                       fluid={tenure}
                       className="my-small-bump"
                       alt="Tenure"
@@ -296,28 +246,6 @@ export default class extends React.Component {
                       }}
                     />
 
-                    <div>
-
-                      <small>
-                        Two directors added to the board over the last 2 years
-                      </small>
-                      <div>
-                        <b style={{ color: "#459ac2" }}> >10 Years Tenure :</b>{" "}
-                        4 Directors
-                      </div>
-
-                      <div>
-                        <b style={{ color: "#e48047" }}> 4-10 Years Tenure :</b>{" "}
-                        3 Directors
-                      </div>
-
-                      <div>
-                        <b> 0-4 Years Tenure :</b> 3 Directors
-                      </div>
-
-                      
-                    </div>
-                  </div>
                   </div>
                 </div>
               </div>
