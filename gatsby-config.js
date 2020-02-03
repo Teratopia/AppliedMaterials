@@ -24,12 +24,13 @@ module.exports = {
         mergeStyleHashes: false, 
         directives: {
           "style-src": "'self' 'unsafe-inline' fonts.googleapis.com",
-          "img-src": "'self' data: blob:",
+          "img-src": "'self' data: ",
+          // blob:
           "default-src": "'self'", 
           "script-src": "'self' 'unsafe-eval'", 
           "connect-src": "'self'", 
-          "worker-src": "blob:",
-          "script-src-elem": "blob: 'unsafe-inline' unpkg.com temp-applied-link.netlify.com appliedmaterials.com amatsmartdev.prod.acquia-sites.com",
+          // "worker-src": "blob:",
+          // "script-src-elem": "blob: 'unsafe-inline' unpkg.com temp-applied-link.netlify.com appliedmaterials.com amatsmartdev.prod.acquia-sites.com",
           "font-src": "'self' data: fonts.gstatic.com",
         }
       }
