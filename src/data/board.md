@@ -36,6 +36,7 @@ members:
   since: Director since 2015
   summaryComittees:
     - title: Compensation
+    - title: Strategy
   boardComittees:
     - title: Human Resources and Compensation
     - title: Strategy
@@ -206,7 +207,7 @@ members:
   title: President and Chief Executive Officer, Broadcom Corporation (retired)
   age: 63
   type: Independent Director
-  since: Director since 2019
+  since: Director since 2018
   summaryComittees:
     - title: Audit
     - title: Strategy
@@ -221,7 +222,6 @@ members:
     - title: Global business, industry and operational experience
     - title: Strategy, innovation, management development and understanding of global challenges and opportunities
     - title: Cybersecurity
-    
     - title: Public company board experience
   bio: >
     Scott A. McGregor served as President and Chief Executive Officer and as a member of the board of directors of Broadcom Corporation, a world leader in wireless connectivity, broadband, automotive and networking infrastructure, from 2005 until the company was acquired by Avago Technologies Limited in February 2016. Mr. McGregor joined Broadcom from Philips Semiconductors (now NXP Semiconductors), where he was President and Chief Executive Officer. He previously served in a range of senior management positions at Santa Cruz Operation Inc., Digital Equipment Corporation (now part of HP), Xerox PARC and Microsoft, where he was the architect and development team leader for Windows 1.0. Mr. McGregor currently serves as a member of the board of directors of Equifax Inc., and Luminar Technologies. He previously served as a member of the boards of directors of Ingram Micro Inc., TSMC, and Xactly Corporation.
