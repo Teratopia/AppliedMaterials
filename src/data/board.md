@@ -111,7 +111,6 @@ members:
     - title: Research and development portfolio management
     - title: Government policy
     - title: Strategy, innovation, technology licensing and product commercialization
-    - title: Mergers and acquisitions
     - title: Establishing partnerships to develop businesses in new markets focused on alternative energy and other technologies
   bio: >
     Stephen R. Forrest holds faculty appointments as Professor of Electrical Engineering and Computer Science, as Professor of Physics, and as Professor of Materials Science and Engineering at the University of Michigan, and leads the University’s Optoelectronics Components and Materials Group. Dr. Forrest also has been the lead editor of Physical Review Applied, a scientific journal covering engineering, physics and technologies, since June 2017. From January 2006 to December 2013, Dr. Forrest also served as Vice President for Research at the University of Michigan. From 1992 to 2005, Dr. Forrest served in a number of positions at Princeton University, including Chair of the Electrical Engineering Department, Director of the Center for Photonics and Optoelectronic Materials, and director of the National Center for Integrated Photonic Technology. Prior to Princeton, Dr. Forrest was a faculty member of the Electrical Engineering and Materials Science Departments at the University of Southern California. Dr. Forrest has participated in the founding of five companies commercializing fiber optic components, displays, lighting and solar cells.
@@ -219,9 +218,10 @@ members:
   keyQualifications: 
     - title: Executive leadership and management experience
     - title: Semiconductor industry leadership
+    - title: Global business, industry and operational experience
     - title: Strategy, innovation, management development and understanding of global challenges and opportunities
     - title: Cybersecurity
-    - title: Risk management and controls
+    
     - title: Public company board experience
   bio: >
     Scott A. McGregor served as President and Chief Executive Officer and as a member of the board of directors of Broadcom Corporation, a world leader in wireless connectivity, broadband, automotive and networking infrastructure, from 2005 until the company was acquired by Avago Technologies Limited in February 2016. Mr. McGregor joined Broadcom from Philips Semiconductors (now NXP Semiconductors), where he was President and Chief Executive Officer. He previously served in a range of senior management positions at Santa Cruz Operation Inc., Digital Equipment Corporation (now part of HP), Xerox PARC and Microsoft, where he was the architect and development team leader for Windows 1.0. Mr. McGregor currently serves as a member of the board of directors of Equifax Inc., and Luminar Technologies. He previously served as a member of the boards of directors of Ingram Micro Inc., TSMC, and Xactly Corporation.
