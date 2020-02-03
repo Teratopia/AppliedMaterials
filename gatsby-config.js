@@ -29,7 +29,7 @@ module.exports = {
           "script-src": "'self' 'unsafe-eval'", 
           "connect-src": "'self'", 
           "worker-src": "blob:",
-          "script-src-elem": "blob: 'unsafe-inline' unpkg.com temp-applied-link.netlify.com appliedmaterials.com",
+          "script-src-elem": "blob: 'unsafe-inline' unpkg.com temp-applied-link.netlify.com appliedmaterials.com amatsmartdev.prod.acquia-sites.com",
           "font-src": "'self' data: fonts.gstatic.com",
         }
       }
