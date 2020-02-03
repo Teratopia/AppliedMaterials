@@ -62,7 +62,7 @@ members:
     - title: Strategy (Chair)
     - title: Investment
   otherBoards: 
-    - title: Synopsis, Inc.
+    - title: Synopsys, Inc.
   boardComittees:
     - title: Strategy (Chair)
     - title: Investment
@@ -186,7 +186,7 @@ members:
 - name: Yvonne McGill
   slug: yvonne-mcgill
   image: ../images/mcgill.png
-  title: Chief Financial Officer, Senior Vice President, Infrastructure Solutions Group and Global FinancialPlanning and Analysis, Dell Technologies, Inc.
+  title: Chief Financial Officer, Senior Vice President, Infrastructure Solutions Group and Global Financial Planning and Analysis, Dell Technologies, Inc.
   age: 52
   type: Independent Director
   since: Director since 2019

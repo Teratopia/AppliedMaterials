@@ -36,32 +36,47 @@ const Styles = styled.div`
         z-index: 100;
         width: 100%;
         background: white;
-        padding: 24px;
+        position: relative;
 
-        @media screen and (min-width: 848px) {
-          padding-top: 94px;
+        .gatsby-image-wrapper {
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          max-height: 530px;
+        }
+
+        .my-content {
+          position: absolute;
+          width: 100%;
+          top: 94px;
+
+          @media screen and (max-width: 520px) {
+            top: 14vw;
+          }
         }
 
         .my-title {
-          font-size: 28px;
+          font-size: 32px;
+          margin-bottom: 44px;
 
-          @media screen and (min-width: 848px) {
-            font-size: 32px;
-            margin-bottom: 44px;
+          @media screen and (max-width: 520px) {
+            font-size: 7vw;
           }
         }
 
         .my-proxy-button {
-          margin: 24px 0px;
+          margin: 20px 0px;
           border: 2px solid white;
           display: inline-block;
-          padding: 12px 18px;
+          padding: 10px 28px;
+          font-size: 22px;
           background: none;
 
-          @media screen and (min-width: ${theme.breakpoints.mind}px) {
-            padding: 12px 78px;
-            font-size: 22px;
+          @media screen and (max-width: 520px) {
+            font-size: 15px;
+            padding: 10px 17px;
           }
+
 
           &:hover {
             background: #fff;
@@ -69,10 +84,6 @@ const Styles = styled.div`
             cursor: pointer;
           }
 
-          @media screen and (min-width: 1048px) {
-            padding: 14px 42px;
-            font-size: 20px;
-          }
         }
       }
 
@@ -425,21 +436,26 @@ export default class extends React.Component {
           <Page>
             <Container style={{ maxWidth: 920 }}>
               <div className="my-hero-grid">
-                <div className="hero-section special">
-                  <BackgroundImage fluid={world} className="my-background">
-                    <div className="my-title">
-                      <div>Notice of</div>
-                      <div>2020 Annual Meeting</div>
-                      <div>of Shareholders</div>
-                      <div>and Proxy Statement</div>
-                    </div>
 
-                    <Link to="proxy" style={{ color: "white" }}>
-                      <div className="my-proxy-button">
-                        VIEW INTERACTIVE PROXY
+                <div className="hero-section" style={{position: "relative"}}>
+                  
+                  <div className="my-background">
+                    <Img fluid={world} />
+                    <div className="my-content">
+                      <div className="my-title">
+                        <div>Notice of</div>
+                        <div>2020 Annual Meeting</div>
+                        <div>of Shareholders</div>
+                        <div>and Proxy Statement</div>
                       </div>
-                    </Link>
-                  </BackgroundImage>
+
+                      <Link to="proxy" style={{ color: "white" }}>
+                        <div className="my-proxy-button">
+                          VIEW INTERACTIVE PROXY
+                        </div>
+                      </Link>
+                      </div>
+                  </div>
                 </div>
 
                 <Link to="/board">

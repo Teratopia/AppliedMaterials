@@ -12,25 +12,9 @@ import Footer from "./footer"
 import "./layout.scss"
 import styled from "@emotion/styled"
 import Theme from "../theme.js";
-// import CMS from 'netlify-cms-app'
 
 const Styles = styled.div`
-  .my-background {
-    position: fixed;
-    z-index: 4000;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    background: grey;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    overflow-y: scroll; 
 
-    &.active {
-      display: none;
-    }
-  }
 `
 class Layout extends React.Component {
   constructor ( props ) {
@@ -39,13 +23,7 @@ class Layout extends React.Component {
   }
 
   componentDidMount () {
-    // if (typeof window !== undefined) {
-    //   if (!window.netlifyIdentity.currentUser()) {
-    //     window.netlifyIdentity.open()
-    //   } else {
-    //     document.querySelectorAll(".my-background")[0].classList += "active"
-    //   }
-    // }
+
     
   }
   render () {
@@ -53,13 +31,9 @@ class Layout extends React.Component {
       <Styles>
         <Header />
         
-        {/* <div className="my-background">
-        </div> */}
-        
         
         <main>{ this.props.children }
         
-        {/* <Footer /> */}
         </main>
         
         
