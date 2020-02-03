@@ -12,6 +12,9 @@ members:
     - title: Rapid7, Inc.
     - title: Seagate Technology plc
     - title: Varian Medical Systems, Inc.
+  summaryComittees:
+    - title: Governance (Chair)
+    - title: Audit
   boardComittees:
     - title: Corporate Governance and Nominating (Chair)
     - title: Audit
@@ -31,6 +34,8 @@ members:
   age: 50
   type: Independent Director
   since: Director since 2015
+  summaryComittees:
+    - title: Compensation
   boardComittees:
     - title: Human Resources and Compensation
     - title: Strategy
@@ -52,6 +57,9 @@ members:
   age: 65
   type: Independent Director
   since: Director since 2007
+  summaryComittees:
+    - title: Strategy (Chair)
+    - title: Investment
   otherBoards: 
     - title: Synopsis, Inc.
   boardComittees:
@@ -90,6 +98,10 @@ members:
   age: 69
   type: Independent Director
   since: Director since 2008
+  summaryComittees:
+    - title: Audit
+    - title: Strategy
+    - title: Investment
   boardComittees:
     - title: Audit
     - title: Strategy
@@ -111,6 +123,8 @@ members:
   age: 63
   type: Chairman of the Board, Independent Director
   since: Director since 2005
+  summaryComittees:
+    - title: Compensation (Chair)
   otherBoards: 
     - title: Atento S.A.
   boardComittees:
@@ -129,6 +143,9 @@ members:
   age: 52
   type: Independent Director
   since: Director since 2008
+  summaryComittees:
+    - title: Compensation
+    - title: Governance
   boardComittees:
     - title: Human Resources and Compensation
     - title: Corporate Governance and Nominating
@@ -150,6 +167,10 @@ members:
   age: 46
   type: Independent Director
   since: Director since 2015
+  summaryComittees:
+    - title: Audit
+    - title: Investment (Chair)
+    - title: Governance
   boardComittees:
     - title: Investment (Chair)
     - title: Audit
@@ -169,6 +190,8 @@ members:
   age: 52
   type: Independent Director
   since: Director since 2019
+  summaryComittees:
+    - title: Audit
   boardComittees:
     - title: Audit
   keyQualifications: 
@@ -185,6 +208,9 @@ members:
   age: 63
   type: Independent Director
   since: Director since 2019
+  summaryComittees:
+    - title: Audit
+    - title: Strategy
   otherBoards: 
     - title: Equifax Inc. (since October 2017)
   boardComittees:

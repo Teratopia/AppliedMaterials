@@ -21,7 +21,6 @@ const Styles = styled.div`
     }
     max-width: 965px;
     margin: 0 auto;
-    margin-bottom: 82px;
 
   
 
@@ -164,7 +163,7 @@ export default class extends React.Component {
             <b>Board Committees:</b>
             <div className="content">
               <small>
-                <ul>{this.boardComittees(el.boardComittees)}</ul>
+                <ul>{this.boardComittees(el.summaryComittees)}</ul>
               </small>
             </div>
           </div>
@@ -250,6 +249,10 @@ export default class extends React.Component {
                 </div>
               </div>
 
+              <div style={{background: theme.blue, height: 1, maxWidth: 940, margin: "40px auto", marginBottom: 80}}>
+
+              </div>
+
               <div className="members-grid">
                 {members.map(this.memberItem.bind(this))}
               </div>
@@ -305,6 +308,9 @@ export const query = graphql`
           type
           since
           age
+          summaryComittees {
+            title
+          }
           otherBoards {
             title
           }
