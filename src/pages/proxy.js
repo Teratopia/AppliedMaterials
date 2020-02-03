@@ -41,7 +41,7 @@ const Styles = styled.div`
       .cell {
         display: table-cell;
         vertical-align: middle;
-        padding: 6px 12px;
+        padding: 2px 12px;
         height: 93px;
         font-size: 14px;
         width: 100%;
