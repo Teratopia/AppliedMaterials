@@ -123,8 +123,11 @@ const Styles = styled.div`
   .my-info-grid {
     margin: 24px auto;
     display: grid;
+    
     grid-template-columns: repeat(auto-fill, minmax(33%, 1fr));
 
+    // max-width: 700px;
+    
     .mini-grid {
       display: grid;
       max-width: 350px;
@@ -719,7 +722,7 @@ export default class extends React.Component {
                 fluid={investorsDaily}
                 alt="Investor Business Daily"
               />
-              <Img fixed={best} className="best" alt="Best Places To Work" />
+              <Img fluid={best} className="best" alt="Best Places To Work" />
               
             </div>
 
