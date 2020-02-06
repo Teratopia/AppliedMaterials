@@ -200,7 +200,7 @@ const ViewerInner = ({ doc, fileName, layout, pageSize, onDownload, onOpenFile, 
                 return (React.createElement("div", { key: `pagelayer-${index}`, ref: (ref) => {
                         pageRefs[index].current = ref;
                     }, style: { padding: '8px' } },
-                    React.createElement(PageLayer, { doc: doc, keywordRegexp: keywordRegexp, height: height, match: match, pageIndex: index, rotation: rotation, scale: scale, width: width, onJumpToDest: jumpToDest, onPageVisibilityChanged: pageVisibilityChanged })));
+                    React.createElement(PageLayer, { doc: doc, keywordRegexp: keywordRegexp, height: height, match: match, pageIndex: index, rotation: rotation, scale: scale, width: width , onJumpToDest: jumpToDest, onPageVisibilityChanged: pageVisibilityChanged })));
             }))),
     }, (renderToolbar) => (React.createElement(Toolbar, { currentPage: currentPage, doc: doc, fileName: fileName, scale: scale, onChangeScrollMode: changeScrollMode, onDownload: onDownload, onFullScreen: openFullScreen, onJumpTo: jumpToPage, onJumpToMatch: jumpToMatch, onOpenFiles: openFiles, onRotate: rotate, onSearchFor: setKeywordRegexp, onToggleDragScroll: toggleDragScroll, onToggleSidebar: toggleSidebar.toggle, onZoom: zoom, renderToolbar: renderToolbar })), {
         attrs: {},

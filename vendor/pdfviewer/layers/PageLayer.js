@@ -17,8 +17,8 @@ const PageLayer = ({ doc, height, keywordRegexp, match, pageIndex, rotation, sca
     const scaledWidth = pageWidth * scale;
     const scaledHeight = pageHeight * scale;
     const isVertical = Math.abs(rotation) % 180 === 0;
-    const w = isVertical ? scaledWidth : scaledHeight;
-    const h = isVertical ? scaledHeight : scaledWidth;
+    const w  = (isVertical ? scaledWidth : scaledHeight ) * 1.5;
+    const h = (isVertical ? scaledHeight : scaledWidth) * 1.5;
     const visibilityChanged = (params) => {
         const ratio = params.isVisible ? params.ratio : 0;
         onPageVisibilityChanged(pageIndex, ratio);
@@ -46,6 +46,7 @@ const PageLayer = ({ doc, height, keywordRegexp, match, pageIndex, rotation, sca
                 margin: '0 auto',
                 position: 'relative',
                 width: `${w}px`,
+                maxWidth: 1000,
             } }, !page
             ? React.createElement(Spinner, null)
             : (React.createElement(React.Fragment, null,

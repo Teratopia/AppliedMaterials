@@ -23,14 +23,14 @@ module.exports = {
       options: {
         mergeStyleHashes: false, 
         directives: {
-          "style-src": "'self' 'unsafe-inline' fonts.googleapis.com appliedmaterials.com amatsmartdev.prod.acquia-sites.com",
-          "img-src": "'self' data: blob: appliedmaterials.com amatsmartdev.prod.acquia-sites.com",
-          "default-src": "'self' appliedmaterials.com amatsmartdev.prod.acquia-sites.com", 
-          "script-src": "'self' 'unsafe-eval' appliedmaterials.com amatsmartdev.prod.acquia-sites.com", 
-          "connect-src": "'self' appliedmaterials.com amatsmartdev.prod.acquia-sites.com", 
-          "worker-src": "'self' blob: appliedmaterials.com amatsmartdev.prod.acquia-sites.com",
-          "script-src-elem": "'self' blob: localhost 'unsafe-inline' unpkg.com temp-applied-link.netlify.com appliedmaterials.com amatsmartdev.prod.acquia-sites.com",
-          "font-src": "'self' data: fonts.gstatic.com appliedmaterials.com amatsmartdev.prod.acquia-sites.com",
+          "style-src": "'self' 'unsafe-inline' fonts.googleapis.com",
+          "img-src": "'self' data: blob:",
+          "default-src": "'self'", 
+          "script-src": "'self' 'unsafe-eval'", 
+          "connect-src": "'self'", 
+          // "worker-src": "'self' blob: appliedmaterials.com amatsmartdev.prod.acquia-sites.com",
+          // "script-src-elem": "'self' blob: localhost 'unsafe-inline' unpkg.com temp-applied-link.netlify.com appliedmaterials.com amatsmartdev.prod.acquia-sites.com",
+          "font-src": "'self' data: fonts.gstatic.com ",
         }
       }
     },
