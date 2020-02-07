@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Container from "../components/container"
-import Wijmo from "../components/wijmo"
+// import Wijmo from "../components/wijmo"
 import Page from "../components/page"
 import SEO from "../components/seo"
 import styled from "@emotion/styled"
@@ -85,16 +85,16 @@ export default class extends React.Component {
 
   componentDidMount() {
     if (typeof window !== undefined) {
-      // var adobeDCView = new window.AdobeDC.View({clientId: "4cf176e7e8a04036a69a1a50982528b3", divId: "adobe-dc-view"});
-      // adobeDCView.previewFile({
-      //   content:{location: {url: require("../images/applied-proxy.pdf")}},
-      //   metaData:{fileName: "Applied Materials 2020 Proxy"}
-      // }, {showDownloadPDF: true, showZoom: true,
-      //   showPrintPDF: true, embedMode: "SIZED_CONTAINER"});
+      var adobeDCView = new window.AdobeDC.View({clientId: "4cf176e7e8a04036a69a1a50982528b3", divId: "adobe-dc-view"});
+      adobeDCView.previewFile({
+        content:{location: {url: require("../images/applied-proxy.pdf")}},
+        metaData:{fileName: "Applied Materials 2020 Proxy"}
+      }, {showDownloadPDF: true, showZoom: true,
+        showPrintPDF: true, embedMode: "SIZED_CONTAINER"});
     
     
-        window.onscroll = this.handleScroll.bind(this)
-        window.onresize = this.handleScroll.bind(this)
+        // window.onscroll = this.handleScroll.bind(this)
+        // window.onresize = this.handleScroll.bind(this)
   
     }
 
@@ -147,7 +147,7 @@ export default class extends React.Component {
       currentPageNumber: e.currentTarget.dataset.page,
     })
 
-    this.jumpToPage(parseInt(e.currentTarget.dataset.page))
+    // this.jumpToPage(parseInt(e.currentTarget.dataset.page))
   }
 
   menuItem(el, idx) {
@@ -315,12 +315,12 @@ export default class extends React.Component {
 
             {/* <Proxy /> */}
 
-            {/* <Container> */}
-              {/* <div id="adobe-dc-view"></div> */}
-            {/* </Container> */}
+            <Container>
+              <div id="adobe-dc-view"></div>
+            </Container>
             {/* <Wijmo /> */}
 
-            <div
+            {/* <div
               className="my-target"
               style={{ position: "relative", height: "110vh" }}
             >
@@ -342,7 +342,7 @@ export default class extends React.Component {
                   </div>
                 </div>
               </Worker>
-            </div>
+            </div> */}
 
           </Page>
         </Styles>
