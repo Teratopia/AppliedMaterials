@@ -54,7 +54,7 @@ export default class extends React.Component {
         <Styles>
           <Page>
             <Container>
-              <div className="my-breadcrumbs" style={{ marginBottom: "30px" }}>
+              <div className="my-breadcrumbs" style={{ marginBottom: "18px" }}>
                 <span>
                   <Link to="/">Home</Link> /{" "}
                   <span style={{ color: theme.blue }}>2020 Proxy Summary</span>

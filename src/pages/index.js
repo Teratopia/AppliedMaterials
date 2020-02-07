@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import Img from "gatsby-image"
 import SEO from "../components/seo"
 import Container from "../components/container"
+import VerticalAlign from "../components/verticalAlign"
 import AppliedLogo from "../images/applied-materials.png"
 import Page from "../components/page"
 import styled from "@emotion/styled"
@@ -51,16 +52,16 @@ const Styles = styled.div`
           top: 94px;
 
           @media screen and (max-width: 520px) {
-            top: 14vw;
+            top: 18vw;
           }
         }
 
         .my-title {
-          font-size: 32px;
+          font-size: 30px;
           margin-bottom: 44px;
 
           @media screen and (max-width: 520px) {
-            font-size: 7vw;
+            font-size: 6.5vw;
           }
         }
 
@@ -73,7 +74,7 @@ const Styles = styled.div`
           background: none;
           cursor: pointer;
 
-          @media screen and (max-width: 520px) {
+          @media screen and (max-width: 470px) {
             font-size: 15px;
             padding: 10px 17px;
           }
@@ -452,6 +453,7 @@ export default class extends React.Component {
                   <div className="my-background">
                     <Img fluid={world} />
                     <div className="my-content">
+                      <VerticalAlign>
                       <div className="my-title">
                         <div>Notice of</div>
                         <div>2020 Annual Meeting</div>
@@ -464,6 +466,7 @@ export default class extends React.Component {
                           VIEW INTERACTIVE PROXY
                         </div>
                       </Link>
+                      </VerticalAlign>
                       </div>
                   </div>
                 </div>
