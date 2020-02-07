@@ -192,7 +192,7 @@ export default class extends React.Component {
     const diversity = this.props.data.diversity.childImageSharp.fluid
     return (
       <Layout>
-        <SEO title="" />
+        <SEO title="Board" />
         <Styles>
           <Page>
             <Container>

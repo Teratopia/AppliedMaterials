@@ -312,6 +312,7 @@ const Styles = styled.div`
       @media screen and (max-width: ${theme.breakpoints.min}px) {
         margin-right: 0px; 
         margin-bottom: 14px; 
+        display: block;
       }
     }
     .proxy-statement-button {

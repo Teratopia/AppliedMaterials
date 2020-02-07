@@ -155,7 +155,7 @@ export default class extends React.Component {
 
     return (
       <Layout>
-        <SEO title="" />
+        <SEO title={ this.state.member.name} />
         <Styles>
           <Page>
           <Container>
