@@ -13,7 +13,7 @@ const PopoverBody = ({ children, closeOnEscape, offset, position, targetRef, onT
             left: 0,
             position: 'absolute',
             top: '-9999px',
-            zIndex: 9999,
+            zIndex: 400,
         } },
         React.createElement(Arrow, { position: position, styles: { background: '#FFF' } }),
         children));
