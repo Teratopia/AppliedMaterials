@@ -28,8 +28,12 @@ const Styles = styled.div`
       background: #e5e5e5;
       width: 100%;
       height: 100%;
-      min-height: 70px;
+      min-height: 54px;
       padding: 8px 12px;
+
+      @media screen and (min-width: 606px) {
+        min-height: 70px;
+      }
 
       &:hover {
         background: #469ac2;
