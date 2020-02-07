@@ -195,6 +195,7 @@ export default class extends React.Component {
               flexGrow: 1,
               flexShrink: 1,
               justifyContent: "center",
+              paddingRight: "6vw"
             }}
           >
             <div style={{ padding: "0 2px" }}>{toolbarSlot.zoomOutButton}</div>
@@ -292,7 +293,7 @@ export default class extends React.Component {
         <SEO title="" />
         <Styles>
           <Page>
-            <Container>
+            <Container >
               <div className="my-breadcrumbs" style={{ marginBottom: "18px" }}>
                 <span>
                   <Link to="/">Home</Link> /{" "}
