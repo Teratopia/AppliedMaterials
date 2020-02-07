@@ -279,6 +279,7 @@ const Styles = styled.div`
 
     @media screen and (max-width: 740px) {
       padding: 40px 60px;
+      grid-gap: 84px;
     }
 
     .gatsby-image-wrapper {
@@ -306,6 +307,11 @@ const Styles = styled.div`
       
       margin: 0;
       margin-right: 44px;
+
+      @media screen and (max-width: ${theme.breakpoints.min}px) {
+        margin-right: 0px; 
+        margin-bottom: 14px; 
+      }
     }
     .proxy-statement-button {
       border: 2px solid white;
