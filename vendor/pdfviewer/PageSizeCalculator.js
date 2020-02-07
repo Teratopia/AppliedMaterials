@@ -9,14 +9,14 @@ const PageSizeCalculator = ({ doc, render }) => {
     });
     React.useEffect(() => {
         doc.getPage(1).then((pdfPage) => {
-            const viewport = pdfPage.getViewport({ scale: 0.666 });
+            const viewport = pdfPage.getViewport({ scale: 1 });
             const w = viewport.width;
             const h = viewport.height;
             const pagesEle = pagesRef.current;
             if (!pagesEle) {
                 return;
             }
-            const scale = Math.min(1, pagesEle.offsetWidth / (w));
+            const scale = Math.min(1, pagesEle.offsetWidth / (w ));
             setPageSize({
                 pageHeight: h,
                 pageWidth: w,

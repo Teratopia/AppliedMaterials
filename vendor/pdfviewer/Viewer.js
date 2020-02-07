@@ -26,6 +26,7 @@ const Viewer = ({ fileUrl, layout, localization, parent }) => {
         downloadFile(file.name, file.data);
     };
     const renderDoc = (doc) => {
+        
         const renderInner = (pageSize) => (React.createElement(ViewerInner, { doc: doc, fileName: file.name, layout: layout || layoutOption, pageSize: pageSize, onDownload: download, onOpenFile: openFile, parent: parent }));
         return (React.createElement(PageSizeCalculator, { doc: doc, render: renderInner }));
     };

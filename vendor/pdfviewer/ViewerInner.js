@@ -23,9 +23,6 @@ const ViewerInner = ({ doc, fileName, layout, pageSize, onDownload, onOpenFile, 
     const pagesRef = ReturnRef();
     const [scale, setScale] = React.useState(pageSize.scale);
     const [currentPage, setCurrentPage] = React.useState(0);
-    
-    
-
     const [rotation, setRotation] = React.useState(0);
     const [keywordRegexp, setKeywordRegexp] = React.useState(EMPTY_KEYWORD_REGEXP);
     const [match, setMatch] = React.useState({
@@ -48,6 +45,7 @@ const ViewerInner = ({ doc, fileName, layout, pageSize, onDownload, onOpenFile, 
         if (!pagesEle) {
             return;
         }
+
         switch (newScale) {
             case SpecialLevel.ActualSize:
                 setScale(1);
@@ -200,7 +198,7 @@ const ViewerInner = ({ doc, fileName, layout, pageSize, onDownload, onOpenFile, 
                 return (React.createElement("div", { key: `pagelayer-${index}`, ref: (ref) => {
                         pageRefs[index].current = ref;
                     }, style: { padding: '8px' } },
-                    React.createElement(PageLayer, { doc: doc, keywordRegexp: keywordRegexp, height: height, match: match, pageIndex: index, rotation: rotation, scale: scale, width: width , onJumpToDest: jumpToDest, onPageVisibilityChanged: pageVisibilityChanged })));
+                    React.createElement(PageLayer, { doc: doc, keywordRegexp: keywordRegexp, height: height, match: match, pageIndex: index, rotation: rotation, scale: scale, width: width  , onJumpToDest: jumpToDest, onPageVisibilityChanged: pageVisibilityChanged })));
             }))),
     }, (renderToolbar) => (React.createElement(Toolbar, { currentPage: currentPage, doc: doc, fileName: fileName, scale: scale, onChangeScrollMode: changeScrollMode, onDownload: onDownload, onFullScreen: openFullScreen, onJumpTo: jumpToPage, onJumpToMatch: jumpToMatch, onOpenFiles: openFiles, onRotate: rotate, onSearchFor: setKeywordRegexp, onToggleDragScroll: toggleDragScroll, onToggleSidebar: toggleSidebar.toggle, onZoom: zoom, renderToolbar: renderToolbar })), {
         attrs: {},

@@ -69,8 +69,9 @@ const Styles = styled.div`
           border: 2px solid white;
           display: inline-block;
           padding: 10px 28px;
-          font-size: 22px;
+          font-size: 20px;
           background: none;
+          cursor: pointer;
 
           @media screen and (max-width: 520px) {
             font-size: 15px;

@@ -15,10 +15,12 @@ const CanvasLayer = ({ height, page, rotation, scale, width }) => {
         renderTask.current.promise.then((_) => { }, (_) => { });
     };
     return (React.createElement(WithScale, { callback: renderCanvas, rotation: rotation, scale: scale },
-        React.createElement("canvas", { height: height * 0.666, ref: canvasRef, style: {
+        React.createElement("canvas", { height: height , ref: canvasRef, style: { 
                 left: '0',
                 position: 'absolute',
+                display: "block",
+                margin: "0 auto",
                 top: '0',
-            }, width: width * 0.666 })));
+            }, width: width   })));
 };
 export default CanvasLayer;

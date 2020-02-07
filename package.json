@@ -7,6 +7,10 @@
   "dependencies": {
     "@emotion/core": "^10.0.22",
     "@emotion/styled": "^10.0.22",
+    "@grapecity/wijmo": "^5.20193.646",
+    "@grapecity/wijmo.react.input": "^5.20193.646",
+    "@grapecity/wijmo.react.viewer": "^5.20193.646",
+    "@grapecity/wijmo.viewer": "^5.20193.646",
     "@phuocng/react-pdf-viewer": "^1.0.2",
     "antd": "^3.24.3",
     "browser-monads": "^1.0.0",

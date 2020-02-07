@@ -17,8 +17,8 @@ const PageLayer = ({ doc, height, keywordRegexp, match, pageIndex, rotation, sca
     const scaledWidth = pageWidth * scale;
     const scaledHeight = pageHeight * scale;
     const isVertical = Math.abs(rotation) % 180 === 0;
-    const w  = (isVertical ? scaledWidth : scaledHeight ) * 1.5;
-    const h = (isVertical ? scaledHeight : scaledWidth) * 1.5;
+    const w  = (isVertical ? scaledWidth : scaledHeight );
+    const h = (isVertical ? scaledHeight : scaledWidth) ;
     const visibilityChanged = (params) => {
         const ratio = params.isVisible ? params.ratio : 0;
         onPageVisibilityChanged(pageIndex, ratio);
@@ -41,16 +41,15 @@ const PageLayer = ({ doc, height, keywordRegexp, match, pageIndex, rotation, sca
         React.createElement("div", { className: "viewer-page", style: {
                 alignItems: 'center',
                 display: 'flex',
-                height: `${h}px`,
+                height: `${h }px`,
                 justifyContent: 'center',
                 margin: '0 auto',
                 position: 'relative',
-                width: `${w}px`,
-                maxWidth: 1000,
+                width: `${w }px`,
             } }, !page
             ? React.createElement(Spinner, null)
             : (React.createElement(React.Fragment, null,
-                React.createElement(CanvasLayer, { height: h, page: page, rotation: rotation, scale: scale, width: w }),
+                React.createElement(CanvasLayer, { height: h, page: page, rotation: rotation, scale: scale , width: w }),
                 React.createElement(TextLayer, { keywordRegexp: keywordRegexp, match: match, page: page, pageIndex: pageIndex, rotation: rotation, scale: scale, onJumpToMatch: jumpToMatch }),
                 React.createElement(AnnotationLayer, { doc: doc, page: page, rotation: rotation, scale: scale, onJumpToDest: onJumpToDest }))))));
 };

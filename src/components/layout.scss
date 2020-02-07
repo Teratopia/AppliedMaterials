@@ -1,6 +1,8 @@
 @import '~bulma/bulma.sass';
 @import '~antd/dist/antd.css';
 
+
+
 @font-face {
   font-family: myriad;
   src: url("../images/fonts/myriad.otf") format("opentype");
@@ -14,6 +16,7 @@
 body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
+  font-size: 12px !important;
 }
 
 .title {

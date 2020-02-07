@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Container from "../components/container"
+import Wijmo from "../components/wijmo"
 import Page from "../components/page"
 import SEO from "../components/seo"
 import styled from "@emotion/styled"
@@ -14,7 +15,7 @@ const Styles = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
     grid-gap: 6px;
-    margin-bottom: 24px;
+    margin-bottom: 18px;
 
     @media screen and (min-width: 408px) {
       grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
@@ -25,8 +26,10 @@ const Styles = styled.div`
       display: table;
       cursor: pointer;
       background: #e5e5e5;
-      font-size: 12px;
       width: 100%;
+      height: 100%;
+      min-height: 70px;
+      padding: 8px 12px;
 
       &:hover {
         background: #469ac2;
@@ -41,24 +44,16 @@ const Styles = styled.div`
       .cell {
         display: table-cell;
         vertical-align: middle;
-        padding: 2px 12px;
-        height: 93px;
-        font-size: 12px;
-        width: 100%;
+        
+        line-height: 18px;
 
-        @media screen and (max-width: 319px) {
-          height: 74px;
-        }
-
-        @media screen and (min-width: 408px) {
-          height: 74px;
-          font-size: 14px;
-        }
+        font-size: 12px !important;
       }
     }
   }
 
   .my-breadcrumbs a {
+    margin-bottom: 4px;
     color: #777;
 
     &:hover {
@@ -66,9 +61,12 @@ const Styles = styled.div`
     }
   }
 
-  canvas {
-    width: 100%;
+  #adobe-dc-view {
+    height: 100vh;
+    margin-bottom: 48px;
   }
+
+ 
 `
 
 export default class extends React.Component {
@@ -83,9 +81,19 @@ export default class extends React.Component {
 
   componentDidMount() {
     if (typeof window !== undefined) {
-      window.onscroll = this.handleScroll.bind(this)
-      window.onresize = this.handleScroll.bind(this)
+      // var adobeDCView = new window.AdobeDC.View({clientId: "4cf176e7e8a04036a69a1a50982528b3", divId: "adobe-dc-view"});
+      // adobeDCView.previewFile({
+      //   content:{location: {url: require("../images/applied-proxy.pdf")}},
+      //   metaData:{fileName: "Applied Materials 2020 Proxy"}
+      // }, {showDownloadPDF: true, showZoom: true,
+      //   showPrintPDF: true, embedMode: "SIZED_CONTAINER"});
+    
+    
+        window.onscroll = this.handleScroll.bind(this)
+        window.onresize = this.handleScroll.bind(this)
+  
     }
+
   }
 
   componentWillUnmount() {
@@ -94,7 +102,7 @@ export default class extends React.Component {
   }
 
   handleScroll(event) {
-    let height = 172;
+    let height = 150;
     let myDocuments = document.querySelectorAll(".my-documents")[0];
 
     if (myDocuments) {
@@ -109,7 +117,7 @@ export default class extends React.Component {
     
 
     this.setState({
-      top: (height-event.currentTarget.scrollY),
+      top:  height - event.currentTarget.scrollY ,
     })
   }
 
@@ -227,7 +235,10 @@ export default class extends React.Component {
             height: "100%",
             overflow: "hidden",
             width: "100%",
+            position: "relative",
             position: "fixed",
+            width: "100%",
+            
             top: this.state.top
           }}
         >
@@ -241,6 +252,9 @@ export default class extends React.Component {
               justifyContent: "center",
               padding: "4px",
               overflow: "hidden",
+              
+              // top: 0,
+              zIndex: 400
             }}
           >
             {toolbar(renderToolbar)}
@@ -277,9 +291,9 @@ export default class extends React.Component {
       <Layout>
         <SEO title="" />
         <Styles>
-          <Page e>
+          <Page>
             <Container>
-              <div className="my-breadcrumbs" style={{ marginBottom: "30px" }}>
+              <div className="my-breadcrumbs" style={{ marginBottom: "18px" }}>
                 <span>
                   <Link to="/">Home</Link> /{" "}
                   <Link to="proxy">2020 Proxy Statement</Link>{" "}
@@ -291,6 +305,15 @@ export default class extends React.Component {
                 {this.state.materials.map(this.menuItem.bind(this))}
               </div>
             </Container>
+
+            {/* <iframe src={ require("../components/web/viewer.html")} style={{height: 100, width: 100}} /> */}
+
+            {/* <Proxy /> */}
+
+            {/* <Container> */}
+              {/* <div id="adobe-dc-view"></div> */}
+            {/* </Container> */}
+            {/* <Wijmo /> */}
 
             <div
               className="my-target"
@@ -315,6 +338,7 @@ export default class extends React.Component {
                 </div>
               </Worker>
             </div>
+
           </Page>
         </Styles>
       </Layout>
