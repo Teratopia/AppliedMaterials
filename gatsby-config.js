@@ -28,6 +28,7 @@ module.exports = {
           "default-src": "'self'", 
           "script-src": "'self' 'unsafe-eval' documentcloud.adobe.com", 
           "connect-src": "'self'", 
+          "frame-src": "documentcloud.adobe.com",
           // "worker-src": "'self' blob: appliedmaterials.com amatsmartdev.prod.acquia-sites.com",
           // "script-src-elem": "'self' blob: localhost 'unsafe-inline' unpkg.com temp-applied-link.netlify.com appliedmaterials.com amatsmartdev.prod.acquia-sites.com",
           "font-src": "'self' data: fonts.gstatic.com ",
