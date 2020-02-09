@@ -434,7 +434,7 @@ console.log(defaultItems);
 
             <div
         ref={this.onRef}
-        style={{ width: "100%", height: "100vh"}}
+        style={{ width: "100%", height: "100vh", marginBottom: 80, borderTop: "1px solid #ccc", borderBottom: "1px solid #ccc"}}
       ></div>
 
 
