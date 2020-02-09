@@ -136,10 +136,10 @@ export default class extends React.Component {
       ),
       licenseKey: "HilxIul2OfvkFQJmXHNkAqz4i7UdmtbxQ4CqYirO7z3Y65iudWWhTKB4zIUFW8ahDOBLWN2CdRshosKuChDujZrwh90OTknxRy4f0_kl5kbtfGZR8EA5sDoy5eyIxrxN0qYesQt_HEkch11DxfsrSiBFVJVq3NwrzigZwrfNANlSR6XrNL47-pYsmVOU9_AF9AjcgXbyXqopemmnh-6fNOuCmG0U6DT9hevI7PQk1kJbwhtRjVNC9AxUO85wD429gcEPiDP5Bw_O-_DHaDPzhF-lDZimD2cJyToQYjeS0uR38S6O6VK_9-i8EoEAoqNDohovnYU3mfA2qwFr7TKudBAkXGZuNUg1cau_I474ILSe3dyZer_wCmLjR_-xHrOXYmf3M5FNEc0G7d7IU2lia1qAFZo-l6jgT4P5ZonqdcfSpdQ7LJekBZJ-3kJaav9H",
       // baseUrl: `static`,
-    }).then((a, b, c) => {
-      console.log(a)
-    }).catch((a, b, c) => {
-      console.log(a)
+    }).then((viewer) => {
+      this.setState({ viewer })
+    }).catch((error) => {
+      console.log(error)
     });
   }
 
@@ -155,12 +155,12 @@ export default class extends React.Component {
 
   componentDidMount() {
     if (typeof window !== undefined) {
-      var adobeDCView = new window.AdobeDC.View({clientId: "4cf176e7e8a04036a69a1a50982528b3", divId: "adobe-dc-view"});
-      adobeDCView.previewFile({
-        content:{location: {url: require("../images/applied-proxy.pdf")}},
-        metaData:{fileName: "Applied Materials 2020 Proxy", }
-      }, {showDownloadPDF: true, showZoom: true,
-        showPrintPDF: true, embedMode: "SIZED_CONTAINER", });
+      // var adobeDCView = new window.AdobeDC.View({clientId: "4cf176e7e8a04036a69a1a50982528b3", divId: "adobe-dc-view"});
+      // adobeDCView.previewFile({
+      //   content:{location: {url: require("../images/applied-proxy.pdf")}},
+      //   metaData:{fileName: "Applied Materials 2020 Proxy", }
+      // }, {showDownloadPDF: true, showZoom: true,
+      //   showPrintPDF: true, embedMode: "SIZED_CONTAINER", });
     
     
         // window.onscroll = this.handleScroll.bind(this)
@@ -183,30 +183,30 @@ export default class extends React.Component {
 
   }
 
-  componentWillUnmount() {
+  // componentWillUnmount() {
     // window.removeEventListener("scroll", this.handleScroll)
     // window.removeEventListener("resize", this.handleScroll)
-  }
+  // }
 
-  handleScroll(event) {
-    let height = 150;
-    let myDocuments = document.querySelectorAll(".my-documents")[0];
+  // handleScroll(event) {
+  //   let height = 150;
+  //   let myDocuments = document.querySelectorAll(".my-documents")[0];
 
-    if (myDocuments) {
-      height += myDocuments.scrollHeight
-    }
+  //   if (myDocuments) {
+  //     height += myDocuments.scrollHeight
+  //   }
 
-    let myBreadcrumbs = document.querySelectorAll(".my-breadcrumbs")[0];
+  //   let myBreadcrumbs = document.querySelectorAll(".my-breadcrumbs")[0];
 
-    if (myBreadcrumbs) {
-      height += myBreadcrumbs.scrollHeight
-    }
+  //   if (myBreadcrumbs) {
+  //     height += myBreadcrumbs.scrollHeight
+  //   }
     
 
-    this.setState({
-      top:  height - event.currentTarget.scrollY ,
-    })
-  }
+  //   this.setState({
+  //     top:  height - event.currentTarget.scrollY ,
+  //   })
+  // }
 
   toggleActive(e) {
     if (document.querySelectorAll(".my-menu-item.active")[0]) {
@@ -230,7 +230,16 @@ export default class extends React.Component {
       currentPageNumber: e.currentTarget.dataset.page,
     })
 
-    // this.jumpToPage(parseInt(e.currentTarget.dataset.page))
+    this.jumpToPage(parseInt(e.currentTarget.dataset.page))
+
+    
+  }
+
+  jumpToPage ( num ) {
+    this.state.viewer.setViewState(viewState =>
+      viewState
+        .set("currentPageIndex", num)
+    );
   }
 
   menuItem(el, idx) {
@@ -395,17 +404,6 @@ export default class extends React.Component {
             </Container>
 
 
-            {/* <MyViewer /> */}
-
-            <Container>
-              <div id="adobe-dc-view"></div>
-            </Container>
-
-            <div className="proxy-target">
-
-            </div>
-            {/* <Wijmo /> */}
-
             {/* <div
               className="my-target"
               style={{ position: "relative", height: "110vh" }}
@@ -429,13 +427,12 @@ export default class extends React.Component {
                 </div>
               </Worker>
             </div> */}
-
-            {/* <Proxy /> */}
-
+            
             <div
         ref={this.onRef}
         style={{ width: "100%", height: "100vh", marginBottom: 80, borderTop: "1px solid #ccc", borderBottom: "1px solid #ccc"}}
       ></div>
+
 
 
           </Page>

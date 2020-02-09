@@ -22,10 +22,10 @@ const Styles = styled.div`
 
   .my-box {
     display: grid;
-    grid-template-columns: 90px calc(100% - 180px);
+    grid-template-columns: 90px calc(100% - 180px) 90px;
 
     @media screen and (min-width: ${theme.breakpoints.mid}px) {
-      grid-template-columns: 180px calc(100% - 270px) 180px;
+      grid-template-columns: 180px calc(100% - 360px) 180px;
     }
   }
 
