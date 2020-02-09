@@ -25,7 +25,7 @@ module.exports = {
         directives: {
           "style-src": "'self' 'unsafe-inline' fonts.googleapis.com",
           "img-src": "'self' data: blob:",
-          "default-src": "'self'", 
+          "default-src": "'self' documentcloud.adobe.com", 
           "script-src": "'self' 'unsafe-eval' documentcloud.adobe.com", 
           "connect-src": "'self'", 
           "frame-src": "documentcloud.adobe.com",
