@@ -26,7 +26,7 @@ module.exports = {
           "style-src": "'self' 'unsafe-inline' fonts.googleapis.com",
           "img-src": "'self' data: blob:",
           "default-src": "'self'", 
-          "script-src": "'self' 'unsafe-eval'", 
+          "script-src": "'self' 'unsafe-eval' blob:", 
           "connect-src": "'self'", 
           // "worker-src": "'self' blob: appliedmaterials.com amatsmartdev.prod.acquia-sites.com",
           // "script-src-elem": "'self' blob: localhost 'unsafe-inline' unpkg.com temp-applied-link.netlify.com appliedmaterials.com amatsmartdev.prod.acquia-sites.com",

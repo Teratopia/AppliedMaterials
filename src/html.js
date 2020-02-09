@@ -14,7 +14,7 @@ export default function HTML(props) {
 
         {props.headComponents}
 
-        <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+        {/* <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script> */}
 
 
       </head>
