@@ -25,10 +25,9 @@ module.exports = {
         directives: {
           "style-src": "'self' 'unsafe-inline' fonts.googleapis.com",
           "img-src": "'self' data: blob:",
-          "default-src": "'self' documentcloud.adobe.com", 
-          "script-src": "'self' 'unsafe-eval' documentcloud.adobe.com", 
+          "default-src": "'self'", 
+          "script-src": "'self' 'unsafe-eval'", 
           "connect-src": "'self'", 
-          "frame-src": "documentcloud.adobe.com",
           // "worker-src": "'self' blob: appliedmaterials.com amatsmartdev.prod.acquia-sites.com",
           // "script-src-elem": "'self' blob: localhost 'unsafe-inline' unpkg.com temp-applied-link.netlify.com appliedmaterials.com amatsmartdev.prod.acquia-sites.com",
           "font-src": "'self' data: fonts.gstatic.com ",

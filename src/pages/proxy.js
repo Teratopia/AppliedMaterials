@@ -433,6 +433,8 @@ export default class extends React.Component {
         style={{ width: "100%", height: "100vh", marginBottom: 80, borderTop: "1px solid #ccc", borderBottom: "1px solid #ccc"}}
       ></div>
 
+      {/* <Proxy /> */}
+
 
 
           </Page>
@@ -456,28 +458,28 @@ export const query = graphql`
 `
 
 
-const Proxy = function () {
-  const containerRef = useRef(null);
+// const Proxy = function () {
+//   const containerRef = useRef(null);
 
-  useEffect(() => {
-    let PSPDFKit;
+//   useEffect(() => {
+//     let PSPDFKit;
 
-    import("pspdfkit/dist/pspdfkit").then(({ default: _PSPDFKit }) => {
-      PSPDFKit = _PSPDFKit;
-      return PSPDFKit.load({
-        licenseKey: "TRIAL-O-O9w8BsdBgfEckZ-LjR4yrYHBnUzqJbdyKOmTxXSN3RuehRI-yxro_hASjCSmJnrmkBmE5sUR7CgNEuS3ehdMMxzxGxjc9ceyPx_ljydQc",
-        // licenseKey: "TRIAL-PhAzpZPs8Sxa1Auj",
-        container: containerRef.current,
-        pdf: `../images/applied-proxy.pdf`
-      });
-    });
+//     import("pspdfkit/dist/pspdfkit").then(({ default: _PSPDFKit }) => {
+//       PSPDFKit = _PSPDFKit;
+//       return PSPDFKit.load({
+//         licenseKey: "TRIAL-O-O9w8BsdBgfEckZ-LjR4yrYHBnUzqJbdyKOmTxXSN3RuehRI-yxro_hASjCSmJnrmkBmE5sUR7CgNEuS3ehdMMxzxGxjc9ceyPx_ljydQc",
+//         // licenseKey: "TRIAL-PhAzpZPs8Sxa1Auj",
+//         container: containerRef.current,
+//         pdf: `../images/applied-proxy.pdf`
+//       });
+//     });
 
-    return () => {
-      PSPDFKit && PSPDFKit.unload(containerRef.current);
-    };
-  }, []);
-  return (
-      <div ref={containerRef} className="viewport" style={{ height: "100vh" }} />
+//     return () => {
+//       PSPDFKit && PSPDFKit.unload(containerRef.current);
+//     };
+//   }, []);
+//   return (
+//       <div ref={containerRef} className="viewport" style={{ height: "100vh" }} />
     
-  );
-}
+//   );
+// }
