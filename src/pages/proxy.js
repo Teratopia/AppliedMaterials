@@ -100,6 +100,9 @@ export default class extends React.Component {
 
   async load() {
 
+    if (typeof window === undefined) {
+      return;
+    }
     this._instance = PSPDFKit.load({
       pdf: require("../images/applied-proxy.pdf"),
       container: this._container,
@@ -165,7 +168,7 @@ export default class extends React.Component {
     
         // window.onscroll = this.handleScroll.bind(this)
         // window.onresize = this.handleScroll.bind(this)
-        this.load();
+        // this.load();
         
         // PSPDFKit.load({
         //   container: ".proxy-target",
@@ -428,12 +431,12 @@ export default class extends React.Component {
               </Worker>
             </div> */}
             
-            <div
+            {/* <div
         ref={this.onRef}
         style={{ width: "100%", height: "100vh", marginBottom: 80, borderTop: "1px solid #ccc", borderBottom: "1px solid #ccc"}}
-      ></div>
+      ></div> */}
 
-      {/* <Proxy /> */}
+      <Proxy parent={ this } />
 
 
 
@@ -458,28 +461,30 @@ export const query = graphql`
 `
 
 
-// const Proxy = function () {
-//   const containerRef = useRef(null);
+const Proxy = function ( props ) {
+  const containerRef = useRef(null);
 
-//   useEffect(() => {
-//     let PSPDFKit;
+  useEffect(() => {
+    let PSPDFKit;
 
-//     import("pspdfkit/dist/pspdfkit").then(({ default: _PSPDFKit }) => {
-//       PSPDFKit = _PSPDFKit;
-//       return PSPDFKit.load({
-//         licenseKey: "TRIAL-O-O9w8BsdBgfEckZ-LjR4yrYHBnUzqJbdyKOmTxXSN3RuehRI-yxro_hASjCSmJnrmkBmE5sUR7CgNEuS3ehdMMxzxGxjc9ceyPx_ljydQc",
-//         // licenseKey: "TRIAL-PhAzpZPs8Sxa1Auj",
-//         container: containerRef.current,
-//         pdf: `../images/applied-proxy.pdf`
-//       });
-//     });
+    import("pspdfkit/dist/pspdfkit").then(({ default: _PSPDFKit }) => {
+      PSPDFKit = _PSPDFKit;
+      return PSPDFKit.load({
+        licenseKey: "HilxIul2OfvkFQJmXHNkAqz4i7UdmtbxQ4CqYirO7z3Y65iudWWhTKB4zIUFW8ahDOBLWN2CdRshosKuChDujZrwh90OTknxRy4f0_kl5kbtfGZR8EA5sDoy5eyIxrxN0qYesQt_HEkch11DxfsrSiBFVJVq3NwrzigZwrfNANlSR6XrNL47-pYsmVOU9_AF9AjcgXbyXqopemmnh-6fNOuCmG0U6DT9hevI7PQk1kJbwhtRjVNC9AxUO85wD429gcEPiDP5Bw_O-_DHaDPzhF-lDZimD2cJyToQYjeS0uR38S6O6VK_9-i8EoEAoqNDohovnYU3mfA2qwFr7TKudBAkXGZuNUg1cau_I474ILSe3dyZer_wCmLjR_-xHrOXYmf3M5FNEc0G7d7IU2lia1qAFZo-l6jgT4P5ZonqdcfSpdQ7LJekBZJ-3kJaav9H",
+        // licenseKey: "TRIAL-PhAzpZPs8Sxa1Auj",
+        container: ".my-viewer-target",
+        pdf: require('../images/applied-proxy.pdf')
+      }).then( (viewer) => {
+        props.parent.setState({ viewer })
+      });
+    });
 
-//     return () => {
-//       PSPDFKit && PSPDFKit.unload(containerRef.current);
-//     };
-//   }, []);
-//   return (
-//       <div ref={containerRef} className="viewport" style={{ height: "100vh" }} />
+    return () => {
+      PSPDFKit && PSPDFKit.unload(containerRef.current);
+    };
+  }, []);
+  return (
+      <div ref={containerRef} className="my-viewer-target" style={{ height: "100vh", width: "100%", marginBottom: 48}} />
     
-//   );
-// }
+  );
+}
