@@ -8,8 +8,8 @@ import Container from "../components/container"
 import Page from "../components/page"
 import SEO from "../components/seo"
 import styled from "@emotion/styled"
-import Worker from "../../vendor/pdfviewer/Worker"
-import Viewer from "../../vendor/pdfviewer/Viewer"
+import Viewer, { Worker } from '@phuocng/react-pdf-viewer';
+import '@phuocng/react-pdf-viewer/cjs/react-pdf-viewer.css';
 import theme from "../theme.js"
 
 // const PSPDFKit = typeof window !== undefined ? require("pspdfkit") : "div";
@@ -69,9 +69,10 @@ const Styles = styled.div`
     }
   }
 
-  #adobe-dc-view {
-    height: 100vh;
-    margin-bottom: 48px;
+  iframe {
+    width: 100%;
+    height: 520px;
+    margin-bottom: 24px;
   }
 
  
@@ -330,13 +331,11 @@ export default class extends React.Component {
               : "'toolbar' 'main'",
             gridTemplateColumns: isSidebarOpened ? "30% 1fr" : "1fr",
             gridTemplateRows: "40px calc(100% - 40px)",
-            height: "100%",
+            height: "520px",
             overflow: "hidden",
             width: "100%",
             position: "relative",
             position: "fixed",
-            width: "100%",
-            
             top: this.state.top
           }}
         >
@@ -407,24 +406,23 @@ export default class extends React.Component {
 
             <div
               className="my-target"
-              style={{ position: "relative", height: "110vh" }}
+              style={{ position: "relative", height: "520px", marginBottom: 100  }}
             >
               <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.2.228/build/pdf.worker.min.js">
                 <div
                   style={{
-                    height: "100vh",
+                    height: "100%",
+                    width: "100%",
                     overflowY: "scroll",
                     position: "relative",
-                    marginBottom: 100,
+                    display: "block",
                   }}
                 >
-                  <div style={{ position: "relative" }}>
                     <Viewer
                       layout={layout}
                       parent={this}
                       fileUrl={require("../images/applied-proxy.pdf")}
                     />
-                  </div>
                 </div>
               </Worker>
             </div>

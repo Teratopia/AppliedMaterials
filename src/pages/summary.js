@@ -34,12 +34,12 @@ export default class extends React.Component {
 
   componentDidMount() {
     if (typeof window !== undefined) {
-      window.onscroll = this.handleScroll.bind(this)
+      // window.onscroll = this.handleScroll.bind(this)
     }
   }
 
   componentWillUnmount() {
-    window.removeEventListener("scroll", this.handleScroll)
+    // window.removeEventListener("scroll", this.handleScroll)
   }
 
   handleScroll(event) {
@@ -131,9 +131,9 @@ export default class extends React.Component {
             height: "520px",
             overflow: "hidden",
             width: "100%",
-            position: "relative",
-            position: "fixed",
-            top: this.state.top
+            // position: "fixed",
+            // top: 0,
+            // top: this.state.top
           }}
         >
           <div
@@ -146,7 +146,8 @@ export default class extends React.Component {
               justifyContent: "center",
               padding: "4px",
               overflow: "hidden",
-              
+              // position: "fixed",              
+              // width: "100%",
               // top: 0,
               zIndex: 400
             }}
@@ -205,7 +206,6 @@ export default class extends React.Component {
                     overflowY: "scroll",
                     position: "relative",
                     display: "block",
-                    
                   }}
                 >
                   <Viewer
