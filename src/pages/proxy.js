@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import Container from "../components/container"
 // import MyViewer from "../components/viewer/myViewer"
 // import Wijmo from "../components/wijmo"
-import PSPDFKit from "pspdfkit";
+
 
 
 import Page from "../components/page"
@@ -13,6 +13,8 @@ import styled from "@emotion/styled"
 // import Worker from "../../vendor/pdfviewer/Worker"
 // import Viewer from "../../vendor/pdfviewer/Viewer"
 import theme from "../theme.js"
+
+const PSPDFKit = typeof window !== undefined ? require("pspdfkit") : "div";
 
 const Styles = styled.div`
   .my-documents {
@@ -97,8 +99,6 @@ export default class extends React.Component {
   }
 
   async load() {
-    var defaultItems = PSPDFKit.defaultToolbarItems;
-console.log(defaultItems);
 
     this._instance = PSPDFKit.load({
       pdf: require("../images/applied-proxy.pdf"),
@@ -158,9 +158,9 @@ console.log(defaultItems);
       var adobeDCView = new window.AdobeDC.View({clientId: "4cf176e7e8a04036a69a1a50982528b3", divId: "adobe-dc-view"});
       adobeDCView.previewFile({
         content:{location: {url: require("../images/applied-proxy.pdf")}},
-        metaData:{fileName: "Applied Materials 2020 Proxy"}
+        metaData:{fileName: "Applied Materials 2020 Proxy", }
       }, {showDownloadPDF: true, showZoom: true,
-        showPrintPDF: true, embedMode: "SIZED_CONTAINER"});
+        showPrintPDF: true, embedMode: "SIZED_CONTAINER", });
     
     
         // window.onscroll = this.handleScroll.bind(this)
