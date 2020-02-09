@@ -101,7 +101,7 @@ const Styles = styled.div`
    
 
     @media screen and (min-width: ${theme.breakpoints.mid}px) {
-      padding-left: 4vw;
+      // padding-left: 4vw;
       display: block ;
       margin: auto auto ;
 
@@ -225,7 +225,7 @@ export default class Header extends React.Component {
             <a href="https://ir.appliedmaterials.com/static-files/59aa9549-a055-44b6-b776-a6f8b0d7bbb1" target="_blank" ref="noopener noreferrer">ANNUAL REPORT & 10-K</a>
           </div>
 
-            {/* <div className="my-vote">
+            <div className="my-vote">
               <div style={{ display: "table", height: "100%", width: "100%" }}>
                 <div style={{ display: "table-cell", verticalAlign: "middle" }}>
                   <a
@@ -237,7 +237,7 @@ export default class Header extends React.Component {
                   </a>
                 </div>
               </div>
-            </div> */}
+            </div>
           </div>
 
           

@@ -31,25 +31,35 @@ export default class extends React.Component {
         this._mouseModeOptions = ['SelectTool', 'MoveTool', 'RubberbandTool', 'MagnifierTool'];
         //
         this.state = {
-            viewMode: viewer.ViewMode.Single,
+            viewMode: viewer.ViewMode.Continuous,
             mouseMode: viewer.MouseMode.SelectTool,
             fullScreen: false,
             zoomFactor: 1
         };
     }
+
+    componentDidMount () {
+        let pdfViewer = new viewer.PdfViewer('#pdfViewer', {
+            serviceUrl: 'https://demos.componentone.com/ASPNET/c1webapi/4.0.20172.105/api/pdf',
+            filePath: '../../images/applied-proxy.pdf',
+            // zoomFactorChanged: (sender) => {
+            //     zoomFactor.value = sender.zoomFactor;
+            // }
+          });
+    }
     //
     render() {
         return (<div className="container-fluid">
-
+{/* 
             <div className="col-md-12">
                 <div className="row">
-                    <wjViewer.PdfViewer filePath="PdfRoot/DefaultDocument.pdf" viewMode={this.state.viewMode} mouseMode={this.state.mouseMode} fullScreen={this.state.fullScreen} zoomFactor={this.state.zoomFactor} viewModeChanged={this.viewModeChanged.bind(this)} fullScreenChanged={this.fullScreenChanged.bind(this)} zoomFactorChanged={this.zoomFactorChanged.bind(this)} >
+                    <wjViewer.PdfViewer filePath={require("../images/applied-proxy.pdf")} viewMode={this.state.viewMode} mouseMode={this.state.mouseMode} fullScreen={this.state.fullScreen} zoomFactor={this.state.zoomFactor} viewModeChanged={this.viewModeChanged.bind(this)} fullScreenChanged={this.fullScreenChanged.bind(this)} zoomFactorChanged={this.zoomFactorChanged.bind(this)} >
                     </wjViewer.PdfViewer>
                 </div>
 
-                <br />
+                <br /> */}
 
-                <div className="row">
+                {/* <div className="row">
                     <div className="form-horizontal">
                         <div className="form-group">
                             <div className="col-md-3">
@@ -92,8 +102,12 @@ export default class extends React.Component {
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </div> */}
+
+
+          <div id="pdfViewer"></div>
+
+            {/* </div> */}
         </div>)
     }
     //

@@ -1,13 +1,17 @@
-import React from "react"
+import React, { useEffect, useRef } from "react"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Container from "../components/container"
+// import MyViewer from "../components/viewer/myViewer"
 // import Wijmo from "../components/wijmo"
+import PSPDFKit from "pspdfkit";
+
+
 import Page from "../components/page"
 import SEO from "../components/seo"
 import styled from "@emotion/styled"
-import Worker from "../../vendor/pdfviewer/Worker"
-import Viewer from "../../vendor/pdfviewer/Viewer"
+// import Worker from "../../vendor/pdfviewer/Worker"
+// import Viewer from "../../vendor/pdfviewer/Viewer"
 import theme from "../theme.js"
 
 const Styles = styled.div`
@@ -72,16 +76,82 @@ const Styles = styled.div`
 
  
 `
-
 export default class extends React.Component {
-  constructor(props) {
-    super()
+  constructor(props, context) {
+    super( props, context)
     this.state = {}
     this.state.current = ""
     this.state.active = { name: "" }
     this.state.materials = props.data.materials.frontmatter.documents
     this.state.currentPage = 3
+
+    this._instance = null;
+    this._container = null;
+    this.onRef = this.onRef.bind(this);
+    this.load = this.load.bind(this);
+    this.unload = this.unload.bind(this);
   }
+
+  onRef(container) {
+    this._container = container;
+  }
+
+  async load() {
+    var defaultItems = PSPDFKit.defaultToolbarItems;
+console.log(defaultItems);
+
+    this._instance = PSPDFKit.load({
+      pdf: require("../images/applied-proxy.pdf"),
+      container: this._container,
+      toolbarItems: PSPDFKit.defaultToolbarItems.filter(
+        toolbarItem => {
+          let list = [
+            "line",
+            "ink",
+            "annotate",
+            "highlighter",
+            "text-highlighter",
+            "ink-eraser",
+            "ink-signature",
+            "image",
+            "stamp",
+            "note",
+            "text",
+            "arrow",
+            "rectangle",
+            "ellipse",
+            "document-editor",
+            "polygon",
+            "polyline",
+
+          ]
+
+          let idx = list.indexOf(toolbarItem.type)
+          if (idx > -1 ) {
+            return false;
+          } else {
+            return true;
+          }
+        }
+      ),
+      licenseKey: "HilxIul2OfvkFQJmXHNkAqz4i7UdmtbxQ4CqYirO7z3Y65iudWWhTKB4zIUFW8ahDOBLWN2CdRshosKuChDujZrwh90OTknxRy4f0_kl5kbtfGZR8EA5sDoy5eyIxrxN0qYesQt_HEkch11DxfsrSiBFVJVq3NwrzigZwrfNANlSR6XrNL47-pYsmVOU9_AF9AjcgXbyXqopemmnh-6fNOuCmG0U6DT9hevI7PQk1kJbwhtRjVNC9AxUO85wD429gcEPiDP5Bw_O-_DHaDPzhF-lDZimD2cJyToQYjeS0uR38S6O6VK_9-i8EoEAoqNDohovnYU3mfA2qwFr7TKudBAkXGZuNUg1cau_I474ILSe3dyZer_wCmLjR_-xHrOXYmf3M5FNEc0G7d7IU2lia1qAFZo-l6jgT4P5ZonqdcfSpdQ7LJekBZJ-3kJaav9H",
+      // baseUrl: `static`,
+    }).then((a, b, c) => {
+      console.log(a)
+    }).catch((a, b, c) => {
+      console.log(a)
+    });
+  }
+
+  unload() {
+    PSPDFKit.unload(this._instance || this._container);
+    this._instance = null;
+  }
+
+  componentWillUnmount() {
+    this.unload();
+  }
+
 
   componentDidMount() {
     if (typeof window !== undefined) {
@@ -95,14 +165,27 @@ export default class extends React.Component {
     
         // window.onscroll = this.handleScroll.bind(this)
         // window.onresize = this.handleScroll.bind(this)
-  
+        this.load();
+        
+        // PSPDFKit.load({
+        //   container: ".proxy-target",
+        //   pdf: "../images/applied-proxy.pdf",
+        //   licenseKey: "TRIAL-O-O9w8BsdBgfEckZ-LjR4yrYHBnUzqJbdyKOmTxXSN3RuehRI-yxro_hASjCSmJnrmkBmE5sUR7CgNEuS3ehdMMxzxGxjc9ceyPx_ljydQc",
+        //   // baseUrl: "/"
+
+        // }).then(function(instance) {
+        //   console.log("PSPDFKit loaded", instance);
+        // })
+        // .catch(function(error) {
+        //   console.error(error.message);
+        // });;
     }
 
   }
 
   componentWillUnmount() {
-    window.removeEventListener("scroll", this.handleScroll)
-    window.removeEventListener("resize", this.handleScroll)
+    // window.removeEventListener("scroll", this.handleScroll)
+    // window.removeEventListener("resize", this.handleScroll)
   }
 
   handleScroll(event) {
@@ -311,13 +394,16 @@ export default class extends React.Component {
               </div>
             </Container>
 
-            {/* <iframe src={ require("../components/web/viewer.html")} style={{height: 100, width: 100}} /> */}
 
-            {/* <Proxy /> */}
+            {/* <MyViewer /> */}
 
             <Container>
               <div id="adobe-dc-view"></div>
             </Container>
+
+            <div className="proxy-target">
+
+            </div>
             {/* <Wijmo /> */}
 
             {/* <div
@@ -344,6 +430,14 @@ export default class extends React.Component {
               </Worker>
             </div> */}
 
+            {/* <Proxy /> */}
+
+            <div
+        ref={this.onRef}
+        style={{ width: "100%", height: "100vh"}}
+      ></div>
+
+
           </Page>
         </Styles>
       </Layout>
@@ -363,3 +457,30 @@ export const query = graphql`
     }
   }
 `
+
+
+const Proxy = function () {
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    let PSPDFKit;
+
+    import("pspdfkit/dist/pspdfkit").then(({ default: _PSPDFKit }) => {
+      PSPDFKit = _PSPDFKit;
+      return PSPDFKit.load({
+        licenseKey: "TRIAL-O-O9w8BsdBgfEckZ-LjR4yrYHBnUzqJbdyKOmTxXSN3RuehRI-yxro_hASjCSmJnrmkBmE5sUR7CgNEuS3ehdMMxzxGxjc9ceyPx_ljydQc",
+        // licenseKey: "TRIAL-PhAzpZPs8Sxa1Auj",
+        container: containerRef.current,
+        pdf: `../images/applied-proxy.pdf`
+      });
+    });
+
+    return () => {
+      PSPDFKit && PSPDFKit.unload(containerRef.current);
+    };
+  }, []);
+  return (
+      <div ref={containerRef} className="viewport" style={{ height: "100vh" }} />
+    
+  );
+}
