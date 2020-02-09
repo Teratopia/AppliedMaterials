@@ -165,8 +165,8 @@ export default class extends React.Component {
   //     //   showPrintPDF: true, embedMode: "SIZED_CONTAINER", });
     
     
-        window.onscroll = this.handleScroll.bind(this)
-        window.onresize = this.handleScroll.bind(this)
+        // window.onscroll = this.handleScroll.bind(this)
+        // window.onresize = this.handleScroll.bind(this)
   //       // this.load();
         
   //       // PSPDFKit.load({
@@ -186,8 +186,8 @@ export default class extends React.Component {
   }
 
   componentWillUnmount() {
-    window.removeEventListener("scroll", this.handleScroll)
-    window.removeEventListener("resize", this.handleScroll)
+    // window.removeEventListener("scroll", this.handleScroll)
+    // window.removeEventListener("resize", this.handleScroll)
   }
 
   handleScroll(event) {
@@ -334,9 +334,9 @@ export default class extends React.Component {
             height: "520px",
             overflow: "hidden",
             width: "100%",
-            position: "relative",
-            position: "fixed",
-            top: this.state.top
+            // position: "fixed",
+            // top: 0,
+            // top: this.state.top
           }}
         >
           <div
@@ -349,7 +349,8 @@ export default class extends React.Component {
               justifyContent: "center",
               padding: "4px",
               overflow: "hidden",
-              
+              // position: "fixed",              
+              // width: "100%",
               // top: 0,
               zIndex: 400
             }}
@@ -409,7 +410,7 @@ export default class extends React.Component {
               style={{ position: "relative", height: "520px", marginBottom: 100  }}
             >
               <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.2.228/build/pdf.worker.min.js">
-                <div
+              <div
                   style={{
                     height: "100%",
                     width: "100%",
@@ -419,7 +420,7 @@ export default class extends React.Component {
                   }}
                 >
                     <Viewer
-                      layout={layout}
+                      // layout={layout}
                       parent={this}
                       fileUrl={require("../images/applied-proxy.pdf")}
                     />
