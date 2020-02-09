@@ -436,7 +436,7 @@ export default class extends React.Component {
         style={{ width: "100%", height: "100vh", marginBottom: 80, borderTop: "1px solid #ccc", borderBottom: "1px solid #ccc"}}
       ></div> */}
 
-      <Proxy parent={ this } />
+      {/* <Proxy parent={ this } /> */}
 
 
 
@@ -515,6 +515,5 @@ const Proxy = function ( props ) {
   }, []);
   return (
       <div ref={containerRef} className="my-viewer-target" style={{ height: "100vh", width: "100%", marginBottom: 48, borderTop: "1px solid #ccc", borderBottom: "1px solid #ccc"}} />
-    
   );
 }
