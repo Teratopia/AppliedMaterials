@@ -471,7 +471,37 @@ const Proxy = function ( props ) {
       PSPDFKit = _PSPDFKit;
       return PSPDFKit.load({
         licenseKey: "HilxIul2OfvkFQJmXHNkAqz4i7UdmtbxQ4CqYirO7z3Y65iudWWhTKB4zIUFW8ahDOBLWN2CdRshosKuChDujZrwh90OTknxRy4f0_kl5kbtfGZR8EA5sDoy5eyIxrxN0qYesQt_HEkch11DxfsrSiBFVJVq3NwrzigZwrfNANlSR6XrNL47-pYsmVOU9_AF9AjcgXbyXqopemmnh-6fNOuCmG0U6DT9hevI7PQk1kJbwhtRjVNC9AxUO85wD429gcEPiDP5Bw_O-_DHaDPzhF-lDZimD2cJyToQYjeS0uR38S6O6VK_9-i8EoEAoqNDohovnYU3mfA2qwFr7TKudBAkXGZuNUg1cau_I474ILSe3dyZer_wCmLjR_-xHrOXYmf3M5FNEc0G7d7IU2lia1qAFZo-l6jgT4P5ZonqdcfSpdQ7LJekBZJ-3kJaav9H",
-        // licenseKey: "TRIAL-PhAzpZPs8Sxa1Auj",
+        toolbarItems: PSPDFKit.defaultToolbarItems.filter(
+          toolbarItem => {
+            let list = [
+              "line",
+              "ink",
+              "annotate",
+              "highlighter",
+              "text-highlighter",
+              "ink-eraser",
+              "ink-signature",
+              "image",
+              "stamp",
+              "note",
+              "text",
+              "arrow",
+              "rectangle",
+              "ellipse",
+              "document-editor",
+              "polygon",
+              "polyline",
+  
+            ]
+  
+            let idx = list.indexOf(toolbarItem.type)
+            if (idx > -1 ) {
+              return false;
+            } else {
+              return true;
+            }
+          }
+        ),
         container: ".my-viewer-target",
         pdf: require('../images/applied-proxy.pdf')
       }).then( (viewer) => {
@@ -484,7 +514,7 @@ const Proxy = function ( props ) {
     };
   }, []);
   return (
-      <div ref={containerRef} className="my-viewer-target" style={{ height: "100vh", width: "100%", marginBottom: 48}} />
+      <div ref={containerRef} className="my-viewer-target" style={{ height: "100vh", width: "100%", marginBottom: 48, borderTop: "1px solid #ccc", borderBottom: "1px solid #ccc"}} />
     
   );
 }
