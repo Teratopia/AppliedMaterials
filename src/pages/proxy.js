@@ -8,8 +8,8 @@ import Container from "../components/container"
 import Page from "../components/page"
 import SEO from "../components/seo"
 import styled from "@emotion/styled"
-// import Worker from "../../vendor/pdfviewer/Worker"
-// import Viewer from "../../vendor/pdfviewer/Viewer"
+import Worker from "../../vendor/pdfviewer/Worker"
+import Viewer from "../../vendor/pdfviewer/Viewer"
 import theme from "../theme.js"
 
 // const PSPDFKit = typeof window !== undefined ? require("pspdfkit") : "div";
@@ -154,7 +154,7 @@ export default class extends React.Component {
   // }
 
 
-  // componentDidMount() {
+  componentDidMount() {
   //   if (typeof window !== undefined) {
   //     // var adobeDCView = new window.AdobeDC.View({clientId: "4cf176e7e8a04036a69a1a50982528b3", divId: "adobe-dc-view"});
   //     // adobeDCView.previewFile({
@@ -164,8 +164,8 @@ export default class extends React.Component {
   //     //   showPrintPDF: true, embedMode: "SIZED_CONTAINER", });
     
     
-  //       // window.onscroll = this.handleScroll.bind(this)
-  //       // window.onresize = this.handleScroll.bind(this)
+        window.onscroll = this.handleScroll.bind(this)
+        window.onresize = this.handleScroll.bind(this)
   //       // this.load();
         
   //       // PSPDFKit.load({
@@ -182,32 +182,32 @@ export default class extends React.Component {
   //       // });;
   //   }
 
-  // }
+  }
 
-  // componentWillUnmount() {
-    // window.removeEventListener("scroll", this.handleScroll)
-    // window.removeEventListener("resize", this.handleScroll)
-  // }
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll)
+    window.removeEventListener("resize", this.handleScroll)
+  }
 
-  // handleScroll(event) {
-  //   let height = 150;
-  //   let myDocuments = document.querySelectorAll(".my-documents")[0];
+  handleScroll(event) {
+    let height = 150;
+    let myDocuments = document.querySelectorAll(".my-documents")[0];
 
-  //   if (myDocuments) {
-  //     height += myDocuments.scrollHeight
-  //   }
+    if (myDocuments) {
+      height += myDocuments.scrollHeight
+    }
 
-  //   let myBreadcrumbs = document.querySelectorAll(".my-breadcrumbs")[0];
+    let myBreadcrumbs = document.querySelectorAll(".my-breadcrumbs")[0];
 
-  //   if (myBreadcrumbs) {
-  //     height += myBreadcrumbs.scrollHeight
-  //   }
+    if (myBreadcrumbs) {
+      height += myBreadcrumbs.scrollHeight
+    }
     
 
-  //   this.setState({
-  //     top:  height - event.currentTarget.scrollY ,
-  //   })
-  // }
+    this.setState({
+      top:  height - event.currentTarget.scrollY ,
+    })
+  }
 
   toggleActive(e) {
     if (document.querySelectorAll(".my-menu-item.active")[0]) {
@@ -405,7 +405,7 @@ export default class extends React.Component {
             </Container>
 
 
-            {/* <div
+            <div
               className="my-target"
               style={{ position: "relative", height: "110vh" }}
             >
@@ -427,23 +427,17 @@ export default class extends React.Component {
                   </div>
                 </div>
               </Worker>
-            </div> */}
+            </div>
             
-            {/* <div
-        ref={this.onRef}
-        style={{ width: "100%", height: "100vh", marginBottom: 80, borderTop: "1px solid #ccc", borderBottom: "1px solid #ccc"}}
-      ></div> */}
 
       <Proxy parent={ this } />
-
-
-
           </Page>
         </Styles>
       </Layout>
     )
   }
 }
+
 
 export const query = graphql`
   {
@@ -485,6 +479,7 @@ const Proxy = function ( props ) {
               "note",
               "text",
               "arrow",
+              "pan-mode",
               "rectangle",
               "ellipse",
               "document-editor",

@@ -11,7 +11,7 @@
     "@grapecity/wijmo.react.input": "^5.20193.646",
     "@grapecity/wijmo.react.viewer": "^5.20193.646",
     "@grapecity/wijmo.viewer": "^5.20193.646",
-    "@phuocng/react-pdf-viewer": "^1.0.2",
+    "@phuocng/react-pdf-viewer": "^1.1.0",
     "antd": "^3.24.3",
     "browser-monads": "^1.0.0",
     "bulma": "^0.8.0",
