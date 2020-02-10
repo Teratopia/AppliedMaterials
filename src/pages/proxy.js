@@ -401,6 +401,6 @@ const Proxy = function ( props ) {
     };
   }, []);
   return (
-      <div ref={containerRef} className="my-viewer-target" style={{ height: "100vh", width: "100%", marginBottom: 48, borderTop: "1px solid #ccc", borderBottom: "1px solid #ccc"}} />
+      <div ref={containerRef} className="my-viewer-target" style={{ height: "90vh", width: "100%", marginBottom: 48, borderTop: "1px solid #ccc", borderBottom: "1px solid #ccc"}} />
   );
 }
