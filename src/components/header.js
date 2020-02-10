@@ -17,7 +17,7 @@ const Styles = styled.div`
   }
 
   width: 100%;
-  z-index: 1000;
+  z-index: 119014;
   min-width: 240px;
 
   .my-box {

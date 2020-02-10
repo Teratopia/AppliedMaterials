@@ -24,6 +24,12 @@ const Styles = styled.div`
     height: 100vh;
     margin-bottom: 24px;
   }
+
+  .my-toolbar {
+    @media screen and (min-width: 475px) {
+      overflow-x: scroll;
+    }    
+  }
 `
 
 export default class extends React.Component {
@@ -137,6 +143,8 @@ export default class extends React.Component {
           }}
         >
           <div
+
+            className="my-toolbar"
             style={{
               alignItems: "center",
               backgroundColor: "#EEE",
@@ -145,7 +153,6 @@ export default class extends React.Component {
               gridArea: "toolbar",
               justifyContent: "center",
               padding: "4px",
-              overflow: "scroll",
               // position: "fixed",              
               // width: "100%",
               // top: 0,

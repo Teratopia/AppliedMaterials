@@ -76,6 +76,13 @@ const Styles = styled.div`
     margin-bottom: 24px;
   }
 
+
+  .my-toolbar {
+    @media screen and (min-width: 475px) {
+      overflow-x: scroll;
+    }    
+  }
+
  
 `
 export default class extends React.Component {
@@ -87,129 +94,17 @@ export default class extends React.Component {
     this.state.materials = props.data.materials.frontmatter.documents
     this.state.currentPage = 3
 
-    // this._instance = null;
-    // this._container = null;
-    // this.onRef = this.onRef.bind(this);
-    // this.load = this.load.bind(this);
-    // this.unload = this.unload.bind(this);
   }
 
-  // onRef(container) {
-  //   this._container = container;
-  // }
-
-  // async load() {
-
-  //   if (typeof window === undefined) {
-  //     return;
-  //   }
-  //   this._instance = PSPDFKit.load({
-  //     pdf: require("../images/applied-proxy.pdf"),
-  //     container: this._container,
-  //     toolbarItems: PSPDFKit.defaultToolbarItems.filter(
-  //       toolbarItem => {
-  //         let list = [
-  //           "line",
-  //           "ink",
-  //           "annotate",
-  //           "highlighter",
-  //           "text-highlighter",
-  //           "ink-eraser",
-  //           "ink-signature",
-  //           "image",
-  //           "stamp",
-  //           "note",
-  //           "text",
-  //           "arrow",
-  //           "rectangle",
-  //           "ellipse",
-  //           "document-editor",
-  //           "polygon",
-  //           "polyline",
-
-  //         ]
-
-  //         let idx = list.indexOf(toolbarItem.type)
-  //         if (idx > -1 ) {
-  //           return false;
-  //         } else {
-  //           return true;
-  //         }
-  //       }
-  //     ),
-  //     licenseKey: "HilxIul2OfvkFQJmXHNkAqz4i7UdmtbxQ4CqYirO7z3Y65iudWWhTKB4zIUFW8ahDOBLWN2CdRshosKuChDujZrwh90OTknxRy4f0_kl5kbtfGZR8EA5sDoy5eyIxrxN0qYesQt_HEkch11DxfsrSiBFVJVq3NwrzigZwrfNANlSR6XrNL47-pYsmVOU9_AF9AjcgXbyXqopemmnh-6fNOuCmG0U6DT9hevI7PQk1kJbwhtRjVNC9AxUO85wD429gcEPiDP5Bw_O-_DHaDPzhF-lDZimD2cJyToQYjeS0uR38S6O6VK_9-i8EoEAoqNDohovnYU3mfA2qwFr7TKudBAkXGZuNUg1cau_I474ILSe3dyZer_wCmLjR_-xHrOXYmf3M5FNEc0G7d7IU2lia1qAFZo-l6jgT4P5ZonqdcfSpdQ7LJekBZJ-3kJaav9H",
-  //     // baseUrl: `static`,
-  //   }).then((viewer) => {
-  //     this.setState({ viewer })
-  //   }).catch((error) => {
-  //     console.log(error)
-  //   });
-  // }
-
-  // unload() {
-  //   PSPDFKit.unload(this._instance || this._container);
-  //   this._instance = null;
-  // }
-
-  // componentWillUnmount() {
-  //   this.unload();
-  // }
-
-
   componentDidMount() {
-  //   if (typeof window !== undefined) {
   //     // var adobeDCView = new window.AdobeDC.View({clientId: "4cf176e7e8a04036a69a1a50982528b3", divId: "adobe-dc-view"});
   //     // adobeDCView.previewFile({
   //     //   content:{location: {url: require("../images/applied-proxy.pdf")}},
   //     //   metaData:{fileName: "Applied Materials 2020 Proxy", }
   //     // }, {showDownloadPDF: true, showZoom: true,
   //     //   showPrintPDF: true, embedMode: "SIZED_CONTAINER", });
-    
-    
-        // window.onscroll = this.handleScroll.bind(this)
-        // window.onresize = this.handleScroll.bind(this)
-  //       // this.load();
-        
-  //       // PSPDFKit.load({
-  //       //   container: ".proxy-target",
-  //       //   pdf: "../images/applied-proxy.pdf",
-  //       //   licenseKey: "TRIAL-O-O9w8BsdBgfEckZ-LjR4yrYHBnUzqJbdyKOmTxXSN3RuehRI-yxro_hASjCSmJnrmkBmE5sUR7CgNEuS3ehdMMxzxGxjc9ceyPx_ljydQc",
-  //       //   // baseUrl: "/"
-
-  //       // }).then(function(instance) {
-  //       //   console.log("PSPDFKit loaded", instance);
-  //       // })
-  //       // .catch(function(error) {
-  //       //   console.error(error.message);
-  //       // });;
-  //   }
-
   }
 
-  componentWillUnmount() {
-    // window.removeEventListener("scroll", this.handleScroll)
-    // window.removeEventListener("resize", this.handleScroll)
-  }
-
-  handleScroll(event) {
-    let height = 150;
-    let myDocuments = document.querySelectorAll(".my-documents")[0];
-
-    if (myDocuments) {
-      height += myDocuments.scrollHeight
-    }
-
-    let myBreadcrumbs = document.querySelectorAll(".my-breadcrumbs")[0];
-
-    if (myBreadcrumbs) {
-      height += myBreadcrumbs.scrollHeight
-    }
-    
-
-    this.setState({
-      top:  height - event.currentTarget.scrollY ,
-    })
-  }
 
   toggleActive(e) {
     if (document.querySelectorAll(".my-menu-item.active")[0]) {
@@ -324,6 +219,7 @@ export default class extends React.Component {
     const layout = (isSidebarOpened, main, toolbar, sidebar) => {
       return (
         <div
+          
           style={{
             border: "1px solid rgba(0, 0, 0, .3)",
             display: "grid",
@@ -333,7 +229,9 @@ export default class extends React.Component {
             gridTemplateColumns: isSidebarOpened ? "30% 1fr" : "1fr",
             gridTemplateRows: "40px calc(100% - 40px)",
             height: "90vh",
-            overflow: "scroll",
+            // overflowX: "scroll",
+            // overflowY: "none",
+            position: "relative",
             width: "100%",
             // position: "fixed",
             // top: 0,
@@ -341,6 +239,7 @@ export default class extends React.Component {
           }}
         >
           <div
+            className="my-toolbar"
             style={{
               alignItems: "center",
               backgroundColor: "#EEE",
@@ -349,7 +248,8 @@ export default class extends React.Component {
               gridArea: "toolbar",
               justifyContent: "center",
               padding: "4px",
-              overflow: "scroll",
+              overflowX: "none",
+              // overflowY: "none",
               // position: "fixed",              
               // width: "100%",
               // top: 0,
