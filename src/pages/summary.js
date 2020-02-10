@@ -5,8 +5,8 @@ import Container from "../components/container"
 import Page from "../components/page"
 import SEO from "../components/seo"
 import styled from "@emotion/styled"
-import Viewer, { Worker } from '@phuocng/react-pdf-viewer';
-import '@phuocng/react-pdf-viewer/cjs/react-pdf-viewer.css';
+import Viewer, { Worker } from '../../vendor/react-pdf-viewer';
+import '../../vendor/react-pdf-viewer.css';
 
 import theme from "../theme.js"
 
