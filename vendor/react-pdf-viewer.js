@@ -817,7 +817,7 @@ var LocalizationProvider = function (_a) {
 };
 
 var LEVELS = [
-    0.75, 1, 1.25, 1.5, 2,
+    0.5, 0.75, 1, 1.25, 1.5, 2,
      2.5
 ];
 var SpecialLevel;

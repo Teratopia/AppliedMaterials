@@ -145,7 +145,7 @@ export default class extends React.Component {
               gridArea: "toolbar",
               justifyContent: "center",
               padding: "4px",
-              overflow: "hidden",
+              overflow: "scroll",
               // position: "fixed",              
               // width: "100%",
               // top: 0,
