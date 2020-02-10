@@ -817,17 +817,8 @@ var LocalizationProvider = function (_a) {
 };
 
 var LEVELS = [
-    0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9,
-    1, 1.1, 1.3, 1.5, 1.7, 1.9,
-    2.1, 2.4, 2.7,
-    3.0, 3.3, 3.7,
-    4.1, 4.6,
-    5.1, 5.7,
-    6.3,
-    7.0, 7.7,
-    8.5,
-    9.4,
-    10,
+    0.75, 1, 1.25, 1.5, 2,
+     2.5
 ];
 var SpecialLevel;
 (function (SpecialLevel) {
@@ -2418,14 +2409,14 @@ var Toolbar = function (_a) {
                 React.createElement(DownloadIcon, null)), content: renderDownload, offset: TOOLTIP_OFFSET$2 })),
         fullScreenButton: (React.createElement(Tooltip, { position: Position$1.BottomCenter, target: React.createElement(Button, { onClick: onFullScreen },
                 React.createElement(FullScreenIcon, null)), content: renderFullScreen, offset: TOOLTIP_OFFSET$2 })),
-        moreActionsPopover: (React.createElement(MoreActionsPopover, { doc: doc, fileName: fileName, onChangeScrollMode: onChangeScrollMode, onJumpToFirstPage: jumpToFirstPage, onJumpToLastPage: jumpToLastPage, onRotate: onRotate, onToggleDragScroll: onToggleDragScroll })),
+        // moreActionsPopover: (React.createElement(MoreActionsPopover, { doc: doc, fileName: fileName, onChangeScrollMode: onChangeScrollMode, onJumpToFirstPage: jumpToFirstPage, onJumpToLastPage: jumpToLastPage, onRotate: onRotate, onToggleDragScroll: onToggleDragScroll })),
         nextPageButton: (React.createElement(Tooltip, { position: Position$1.BottomCenter, target: React.createElement(Button, { onClick: gotoNextPage },
                 React.createElement(NextIcon, null)), content: renderNextPage, offset: TOOLTIP_OFFSET$2 })),
         numPages: numPages,
-        openFileButton: (React.createElement(OpenFileButton, { onOpenFiles: onOpenFiles })),
+        // openFileButton: (React.createElement(OpenFileButton, { onOpenFiles: onOpenFiles })),
         previousPageButton: (React.createElement(Tooltip, { position: Position$1.BottomCenter, target: React.createElement(Button, { onClick: gotoPreviousPage },
                 React.createElement(PreviousIcon, null)), content: renderPreviousPage, offset: TOOLTIP_OFFSET$2 })),
-        searchPopover: (React.createElement(SearchPopover, { doc: doc, onJumpToMatch: onJumpToMatch, onSearchFor: onSearchFor })),
+        // searchPopover: (React.createElement(SearchPopover, { doc: doc, onJumpToMatch: onJumpToMatch, onSearchFor: onSearchFor })),
         toggleSidebarButton: (React.createElement(Tooltip, { position: Position$1.BottomCenter, target: (React.createElement(Button, { onClick: toggleSidebar, isSelected: isSidebarOpened },
                 React.createElement(LeftSidebarIcon, null))), content: renderToggle, offset: TOOLTIP_OFFSET$2 })),
         zoomInButton: (React.createElement(Tooltip, { position: Position$1.BottomCenter, target: React.createElement(Button, { onClick: zoomIn },
