@@ -225,7 +225,7 @@ export default class extends React.Component {
               </Worker>
             </div>
 
-            <Proxy parent={ this } />
+            {/* <Proxy parent={ this } /> */}
 
             
           </Page>
