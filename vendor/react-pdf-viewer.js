@@ -532,6 +532,7 @@ var Tooltip = function (_a) {
     var renderTarget = function (toggle) {
         var show = function () { toggle(ToggleStatus.Open); };
         var hide = function () { toggle(ToggleStatus.Close); };
+        // onMouseEnter: show, 
         return (React.createElement("div", { ref: targetRef, onMouseLeave: hide }, target));
     };
     var renderContent = function () { return (React.createElement(TooltipBody, { offset: offset, position: position, targetRef: targetRef }, content())); };
@@ -2462,7 +2463,7 @@ var ViewerInner = function (_a) {
     var pageWidth = pageSize.pageWidth, pageHeight = pageSize.pageHeight;
     var arr = Array(numPages).fill(null);
     var pageVisibility = arr.map(function (_, __) { return 0; });
-    var pageRefs = arr.map(function (_, __) { return React.useRef(); });
+    var pageRefs = arr.map(function (_, __) { return GimmeRef(); });
     
     var zoom = function (newScale) {
         var pagesEle = pagesRef.current;

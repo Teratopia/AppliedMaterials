@@ -406,28 +406,16 @@ export default class extends React.Component {
             </Container>
 
 
-            <div
-              className="my-target"
-              style={{ position: "relative", height: "90vh", marginBottom: 100  }}
-            >
+         
               <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.2.228/build/pdf.worker.min.js">
-              <div
-                  style={{
-                    height: "100%",
-                    width: "100%",
-                    overflowY: "scroll",
-                    position: "relative",
-                    display: "block",
-                  }}
-                >
+              
                     <Viewer
                       layout={layout}
                       parent={this}
                       fileUrl={require("../images/applied-proxy.pdf")}
                     />
-                </div>
+                
               </Worker>
-            </div>
             
 
       {/* <Proxy parent={ this } /> */}
