@@ -242,6 +242,8 @@ export default class extends React.Component {
       viewState
         .set("currentPageIndex", num)
     );
+
+    this._jumpToPage( num )
   }
 
   menuItem(el, idx) {
@@ -420,7 +422,7 @@ export default class extends React.Component {
                   }}
                 >
                     <Viewer
-                      // layout={layout}
+                      layout={layout}
                       parent={this}
                       fileUrl={require("../images/applied-proxy.pdf")}
                     />
