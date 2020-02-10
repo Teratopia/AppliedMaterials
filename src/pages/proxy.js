@@ -323,7 +323,7 @@ export default class extends React.Component {
               <br></br>
             
 
-      {/* <Proxy parent={ this } /> */}
+      <Proxy parent={ this } />
           </Page>
         </Styles>
       </Layout>
