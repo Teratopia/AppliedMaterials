@@ -411,6 +411,7 @@ export default class extends React.Component {
               
                     <Viewer
                       layout={layout}
+                      defaultScale={1.5}
                       parent={this}
                       fileUrl={require("../images/applied-proxy.pdf")}
                     />

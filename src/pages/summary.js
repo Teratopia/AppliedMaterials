@@ -210,6 +210,7 @@ export default class extends React.Component {
                 >
                   <Viewer
                     parent={this}
+                    defaultScale={1.5}
                     layout={layout}
                     fileUrl={require("../images/proxy-summary.pdf")}
                   />

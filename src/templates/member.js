@@ -200,11 +200,9 @@ export default class extends React.Component {
               </div>
 
               <div className="content">
-                <small>
                 {
                   this.state.member.bio
                 }
-                </small>
               </div>
               </div>
             </div>
