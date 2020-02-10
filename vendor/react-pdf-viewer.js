@@ -520,6 +520,7 @@ var TooltipBody = function (_a) {
             textAlign: 'center',
             top: '-9999px',
             zIndex: 9999,
+            
         } },
         React.createElement(Arrow, { position: position, styles: { background: '#000' } }),
         children));
@@ -531,7 +532,7 @@ var Tooltip = function (_a) {
     var renderTarget = function (toggle) {
         var show = function () { toggle(ToggleStatus.Open); };
         var hide = function () { toggle(ToggleStatus.Close); };
-        return (React.createElement("div", { ref: targetRef, onMouseEnter: show, onMouseLeave: hide }, target));
+        return (React.createElement("div", { ref: targetRef, onMouseLeave: hide }, target));
     };
     var renderContent = function () { return (React.createElement(TooltipBody, { offset: offset, position: position, targetRef: targetRef }, content())); };
     return (React.createElement(Portal, { target: renderTarget, content: renderContent }));
