@@ -128,7 +128,7 @@ export default class extends React.Component {
               : "'toolbar' 'main'",
             gridTemplateColumns: isSidebarOpened ? "30% 1fr" : "1fr",
             gridTemplateRows: "40px calc(100% - 40px)",
-            height: "520px",
+            height: "90vh",
             overflow: "hidden",
             width: "100%",
             // position: "fixed",
@@ -196,7 +196,7 @@ export default class extends React.Component {
             </Container>
             <div
               className="my-target"
-              style={{ position: "relative", height: "520px", marginBottom: 100  }}
+              style={{ position: "relative", height: "90vh", marginBottom: 100  }}
             >
               <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.2.228/build/pdf.worker.min.js">
                 <div
@@ -217,7 +217,7 @@ export default class extends React.Component {
               </Worker>
             </div>
 
-            <Proxy parent={ this } />
+            {/* <Proxy parent={ this } /> */}
 
             
           </Page>

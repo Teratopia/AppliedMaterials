@@ -1,0 +1,189 @@
+/**
+ * A React component to view a PDF document
+ *
+ * @see https://react-pdf-viewer.dev
+ * @license https://react-pdf-viewer.dev/license
+ * @copyright 2019-2020 Nguyen Huu Phuoc <me@phuoc.ng>
+ */
+
+.viewer-button {
+    background-color: transparent;
+}
+.viewer-button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+/**
+ * A React component to view a PDF document
+ *
+ * @see https://react-pdf-viewer.dev
+ * @license https://react-pdf-viewer.dev/license
+ * @copyright 2019-2020 Nguyen Huu Phuoc <me@phuoc.ng>
+ */
+
+.viewer-menu-item:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+/**
+ * A React component to view a PDF document
+ *
+ * @see https://react-pdf-viewer.dev
+ * @license https://react-pdf-viewer.dev/license
+ * @copyright 2019-2020 Nguyen Huu Phuoc <me@phuoc.ng>
+ */
+
+.viewer-spinner {
+    animation-duration: 750ms;
+    animation-name: viewer-spinner-transform;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transition-property: transform;
+}
+@keyframes viewer-spinner-transform {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+/**
+ * A React component to view a PDF document
+ *
+ * @see https://react-pdf-viewer.dev
+ * @license https://react-pdf-viewer.dev/license
+ * @copyright 2019-2020 Nguyen Huu Phuoc <me@phuoc.ng>
+ */
+
+.viewer-grab {
+    cursor: grab;
+}
+
+.viewer-grab :not(input),
+.viewer-grab :not(select),
+.viewer-grab :not(textarea) {
+    cursor: grab !important;
+}
+
+.viewer-grabbing {
+    cursor: grabbing;
+}
+.viewer-grabbing :not(input),
+.viewer-grabbing :not(select),
+.viewer-grabbing :not(textarea) {
+    cursor: grabbing !important;
+}
+/**
+ * A React component to view a PDF document
+ *
+ * @see https://react-pdf-viewer.dev
+ * @license https://react-pdf-viewer.dev/license
+ * @copyright 2019-2020 Nguyen Huu Phuoc <me@phuoc.ng>
+ */
+
+.viewer-page {
+    box-shadow: 2px 2px 8px 0 rgba(0,0,0,.2);
+}
+/**
+ * A React component to view a PDF document
+ *
+ * @see https://react-pdf-viewer.dev
+ * @license https://react-pdf-viewer.dev/license
+ * @copyright 2019-2020 Nguyen Huu Phuoc <me@phuoc.ng>
+ */
+
+.viewer-thumbnail:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.viewer-thumbnail-selected {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+/**
+ * A React component to view a PDF document
+ *
+ * @see https://react-pdf-viewer.dev
+ * @license https://react-pdf-viewer.dev/license
+ * @copyright 2019-2020 Nguyen Huu Phuoc <me@phuoc.ng>
+ */
+
+.viewer-open-file {
+    background-color: transparent;
+    padding: 8px;
+}
+.viewer-open-file:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+/**
+ * A React component to view a PDF document
+ *
+ * @see https://react-pdf-viewer.dev
+ * @license https://react-pdf-viewer.dev/license
+ * @copyright 2019-2020 Nguyen Huu Phuoc <me@phuoc.ng>
+ */
+
+.viewer-text {
+    color: transparent;
+    cursor: text;
+    opacity: 0.2;
+    position: absolute;
+    transform-origin: 0% 0%;
+    white-space: pre;
+}
+.viewer-text::selection {
+    background: rgb(0, 0, 255, 0.5);
+    color: transparent;
+}
+.viewer-highlight {
+    background-color: rgb(180, 0, 170);
+    border-radius: 4px;
+    margin: -1px;
+    padding: 1px;
+}
+.viewer-highlight-selected {
+    background-color: rgb(0, 100, 0);
+    border-radius: 4px;
+    margin: -1px;
+    padding: 1px;
+}
+/**
+ * A React component to view a PDF document
+ *
+ * @see https://react-pdf-viewer.dev
+ * @license https://react-pdf-viewer.dev/license
+ * @copyright 2019-2020 Nguyen Huu Phuoc <me@phuoc.ng>
+ */
+
+.viewer-annotation section {
+    position: absolute;
+}
+.viewer-annotation .linkAnnotation > a {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.viewer-annotation .linkAnnotation > a:hover {
+    background: rgba(255, 255, 0, 0.2);
+}
+/**
+ * A React component to view a PDF document
+ *
+ * @see https://react-pdf-viewer.dev
+ * @license https://react-pdf-viewer.dev/license
+ * @copyright 2019-2020 Nguyen Huu Phuoc <me@phuoc.ng>
+ */
+
+.viewer-attachment-item:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+/**
+ * A React component to view a PDF document
+ *
+ * @see https://react-pdf-viewer.dev
+ * @license https://react-pdf-viewer.dev/license
+ * @copyright 2019-2020 Nguyen Huu Phuoc <me@phuoc.ng>
+ */
+
+.viewer-bookmark-item:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}

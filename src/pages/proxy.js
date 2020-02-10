@@ -8,8 +8,9 @@ import Container from "../components/container"
 import Page from "../components/page"
 import SEO from "../components/seo"
 import styled from "@emotion/styled"
-import Viewer, { Worker } from '@phuocng/react-pdf-viewer';
-import '@phuocng/react-pdf-viewer/cjs/react-pdf-viewer.css';
+import Logo from "../images/applied-icon.png"
+import Viewer, { Worker } from '../../vendor/react-pdf-viewer';
+import '../../vendor/react-pdf-viewer.css';
 import theme from "../theme.js"
 
 // const PSPDFKit = typeof window !== undefined ? require("pspdfkit") : "div";
@@ -233,8 +234,6 @@ export default class extends React.Component {
     })
 
     this.jumpToPage(parseInt(e.currentTarget.dataset.page))
-
-    
   }
 
   jumpToPage ( num ) {
@@ -333,7 +332,7 @@ export default class extends React.Component {
               : "'toolbar' 'main'",
             gridTemplateColumns: isSidebarOpened ? "30% 1fr" : "1fr",
             gridTemplateRows: "40px calc(100% - 40px)",
-            height: "520px",
+            height: "90vh",
             overflow: "hidden",
             width: "100%",
             // position: "fixed",
@@ -409,7 +408,7 @@ export default class extends React.Component {
 
             <div
               className="my-target"
-              style={{ position: "relative", height: "520px", marginBottom: 100  }}
+              style={{ position: "relative", height: "90vh", marginBottom: 100  }}
             >
               <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.2.228/build/pdf.worker.min.js">
               <div
@@ -431,7 +430,7 @@ export default class extends React.Component {
             </div>
             
 
-      <Proxy parent={ this } />
+      {/* <Proxy parent={ this } /> */}
           </Page>
         </Styles>
       </Layout>
