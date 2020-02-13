@@ -93,7 +93,6 @@ export default class extends React.Component {
       windowWidth : 0,
       windowHeight : 0,
       pdfViewerIsRendered : false,
-      lastPageJump : 1
     }
     this.state.current = ""
     this.state.active = { name: "" }
@@ -119,10 +118,20 @@ export default class extends React.Component {
     window.removeEventListener('resize', this.updateWindowDimensions);
   }
 
+  componentDidUpdate(prevProps, prevState){
+    console.log('componentDidUpdate 1 prevState = ', prevState);
+    console.log('componentDidUpdate 1 this.state = ', this.state);
+    if(prevState.pdfViewerIsRendered !== this.state.pdfViewerIsRendered && this.state.pdfViewerIsRendered === true){
+      var that = this;
+      setTimeout(()=>{that.jumpToPage(that.state.currentPage)}, 1000);
+      console.log('componentDidUpdate 2');
+
+      //this.jumpToPage(this.state.currentPage);
+    }
+  }
+
   updateWindowDimensions() {
-    console.log('foo');
-    console.log('updateWindowDimensions state = ', this.state);
-    console.log('this.state.viewer = ', this.state.viewer);
+    console.log('updateWindowDimensions');
     const width = window.innerWidth;
     let pdfPercent = 1.5;
     if(width < 1015){
@@ -132,22 +141,21 @@ export default class extends React.Component {
       windowWidth: window.innerWidth, 
       windowHeight: window.innerHeight, 
       defaultPdfPercent : pdfPercent, 
+      pdfViewerIsRendered : false
     }
-    //include for pdf viewer reload on all page changes
-    newState.pdfViewerIsRendered = false;
-
     this.setState(newState);
-
     this.setState({
       pdfViewerIsRendered : true 
     });
+    console.log('update window dimensions this.state.currentPage = ', this.state.currentPage);
+    this.jumpToPage(parseInt(this.state.currentPage));
   }
 
   toggleActive(e) {
     console.log('toggleActive e = ', e);
     console.log('toggleActive e.currentTarget = ', e.currentTarget);
     console.log('toggleActive e.currentTarget.dataset = ', e.currentTarget.dataset);
-    this.setState({lastPageJump : parseInt(e.currentTarget.dataset.page)});
+
     if (document.querySelectorAll(".my-menu-item.active")[0]) {
       document
         .querySelectorAll(".my-menu-item.active")[0]
@@ -170,24 +178,26 @@ export default class extends React.Component {
     });
 
     console.log('e.currentTarget.dataset.page = ', e.currentTarget.dataset.page);
+    console.log('toggleActive this = ', this);
 
-    this.jumpToPage(parseInt(e.currentTarget.dataset.page))
+    this.jumpToPage(parseInt(e.currentTarget.dataset.page));
   }
 
   jumpToPage ( num ) {
-    console.log('foo');
-    console.log('jumpToPage num = ', num);
-    console.log('this.state.viewer = ', this.state.viewer);
+    console.log('BAR');
+    console.log('BAR num = ', num);
+    console.log('BAR this.state = ', this.state);
+    console.log('BAR this.state.viewer = ', this.state.viewer);
+    if(!this.state.viewer){
+      return;
+    }
     this.state.viewer.setViewState(viewState =>
       {
-        console.log('viewState = ', viewState);
         viewState
         .set("currentPageIndex", num)
       }
       
     );
-    console.log('jumpToPage num = ', num);
-    this.setState({lastPageJump : num});
     this._jumpToPage( num )
   }
 
@@ -269,6 +279,16 @@ export default class extends React.Component {
     }
 
     const layout = (isSidebarOpened, main, toolbar, sidebar) => {
+      console.log('layout main = ', main);
+      console.log('layout sidebar = ', sidebar);
+      //sidebar.children.props.currentPage = 5;
+      if(this.state.pdfViewerIsRendered 
+        && this.state.currentPage !== sidebar.children.props.currentPage 
+        && sidebar.children.props.currentPage !== 0){
+        console.log('layout sidebar if true sidebar.children.props.currentPage = ', sidebar.children.props.currentPage);
+        this.setState({currentPage : sidebar.children.props.currentPage});
+      }
+      
       return (
         <div
           
@@ -372,11 +392,9 @@ export default class extends React.Component {
                       { this.state.pdfViewerIsRendered ? 
                         <Viewer
                           layout={layout}
-                          currentPage={this.state.lastPageJump}
                           defaultScale={this.state.defaultPdfPercent}
                           parent={this}
                           fileUrl={require("../images/applied-proxy.pdf")}
-                          
                         />
                       : null }                  
                 </Worker>
