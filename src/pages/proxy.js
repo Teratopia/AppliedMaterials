@@ -99,7 +99,8 @@ export default class extends React.Component {
     this.state.materials = props.data.materials.frontmatter.documents
     this.state.currentPage = 3
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
-
+    this.watchForPdfViewHeightChange = this.watchForPdfViewHeightChange.bind(this);
+    this.pdfTarget = React.createRef();
   }
 
   componentDidMount() {
@@ -121,12 +122,31 @@ export default class extends React.Component {
   componentDidUpdate(prevProps, prevState){
     console.log('componentDidUpdate 1 prevState = ', prevState);
     console.log('componentDidUpdate 1 this.state = ', this.state);
-    if(prevState.pdfViewerIsRendered !== this.state.pdfViewerIsRendered && this.state.pdfViewerIsRendered === true){
-      var that = this;
-      setTimeout(()=>{that.jumpToPage(that.state.currentPage)}, 1000);
-      console.log('componentDidUpdate 2');
+    console.log('componentDidUpdate Viewer = ', Viewer);
+    console.log('componentDidUpdate Worker = ', Worker);
+    console.log('pdfTarget = ', this.pdfTarget);
+    //console.log('pdfTarget.current = ', this.pdfTarget.current);
 
+    if(prevState.pdfViewerIsRendered !== this.state.pdfViewerIsRendered 
+      && this.state.pdfViewerIsRendered === true){
+      var that = this;
+      //setTimeout(()=>{that.jumpToPage(that.state.currentPage)}, 1000);
+      console.log('componentDidUpdate 2');
+      this.watchForPdfViewHeightChange(this.pdfTarget.current.clientHeight, 0, that);
       //this.jumpToPage(this.state.currentPage);
+    }
+  }
+
+  watchForPdfViewHeightChange(baseHeight, count, that){
+    console.log('watchForPdfViewHeightChange baseHeight = ',baseHeight);
+    console.log('watchForPdfViewHeightChange count = ',count);
+    if(this.pdfTarget && this.pdfTarget.current && this.pdfTarget.current.clientHeight !== baseHeight){
+      console.log('watchForPdfViewHeightChange success this.pdfTarget.current.clientHeight = ',this.pdfTarget.current.clientHeight);
+      that.jumpToPage(that.state.currentPage);
+    } else if(count < 300) {
+      setTimeout(()=>that.watchForPdfViewHeightChange(baseHeight, ++count, that), 10);
+    } else {
+      return false;
     }
   }
 
@@ -387,7 +407,7 @@ export default class extends React.Component {
             </Container>
 
             <div style={{width : '100%'}}>
-              <div style={{maxWidth : '1050px', margin: 'auto'}}>
+              <div style={{maxWidth : '1050px', margin: 'auto'}} ref={this.pdfTarget}>
                 <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.2.228/build/pdf.worker.min.js">
                       { this.state.pdfViewerIsRendered ? 
                         <Viewer
