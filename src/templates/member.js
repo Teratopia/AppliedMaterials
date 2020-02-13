@@ -58,6 +58,10 @@ const Styles = styled.div`
     grid-template-columns: repeat(auto-fit, minmax(212px, 1fr));
     margin-bottom: 48px;
   }
+
+  .content {
+    font-size: 14px;
+  }
 `
 
 export default class extends React.Component {

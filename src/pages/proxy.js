@@ -5,6 +5,8 @@ import Container from "../components/container"
 // import MyViewer from "../components/viewer/myViewer"
 // import Wijmo from "../components/wijmo"
 
+import Dropdown from '../components/dropdown';
+
 import Page from "../components/page"
 import SEO from "../components/seo"
 import styled from "@emotion/styled"
@@ -18,7 +20,7 @@ import theme from "../theme.js"
 const Styles = styled.div`
   .my-documents {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
     grid-gap: 6px;
     margin-bottom: 18px;
 
@@ -33,11 +35,11 @@ const Styles = styled.div`
       background: #e5e5e5;
       width: 100%;
       height: 100%;
-      min-height: 54px;
+      min-height: 34px;
       padding: 8px 12px;
 
       @media screen and (min-width: 606px) {
-        min-height: 70px;
+        min-height: 50px;
       }
 
       &:hover {
@@ -53,8 +55,7 @@ const Styles = styled.div`
       .cell {
         display: table-cell;
         vertical-align: middle;
-        
-        line-height: 18px;
+        line-height: 16px;
 
         font-size: 12px !important;
       }
@@ -88,11 +89,17 @@ const Styles = styled.div`
 export default class extends React.Component {
   constructor(props, context) {
     super( props, context)
-    this.state = {}
+    this.state = {
+      windowWidth : 0,
+      windowHeight : 0,
+      pdfViewerIsRendered : false,
+      lastPageJump : 1
+    }
     this.state.current = ""
     this.state.active = { name: "" }
     this.state.materials = props.data.materials.frontmatter.documents
     this.state.currentPage = 3
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
 
   }
 
@@ -103,10 +110,44 @@ export default class extends React.Component {
   //     //   metaData:{fileName: "Applied Materials 2020 Proxy", }
   //     // }, {showDownloadPDF: true, showZoom: true,
   //     //   showPrintPDF: true, embedMode: "SIZED_CONTAINER", });
+  this.updateWindowDimensions();
+  window.addEventListener('resize', this.updateWindowDimensions);
+    
   }
 
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateWindowDimensions);
+  }
+
+  updateWindowDimensions() {
+    console.log('foo');
+    console.log('updateWindowDimensions state = ', this.state);
+    console.log('this.state.viewer = ', this.state.viewer);
+    const width = window.innerWidth;
+    let pdfPercent = 1.5;
+    if(width < 1015){
+      pdfPercent = width/650;
+    }
+    let newState = { 
+      windowWidth: window.innerWidth, 
+      windowHeight: window.innerHeight, 
+      defaultPdfPercent : pdfPercent, 
+    }
+    //include for pdf viewer reload on all page changes
+    newState.pdfViewerIsRendered = false;
+
+    this.setState(newState);
+
+    this.setState({
+      pdfViewerIsRendered : true 
+    });
+  }
 
   toggleActive(e) {
+    console.log('toggleActive e = ', e);
+    console.log('toggleActive e.currentTarget = ', e.currentTarget);
+    console.log('toggleActive e.currentTarget.dataset = ', e.currentTarget.dataset);
+    this.setState({lastPageJump : parseInt(e.currentTarget.dataset.page)});
     if (document.querySelectorAll(".my-menu-item.active")[0]) {
       document
         .querySelectorAll(".my-menu-item.active")[0]
@@ -126,17 +167,27 @@ export default class extends React.Component {
     this.setState({
       current,
       currentPageNumber: e.currentTarget.dataset.page,
-    })
+    });
+
+    console.log('e.currentTarget.dataset.page = ', e.currentTarget.dataset.page);
 
     this.jumpToPage(parseInt(e.currentTarget.dataset.page))
   }
 
   jumpToPage ( num ) {
+    console.log('foo');
+    console.log('jumpToPage num = ', num);
+    console.log('this.state.viewer = ', this.state.viewer);
     this.state.viewer.setViewState(viewState =>
-      viewState
+      {
+        console.log('viewState = ', viewState);
+        viewState
         .set("currentPageIndex", num)
+      }
+      
     );
-
+    console.log('jumpToPage num = ', num);
+    this.setState({lastPageJump : num});
     this._jumpToPage( num )
   }
 
@@ -155,6 +206,7 @@ export default class extends React.Component {
   }
 
   render() {
+    console.log('render this.state = ', this.state);
     const renderToolbar = toolbarSlot => {
       return (
         <div
@@ -299,24 +351,38 @@ export default class extends React.Component {
                   {this.state.current}
                 </span>
               </div>
-
+            {
+              this.state.windowWidth < 1015 ? 
+              <Dropdown 
+                onSelect={e=>this.jumpToPage(parseInt(e.page))}
+                default="JUMP TO A PAGE" 
+                options={this.state.materials}
+              />
+              :
               <div className="my-documents">
                 {this.state.materials.map(this.menuItem.bind(this))}
               </div>
+            }
+            
             </Container>
 
-
-         
-              <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.2.228/build/pdf.worker.min.js">
+            <div style={{width : '100%'}}>
+              <div style={{maxWidth : '1050px', margin: 'auto'}}>
+                <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.2.228/build/pdf.worker.min.js">
+                      { this.state.pdfViewerIsRendered ? 
+                        <Viewer
+                          layout={layout}
+                          currentPage={this.state.lastPageJump}
+                          defaultScale={this.state.defaultPdfPercent}
+                          parent={this}
+                          fileUrl={require("../images/applied-proxy.pdf")}
+                          
+                        />
+                      : null }                  
+                </Worker>
+              </div>
+            </div>
               
-                    <Viewer
-                      layout={layout}
-                      defaultScale={1.5}
-                      parent={this}
-                      fileUrl={require("../images/applied-proxy.pdf")}
-                    />
-                
-              </Worker>
 
               <br></br>
               <br></br>
