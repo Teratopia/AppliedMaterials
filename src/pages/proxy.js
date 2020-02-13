@@ -143,7 +143,7 @@ export default class extends React.Component {
     if(this.pdfTarget && this.pdfTarget.current && this.pdfTarget.current.clientHeight !== baseHeight){
       console.log('watchForPdfViewHeightChange success this.pdfTarget.current.clientHeight = ',this.pdfTarget.current.clientHeight);
       that.jumpToPage(that.state.currentPage);
-    } else if(count < 300) {
+    } else if(count < 1000) {
       setTimeout(()=>that.watchForPdfViewHeightChange(baseHeight, ++count, that), 10);
     } else {
       return false;
