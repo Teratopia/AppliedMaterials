@@ -97,7 +97,7 @@ export default class extends React.Component {
     this.state.current = ""
     this.state.active = { name: "" }
     this.state.materials = props.data.materials.frontmatter.documents
-    this.state.currentPage = 3
+    this.state.currentPage = 0
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
     this.watchForPdfViewHeightChange = this.watchForPdfViewHeightChange.bind(this);
     this.pdfTarget = React.createRef();
