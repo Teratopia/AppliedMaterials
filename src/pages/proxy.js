@@ -103,6 +103,8 @@ export default class extends React.Component {
     this.pdfTarget = React.createRef();
   }
 
+  //Sets default pdf viewer width and adds listener to window for updating pdf
+  //viwer dimensions on window resizes.
   componentDidMount() {
   //     // var adobeDCView = new window.AdobeDC.View({clientId: "4cf176e7e8a04036a69a1a50982528b3", divId: "adobe-dc-view"});
   //     // adobeDCView.previewFile({
@@ -112,36 +114,27 @@ export default class extends React.Component {
   //     //   showPrintPDF: true, embedMode: "SIZED_CONTAINER", });
   this.updateWindowDimensions();
   window.addEventListener('resize', this.updateWindowDimensions);
-    
   }
 
   componentWillUnmount() {
     window.removeEventListener('resize', this.updateWindowDimensions);
   }
 
+  //Calls recursive function watchForPdfViewHeightChange if pdfViewerIsRendered 
+  //changes from false to true.
   componentDidUpdate(prevProps, prevState){
-    console.log('componentDidUpdate 1 prevState = ', prevState);
-    console.log('componentDidUpdate 1 this.state = ', this.state);
-    console.log('componentDidUpdate Viewer = ', Viewer);
-    console.log('componentDidUpdate Worker = ', Worker);
-    console.log('pdfTarget = ', this.pdfTarget);
-    //console.log('pdfTarget.current = ', this.pdfTarget.current);
-
     if(prevState.pdfViewerIsRendered !== this.state.pdfViewerIsRendered 
       && this.state.pdfViewerIsRendered === true){
       var that = this;
-      //setTimeout(()=>{that.jumpToPage(that.state.currentPage)}, 1000);
-      console.log('componentDidUpdate 2');
       this.watchForPdfViewHeightChange(this.pdfTarget.current.clientHeight, 0, that);
-      //this.jumpToPage(this.state.currentPage);
     }
   }
 
+  //Calls jumpToPage if the pdfViewer has finished loading and has changed its height
+  //to something other than its base loading height. Else, sets a timeout of ten milliseconds
+  //to call itself again, with a max try number of 1000 or ten seconds.
   watchForPdfViewHeightChange(baseHeight, count, that){
-    console.log('watchForPdfViewHeightChange baseHeight = ',baseHeight);
-    console.log('watchForPdfViewHeightChange count = ',count);
     if(this.pdfTarget && this.pdfTarget.current && this.pdfTarget.current.clientHeight !== baseHeight){
-      console.log('watchForPdfViewHeightChange success this.pdfTarget.current.clientHeight = ',this.pdfTarget.current.clientHeight);
       that.jumpToPage(that.state.currentPage);
     } else if(count < 1000) {
       setTimeout(()=>that.watchForPdfViewHeightChange(baseHeight, ++count, that), 10);
@@ -150,8 +143,11 @@ export default class extends React.Component {
     }
   }
 
+  //Divides width of window dimensions by 650, the width of viewer PDF 
+  //pages at 100% zoom, to determine and set defaultPdfPercent value for viewer.
+  //Next, sets pdfViewerIsRendered to false then back to true to force PDF
+  //viewer to rerender. Finally attempts to jump to page.
   updateWindowDimensions() {
-    console.log('updateWindowDimensions');
     const width = window.innerWidth;
     let pdfPercent = 1.5;
     if(width < 1015){
@@ -167,15 +163,10 @@ export default class extends React.Component {
     this.setState({
       pdfViewerIsRendered : true 
     });
-    console.log('update window dimensions this.state.currentPage = ', this.state.currentPage);
     this.jumpToPage(parseInt(this.state.currentPage));
   }
 
   toggleActive(e) {
-    console.log('toggleActive e = ', e);
-    console.log('toggleActive e.currentTarget = ', e.currentTarget);
-    console.log('toggleActive e.currentTarget.dataset = ', e.currentTarget.dataset);
-
     if (document.querySelectorAll(".my-menu-item.active")[0]) {
       document
         .querySelectorAll(".my-menu-item.active")[0]
@@ -196,18 +187,10 @@ export default class extends React.Component {
       current,
       currentPageNumber: e.currentTarget.dataset.page,
     });
-
-    console.log('e.currentTarget.dataset.page = ', e.currentTarget.dataset.page);
-    console.log('toggleActive this = ', this);
-
     this.jumpToPage(parseInt(e.currentTarget.dataset.page));
   }
 
   jumpToPage ( num ) {
-    console.log('BAR');
-    console.log('BAR num = ', num);
-    console.log('BAR this.state = ', this.state);
-    console.log('BAR this.state.viewer = ', this.state.viewer);
     if(!this.state.viewer){
       return;
     }
@@ -236,7 +219,6 @@ export default class extends React.Component {
   }
 
   render() {
-    console.log('render this.state = ', this.state);
     const renderToolbar = toolbarSlot => {
       return (
         <div
@@ -299,13 +281,10 @@ export default class extends React.Component {
     }
 
     const layout = (isSidebarOpened, main, toolbar, sidebar) => {
-      console.log('layout main = ', main);
-      console.log('layout sidebar = ', sidebar);
       //sidebar.children.props.currentPage = 5;
       if(this.state.pdfViewerIsRendered 
         && this.state.currentPage !== sidebar.children.props.currentPage 
         && sidebar.children.props.currentPage !== 0){
-        console.log('layout sidebar if true sidebar.children.props.currentPage = ', sidebar.children.props.currentPage);
         this.setState({currentPage : sidebar.children.props.currentPage});
       }
       

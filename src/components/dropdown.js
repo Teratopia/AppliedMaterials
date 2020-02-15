@@ -97,12 +97,11 @@ export default class Dropdown extends React.Component {
 
     componentDidMount(){
         this.mouseTarget.current.addEventListener('mouseleave', ()=>{
-            //this.setState({isViewingOptions : false});
+            this.setState({isViewingOptions : false});
         });
     }
 
     onSelect(option){
-        console.log('onSelect option = ', option);
         this.setState({selectedOption : option, isViewingOptions : false});
         this.props.onSelect(option);
     }
@@ -125,13 +124,9 @@ export default class Dropdown extends React.Component {
                     <div className="dd-options-list-container-padding">
                     <div className="dd-options-list" >
                         {this.props.options.map(option => {
-                            if(option === this.state.selectedOption){
-                                return null;
-                            } else {
                                 return <div key={option.title} className="dd-option" onClick={()=>{this.onSelect(option)}}>
                                     {option.title}
                                 </div>
-                            }
                         })}
                     </div>
                     </div>
