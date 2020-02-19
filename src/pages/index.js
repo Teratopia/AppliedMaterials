@@ -462,7 +462,7 @@ export default class extends React.Component {
                         <div>and Proxy Statement</div>
                       </div>
 
-                      <Link to="proxy" style={{ color: "white" }}>
+                      <Link to="/proxy" style={{ color: "white" }}>
                         <div className="my-proxy-button">
                           VIEW INTERACTIVE PROXY
                         </div>

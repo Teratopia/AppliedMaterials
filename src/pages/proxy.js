@@ -366,7 +366,7 @@ export default class extends React.Component {
               <div className="my-breadcrumbs" style={{ marginBottom: "18px" }}>
                 <span>
                   <Link to="/">Home</Link> /{" "}
-                  <Link to="proxy">2020 Proxy Statement</Link>{" "}
+                  <Link to="/proxy">2020 Proxy Statement</Link>{" "}
                   {this.state.current}
                 </span>
               </div>
