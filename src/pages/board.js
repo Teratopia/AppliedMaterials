@@ -170,7 +170,7 @@ export default class extends React.Component {
                 </ul>
             </div>
 
-            <b>Committees:</b>
+            <b style={{fontSize : 14}}>Committees:</b>
             <div className="content">
                 <ul>{this.boardComittees(el.summaryComittees)}</ul>
             </div>
