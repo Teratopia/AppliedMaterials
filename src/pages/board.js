@@ -86,7 +86,7 @@ const Styles = styled.div`
 
         .content ul {
           margin-top: 8px;
-          font-size: 12px;
+          font-size: 13px;
         }
 
         .my-board-title {
