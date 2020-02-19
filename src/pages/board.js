@@ -86,6 +86,7 @@ const Styles = styled.div`
 
         .content ul {
           margin-top: 8px;
+          font-size: 14px;
         }
 
         .my-board-title {
@@ -162,20 +163,16 @@ export default class extends React.Component {
             <div className="my-board-title">{el.title}</div>
 
             <div className="content">
-              <small>
                 <ul>
                   <li>{el.since}</li>
                   <li>Age {el.age}</li>
                   {this.type(el.type)}
                 </ul>
-              </small>
             </div>
 
             <b>Committees:</b>
             <div className="content">
-              <small>
                 <ul>{this.boardComittees(el.summaryComittees)}</ul>
-              </small>
             </div>
           </div>
         </div>
