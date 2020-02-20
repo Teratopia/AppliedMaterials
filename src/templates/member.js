@@ -68,18 +68,22 @@ const Styles = styled.div`
     marginBottom : 0px;
   }
 
-  .subtitle {
+  .content-subtitle {
     color: #4a4a4a;
     font-size: 20px;
     font-weight: 400;
     line-height: 1.25;
   }
 
-  .title {
+  .content-title {
+    font-family: myriad;
     color: #363636;
     font-size: 32px;
-    font-weight: 500;
-    line-height: 1.125;
+    font-weight: 400;
+    margin-bottom: 8px;
+    margin-top: 4px;
+    margin-left: 2px;
+    line-height: 28px;
 }
 `
 
@@ -112,7 +116,7 @@ export default class extends React.Component {
     if ( this.state.member.otherBoards ) {
       return (
         <div>
-           <div className="title is-6">
+           <div className="title is-6" style={{fontSize : '16px'}}>
                   <b>OTHER CURRENT PUBLIC BOARDS:</b>
                 </div>
 
@@ -139,7 +143,7 @@ export default class extends React.Component {
     if ( this.state.member.boardComittees ) {
       return (
         <div>
-           <div className="title is-6">
+           <div className="title is-6" style={{fontSize : '16px'}}>
                   <b>BOARD COMMITTEES:</b>
                 </div>
 
@@ -184,7 +188,7 @@ export default class extends React.Component {
           <Container>
             <div style={{marginBottom: "30px"}}>
               <div className="my-header-grid">
-              <span>
+              <span style={{fontSize : '16px'}}>
               <Link to="/">Home</Link> / <Link to="board">Board of Directors</Link> / <span style={{color: theme.blue}}>{this.state.member.name}</span>
               </span>
 
@@ -206,14 +210,14 @@ export default class extends React.Component {
               </div>
 
             <div>
-              <div className="title" style={{color: theme.blue}}>
+              <div className="content-title" style={{color: theme.blue}}>
                 { this.state.member.name }
                 </div>
-              <div className="subtitle" style={{marginBottom: 8}}>
+              <div className="content-subtitle" style={{marginBottom: 8}}>
                 { this.state.member.title }
               </div>
               <div className="content-detail">
-                Age: { this.state.member.age }
+                foo Age: { this.state.member.age }
               </div>
               <div className="content-detail">
                 { memberType }
@@ -234,7 +238,7 @@ export default class extends React.Component {
 
             <div className="my-package">
               <div>
-                <div className="title is-6">
+                <div className="title is-6" style={{fontSize : '16px'}}>
                   <b>KEY QUALIFICATIONS AND EXPERTISE:</b>
                 </div>
 
