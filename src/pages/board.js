@@ -149,6 +149,7 @@ export default class extends React.Component {
     }
   }
 
+  //memberItem
   memberItem( el, idx ) {
     if (el.name == "Thomas J. Iannotti"){
       el.type = "Independent Director";
