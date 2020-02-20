@@ -62,6 +62,25 @@ const Styles = styled.div`
   .content {
     font-size: 14px;
   }
+
+  .content-detail {
+    font-size: 16px;
+    marginBottom : 0px;
+  }
+
+  .subtitle {
+    color: #4a4a4a;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.25;
+  }
+
+  .title {
+    color: #363636;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 1.125;
+}
 `
 
 export default class extends React.Component {
@@ -193,13 +212,13 @@ export default class extends React.Component {
               <div className="subtitle" style={{marginBottom: 8}}>
                 { this.state.member.title }
               </div>
-              <div>
+              <div className="content-detail">
                 Age: { this.state.member.age }
               </div>
-              <div>
+              <div className="content-detail">
                 { memberType }
               </div>
-              <div style={{ marginBottom: 12}}>
+              <div className="content-detail" style={{ marginBottom: 12}}>
                 { this.state.member.since }
               </div>
 
