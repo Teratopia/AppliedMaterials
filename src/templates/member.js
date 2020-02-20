@@ -217,7 +217,7 @@ export default class extends React.Component {
                 { this.state.member.title }
               </div>
               <div className="content-detail">
-                foo Age: { this.state.member.age }
+                Age: { this.state.member.age }
               </div>
               <div className="content-detail">
                 { memberType }
