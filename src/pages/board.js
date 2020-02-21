@@ -158,7 +158,7 @@ export default class extends React.Component {
       <Link to={"/board/" + el.slug}>
         <div className="my-board-member" key={el.name}>
           <Img fluid={el.image.childImageSharp.fluid} alt={el.name} />
-          <div className="my-title">{el.name}</div>
+          <div className="my-title" style={{fontSize : '16px'}}>{el.name}</div>
 
           <div className="my-content">
             <div className="my-board-title">{el.title}</div>
