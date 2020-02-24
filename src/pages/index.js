@@ -125,8 +125,8 @@ const Styles = styled.div`
   .my-info-grid {
     margin: 24px auto;
     display: grid;
-    
-    grid-template-columns: repeat(auto-fill, minmax(33%, 1fr));
+    justify-content: center;
+    grid-template-columns: repeat(2, 33%);
 
     // max-width: 700px;
     
@@ -517,6 +517,8 @@ export default class extends React.Component {
                   </div>
                 </div>
 
+                {/*   UNCOMMENT FOR "VOTE" BUTTON
+
                 <div className="info-grid-section my-vote-button">
                   <a
                     href="https://east.proxyvote.com/pv/web"
@@ -526,6 +528,7 @@ export default class extends React.Component {
                     <div className="button is-danger">VOTE</div>
                   </a>
                 </div>
+              */}
               </div>
             </Container>
 
